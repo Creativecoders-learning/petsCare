@@ -4,7 +4,10 @@ const router = createBrowserRouter([
     // this is basic routes
     {
         path: "/",
-        element: <App/>
+        element: <App/>,
+        children: [
+            
+        ]
     }
 ])
 
