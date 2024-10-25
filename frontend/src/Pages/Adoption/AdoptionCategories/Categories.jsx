@@ -22,7 +22,7 @@ const Categories = () => {
 
   return (
     <div className="text-center p-10">
-      <h1 className="text-3xl">Pets Available For Adoption Nearby</h1>
+      <h1 className="text-3xl">Pets Available For Adoption Nearbyy</h1>
       {/* added filter by tabs */}
       <div className="max-w-screen-lg mx-auto mt-10">
         <Tabs>
