@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#675BC8', // Replace with your primary color hex code
-        secondary: '#0A453A', // Replace with your secondary color hex code
+        primary: '#675BC8',
+        secondary: '#0A453A',
       },
     },
   },
