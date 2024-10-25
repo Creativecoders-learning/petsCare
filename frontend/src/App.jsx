@@ -1,6 +1,10 @@
+import Categories from "./Pages/Adoption/AdoptionCategories/Categories";
 
 export default function App() {
   return (
-    <div className="underline text-2xl text-center uppercase">This is pets care.............</div>
+    <div className="max-w-screen-xl mx-auto">
+    
+    <Categories></Categories>
+    </div>
   )
 }
