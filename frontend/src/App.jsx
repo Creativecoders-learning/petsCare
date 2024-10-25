@@ -1,10 +1,9 @@
-import Categories from "./Pages/Adoption/AdoptionCategories/Categories";
+import { Outlet } from "react-router-dom";
 
 export default function App() {
   return (
     <div className="max-w-screen-xl mx-auto">
-    
-    <Categories></Categories>
+      <Outlet></Outlet>
     </div>
   )
 }

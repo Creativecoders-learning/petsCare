@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import AdoptionCard from "../../../Components/Shared/AllCards/AdoptionCard";
+import AdoptionCard from "../../UI/AdoptionCard";
 
 const Categories = () => {
   const [adoptions, setAdoptions] = useState([]);

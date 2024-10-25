@@ -20,9 +20,11 @@ const AdoptionCard = ({ item }) => {
             <h2 className="font-medium text-slate-800 sm:text-lg md:text-xl dark:text-black">
               {item?.breed}
             </h2>
-            <h2 className="font-medium text-left text-black md:text-base dark:text-black">
-              $20.00
+           <div className="flex item-center">
+           <h2 className="font-medium text-left text-black md:text-base dark:text-black">
+              Age: {item?.age}
             </h2>
+           </div>
           </div>
         </div>
 
