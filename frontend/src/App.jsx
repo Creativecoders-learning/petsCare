@@ -1,9 +1,9 @@
-import Vets from "./Pages/Vets/Vets";
+import MainLayout from "./Layout/MainLayout";
 
 export default function App() {
   return (
     <div>
-    <Vets></Vets>
+      <MainLayout />
     </div>
-  )
+  );
 }
