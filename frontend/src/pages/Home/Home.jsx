@@ -1,11 +1,9 @@
-import Banner from '../../Components/Home/Banner';
-import Container from '../../Components/UI/Container';
+import Button from "../../Components/UI/Button";
 
-const Home = () => {
+export default function Home() {
   return (
-    <Container>
-      <Banner />
-    </Container>
-  );
-};
-export default Home;
+    <div>
+        <Button></Button>
+    </div>
+  )
+}
