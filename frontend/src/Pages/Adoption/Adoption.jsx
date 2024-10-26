@@ -4,6 +4,7 @@ const Adoption = () => {
     return (
         <div>
             <Categories></Categories>
+            this 
         </div>
     );
 };
