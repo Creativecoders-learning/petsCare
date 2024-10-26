@@ -8,8 +8,6 @@ import { FaPagelines, FaRegClock } from "react-icons/fa";
 import Button from "../../UI/Button";
 
 
-
-
 const AdopDetails = () => {
   const { id } = useParams();
   console.log(typeof id);
@@ -24,7 +22,7 @@ const AdopDetails = () => {
           <img
             width="40"
             height="20"
-            classNameName="rounded-full"
+            className="rounded-full"
             src={adoption?.shelter_photo}
             alt=""
           />
