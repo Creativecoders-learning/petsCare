@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import BlogCategory from '../../Components/Blogs/BlogCategory';
 import CardBlog from '../../Components/Blogs/CardBlog';
+import useBlogs from '../../Hooks/api/useBlogs';
 // import SideBar from '../../Components/Blogs/SideBar';
-import useBlogs from '../../Hooks/useBlogs';
 
 
 const Blog = () => {
-    const { blogs, loading, error } = useBlogs('/blogs.json');
-    const [categoryBlog, setCategoryBlog] = useState(blogs)
+    const { blogs, loading, error } = useBlogs();
+    const [categoryBlogs, setCategoryBlogs] = useState(blogs)
+    console.log(categoryBlogs);
 
     const getItemsByCategory =  (data, category)=>{
         return  data?.filter(item => item?.category === category);
@@ -18,7 +19,7 @@ const Blog = () => {
         const select = document.getElementById("categorySelect");
         const selectedValue = select.value;
         const result = getItemsByCategory(blogs, selectedValue)
-        setCategoryBlog(result)
+        setCategoryBlogs(result)
     }
 
     // get data by search
@@ -27,10 +28,10 @@ const Blog = () => {
         const filteredData = blogs.filter(item => 
             item.category.toLowerCase().includes(searchInput)
         );
-        setCategoryBlog(filteredData)
+        setCategoryBlogs(filteredData)
     }
 
-    console.log(categoryBlog);
+    // console.log(categoryBlog);
 
 
     if (loading) return <p>Loading...</p>;
@@ -49,7 +50,7 @@ const Blog = () => {
                 {/* <CardBlog /> */}
                 <div className="grid lg:grid-cols-2 grid-cols-1 gap-5">
                 {
-                    categoryBlog?.map(blog => <CardBlog key={blog?.id} blog={blog} />)
+                    categoryBlogs?.map(blog => <CardBlog key={blog?.id} blog={blog} />)
                 }
                 </div>
             </div>
