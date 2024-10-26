@@ -1,23 +1,18 @@
-import {createBrowserRouter} from "react-router-dom";
-import App from "../App";
-import Adoption from "../Pages/Adoption/Adoption";
+import { createBrowserRouter } from 'react-router-dom';
+import App from '../App';
+import ErrorPage from '../ErrorPage';
+import Home from '../pages/Home/Home';
 import AdopDetails from "../Components/Adoption/AdopDetails/AdopDetails";
 const router = createBrowserRouter([
-    // this is basic routes
-    {
-        path: "/",
-        element: <App/>,
-        children: [
-            {
-                path:'/adoption',
-                element:<Adoption></Adoption>
-            },
-            {
-                path:'/adoptionDetails/:id',
-                element:<AdopDetails></AdopDetails>
-            },
-        ]
-    }
-])
+  // this is basic routes
+  {
+    path: '/',
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+    { path: '/', element: <Home /> },
+    { path:'/adoption', element:<Adoption/>}],
+  },
+]);
 
-export default router; 
+export default router;
