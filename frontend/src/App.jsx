@@ -1,9 +1,9 @@
-import Blog from "./Pages/Blogs/Blog";
+import MainLayout from "./Layout/MainLayout";
 
 export default function App() {
   return (
-    <>
-      <Blog />
-    </>
-  )
+    <div>
+      <MainLayout />
+    </div>
+  );
 }
