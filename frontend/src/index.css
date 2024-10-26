@@ -6,6 +6,21 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.container-class {
+    @apply max-w-[1240px] mx-auto px-[4%] lg:px-0;
+  }
 /* other colors: 
 red:#C30000
 light-red:#C30000

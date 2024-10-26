@@ -4,7 +4,7 @@ import Container from '../../Components/UI/Container';
 
 const Home = () => {
   return (
-    <Container className="h-[80vh] font-inter">
+    <Container className="font-inter">
       <Banner />
       <DetailCard />
 

@@ -25,12 +25,12 @@ const PetCard = ({
             {listed ? (
               <FaHeart
                 onClick={() => setListed(false)}
-                className="text-red-500  cursor-pointer"
+                className="text-primary cursor-pointer"
               />
             ) : (
               <FaRegHeart
                 onClick={() => setListed(true)}
-                className="text-gray-500 cursor-pointer"
+                className="text-secondary cursor-pointer"
               />
             )}
           </div>
@@ -53,7 +53,7 @@ const PetCard = ({
           </p>
         </div>
         <p className="mt-3 text-gray-700 text-sm">{description}</p>
-        <Button btnName={name} primary />
+        <Button primary> {name}</Button>
       </div>
     </div>
   );
