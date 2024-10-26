@@ -1,11 +1,19 @@
-import Button from "../../Components/UI/Button";
+import Banner from '../../Components/Home/Banner/Banner';
+import DetailCard from '../../Components/Home/DetailCard.jsx/DetailCard';
+import Container from '../../Components/UI/Container';
 
-export default function Home() {
+const Home = () => {
   return (
-    <div>
-        <Section1/>
-        
-        <Button></Button>
-    </div>
-  )
-}
+    <Container className="font-inter">
+      <Banner />
+      <DetailCard />
+
+      {/* Adoption Steps */}
+      {/* pet news */}
+      {/* Relation with pets */}
+      {/* testimonial cards*/}
+      {/* Faq section */}
+    </Container>
+  );
+};
+export default Home;
