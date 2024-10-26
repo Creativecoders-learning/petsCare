@@ -3,14 +3,15 @@ import BannerRight from './BannerRight';
 
 const Banner = () => {
   return (
-    <section className="grid grid-cols-6">
-      <div className="col-span-2">
+    <section className="flex flex-col md:flex-row">
+      <div className="flex-1 md:basis-1/3 order-2 md:order-1">
         <BannerLeft />
       </div>
-      <div className="col-span-4">
+      <div className="flex-1 md:basis-2/3 order-1 md:order-2">
         <BannerRight />
       </div>
     </section>
   );
 };
+
 export default Banner;

@@ -3,10 +3,10 @@ import Navbar from '../Components/Shared/Navbar/Navbar';
 import Footer from '../Components/Shared/Footer/Footer';
 export default function MainLayout() {
   return (
-    <div>
+    <section>
       <Navbar />
       <Outlet />
       <Footer />
-    </div>
+    </section>
   );
 }
