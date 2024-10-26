@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { FaArrowRight } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 
 const AdoptionCard = ({ item }) => {
   return (
@@ -9,7 +9,7 @@ const AdoptionCard = ({ item }) => {
       <img
         width={350}
         height={190}
-        className="h-[190px] w-[350px] rounded-2xl bg-gray-400"
+        className="h-[200px] w-[350px] rounded-2xl bg-gray-400 bg-cover"
         src={item?.image}
         alt="card navigate ui"
       />
@@ -20,17 +20,19 @@ const AdoptionCard = ({ item }) => {
             <h2 className="font-medium text-slate-800 sm:text-lg md:text-xl dark:text-black">
               {item?.breed}
             </h2>
-           <div className="flex item-center">
-           <h2 className="font-medium text-left text-black md:text-base dark:text-black">
-              Age: {item?.age}
-            </h2>
-           </div>
+            <div className="flex item-center">
+              <h2 className="font-medium text-left text-black md:text-base dark:text-black">
+                Age: {item?.age}
+              </h2>
+            </div>
           </div>
         </div>
 
-        <button className="rounded-full bg-slate-800 px-6 py-3 text-[12px] font-semibold text-white hover:bg-slate-900 sm:text-sm md:text-base">
-          <FaArrowRight/>
-        </button>
+        <Link to={`/adoptionDetails/${item.id}`}>
+          <button className="rounded-full bg-indigo-400 px-6 py-3 text-[12px] font-semibold text-white hover:bg-indigo-500 sm:text-sm md:text-base">
+            <FaArrowRight />
+          </button>
+        </Link>
       </div>
     </div>
   );

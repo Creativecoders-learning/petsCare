@@ -1,6 +1,7 @@
 import {createBrowserRouter} from "react-router-dom";
 import App from "../App";
 import Adoption from "../Pages/Adoption/Adoption";
+import AdopDetails from "../Components/Adoption/AdopDetails/AdopDetails";
 const router = createBrowserRouter([
     // this is basic routes
     {
@@ -10,7 +11,11 @@ const router = createBrowserRouter([
             {
                 path:'/adoption',
                 element:<Adoption></Adoption>
-            }
+            },
+            {
+                path:'/adoptionDetails/:id',
+                element:<AdopDetails></AdopDetails>
+            },
         ]
     }
 ])
