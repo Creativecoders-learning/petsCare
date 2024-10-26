@@ -1,10 +1,10 @@
 import Categories from "../../Components/Adoption/AdoptionCategories/Categories";
 
+
 const Adoption = () => {
     return (
         <div>
-            <Categories></Categories>
-            this 
+           <Categories></Categories>
         </div>
     );
 };

@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import ActiveRoute from "../../../Routes/ActiveRoute";
-import Button from "../../UI/Button";
-import Container from "../../UI/Container";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import ActiveRoute from '../../../Routes/ActiveRoute';
+import Button from '../../UI/Button';
+import Container from '../../UI/Container';
 
 export default function Navbar() {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
@@ -34,12 +34,12 @@ export default function Navbar() {
               className={`relative order-10 block h-10 w-10 self-center lg:hidden
                 ${
                   isToggleOpen
-                    ? "visible opacity-100 [&_span:nth-child(1)]:w-6 [&_span:nth-child(1)]:translate-y-0 [&_span:nth-child(1)]:rotate-45 [&_span:nth-child(2)]:-rotate-45 [&_span:nth-child(3)]:w-0 "
-                    : ""
+                    ? 'visible opacity-100 [&_span:nth-child(1)]:w-6 [&_span:nth-child(1)]:translate-y-0 [&_span:nth-child(1)]:rotate-45 [&_span:nth-child(2)]:-rotate-45 [&_span:nth-child(3)]:w-0 '
+                    : ''
                 }
               `}
               onClick={() => setIsToggleOpen(!isToggleOpen)}
-              aria-expanded={isToggleOpen ? "true" : "false"}
+              aria-expanded={isToggleOpen ? 'true' : 'false'}
               aria-label="Toggle navigation"
             >
               <div className="absolute left-1/2 top-1/2 w-6 -translate-x-1/2 -translate-y-1/2 transform">
@@ -63,40 +63,40 @@ export default function Navbar() {
               aria-label="Select page"
               className={`absolute left-0 top-0 z-[-1] w-full justify-center overflow-hidden  overflow-y-auto overscroll-contain bg-white/90 px-8 pb-12 pt-24 font-medium transition-[opacity,visibility] duration-300 lg:visible lg:relative lg:top-0  lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 lg:px-0 lg:py-0  lg:pt-0 lg:opacity-100 ${
                 isToggleOpen
-                  ? "visible opacity-100 backdrop-blur-sm"
-                  : "invisible opacity-0"
+                  ? 'visible opacity-100 backdrop-blur-sm'
+                  : 'invisible opacity-0'
               }`}
             >
               <li className="flex items-center">
-                <ActiveRoute to={"/"}>
+                <ActiveRoute to={'/'}>
                   <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
                     Home
                   </span>
                 </ActiveRoute>
               </li>
               <li className="flex items-center">
-                <ActiveRoute to={"courses"}>
+                <ActiveRoute to={"/shop"}>
                   <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
                     Shop
                   </span>
                 </ActiveRoute>
               </li>
               <li className="flex items-center">
-                <ActiveRoute to={"instructors"}>
+                <ActiveRoute to={'instructors'}>
                   <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
                     Vets
                   </span>
                 </ActiveRoute>
               </li>
               <li className="flex items-center">
-                <ActiveRoute to={"about-us"}>
+                <ActiveRoute to={"/adoption"}>
                   <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
                     Adoption
                   </span>
                 </ActiveRoute>
               </li>
               <li className="flex items-center">
-                <ActiveRoute to={"blogs"}>
+                <ActiveRoute to={'blogs'}>
                   <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
                     Blogs
                   </span>
@@ -108,8 +108,8 @@ export default function Navbar() {
               {!user ? (
                 <>
                   <div className="flex gap-4 items-center">
-                    <Button>Login</Button>
-                    <Button>Sign Up</Button>
+                    <Button primary>Login</Button>
+                    <Button secondary> Sign Up</Button>
                   </div>
                 </>
               ) : (
@@ -125,7 +125,7 @@ export default function Navbar() {
                     >
                       <img
                         className="w-full h-full rounded-full object-cover"
-                        src={"#"}
+                        src={'#'}
                         alt="User profile"
                       />
                     </figure>
@@ -133,8 +133,8 @@ export default function Navbar() {
                     <div
                       className={`absolute -right-14 md:right-0 mt-2 w-80 md:w-96 py-2 bg-white rounded-md shadow-lg transform transition-all duration-300 flex flex-col gap-6 ${
                         isDropdownOpen
-                          ? "opacity-100 scale-100"
-                          : "opacity-0 scale-95 pointer-events-none"
+                          ? 'opacity-100 scale-100'
+                          : 'opacity-0 scale-95 pointer-events-none'
                       }`}
                     >
                       {/* Dropdown head */}

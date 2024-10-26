@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "name": "Pitter",
+    "location": "California, USA",
+    "gender": "Male",
+    "breed": "Pit Bull",
+    "age": "5 years",
+    "size": "Large",
+    "description": "Pitter is a friendly, playful, smart male dog. Only adopted to a home with a fenced yard.",
+    "image": "https://images.unsplash.com/photo-1518887499460-71d222eed89d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 2,
+    "name": "Bella",
+    "location": "New York, USA",
+    "gender": "Female",
+    "breed": "Golden Retriever",
+    "age": "3 years",
+    "size": "Large",
+    "description": "Bella loves to play fetch and enjoys outdoor adventures. She's very friendly and good with kids.",
+    "image": "https://images.unsplash.com/photo-1613409442597-85a288fe0997?q=80&w=2027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 3,
+    "name": "Max",
+    "location": "Texas, USA",
+    "gender": "Male",
+    "breed": "German Shepherd",
+    "age": "4 years",
+    "size": "Large",
+    "description": "Max is highly energetic and requires an active family. Great guard dog with a loyal personality.",
+    "image": "https://plus.unsplash.com/premium_photo-1681843815216-f50fc50d0b8a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 4,
+    "name": "Luna",
+    "location": "Florida, USA",
+    "gender": "Female",
+    "breed": "Husky",
+    "age": "2 years",
+    "size": "Medium",
+    "description": "Luna is a spirited husky who loves the cold and enjoys long runs. Needs an experienced dog owner.",
+    "image": "https://images.unsplash.com/photo-1501820488136-72669149e0d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 5,
+    "name": "Rocky",
+    "location": "Ohio, USA",
+    "gender": "Male",
+    "breed": "Bulldog",
+    "age": "6 years",
+    "size": "Medium",
+    "description": "Rocky is calm, loves cuddles, and is great with other pets. Prefers a quiet home environment.",
+    "image": "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8"
+  },
+  {
+    "id": 6,
+    "name": "Daisy",
+    "location": "Washington, USA",
+    "gender": "Female",
+    "breed": "Beagle",
+    "age": "3 years",
+    "size": "Small",
+    "description": "Daisy is a curious beagle with a great sense of smell. She loves to sniff around and explore.",
+    "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9"
+  },
+  {
+    "id": 7,
+    "name": "Charlie",
+    "location": "Arizona, USA",
+    "gender": "Male",
+    "breed": "Poodle",
+    "age": "2 years",
+    "size": "Medium",
+    "description": "Charlie is a smart and trainable poodle. He loves performing tricks and is very obedient.",
+    "image": "https://images.unsplash.com/photo-1555685812-3e61e7efd8d1"
+  },
+  {
+    "id": 8,
+    "name": "Milo",
+    "location": "Nevada, USA",
+    "gender": "Male",
+    "breed": "Chihuahua",
+    "age": "4 years",
+    "size": "Small",
+    "description": "Milo is a small but fearless Chihuahua. He's protective and forms strong bonds with his owners.",
+    "image": "https://images.unsplash.com/photo-1560807707-8cc77767d783"
+  },
+  {
+    "id": 9,
+    "name": "Zoe",
+    "location": "Colorado, USA",
+    "gender": "Female",
+    "breed": "Cocker Spaniel",
+    "age": "5 years",
+    "size": "Medium",
+    "description": "Zoe is gentle and affectionate, enjoys being around people and is easy to train.",
+    "image": "https://images.unsplash.com/photo-1546182990-dffeafbe841d"
+  },
+  {
+    "id": 10,
+    "name": "Oscar",
+    "location": "Georgia, USA",
+    "gender": "Male",
+    "breed": "Rottweiler",
+    "age": "6 years",
+    "size": "Large",
+    "description": "Oscar is a strong and loyal dog, suitable for families who are experienced with large breeds.",
+    "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9"
+  },
+  {
+    "id": 11,
+    "name": "Coco",
+    "location": "Oregon, USA",
+    "gender": "Female",
+    "breed": "Shih Tzu",
+    "age": "3 years",
+    "size": "Small",
+    "description": "Coco is a playful Shih Tzu who loves attention and cuddles. Great with children and other pets.",
+    "image": "https://images.unsplash.com/photo-1555685812-3e61e7efd8d1"
+  },
+  {
+    "id": 12,
+    "name": "Rex",
+    "location": "Illinois, USA",
+    "gender": "Male",
+    "breed": "Boxer",
+    "age": "7 years",
+    "size": "Large",
+    "description": "Rex is a gentle giant who loves lounging and is good with other pets and children.",
+    "image": "https://images.unsplash.com/photo-1573497019644-bd9d8b0f14f2"
+  },
+  {
+    "id": 13,
+    "name": "Maggie",
+    "location": "Virginia, USA",
+    "gender": "Female",
+    "breed": "Dachshund",
+    "age": "4 years",
+    "size": "Small",
+    "description": "Maggie is an energetic dachshund with a nose for adventure. Loves to dig and explore.",
+    "image": "https://images.unsplash.com/photo-1560807707-8cc77767d783"
+  },
+  {
+    "id": 14,
+    "name": "Buster",
+    "location": "Pennsylvania, USA",
+    "gender": "Male",
+    "breed": "Basset Hound",
+    "age": "5 years",
+    "size": "Medium",
+    "description": "Buster is a calm dog who enjoys lounging around. Great with kids and other pets.",
+    "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9"
+  },
+  {
+    "id": 15,
+    "name": "Sadie",
+    "location": "Indiana, USA",
+    "gender": "Female",
+    "breed": "Pomeranian",
+    "age": "3 years",
+    "size": "Small",
+    "description": "Sadie is a small fluffy dog who loves attention and is easy to train.",
+    "image": "https://images.unsplash.com/photo-1598133894009-7505b04d8ecb"
+  },
+  {
+    "id": 16,
+    "name": "Gizmo",
+    "location": "Michigan, USA",
+    "gender": "Male",
+    "breed": "Shiba Inu",
+    "age": "4 years",
+    "size": "Medium",
+    "description": "Gizmo is a confident and independent Shiba Inu who enjoys exploring.",
+    "image": "https://images.unsplash.com/photo-1555685812-3e61e7efd8d1"
+  },
+  {
+    "id": 17,
+    "name": "Nala",
+    "location": "Tennessee, USA",
+    "gender": "Female",
+    "breed": "Great Dane",
+    "age": "6 years",
+    "size": "Large",
+    "description": "Nala is a gentle giant, very friendly with children and loves being part of the family.",
+    "image": "https://images.unsplash.com/photo-1573497019644-bd9d8b0f14f2"
+  },
+  {
+    "id": 18,
+    "name": "Finn",
+    "location": "Massachusetts, USA",
+    "gender": "Male",
+    "breed": "Siberian Husky",
+    "age": "3 years",
+    "size": "Large",
+    "description": "Finn is an energetic husky who loves the outdoors and needs lots of exercise.",
+    "image": "https://images.unsplash.com/photo-1560807707-8cc77767d783"
+  },
+  {
+    "id": 19,
+    "name": "Pepper",
+    "location": "Wisconsin, USA",
+    "gender": "Female",
+    "breed": "Border Collie",
+    "age": "5 years",
+    "size": "Medium",
+    "description": "Pepper is a highly intelligent dog who thrives on mental stimulation and loves to play.",
+    "image": "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8"
+  },
+  {
+    "id": 20,
+    "name": "Roscoe",
+    "location": "South Carolina, USA",
+    "gender": "Male",
+    "breed": "American Bulldog",
+    "age": "4 years",
+    "size": "Large",
+    "description": "Roscoe is a friendly and protective dog, great for families and enjoys being active.",
+    "image": "https://images.unsplash.com/photo-1546182990-dffeafbe841d"
+  }
+]
