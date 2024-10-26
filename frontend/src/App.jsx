@@ -1,9 +1,9 @@
-import { Outlet } from "react-router-dom";
+import MainLayout from "./Layout/MainLayout";
 
 export default function App() {
   return (
-    <div className="max-w-screen-xl mx-auto">
-      <Outlet></Outlet>
+    <div>
+      <MainLayout />
     </div>
-  )
+  );
 }
