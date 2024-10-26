@@ -1,6 +1,10 @@
+import ShopCategories from "../../Components/Shop/ShopCategories";
+import Container from "../../Components/UI/Container";
 
 export default function Shop() {
   return (
-    <div>Shop</div>
+    <Container>
+      <ShopCategories/>
+    </Container>
   )
 }
