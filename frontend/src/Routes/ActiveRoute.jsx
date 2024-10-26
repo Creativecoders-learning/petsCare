@@ -5,7 +5,7 @@ export default function ActiveRoute({to, children}) {
   return (
     <NavLink
       to={to}
-      className={({ isActive }) => (isActive ? "text-green-500" : "")}
+      className={({ isActive }) => (isActive ? "text-primary" : "")}
     >
       {children}
     </NavLink>
