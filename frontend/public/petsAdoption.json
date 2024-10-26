@@ -99,7 +99,7 @@
       "shelter_name": "Feathered Friends",
       "shelter_photo": "https://example.com/shelter_images/feathered_friends.jpg",
       "description": "Coco is a chatty parrot who loves interacting with people and learning new words.",
-      "image": "https://plus.unsplash.com/premium_photo-1691784963883-1a481f97dc5a?q=80&w=1545&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": "https://images.unsplash.com/photo-1470116073782-48ae2ccd8ffd?q=80&w=1412&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "7",
@@ -115,7 +115,24 @@
       "category": "Rabbit",
       "shelter_name": "Hoppy Haven",
       "shelter_photo": "https://example.com/shelter_images/hoppy_haven.jpg",
-      "description": "Thumper is a sweet Mini Lop rabbit who enjoys cuddles and gentle petting.",
+      "description": "We have had Magie since she was able to leave her mum as a puppy so 8 weeks old.Magie currently lives with two children age 7 and 13 and has many visitors to the house which are children she is great with kids.There's lots of cats birds etc around the area and in the garden on most days as she's not fussed by these.",
       "image": "https://images.unsplash.com/photo-1478109214826-170faed7985c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "8",
+      "animal_name": "Coco",
+      "type": "Bird",
+      "breed": "Parrot",
+      "age": "Adult",
+      "gender": "Female",
+      "size": "Small",
+      "location": "Dhaka, Bangladesh",
+      "name": "Coco",
+      "temperament": "Talkative, Friendly",
+      "category": "Bird",
+      "shelter_name": "Feathered Friends",
+      "shelter_photo": "https://example.com/shelter_images/feathered_friends.jpg",
+      "description": "Coco is a chatty parrot who loves interacting with people and learning new words. We have had Magie since she was able to leave her mum as a puppy so 8 weeks old. Magie currently lives with two children age 7 and 13 and has many visitors to the house which are children she is great with kids. There's lots of cats birds etc around the area and in the garden on most days as she's not fussed by these.",
+      "image": "https://images.unsplash.com/photo-1480044965905-02098d419e96?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ]
