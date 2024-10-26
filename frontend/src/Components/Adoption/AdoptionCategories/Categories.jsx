@@ -6,7 +6,7 @@ import AdoptionCategoryBtn from "../../UI/AdoptionCategoryBtn";
 
 const Categories = () => {
   const {adoptions} = useAdoptionData();
-  const [selectedCategory, SetSelectedCategory]=useState('')
+  const [selectedCategory, SetSelectedCategory]=useState('Dog')
   const unickCategories = new Set();
 
   // unick category filtering
