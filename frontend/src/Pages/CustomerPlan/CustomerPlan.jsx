@@ -1,11 +1,18 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CustomerPlan = () => {
 
       const [activeIndex, setActiveIndex] = useState(0);
+      const navigate = useNavigate();
 
       const toggleFAQ = (index) => {
             setActiveIndex(activeIndex === index ? null : index);
+      };
+
+
+      const handleSelectPlan = (plan, price, color) => {
+            navigate("/checkout", { state: { plan, price, color } }); // Redirect to checkout with the selected plan
       };
 
       return (
@@ -30,7 +37,9 @@ const CustomerPlan = () => {
                                     <li>✔ Standard support</li>
                                     <li>✔ Monthly updates</li>
                               </ul>
-                              <button className="mt-8 w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-semibold">
+                              <button
+                                    onClick={() => handleSelectPlan("Basic", "$10", "blue-600",)}
+                                    className="mt-8 w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-semibold">
                                     Select Basic
                               </button>
                         </div>
@@ -45,7 +54,9 @@ const CustomerPlan = () => {
                                     <li>✔ Priority support</li>
                                     <li>✔ Access to exclusive resources</li>
                               </ul>
-                              <button className="mt-8 w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-semibold">
+                              <button
+                                    onClick={() => handleSelectPlan("Standard", "$30", "green-600")}
+                                    className="mt-8 w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-semibold">
                                     Select Standard
                               </button>
                         </div>
@@ -60,7 +71,9 @@ const CustomerPlan = () => {
                                     <li>✔ 24/7 dedicated support</li>
                                     <li>✔ Personalized sessions</li>
                               </ul>
-                              <button className="mt-8 w-full py-3 bg-primaryBold text-white rounded-lg hover:bg-gray-900 transition-colors font-semibold">
+                              <button
+                                    onClick={() => handleSelectPlan("Pro", "$50", "primaryBold")}
+                                    className="mt-8 w-full py-3 bg-primaryBold text-white rounded-lg hover:bg-gray-900 transition-colors font-semibold">
                                     Select Pro
                               </button>
                         </div>

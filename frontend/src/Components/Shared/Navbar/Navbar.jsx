@@ -102,6 +102,13 @@ export default function Navbar() {
                   </span>
                 </ActiveRoute>
               </li>
+              <li className="flex items-center">
+                <ActiveRoute to={'customer-plan'}>
+                  <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
+                    Customer Plans
+                  </span>
+                </ActiveRoute>
+              </li>
             </ul>
             {/*      <!-- Actions --> */}
             <div className="">

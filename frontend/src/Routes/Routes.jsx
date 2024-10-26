@@ -8,6 +8,7 @@ import Home from '../Pages/Home/Home';
 import Blog from "../Pages/Blogs/Blog";
 import BlogDetails from "../Components/Blogs/BlogDetails";
 import AdopDetails from '../Components/Adoption/AdopDetails/AdopDetails';
+import Checkout from '../Pages/Checkout/Checkout';
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       {path: '/blogs', element: <Blog />},
       {path: '/blog-details/:id', element: <BlogDetails />},
       { path: '/customer-plan', element: <CustomerPlan /> },
+      { path: '/checkout', element: <Checkout /> },
     ],
   },
 ]);
