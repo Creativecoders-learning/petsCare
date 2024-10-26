@@ -117,7 +117,7 @@ const CustomerPlan = () => {
                         <h2 className="text-5xl font-acme text-center mb-8">Frequently Asked Questions</h2>
                         <div className=" overflow-hidden">
                               {/* FAQ Item 1 */}
-                              <div className="border-y border-gray-300 py-5">
+                              <div className="border-y-2 border-gray-300 py-5">
                                     <button
                                           className="flex justify-between items-center w-full p-4 text-left focus:outline-none transition duration-200"
                                           onClick={() => toggleFAQ(0)}
@@ -133,7 +133,7 @@ const CustomerPlan = () => {
                               </div>
 
                               {/* FAQ Item 2 */}
-                              <div className="border-y border-gray-300 py-5">
+                              <div className="border-y-2 border-gray-300 py-5">
                                     <button
                                           className="flex justify-between items-center w-full p-4 text-left focus:outline-none transition duration-200"
                                           onClick={() => toggleFAQ(1)}
@@ -149,7 +149,7 @@ const CustomerPlan = () => {
                               </div>
 
                               {/* FAQ Item 3 */}
-                              <div className="border-y border-gray-300 py-5">
+                              <div className="border-y-2 border-gray-300 py-5">
                                     <button
                                           className="flex justify-between items-center w-full p-4 text-left focus:outline-none transition duration-200"
                                           onClick={() => toggleFAQ(2)}
@@ -165,7 +165,7 @@ const CustomerPlan = () => {
                               </div>
 
                               {/* FAQ Item 4 */}
-                              <div className="border-y border-gray-300 py-5">
+                              <div className="border-y-2 border-gray-300 py-5">
                                     <button
                                           className="flex justify-between items-center w-full p-4 text-left focus:outline-none transition duration-200"
                                           onClick={() => toggleFAQ(3)}
