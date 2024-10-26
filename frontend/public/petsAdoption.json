@@ -14,7 +14,7 @@
       "shelter_name": "Happy Tails Shelter",
       "shelter_photo": "https://example.com/shelter_images/happy_tails.jpg",
       "description": "Bella is a lively Labrador who loves to play fetch and enjoys long walks.",
-      "image": "https://example.com/animal_images/bella.jpg"
+      "image": "https://plus.unsplash.com/premium_photo-1668114375111-e90b5e975df6?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "2",
@@ -48,7 +48,7 @@
       "shelter_name": "Rescue Haven",
       "shelter_photo": "https://example.com/shelter_images/rescue_haven.jpg",
       "description": "Charlie is a sweet senior Beagle who loves quiet evenings and gentle walks.",
-      "image": "https://example.com/animal_images/charlie.jpg"
+      "image": "https://images.unsplash.com/photo-1522276498395-f4f68f7f8454?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "4",
@@ -82,7 +82,7 @@
       "shelter_name": "Golden Heart Shelter",
       "shelter_photo": "https://example.com/shelter_images/golden_heart.jpg",
       "description": "Buddy is an energetic Golden Retriever puppy who loves to be around people.",
-      "image": "https://example.com/animal_images/buddy.jpg"
+      "image": "https://plus.unsplash.com/premium_photo-1683121426817-6ccd9e6ccb41?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "6",
