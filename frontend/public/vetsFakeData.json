@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "name": "Dr. Emily Carter",
+      "degrees": ["DVM", "MS"],
+      "expertise": "Small Animal Surgery",
+      "experience": "8 years",
+      "institute": "University of California, Davis",
+      "instituteLocation": "Davis, CA",
+      "image": "https://cdn.pixabay.com/photo/2019/09/21/18/58/dog-4494554_640.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Dr. Michael Brooks",
+      "degrees": ["DVM"],
+      "expertise": "Animal Nutrition",
+      "experience": "12 years",
+      "institute": "Cornell University",
+      "instituteLocation": "Ithaca, NY",
+      "image": "https://cdn.pixabay.com/photo/2023/12/06/19/00/dog-8434227_640.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Dr. Sarah Lin",
+      "degrees": ["DVM", "PhD"],
+      "expertise": "Veterinary Neurology",
+      "experience": "10 years",
+      "institute": "University of Illinois",
+      "instituteLocation": "Urbana, IL",
+      "image": "https://cdn.pixabay.com/photo/2023/12/06/19/00/dog-8434226_640.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Dr. Jason Rivera",
+      "degrees": ["DVM", "MSc"],
+      "expertise": "Exotic Animals",
+      "experience": "7 years",
+      "institute": "University of Florida",
+      "instituteLocation": "Gainesville, FL",
+      "image": "https://media.istockphoto.com/id/1443407065/photo/female-veterinarian-with-a-puppy.jpg?s=612x612&w=0&k=20&c=Amu72XxmtYg4DHE7o19uv985nz64UW6ES4zTabqXIzU="
+    },
+    {
+      "id": 5,
+      "name": "Dr. Aisha Khan",
+      "degrees": ["DVM"],
+      "expertise": "Veterinary Dentistry",
+      "experience": "5 years",
+      "institute": "Texas A&M University",
+      "instituteLocation": "College Station, TX",
+      "image": "https://cdn.pixabay.com/photo/2020/11/03/15/31/doctor-5710152_960_720.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Dr. Robert Garcia",
+      "degrees": ["DVM", "MPH"],
+      "expertise": "Epidemiology and Public Health",
+      "experience": "15 years",
+      "institute": "University of Wisconsin",
+      "instituteLocation": "Madison, WI",
+      "image": "https://cdn.pixabay.com/photo/2024/03/15/14/54/ai-generated-8635125_960_720.jpg"
+    }
+  ]
+  
