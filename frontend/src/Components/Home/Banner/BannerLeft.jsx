@@ -2,7 +2,7 @@ import Button from '../../UI/Button';
 const BannerLeft = () => {
   return (
     <div className="h-full flex flex-col p-4 items-center justify-center">
-      <div className="text-6xl mt-5 font-inter text-center ">
+      <div className="text-4xl md:text-6xl mt-5 font-inter text-center ">
         <h2 className=" text-secondary ">Give a New Life to</h2>
         <div className="font-acme mt-5">
           <h2 className=" text-primaryLight">
