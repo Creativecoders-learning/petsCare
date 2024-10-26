@@ -1,12 +1,12 @@
 // This is a reusable button where you'll use it as a component and pass the props and you can customize it by passing your desired style
 //do not change the default classes your tailwind style props override the default styles.
 //else you can
-// just make your button primary or secondary like this   <Button btnName="Adopt Now" primary /> do dont forget to import
+// just make your button primary or secondary like this  <Button primary>Login</Button> do dont forget to import
 
 import PropTypes from 'prop-types';
 
 const Button = ({
-  btnName,
+  children,
   primary = false,
   secondary = false,
   btnStyle = '',
@@ -24,17 +24,17 @@ const Button = ({
   } ${btnStyle}`;
   return (
     <button onClick={onClick} type="button" className={`${appliedClasses}`}>
-      {btnName}
+      {children}
     </button>
   );
 };
 
 Button.propTypes = {
-  btnName: PropTypes.string.isRequired,
   btnStyle: PropTypes.string,
   onClick: PropTypes.func,
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
+  children: PropTypes.node.isRequired,
 };
 
 export default Button;

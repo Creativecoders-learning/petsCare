@@ -15,9 +15,9 @@ const BannerLeft = () => {
         offering hope and a fresh start to pets in need. Open your heart and
         your home to a shelter pet.
       </p>
-      <div className="flex justify-between items-center mt-8 w-full gap-4">
-        <Button btnName="Adopt Now" primary />
-        <Button btnName="Rehome Now" secondary />
+      <div className="flex justify-evenly items-center mt-8 w-full gap-4">
+        <Button primary> Adopt me</Button>
+        <Button secondary> Rehome Now</Button>
       </div>
     </div>
   );
