@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import usePetsMedicine from "../../Hooks/api/usePetsMedicine";
 import Button from "../UI/Button";
 import PrimaryTitle from "../UI/PrimaryTitle";
@@ -15,7 +16,9 @@ export default function Medicine() {
         ))}
       </div>
       <div className="flex justify-center mt-10">
-        <Button secondary={true}>Load More</Button>
+        <Link to={"/all-products"}>
+          <Button secondary={true}>Load More</Button>
+        </Link>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "category": "Dog Food",
+        "category": "Dogs",
         "title": "Premium Dog Biscuits",
         "description": "Crunchy and nutritious biscuits for healthy teeth and coat.",
         "numOfStock": 100,
@@ -11,7 +11,7 @@
     },
     {
         "id": 2,
-        "category": "Dog Food",
+        "category": "Dogs",
         "title": "Chicken Flavored Kibble",
         "description": "High-protein kibble with real chicken flavor.",
         "numOfStock": 200,
@@ -21,8 +21,8 @@
     },
     {
         "id": 3,
-        "category": "Dog Food",
-        "title": "Grain-Free Dog Food",
+        "category": "Dogs",
+        "title": "Grain-Free Dog",
         "description": "All-natural grain-free food for dogs with sensitive stomachs.",
         "numOfStock": 150,
         "price": 29.99,
@@ -31,7 +31,7 @@
     },
     {
         "id": 4,
-        "category": "Dog Food",
+        "category": "Dogs",
         "title": "Organic Beef Jerky Treats",
         "description": "Organic beef jerky treats for training and rewards.",
         "numOfStock": 180,
@@ -41,7 +41,7 @@
     },
     {
         "id": 5,
-        "category": "Dog Food",
+        "category": "Dogs",
         "title": "Dental Chews",
         "description": "Dental chews to maintain oral health and reduce plaque.",
         "numOfStock": 130,
@@ -51,7 +51,7 @@
     },
     {
         "id": 6,
-        "category": "Cat Food",
+        "category": "Cats",
         "title": "Salmon Pâté",
         "description": "Soft pâté with fresh salmon, rich in Omega-3 for healthy skin.",
         "numOfStock": 90,
@@ -61,7 +61,7 @@
     },
     {
         "id": 7,
-        "category": "Cat Food",
+        "category": "Cats",
         "title": "Chicken and Turkey Mix",
         "description": "Tasty blend of chicken and turkey for fussy eaters.",
         "numOfStock": 110,
@@ -71,7 +71,7 @@
     },
     {
         "id": 8,
-        "category": "Cat Food",
+        "category": "Cats",
         "title": "Grain-Free Cat Kibble",
         "description": "Grain-free kibble for cats with digestive sensitivities.",
         "numOfStock": 140,
@@ -81,7 +81,7 @@
     },
     {
         "id": 9,
-        "category": "Cat Food",
+        "category": "Cats",
         "title": "Tuna Flakes",
         "description": "Delicious tuna flakes, high in protein and low in carbs.",
         "numOfStock": 75,
@@ -91,7 +91,7 @@
     },
     {
         "id": 10,
-        "category": "Cat Food",
+        "category": "Cats",
         "title": "Catnip Infused Treats",
         "description": "Irresistible catnip infused treats for play and relaxation.",
         "numOfStock": 95,
@@ -101,7 +101,7 @@
     },
     {
         "id": 11,
-        "category": "Fish Food",
+        "category": "Fishes",
         "title": "Goldfish Flakes",
         "description": "Flakes designed for all types of goldfish for optimal growth.",
         "numOfStock": 250,
@@ -111,7 +111,7 @@
     },
     {
         "id": 12,
-        "category": "Fish Food",
+        "category": "Fishes",
         "title": "Tropical Fish Granules",
         "description": "Nutritious granules for all tropical fish species.",
         "numOfStock": 300,
@@ -121,7 +121,7 @@
     },
     {
         "id": 13,
-        "category": "Fish Food",
+        "category": "Fishes",
         "title": "Betta Pellets",
         "description": "Specialized pellets for vibrant and healthy bettas.",
         "numOfStock": 200,
@@ -131,7 +131,7 @@
     },
     {
         "id": 14,
-        "category": "Fish Food",
+        "category": "Fishes",
         "title": "Algae Wafers",
         "description": "Algae-based wafers for bottom-feeders and algae eaters.",
         "numOfStock": 150,
@@ -141,7 +141,7 @@
     },
     {
         "id": 15,
-        "category": "Fish Food",
+        "category": "Fishes",
         "title": "Shrimp Pellets",
         "description": "Protein-rich pellets for freshwater shrimp and crayfish.",
         "numOfStock": 175,
@@ -151,7 +151,7 @@
     },
     {
         "id": 16,
-        "category": "Rabbit Food",
+        "category": "Rabbits",
         "title": "Timothy Hay",
         "description": "Premium quality hay for healthy digestion and dental care.",
         "numOfStock": 60,
@@ -161,7 +161,7 @@
     },
     {
         "id": 17,
-        "category": "Rabbit Food",
+        "category": "Rabbits",
         "title": "Alfalfa Pellets",
         "description": "High-fiber alfalfa pellets for young and growing rabbits.",
         "numOfStock": 80,
@@ -171,7 +171,7 @@
     },
     {
         "id": 18,
-        "category": "Rabbit Food",
+        "category": "Rabbits",
         "title": "Mixed Vegetable Treats",
         "description": "Natural vegetable treats for a healthy and tasty snack.",
         "numOfStock": 55,
@@ -181,7 +181,7 @@
     },
     {
         "id": 19,
-        "category": "Rabbit Food",
+        "category": "Rabbits",
         "title": "Rabbit Kibble",
         "description": "Balanced kibble with essential nutrients for adult rabbits.",
         "numOfStock": 100,
@@ -191,7 +191,7 @@
     },
     {
         "id": 20,
-        "category": "Rabbit Food",
+        "category": "Rabbits",
         "title": "Fruit and Hay Mix",
         "description": "A blend of fruits and hay for a tasty and nutritious snack.",
         "numOfStock": 45,

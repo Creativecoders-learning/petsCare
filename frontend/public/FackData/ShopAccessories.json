@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "category": "Dog Accessories",
+        "category": "Dogs",
         "title": "Dog Collar with ID Tag",
         "description": "Durable collar with customizable ID tag for safety.",
         "numOfStock": 120,
@@ -11,7 +11,7 @@
     },
     {
         "id": 2,
-        "category": "Dog Accessories",
+        "category": "Dogs",
         "title": "Chew-Resistant Leash",
         "description": "Strong, chew-resistant leash for outdoor walks.",
         "numOfStock": 90,
@@ -21,7 +21,7 @@
     },
     {
         "id": 3,
-        "category": "Dog Accessories",
+        "category": "Dogs",
         "title": "Plush Dog Bed",
         "description": "Soft and cozy bed for a good night's sleep.",
         "numOfStock": 70,
@@ -31,7 +31,7 @@
     },
     {
         "id": 4,
-        "category": "Dog Accessories",
+        "category": "Dogs",
         "title": "Dog Water Bottle",
         "description": "Portable water bottle for hydration on the go.",
         "numOfStock": 150,
@@ -41,7 +41,7 @@
     },
     {
         "id": 5,
-        "category": "Dog Accessories",
+        "category": "Dogs",
         "title": "Interactive Dog Toy",
         "description": "Stimulating toy to keep dogs entertained and active.",
         "numOfStock": 60,
@@ -51,7 +51,7 @@
     },
     {
         "id": 6,
-        "category": "Cat Accessories",
+        "category": "Cats",
         "title": "Scratching Post",
         "description": "Cat scratching post to satisfy scratching instincts.",
         "numOfStock": 40,
@@ -61,7 +61,7 @@
     },
     {
         "id": 7,
-        "category": "Cat Accessories",
+        "category": "Cats",
         "title": "Cat Tree",
         "description": "Multi-level cat tree for climbing and lounging.",
         "numOfStock": 35,
@@ -71,7 +71,7 @@
     },
     {
         "id": 8,
-        "category": "Cat Accessories",
+        "category": "Cats",
         "title": "Self-Grooming Brush",
         "description": "Self-grooming brush for cats to keep their coat neat.",
         "numOfStock": 85,
@@ -81,7 +81,7 @@
     },
     {
         "id": 9,
-        "category": "Cat Accessories",
+        "category": "Cats",
         "title": "Cat Tunnel",
         "description": "Play tunnel for interactive fun and exercise.",
         "numOfStock": 50,
@@ -91,7 +91,7 @@
     },
     {
         "id": 10,
-        "category": "Cat Accessories",
+        "category": "Cats",
         "title": "Laser Pointer Toy",
         "description": "Laser pointer to keep cats entertained and active.",
         "numOfStock": 100,
@@ -101,7 +101,7 @@
     },
     {
         "id": 11,
-        "category": "Fish Accessories",
+        "category": "Fishes",
         "title": "Aquarium Filter",
         "description": "High-quality filter for clean and clear water.",
         "numOfStock": 30,
@@ -111,7 +111,7 @@
     },
     {
         "id": 12,
-        "category": "Fish Accessories",
+        "category": "Fishes",
         "title": "Aquarium Heater",
         "description": "Reliable heater to maintain optimal water temperature.",
         "numOfStock": 40,
@@ -121,7 +121,7 @@
     },
     {
         "id": 13,
-        "category": "Fish Accessories",
+        "category": "Fishes",
         "title": "Artificial Plants",
         "description": "Decorative plants to enhance aquarium aesthetics.",
         "numOfStock": 75,
@@ -131,7 +131,7 @@
     },
     {
         "id": 14,
-        "category": "Fish Accessories",
+        "category": "Fishes",
         "title": "Gravel Cleaner",
         "description": "Gravel cleaner for maintaining a clean aquarium bed.",
         "numOfStock": 55,
@@ -141,7 +141,7 @@
     },
     {
         "id": 15,
-        "category": "Fish Accessories",
+        "category": "Fishes",
         "title": "Aquarium Light",
         "description": "LED light to illuminate and enhance aquarium beauty.",
         "numOfStock": 65,
@@ -151,7 +151,7 @@
     },
     {
         "id": 16,
-        "category": "Rabbit Accessories",
+        "category": "Rabbits",
         "title": "Rabbit Hutch",
         "description": "Spacious hutch with secure lock for indoor and outdoor use.",
         "numOfStock": 25,
@@ -161,7 +161,7 @@
     },
     {
         "id": 17,
-        "category": "Rabbit Accessories",
+        "category": "Rabbits",
         "title": "Hay Feeder",
         "description": "Keeps hay organized and easy for rabbits to access.",
         "numOfStock": 50,
@@ -171,7 +171,7 @@
     },
     {
         "id": 18,
-        "category": "Rabbit Accessories",
+        "category": "Rabbits",
         "title": "Bunny Chew Toy",
         "description": "Natural wood chew toy for dental health and fun.",
         "numOfStock": 80,
@@ -181,7 +181,7 @@
     },
     {
         "id": 19,
-        "category": "Rabbit Accessories",
+        "category": "Rabbits",
         "title": "Rabbit Carrier",
         "description": "Lightweight carrier for safe transportation.",
         "numOfStock": 30,
@@ -191,7 +191,7 @@
     },
     {
         "id": 20,
-        "category": "Rabbit Accessories",
+        "category": "Rabbits",
         "title": "Cooling Pad",
         "description": "Cooling pad to keep rabbits comfortable in hot weather.",
         "numOfStock": 45,
