@@ -30,7 +30,7 @@ const categories = [
 ];
 export default function ShopCategories() {
   return (
-    <div className="grid grid-cols-3 gap-x-6 gap-y-16">
+    <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-x-6 gap-y-16">
       {categories?.map((item, index) => (
         <div className="group relative cursor-pointer rounded-lg overflow-hidden" key={index}>
           <img
@@ -44,7 +44,7 @@ export default function ShopCategories() {
               <h3 className="text-3xl">{item.title}</h3>
               <p className="text-xl">{item.description}</p>
             </div>
-            <Button>Shop Now</Button>
+            <Button primary={true}>Shop Now</Button>
           </div>
         </div>
       ))}
