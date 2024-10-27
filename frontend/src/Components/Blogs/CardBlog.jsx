@@ -1,13 +1,6 @@
-/* eslint-disable react/prop-types */
-// import img1 from '../../assets/dog1.jpg';
-
 import { Link } from "react-router-dom";
 
-export default function CardBlog({blog}) {
-//   const wordsArray = blog?.description.trim().split(' ');
-//   if (wordsArray.length > 30) {
-//     return wordsArray.slice(0, 30).join(" ") + "...";
-// }
+export default function CardBlog({blog = {}}) {
 
 function getFirst30Words(text) {
   const wordsArray = text.trim().split(/\s+/);
