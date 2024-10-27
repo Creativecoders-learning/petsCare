@@ -6,6 +6,7 @@ import ShopCard from "../UI/ShopCard";
 export default function Foods() {
     const {petsFoods} = usePetsFoods();
 
+    console.log(petsFoods)
 
   return (
     <div className="mt-20 flex flex-col gap-10">

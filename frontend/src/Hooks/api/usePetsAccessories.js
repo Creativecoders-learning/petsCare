@@ -10,7 +10,7 @@ export default function usePetsAccessories() {
     const refresh = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("FackData/ShopAccessories.json");
+        const response = await axios.get("/FackData/ShopAccessories.json");
         setPetsAccessories(response.data);
       } catch (err) {
         setError(err.message || 'An error occurred');
@@ -22,7 +22,7 @@ export default function usePetsAccessories() {
     // fetch pest foods data
     useEffect(() => {
       refresh();
-    })
+    }, [])
   
     return {loading, error, petsAccessories, refresh}
 }
