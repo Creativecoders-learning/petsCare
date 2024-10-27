@@ -1,13 +1,18 @@
-import { useParams } from "react-router-dom";
-import useAdoptionData from "../../../hooks/useAdoptionData";
-import Container from "../../UI/Container";
-import { TbGenderBigender } from "react-icons/tb";
-import AnimalCardInfo from "../../UI/AnimalCardInfo";
-import { PiDogDuotone } from "react-icons/pi";
-import { FaPagelines, FaRegClock, FaTemperatureHigh, FaTextHeight, FaWeight } from "react-icons/fa";
-import Button from "../../UI/Button";
-import HealthInfo from "../HealthInfo/HealthInfo";
-
+import { useParams } from 'react-router-dom';
+import useAdoptionData from '../../../Hooks/useAdoptionData';
+import Container from '../../UI/Container';
+import { TbGenderBigender } from 'react-icons/tb';
+import AnimalCardInfo from '../../UI/AnimalCardInfo';
+import { PiDogDuotone } from 'react-icons/pi';
+import {
+  FaPagelines,
+  FaRegClock,
+  FaTemperatureHigh,
+  FaTextHeight,
+  FaWeight,
+} from 'react-icons/fa';
+import Button from '../../UI/Button';
+import HealthInfo from '../HealthInfo/HealthInfo';
 
 const AdopDetails = () => {
   const { id } = useParams();
@@ -50,29 +55,57 @@ const AdopDetails = () => {
             </div>
             <hr />
             <div className=" h-3/6 mt-5 space-y-2">
-               <HealthInfo icon={FaTemperatureHigh} title={adoption?.temperament}/>
-              <HealthInfo icon={FaWeight} title={`${adoption?.behavior?.good_with_kids}`}/>
-               <HealthInfo icon={FaTextHeight} title={adoption?.behavior?.good_with_other_pets}/>
-               <HealthInfo icon={FaWeight} title={adoption?.behavior?.house_trained}/>
-               <HealthInfo icon={FaWeight} title={adoption?.weight}/>
-               <HealthInfo icon={FaTextHeight} title={adoption?.height}/>
+              <HealthInfo
+                icon={FaTemperatureHigh}
+                title={adoption?.temperament}
+              />
+              <HealthInfo
+                icon={FaWeight}
+                title={`${adoption?.behavior?.good_with_kids}`}
+              />
+              <HealthInfo
+                icon={FaTextHeight}
+                title={adoption?.behavior?.good_with_other_pets}
+              />
+              <HealthInfo
+                icon={FaWeight}
+                title={adoption?.behavior?.house_trained}
+              />
+              <HealthInfo icon={FaWeight} title={adoption?.weight} />
+              <HealthInfo icon={FaTextHeight} title={adoption?.height} />
             </div>
           </div>
         </div>
 
         {/* Basic animals information card */}
         <div className="flex flex-col lg:flex-row items-center">
-        <div className="w-full lg:w-3/5 flex flex-wrap items-center justify-center gap-4 p-5">
-            <AnimalCardInfo item={adoption?.gender} name={'Gender'} icon={TbGenderBigender}></AnimalCardInfo>
-            <AnimalCardInfo item={adoption?.breed} name={'Breed'} icon={PiDogDuotone}></AnimalCardInfo>
-            <AnimalCardInfo item={adoption?.size} name={'Size'} icon={FaPagelines}></AnimalCardInfo>
-            <AnimalCardInfo item={adoption?.age} name={'Age'} icon={FaRegClock}></AnimalCardInfo>
+          <div className="w-full lg:w-3/5 flex flex-wrap items-center justify-center gap-4 p-5">
+            <AnimalCardInfo
+              item={adoption?.gender}
+              name={'Gender'}
+              icon={TbGenderBigender}
+            ></AnimalCardInfo>
+            <AnimalCardInfo
+              item={adoption?.breed}
+              name={'Breed'}
+              icon={PiDogDuotone}
+            ></AnimalCardInfo>
+            <AnimalCardInfo
+              item={adoption?.size}
+              name={'Size'}
+              icon={FaPagelines}
+            ></AnimalCardInfo>
+            <AnimalCardInfo
+              item={adoption?.age}
+              name={'Age'}
+              icon={FaRegClock}
+            ></AnimalCardInfo>
           </div>
           <div className="w-full lg:w-2/5 text-center px-5 md:px-10">
-              <div className="border p-5 space-y-4">
-                <h1>If you are interested to adopted</h1>
-                <Button>Get Started </Button>
-              </div>
+            <div className="border p-5 space-y-4">
+              <h1>If you are interested to adopted</h1>
+              <Button>Get Started </Button>
+            </div>
           </div>
         </div>
 

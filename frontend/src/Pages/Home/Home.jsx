@@ -1,5 +1,10 @@
+import AdoptionSteps from '../../Components/Home/AdoptionSteps/AdoptionSteps';
 import Banner from '../../Components/Home/Banner/Banner';
 import DetailCard from '../../Components/Home/DetailCard.jsx/DetailCard';
+import Faq from '../../Components/Home/Faq/Faq';
+import PetNews from '../../Components/Home/PetNews/PetNews';
+import RelationWithPets from '../../Components/Home/RelationWithPets/RelationWithPets';
+import Testimonial from '../../Components/Home/Testimonial/Testimonial';
 import Container from '../../Components/UI/Container';
 
 const Home = () => {
@@ -7,12 +12,11 @@ const Home = () => {
     <Container className="font-inter">
       <Banner />
       <DetailCard />
-
-      {/* Adoption Steps */}
-      {/* pet news */}
-      {/* Relation with pets */}
-      {/* testimonial cards*/}
-      {/* Faq section */}
+      <AdoptionSteps />
+      <PetNews />
+      <RelationWithPets />
+      <Testimonial />
+      <Faq />
     </Container>
   );
 };
