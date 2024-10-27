@@ -1,6 +1,7 @@
 import AdoptionSteps from '../../Components/Home/AdoptionSteps/AdoptionSteps';
 import Banner from '../../Components/Home/Banner/Banner';
 import DetailCard from '../../Components/Home/DetailCard.jsx/DetailCard';
+import PetNews from '../../Components/Home/PetNews/PetNews';
 import Container from '../../Components/UI/Container';
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
       <Banner />
       <DetailCard />
       <AdoptionSteps />
-      {/* Adoption Steps */}
+      <PetNews />
       {/* pet news */}
       {/* Relation with pets */}
       {/* testimonial cards*/}
