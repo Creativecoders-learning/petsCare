@@ -62,7 +62,7 @@ const AdopDetails = () => {
 
         {/* Basic animals information card */}
         <div className="flex flex-col lg:flex-row items-center">
-        <div className="w-full lg:w-3/5 flex flex-wrap items-center justify-center gap-4 p-5 ">
+        <div className="w-full lg:w-3/5 flex flex-wrap items-center justify-center gap-4 p-5">
             <AnimalCardInfo item={adoption?.gender} name={'Gender'} icon={TbGenderBigender}></AnimalCardInfo>
             <AnimalCardInfo item={adoption?.breed} name={'Breed'} icon={PiDogDuotone}></AnimalCardInfo>
             <AnimalCardInfo item={adoption?.size} name={'Size'} icon={FaPagelines}></AnimalCardInfo>
@@ -70,7 +70,7 @@ const AdopDetails = () => {
           </div>
           <div className="w-full lg:w-2/5 text-center px-5 md:px-10">
               <div className="border p-5 space-y-4">
-                <h1>If you are interested to adopt </h1>
+                <h1>If you are interested to adopted</h1>
                 <Button>Get Started </Button>
               </div>
           </div>
