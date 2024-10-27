@@ -6,7 +6,8 @@ import Adoption from "../Pages/Adoption/Adoption";
 import Shop from "../Pages/Shop/Shop";
 import Home from "../Pages/Home/Home";
 import Blog from "../Pages/Blogs/Blog";
-import AdopDetails from "../Components/Adoption/AdopDetails/AdopDetails";
+import AdopDetails from '../Components/Adoption/AdopDetails/AdopDetails';
+import Checkout from '../Pages/Checkout/Checkout';
 import Vets from "../Pages/Vets/Vets";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
 
@@ -17,13 +18,14 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      { path: "/", element: <Home /> },
-      { path: "/adoption", element: <Adoption /> },
-      { path: "/adoptionDetails/:id", element: <AdopDetails></AdopDetails> },
-      { path: "/shop", element: <Shop /> },
-      { path: "/blogs", element: <Blog /> },
-      { path: "blog-details/:id", element: <BlogDetails /> },
-      { path: "/customer-plan", element: <CustomerPlan /> },
+      { path: '/', element: <Home /> },
+      { path: '/adoption', element: <Adoption /> },
+      { path: '/adoptionDetails/:id', element: <AdopDetails></AdopDetails>},
+      { path: '/shop', element: <Shop /> },
+      {path: '/blogs', element: <Blog />},
+      {path: '/blog-details/:id', element: <BlogDetails />},
+      { path: '/customer-plan', element: <CustomerPlan /> },
+      { path: '/checkout', element: <Checkout /> },
       { path: "/vets", element: <Vets /> },
     ],
   },
