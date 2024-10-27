@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
-export default function CardBlog({blog = {}}) {
+export default function CardBlog({ blog ={} }) {
 
 function getFirst30Words(text) {
   const wordsArray = text.trim().split(/\s+/);
