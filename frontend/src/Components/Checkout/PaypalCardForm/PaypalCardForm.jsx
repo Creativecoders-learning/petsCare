@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import Button from "../../UI/Button";
 
 export default function PaypalCardForm({ onSubmit }) {
       const {
@@ -86,11 +87,12 @@ export default function PaypalCardForm({ onSubmit }) {
                   </div>
 
                   <div className="flex justify-end">
-                        <input
+                        {/* <input
                               className="bg-[#49BBBD] px-12 py-4 rounded-xl text-white cursor-pointer w-full"
                               type="submit"
                               value="Pay"
-                        />
+                        /> */}
+                        <Button btnStyle="w-full" primary>Pay</Button>
                   </div>
             </form>
       );

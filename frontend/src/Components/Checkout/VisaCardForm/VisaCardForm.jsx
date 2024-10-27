@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import Button from "../../UI/Button";
 
 export default function VisaCardForm({ onSubmit }) {
       const {
@@ -86,12 +87,13 @@ export default function VisaCardForm({ onSubmit }) {
                         </div>
                   </div>
 
-                  <div className="flex justify-end">
-                        <input
+                  <div className="w-full">
+                        {/* <input
                               className="bg-[#49BBBD] px-12 py-4 rounded-xl text-white cursor-pointer w-full"
                               type="submit"
                               value="Pay"
-                        />
+                        /> */}
+                        <Button btnStyle="w-full" primary>Pay</Button>
                   </div>
             </form>
       );

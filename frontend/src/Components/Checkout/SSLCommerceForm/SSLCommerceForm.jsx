@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import Button from "../../UI/Button";
 
 const countries = [
       "Bangladesh",
@@ -52,9 +53,9 @@ export default function SSLCommerceForm({ onSubmit }) {
       return (
             <form className="space-y-8 py-10" onSubmit={handleSubmit(onSubmit)}>
                   <div className="space-y-8">
-                        <div className="flex gap-10 justify-between">
+                        <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-10">
                               {/* Name input */}
-                              <div className="space-y-2">
+                              <div className="space-y-2 w-full lg:w-1/2 xl:w-1/2">
                                     <label className="text-[#5B5B5B] font-semibold" htmlFor="name">
                                           Name
                                     </label>
@@ -73,7 +74,7 @@ export default function SSLCommerceForm({ onSubmit }) {
                                     )}
                               </div>
                               {/* Email input */}
-                              <div className="space-y-2">
+                              <div className="space-y-2 w-full lg:w-1/2 xl:w-1/2">
                                     <label className="text-[#5B5B5B] font-semibold" htmlFor="email">
                                           Email
                                     </label>
@@ -89,7 +90,7 @@ export default function SSLCommerceForm({ onSubmit }) {
                                     />
                               </div>
                         </div>
-                        <div className="flex gap-10 justify-between">
+                        <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-10">
                               {/* phone */}
                               <div className="space-y-2 w-full lg:w-1/2 xl:w-1/2">
                                     <label className="text-[#5B5B5B] font-semibold" htmlFor="password">
@@ -214,11 +215,12 @@ export default function SSLCommerceForm({ onSubmit }) {
                   </div>
 
                   <div className="flex justify-end">
-                        <input
+                        {/* <input
                               className="bg-[#49BBBD] px-12 py-4 rounded-xl text-white cursor-pointer w-full"
                               type="submit"
                               value="Pay"
-                        />
+                        /> */}
+                        <Button btnStyle="w-full" primary>Pay</Button>
                   </div>
             </form>
       );

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { TiPlus, TiMinus } from "react-icons/ti";
 
 const CustomerPlan = () => {
 
@@ -125,72 +126,79 @@ const CustomerPlan = () => {
                         </table>
                   </div>
 
-                  {/* FAQ Section */}
                   <div className="mt-16 max-w-5xl mx-auto">
-                        <h2 className="text-5xl font-acme text-center mb-8">Frequently Asked Questions</h2>
-                        <div className=" overflow-hidden">
+                        <h2 className="text-5xl font-acme text-center mb-8">Frequently Asked Questions?</h2>
+                        <div className="overflow-hidden">
                               {/* FAQ Item 1 */}
-                              <div className="border-y-2 border-gray-300 py-5">
+                              <div className="border-y-2 border-gray-300 py-3">
                                     <button
                                           className="flex justify-between items-center w-full p-4 text-left focus:outline-none transition duration-200"
                                           onClick={() => toggleFAQ(0)}
                                     >
                                           <span className="text-2xl font-semibold text-secondary">What is included in the Basic plan?</span>
-                                          <span className="text-gray-600">{activeIndex === 0 ? '-' : '+'}</span>
+                                          <span className="text-gray-600">{activeIndex === 0 ? <TiMinus className="text-2xl text-primary" /> : <TiPlus className="text-2xl text-primary" />}</span>
                                     </button>
-                                    {activeIndex === 0 && (
+                                    <div
+                                          className={`overflow-hidden transition-all duration-300 ease-in-out ${activeIndex === 0 ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
+                                    >
                                           <p className="p-4 text-lg text-gray-700 bg-blue-50 border-l-4 border-blue-500">
                                                 The Basic plan includes access to a curated selection of courses, standard customer support via email, and monthly updates to ensure you're always up-to-date with the latest content. This plan is designed for those who are just starting their learning journey and want to explore without a significant commitment.
                                           </p>
-                                    )}
+                                    </div>
                               </div>
 
                               {/* FAQ Item 2 */}
-                              <div className="border-y-2 border-gray-300 py-5">
+                              <div className="border-y-2 border-gray-300 py-3">
                                     <button
                                           className="flex justify-between items-center w-full p-4 text-left focus:outline-none transition duration-200"
                                           onClick={() => toggleFAQ(1)}
                                     >
                                           <span className="text-2xl font-semibold text-secondary">Can I upgrade my plan later?</span>
-                                          <span className="text-gray-600">{activeIndex === 1 ? '-' : '+'}</span>
+                                          <span className="text-gray-600">{activeIndex === 1 ? <TiMinus className="text-2xl text-primary" /> : <TiPlus className="text-2xl text-primary" />}</span>
                                     </button>
-                                    {activeIndex === 1 && (
+                                    <div
+                                          className={`overflow-hidden transition-all duration-300 ease-in-out ${activeIndex === 1 ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
+                                    >
                                           <p className="p-4 text-lg text-gray-700 bg-blue-50 border-l-4 border-blue-500">
                                                 Absolutely! You can upgrade your plan at any time through your account settings. Whether you're looking for more advanced content or additional features, we offer flexible options that can be tailored to your evolving needs.
                                           </p>
-                                    )}
+                                    </div>
                               </div>
 
                               {/* FAQ Item 3 */}
-                              <div className="border-y-2 border-gray-300 py-5">
+                              <div className="border-y-2 border-gray-300 py-3">
                                     <button
                                           className="flex justify-between items-center w-full p-4 text-left focus:outline-none transition duration-200"
                                           onClick={() => toggleFAQ(2)}
                                     >
                                           <span className="text-2xl font-semibold text-secondary">Is there a money-back guarantee?</span>
-                                          <span className="text-gray-600">{activeIndex === 2 ? '-' : '+'}</span>
+                                          <span className="text-gray-600">{activeIndex === 2 ? <TiMinus className="text-2xl text-primary" /> : <TiPlus className="text-2xl text-primary" />}</span>
                                     </button>
-                                    {activeIndex === 2 && (
+                                    <div
+                                          className={`overflow-hidden transition-all duration-300 ease-in-out ${activeIndex === 2 ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
+                                    >
                                           <p className="p-4 text-lg text-gray-700 bg-blue-50 border-l-4 border-blue-500">
                                                 Yes, we understand that choosing the right plan is important. That's why we offer a 30-day money-back guarantee. If you're not satisfied with your experience, simply reach out to our support team within 30 days for a full refund—no questions asked.
                                           </p>
-                                    )}
+                                    </div>
                               </div>
 
                               {/* FAQ Item 4 */}
-                              <div className="border-y-2 border-gray-300 py-5">
+                              <div className="border-y-2 border-gray-300 py-3">
                                     <button
                                           className="flex justify-between items-center w-full p-4 text-left focus:outline-none transition duration-200"
                                           onClick={() => toggleFAQ(3)}
                                     >
                                           <span className="text-2xl font-semibold text-secondary">How do I cancel my subscription?</span>
-                                          <span className="text-gray-600">{activeIndex === 3 ? '-' : '+'}</span>
+                                          <span className="text-gray-600">{activeIndex === 3 ? <TiMinus className="text-2xl text-primary" /> : <TiPlus className="text-2xl text-primary" />}</span>
                                     </button>
-                                    {activeIndex === 3 && (
+                                    <div
+                                          className={`overflow-hidden transition-all duration-300 ease-in-out ${activeIndex === 3 ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
+                                    >
                                           <p className="p-4 text-lg text-gray-700 bg-blue-50 border-l-4 border-blue-500">
                                                 You can cancel your subscription at any time through your account settings. Simply navigate to the billing section, and follow the prompts to cancel. We aim to make this process as smooth as possible, and our support team is here to assist you if needed.
                                           </p>
-                                    )}
+                                    </div>
                               </div>
                         </div>
                   </div>

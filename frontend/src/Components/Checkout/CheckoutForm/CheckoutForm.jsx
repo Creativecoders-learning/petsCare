@@ -3,6 +3,7 @@ import { CHECKOUTImages } from "../../../image-data/checkout";
 import PaypalCardForm from "../PaypalCardForm/PaypalCardForm";
 import SSLCommerceForm from "../SSLCommerceForm/SSLCommerceForm";
 import VisaCardForm from "../VisaCardForm/VisaCardForm";
+import PrimaryTitle from "../../UI/PrimaryTitle";
 
 const cards = [
       {
@@ -42,11 +43,11 @@ export default function CheckoutForm() {
       return (
             <div className="">
                   <div className="w-full">
-                        <div className="flex flex-col gap-2">
-                              <h2 className={`text-[34px] font-medium`}>
-                                    <span className="text-[#101828]">Checkout</span>
-                              </h2>
-                              <p className={`text-myGray text-md`}>Cart Type</p>
+                  <div className="flex flex-col gap-2">
+                              <PrimaryTitle titleStyle="text-primaryBold">Secure Your Purchase</PrimaryTitle>
+                              <p className="text-gray-600 text-md">
+                                    Select your preferred payment method below and complete the required details to secure your purchase. We prioritize your security with every transaction.
+                              </p>
                         </div>
                         <div className="flex justify-between gap-6 w-full lg:w-[70%] xl:w-[70%] py-10">
                               {cards?.map((item, index) => (
