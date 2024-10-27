@@ -5,8 +5,10 @@ import usePetsFoods from "../../../Hooks/api/usePetsFoods";
 import ShopCard from "../../../Components/UI/ShopCard";
 import usePetsAccessories from "../../../Hooks/api/usePetsAccessories";
 import usePetsMedicine from "../../../Hooks/api/usePetsMedicine";
+import { useSearchParams } from "react-router-dom";
 
 export default function AllProducts() {
+  const [searchParams] = useSearchParams();
   const { petsFoods } = usePetsFoods();
   const { petsAccessories } = usePetsAccessories();
   const { petsMedicine } = usePetsMedicine();
@@ -17,6 +19,10 @@ export default function AllProducts() {
 
   //   manage filtered products
   useEffect(() => {
+    if(searchParams){
+      setCategory(searchParams.get("category"));
+      setSubCategory(searchParams.get("subCategory"))
+    }
     // this is for foods data
     if (category !== "" && subCategory === "Foods") {
       const filteredData = petsFoods?.filter(
@@ -47,7 +53,7 @@ export default function AllProducts() {
     } else {
       setFoodsByCategory(petsFoods);
     }
-  }, [petsFoods, petsAccessories, petsMedicine, category, subCategory]);
+  }, [petsFoods, petsAccessories, petsMedicine, category, subCategory, searchParams]);
 
   return (
     <Container>

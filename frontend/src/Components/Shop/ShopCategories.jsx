@@ -48,7 +48,7 @@ export default function ShopCategories() {
               <h3 className="text-3xl">{item.title}</h3>
               <p className="text-xl">{item.description}</p>
             </div>
-            <Link to={"/all-products"}>
+            <Link to={`/all-products?category=${item.title}&subCategory=Foods`}>
               <Button primary={true}>Shop Now</Button>
             </Link>
           </div>
