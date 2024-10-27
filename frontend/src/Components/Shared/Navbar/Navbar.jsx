@@ -75,21 +75,21 @@ export default function Navbar() {
                 </ActiveRoute>
               </li>
               <li className="flex items-center">
-                <ActiveRoute to={'courses'}>
+                <ActiveRoute to={"/shop"}>
                   <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
                     Shop
                   </span>
                 </ActiveRoute>
               </li>
               <li className="flex items-center">
-                <ActiveRoute to={'instructors'}>
+                <ActiveRoute to={'vets'}>
                   <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
                     Vets
                   </span>
                 </ActiveRoute>
               </li>
               <li className="flex items-center">
-                <ActiveRoute to={'about-us'}>
+                <ActiveRoute to={"/adoption"}>
                   <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
                     Adoption
                   </span>

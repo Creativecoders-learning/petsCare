@@ -14,7 +14,7 @@
       "shelter_name": "Happy Tails Shelter",
       "shelter_photo": "https://example.com/shelter_images/happy_tails.jpg",
       "description": "Bella is a lively Labrador who loves to play fetch and enjoys long walks.",
-      "image": "https://example.com/animal_images/bella.jpg"
+      "image": "https://plus.unsplash.com/premium_photo-1668114375111-e90b5e975df6?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "2",
@@ -31,7 +31,7 @@
       "shelter_name": "Purr Palace",
       "shelter_photo": "https://example.com/shelter_images/purr_palace.jpg",
       "description": "Milo is an adventurous kitten who loves to explore his surroundings.",
-      "image": "https://example.com/animal_images/milo.jpg"
+      "image": "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "3",
@@ -48,7 +48,7 @@
       "shelter_name": "Rescue Haven",
       "shelter_photo": "https://example.com/shelter_images/rescue_haven.jpg",
       "description": "Charlie is a sweet senior Beagle who loves quiet evenings and gentle walks.",
-      "image": "https://example.com/animal_images/charlie.jpg"
+      "image": "https://images.unsplash.com/photo-1522276498395-f4f68f7f8454?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "4",
@@ -65,7 +65,7 @@
       "shelter_name": "Feline Friends",
       "shelter_photo": "https://example.com/shelter_images/feline_friends.jpg",
       "description": "Luna is a graceful British Shorthair with a calm personality.",
-      "image": "https://example.com/animal_images/luna.jpg"
+      "image": "https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=1430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "5",
@@ -82,7 +82,7 @@
       "shelter_name": "Golden Heart Shelter",
       "shelter_photo": "https://example.com/shelter_images/golden_heart.jpg",
       "description": "Buddy is an energetic Golden Retriever puppy who loves to be around people.",
-      "image": "https://example.com/animal_images/buddy.jpg"
+      "image": "https://plus.unsplash.com/premium_photo-1661503280224-a86d7ad2a574?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "6",
@@ -99,7 +99,7 @@
       "shelter_name": "Feathered Friends",
       "shelter_photo": "https://example.com/shelter_images/feathered_friends.jpg",
       "description": "Coco is a chatty parrot who loves interacting with people and learning new words.",
-      "image": "https://example.com/animal_images/coco.jpg"
+      "image": "https://plus.unsplash.com/premium_photo-1691784963883-1a481f97dc5a?q=80&w=1545&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "7",
@@ -116,6 +116,6 @@
       "shelter_name": "Hoppy Haven",
       "shelter_photo": "https://example.com/shelter_images/hoppy_haven.jpg",
       "description": "Thumper is a sweet Mini Lop rabbit who enjoys cuddles and gentle petting.",
-      "image": "https://example.com/animal_images/thumper.jpg"
+      "image": "https://images.unsplash.com/photo-1478109214826-170faed7985c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ]
