@@ -6,9 +6,9 @@ import Adoption from "../Pages/Adoption/Adoption";
 import Shop from "../Pages/Shop/Shop";
 import Home from "../Pages/Home/Home";
 import Blog from "../Pages/Blogs/Blog";
-import BlogDetails from "../Components/Blogs/BlogDetails";
 import AdopDetails from "../Components/Adoption/AdopDetails/AdopDetails";
 import Vets from "../Pages/Vets/Vets";
+import BlogDetails from "../Pages/Blogs/BlogDetails";
 
 const router = createBrowserRouter([
   // this is basic routes
