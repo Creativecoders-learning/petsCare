@@ -6,11 +6,13 @@ import Container from "../../Components/UI/Container";
 
 export default function Shop() {
   return (
-    <Container>
-      <ShopCategories />
-      <Foods />
-      <Accessories/>
-      <Medicine/>
-    </Container>
+    <div className="mt-20">
+      <Container>
+        <ShopCategories />
+        <Foods />
+        <Accessories />
+        <Medicine />
+      </Container>
+    </div>
   );
 }
