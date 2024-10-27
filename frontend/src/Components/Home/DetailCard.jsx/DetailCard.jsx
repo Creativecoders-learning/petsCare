@@ -1,4 +1,5 @@
 import usePetData from '../../../hooks/usePetData';
+import Button from '../../UI/Button';
 import PetCard from './PetCard';
 const DetailCard = () => {
   const petData = usePetData(4);
@@ -22,6 +23,9 @@ const DetailCard = () => {
             image={dog?.image}
           />
         ))}
+      </div>
+      <div className="my-5  text-center">
+        <Button secondary>See More</Button>
       </div>
     </>
   );
