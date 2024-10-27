@@ -24,7 +24,7 @@
       },
       "category": "Dog",
       "shelter_name": "Happy Tails Shelter",
-      "shelter_photo": "https://example.com/shelter_images/happy_tails.jpg",
+      "shelter_photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Bella is a lively Labrador who loves to play fetch and enjoys long walks.",
       "image": [
         "https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -57,7 +57,7 @@
       },
       "category": "Cat",
       "shelter_name": "Purr Palace",
-      "shelter_photo": "https://example.com/shelter_images/purr_palace.jpg",
+      "shelter_photo": "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Milo is an adventurous kitten who loves to explore his surroundings.",
       "image": [
         "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -77,7 +77,7 @@
       "temperament": "Calm, Affectionate",
       "category": "Dog",
       "shelter_name": "Rescue Haven",
-      "shelter_photo": "https://example.com/shelter_images/rescue_haven.jpg",
+      "shelter_photo": "https://plus.unsplash.com/premium_photo-1683121366070-5ceb7e007a97?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Charlie is a sweet senior Beagle who loves quiet evenings and gentle walks.",
       "image": [
         "https://images.unsplash.com/photo-1522276498395-f4f68f7f8454?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -109,7 +109,7 @@
       "temperament": "Independent, Calm",
       "category": "Cat",
       "shelter_name": "Feline Friends",
-      "shelter_photo": "https://example.com/shelter_images/feline_friends.jpg",
+      "shelter_photo": "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Luna is a graceful British Shorthair with a calm personality.",
       "image": [
         "https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=1430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -141,7 +141,7 @@
       "temperament": "Playful, Loyal",
       "category": "Dog",
       "shelter_name": "Golden Heart Shelter",
-      "shelter_photo": "https://example.com/shelter_images/golden_heart.jpg",
+      "shelter_photo": "https://plus.unsplash.com/premium_photo-1670071482460-5c08776521fe?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Buddy is an energetic Golden Retriever puppy who loves to be around people.",
       "image": [
         "https://plus.unsplash.com/premium_photo-1661503280224-a86d7ad2a574?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -173,7 +173,7 @@
       "temperament": "Talkative, Friendly",
       "category": "Bird",
       "shelter_name": "Feathered Friends",
-      "shelter_photo": "https://example.com/shelter_images/feathered_friends.jpg",
+      "shelter_photo": "https://images.unsplash.com/photo-1640951613773-54706e06851d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Coco is a chatty parrot who loves interacting with people and learning new words.",
       "image": [
         "https://images.unsplash.com/photo-1470116073782-48ae2ccd8ffd?q=80&w=1412&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
