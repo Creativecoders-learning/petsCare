@@ -4,12 +4,12 @@ import Container from '../../Components/UI/Container';
 import useBlogs from '../../Hooks/api/useBlogs';
 
 const BlogDetails = () => {
-    const {blogs} = useBlogs()
+    const {loading, error, blogs} = useBlogs(); 
     const {id} = useParams()
 
-    console.log(id, blogs);
-    // if (loading) return <p>Loading...</p>;
-    // if (error) return <p>Error: {error}</p>;
+    console.log(blogs)
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error}</p>;
     
     return (
         <Container>
