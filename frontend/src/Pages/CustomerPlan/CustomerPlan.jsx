@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TiPlus, TiMinus } from "react-icons/ti";
+import PrimaryTitle from "../../Components/UI/PrimaryTitle";
 
 const CustomerPlan = () => {
 
@@ -20,7 +21,9 @@ const CustomerPlan = () => {
             <div className="min-h-screen p-8 container mx-auto font-inter bg-white">
                   {/* Page Header */}
                   <div className="text-center mb-16">
-                        <h1 className="text-6xl font-bold font-acme">Our Subscription Plans</h1>
+                        <div className="flex justify-center">
+                              <PrimaryTitle titleStyle="text-6xl font-bold font-acme text-primaryBold">Our Subscription Plans</PrimaryTitle>
+                        </div>
                         <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
                               Explore our plans and find the one that best suits your needs. Each option provides tailored benefits to enhance your experience.
                         </p>
@@ -126,9 +129,11 @@ const CustomerPlan = () => {
                         </table>
                   </div>
 
-
+                  {/* Frequently Asked Questions */}
                   <div className="mt-16 max-w-5xl mx-auto">
-                        <h2 className="text-5xl font-acme text-center mb-8">Frequently Asked Questions?</h2>
+                  <div className="flex justify-center">
+                              <PrimaryTitle titleStyle="text-5xl font-bold font-acme text-primaryBold">Frequently Asked Questions?</PrimaryTitle>
+                        </div>
                         <div className="overflow-hidden">
                               {/* FAQ Item 1 */}
                               <div className="border-y-2 border-gray-300 py-3">
