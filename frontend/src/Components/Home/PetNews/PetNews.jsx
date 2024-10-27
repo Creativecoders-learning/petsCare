@@ -1,4 +1,5 @@
 import useGetPetData from '../../../Hooks/useGetPetData';
+import Button from '../../UI/Button';
 import PetNewsCard from './PetNewsCard';
 
 const PetNews = () => {
@@ -12,8 +13,8 @@ const PetNews = () => {
   }
   return (
     <>
-      <h2 className="text-4xl text-center font-semibold my-10 ">
-        Take a Look at Some of <span className="text-secondary"> Our Pets</span>
+      <h2 className="text-4xl text-center font-semibold my-20 ">
+        <span className="text-secondary"> Pet News</span>
       </h2>
 
       <div className="mt-10 mb-20">
@@ -22,6 +23,10 @@ const PetNews = () => {
             <PetNewsCard key={pet.id} pet={pet} />
           ))}
         </div>
+      </div>
+      <div className="flex justify-center items-center gap-5">
+        <Button secondary> Cat News</Button>
+        <Button secondary> Dog News</Button>
       </div>
     </>
   );

@@ -28,7 +28,7 @@ const AdoptionSteps = () => {
         </div>
 
         {/* Left Arrow */}
-        <div className="hidden lg:block w-32 -mt-10">
+        <div className="hidden lg:block ">
           <img
             src={left}
             alt="left connection"
@@ -53,7 +53,7 @@ const AdoptionSteps = () => {
         </div>
 
         {/* Right Arrow */}
-        <div className="hidden lg:block w-32 -mt-10">
+        <div className="hidden lg:block ">
           <img
             src={right}
             alt="right connection"
