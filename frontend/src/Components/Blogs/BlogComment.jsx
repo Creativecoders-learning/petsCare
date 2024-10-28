@@ -4,7 +4,8 @@ import useComment from '../../Hooks/api/useComment';
 
 const BlogComment = () => {
     const {comments} = useComment()
-    console.log(comments);
+    const user = true
+    console.log(user);
 
      //comment adding function
      const addComment = ()=>{
@@ -18,8 +19,24 @@ const BlogComment = () => {
       }
 
     //   show comment in the screen
-    // const comments = JSON.parse(localStorage.getItem("comment")) || []
-    
+//    const showComment = ()=>{
+//     const body = document.getElementById('comment-body')
+//     const comment = document.getElementById('comment-input').value;
+//     const div = document.createElement('div')
+//     div.innerHTML=`
+//         <div className='flex my-9'>
+//                     <div className='w-16 h-16 mr-10'>
+//                         <img className='w-full h-full rounded-full' src="https://i.ibb.co.com/2P6D1Lm/author.jpg" alt="author image" />
+//                     </div>
+//                     <article>
+//                         <p className='text-xl'>user name:</p>
+//                         <p className='text-2xl '>${comment}</p>
+//                     </article>
+//                 </div>
+//     `
+//     body.appendChild(div)
+//    }
+//     showComment()
 
     return (
         <div>
@@ -41,24 +58,23 @@ const BlogComment = () => {
             </div>
 
             {/* show comment section */}
-            <div id='comment-body'>
+            <div>
                 {
                     comments?.map(c =>
-                        // <article key={comment}>
-                        //      <p className='font-semibold text-xl  py-2 my-4'>{comment}</p>
-                        // </article>
-                        <div key={c.comment} className='flex my-9'>
-                    <div className='w-16 h-16 mr-10'>
+                        <div id='comment-body' key={c.comment} className='flex my-9'>
+                        <div className='w-16 h-16 mr-10'>
                         <img className='w-full h-full rounded-full' src={c?.user} alt="author image" />
-                    </div>
-                    <article>
+                        </div>
+                        <article>
                         <p className='text-xl'>user name:</p>
                         <p className='text-2xl '>{c?.comment}</p>
-                    </article>
+                        </article>
                         </div>
                         // console.log(comment)
                        )
                 }
+
+
                 {/* comment 1 */}
                 <div className='flex my-9'>
                     <div className='w-16 h-16 mr-10'>
