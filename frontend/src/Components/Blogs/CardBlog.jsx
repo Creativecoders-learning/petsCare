@@ -33,14 +33,14 @@ const previewText = getFirst30Words(blog?.description);
         {/*  <!-- Body--> */}
         <div className="p-2">
           <header className="mb-4">
-            <h3 className="text-lg font-medium text-primaryBold">
+            <h3 className="text-lg font-medium text-secondary">
               {blog?.title}
             </h3>
            
           </header>
           <p>
             {previewText} 
-            <button className="text-xs text-primary hover:text-primaryLight mt-1 ml-2">Read More</button>
+            <button className="text-sm text-primary hover:text-primaryLight mt-1 ml-2">Read More</button>
           </p>
           
           <article className="flex justify-between mt-2">
