@@ -10,7 +10,7 @@ const AdoptionCard = ({ item }) => {
         width={350}
         height={190}
         className="h-[200px] w-[350px] rounded-2xl bg-gray-400 bg-cover"
-        src={item?.image}
+        src={item?.image[0]}
         alt="card navigate ui"
       />
       {/* Card Heading */}
