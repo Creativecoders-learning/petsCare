@@ -6,7 +6,7 @@ import useBlogs from "../../Hooks/api/useBlogs";
 // import SideBar from '../../Components/Blogs/SideBar';
 
 const Blog = () => {
-  const { blogs } = useBlogs();
+  const { blogs, loading, error } = useBlogs();
   const [blogsByCategory, setBlogsByCategory] = useState([]);
   const [filterInput, setFilterInput] = useState("");
 
@@ -27,8 +27,8 @@ const handleFilterOption = (value) => {
 
   
 
-  // if (loading) return <p>Loading...</p>;
-  // if (error) return <p>Error: {error}</p>;
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <>
@@ -36,11 +36,11 @@ const handleFilterOption = (value) => {
       <div className="flex">
         {/* <BlogBanner /> */}
         <div className="px-10 ">
-          <h1 className="text-2xl font-bold pt-5">ALL POSTS</h1>
+          <h1 className="text-2xl font-bold pt-10">ALL POSTS</h1>
           <br />
           {/* <CardBlog /> */}
           <Container>
-            <div className="grid lg:grid-cols-4 grid-cols-1 gap-5">
+            <div className="grid lg:grid-cols-4 grid-cols-1 gap-5 ">
               {blogsByCategory?.map((blog) => (
                 <CardBlog key={blog?.id} blog={blog} />
               ))}

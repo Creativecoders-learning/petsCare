@@ -1,11 +1,12 @@
 import Categories from "../../Components/Adoption/AdoptionCategories/Categories";
+import Container from "../../Components/UI/Container";
 
 
 const Adoption = () => {
     return (
-        <div>
+       <Container>
            <Categories></Categories>
-        </div>
+       </Container>
     );
 };
 
