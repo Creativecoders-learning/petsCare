@@ -1,4 +1,5 @@
 import AdoptionSteps from '../../Components/Home/AdoptionSteps/AdoptionSteps';
+import AppCard from '../../Components/Home/AppCard/AppCard';
 import Banner from '../../Components/Home/Banner/Banner';
 import DetailCard from '../../Components/Home/DetailCard.jsx/DetailCard';
 import Faq from '../../Components/Home/Faq/Faq';
@@ -19,6 +20,7 @@ const Home = () => {
       <RelationWithPets />
       <Testimonial />
       <Faq />
+      <AppCard />
     </Container>
   );
 };
