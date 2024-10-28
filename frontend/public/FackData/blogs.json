@@ -28,7 +28,12 @@
         }
       ],
       "view_count": 12000,
-      "rating": 4.8
+      "rating": 4.8,
+      "author": {
+        "name": "John Doe",
+        "image": "https://i.ibb.co.com/2P6D1Lm/author.jpg",
+        "description": "John Doe is an experienced writer with a passion for exploring technology, science, and innovation. He has been publishing insightful articles for over a decade, covering topics ranging from artificial intelligence to space exploration. John's writing style is engaging, informative, and aims to make complex subjects accessible to a broad audience."
+      }
     },
     {
         "id": 2,
@@ -59,7 +64,12 @@
         }
       ],
       "view_count": 12000,
-      "rating": 4.8
+      "rating": 4.8,
+      "author": {
+        "name": "John Doe",
+        "image": "https://i.ibb.co.com/2P6D1Lm/author.jpg",
+        "description": "John Doe is an experienced writer with a passion for exploring technology, science, and innovation. He has been publishing insightful articles for over a decade, covering topics ranging from artificial intelligence to space exploration. John's writing style is engaging, informative, and aims to make complex subjects accessible to a broad audience."
+      }
     },
     {
         "id": 3,
@@ -90,7 +100,12 @@
         }
       ],
       "view_count": 12000,
-      "rating": 4.8
+      "rating": 4.8,
+      "author": {
+        "name": "John Doe",
+        "image": "https://i.ibb.co.com/2P6D1Lm/author.jpg",
+        "description": "John Doe is an experienced writer with a passion for exploring technology, science, and innovation. He has been publishing insightful articles for over a decade, covering topics ranging from artificial intelligence to space exploration. John's writing style is engaging, informative, and aims to make complex subjects accessible to a broad audience."
+      }
     },
     {
         "id": 4,
@@ -121,7 +136,12 @@
         }
       ],
       "view_count": 12000,
-      "rating": 4.8
+      "rating": 4.8,
+      "author": {
+        "name": "John Doe",
+        "image": "https://i.ibb.co.com/2P6D1Lm/author.jpg",
+        "description": "John Doe is an experienced writer with a passion for exploring technology, science, and innovation. He has been publishing insightful articles for over a decade, covering topics ranging from artificial intelligence to space exploration. John's writing style is engaging, informative, and aims to make complex subjects accessible to a broad audience."
+      }
     },
     {
         "id": 5,
@@ -152,7 +172,12 @@
         }
       ],
       "view_count": 12000,
-      "rating": 4.8
+      "rating": 4.8,
+      "author": {
+        "name": "John Doe",
+        "image": "https://i.ibb.co.com/2P6D1Lm/author.jpg",
+        "description": "John Doe is an experienced writer with a passion for exploring technology, science, and innovation. He has been publishing insightful articles for over a decade, covering topics ranging from artificial intelligence to space exploration. John's writing style is engaging, informative, and aims to make complex subjects accessible to a broad audience."
+      }
     },
     {
         "id": 6,
@@ -183,7 +208,12 @@
         }
       ],
       "view_count": 12000,
-      "rating": 4.8
+      "rating": 4.8,
+      "author": {
+        "name": "John Doe",
+        "image": "https://i.ibb.co.com/2P6D1Lm/author.jpg",
+        "description": "John Doe is an experienced writer with a passion for exploring technology, science, and innovation. He has been publishing insightful articles for over a decade, covering topics ranging from artificial intelligence to space exploration. John's writing style is engaging, informative, and aims to make complex subjects accessible to a broad audience."
+      }
     },
     {
         "id": 7,
@@ -214,7 +244,12 @@
         }
       ],
       "view_count": 8500,
-      "rating": 4.6
+      "rating": 4.6,
+      "author": {
+        "name": "John Doe",
+        "image": "https://i.ibb.co.com/2P6D1Lm/author.jpg",
+        "description": "John Doe is an experienced writer with a passion for exploring technology, science, and innovation. He has been publishing insightful articles for over a decade, covering topics ranging from artificial intelligence to space exploration. John's writing style is engaging, informative, and aims to make complex subjects accessible to a broad audience."
+      }
     },
     {
         "id": 8,
@@ -245,7 +280,12 @@
         }
       ],
       "view_count": 8500,
-      "rating": 4.6
+      "rating": 4.6,
+      "author": {
+        "name": "John Doe",
+        "image": "https://i.ibb.co.com/2P6D1Lm/author.jpg",
+        "description": "John Doe is an experienced writer with a passion for exploring technology, science, and innovation. He has been publishing insightful articles for over a decade, covering topics ranging from artificial intelligence to space exploration. John's writing style is engaging, informative, and aims to make complex subjects accessible to a broad audience."
+      }
     },
     {
         "id": 9,
@@ -276,8 +316,13 @@
         }
       ],
       "view_count": 8500,
-      "rating": 4.6
-    },
+      "rating": 4.6,
+      "author": {
+        "name": "John Doe",
+        "image": "https://i.ibb.co.com/2P6D1Lm/author.jpg",
+        "description": "John Doe is an experienced writer with a passion for exploring technology, science, and innovation. He has been publishing insightful articles for over a decade, covering topics ranging from artificial intelligence to space exploration. John's writing style is engaging, informative, and aims to make complex subjects accessible to a broad audience."
+      }
+    }, 
     {
         "id": 10,
       "image": "https://i.ibb.co.com/Wn4bgNX/rabbits.webp",
@@ -307,7 +352,12 @@
         }
       ],
       "view_count": 8500,
-      "rating": 4.6
+      "rating": 4.6,
+      "author": {
+        "name": "John Doe",
+        "image": "https://i.ibb.co.com/2P6D1Lm/author.jpg",
+        "description": "John Doe is an experienced writer with a passion for exploring technology, science, and innovation. He has been publishing insightful articles for over a decade, covering topics ranging from artificial intelligence to space exploration. John's writing style is engaging, informative, and aims to make complex subjects accessible to a broad audience."
+      }
     }
   ]
 
