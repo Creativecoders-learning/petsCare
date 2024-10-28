@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom'
-// import img from '../../assets/dog3.jpg';
 import Container from '../../Components/UI/Container';
 import useBlogs from '../../Hooks/api/useBlogs';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'; 
+import BlogComment from '../../Components/Blogs/BlogComment';
+// import Testimonial from '../../Components/Home/Testimonial/Testimonial';
 
 const BlogDetails = () => {
     const {loading, error, blogs} = useBlogs(); 
@@ -11,7 +12,7 @@ const BlogDetails = () => {
 
     const blog =  blogs?.find(blog => blog.id === Number(id))
 
-    console.log( blog?.author)
+    // console.log( blog?.author)
     useEffect(()=>{
         const subBlog = blog?.subtitles
         setItems(subBlog)
@@ -55,6 +56,7 @@ const BlogDetails = () => {
                 <div className='w-full h-auto'>
                     <img className='w-full h-auto' src={blog?.image} alt="" />
                 </div>
+
                 {/* author info */}
             <div className='mt-10 mb-5 border-2 border-primary rounded-md p-3 lg:flex  items-center'>
                 {/* author image */}
@@ -70,12 +72,10 @@ const BlogDetails = () => {
                     <p className='text-primaryBold text-2xl  font-bold underline mb-2'>{blog?.author?.name}</p>
                     <p className='text-sm text-gray-700'>{blog?.author?.description}</p>
                 </article>
+                </div>
+                <BlogComment />
+                
             </div>
-            </div>
-             
-            
-
-           
         </div>
         </Container>
     );

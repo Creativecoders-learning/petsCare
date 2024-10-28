@@ -3,14 +3,13 @@ import BlogCategory from "../../Components/Blogs/BlogCategory";
 import CardBlog from "../../Components/Blogs/CardBlog";
 import Container from "../../Components/UI/Container";
 import useBlogs from "../../Hooks/api/useBlogs";
-// import SideBar from '../../Components/Blogs/SideBar';
 
 const Blog = () => {
   const { blogs, loading, error } = useBlogs();
   const [blogsByCategory, setBlogsByCategory] = useState([]);
   const [filterInput, setFilterInput] = useState("");
 
-  console.log(blogsByCategory);
+  // console.log(blogs);
 
   useEffect(() => {
     setBlogsByCategory(blogs);
