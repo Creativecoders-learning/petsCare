@@ -9,6 +9,7 @@ import Blog from "../Pages/Blogs/Blog";
 import BlogDetails from "../Components/Blogs/BlogDetails";
 import AdopDetails from "../Components/Adoption/AdopDetails/AdopDetails";
 import Vets from "../Pages/Vets/Vets";
+import VetsDetails from "../Components/Vets/VetsDetails/VetsDetails";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       { path: "/blog-details/:id", element: <BlogDetails /> },
       { path: "/customer-plan", element: <CustomerPlan /> },
       { path: "/vets", element: <Vets /> },
+      { 
+        path: "/vets-details/:id",
+         element: <VetsDetails /> ,
+      },
     ],
   },
 ]);

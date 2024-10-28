@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react";
-import VetsBanner from "../../Components/VetsBanner/VetsBanner";
-import VetsCard from "../../Components/VetsCard/VetsCard";
+
+import VetsCard from "../../Components/Vets/VetsCard/VetsCard";
+import VetsBanner from "../../Components/Vets/VetsBanner/VetsBanner";
+import useVetsData from "../../Hooks/api/useVetsData";
 
 const Vets = () => {
-  const [vets, setVets] = useState();
-  useEffect(() => {
-    fetch("/vetsFakeData.json")
-      .then((res) => res.json())
-      .then((data) => setVets(data));
-  }, []);
-
+  const {vets}=useVetsData()
   return (
     <div className="mb-20">
       {/* vets banner  */}
