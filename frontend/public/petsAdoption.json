@@ -10,11 +10,27 @@
       "location": "Sylhet, Bangladesh",
       "name": "Bella",
       "temperament": "Friendly, Energetic",
+      "weight": "30 kg",
+      "height": "60 cm",
+      "color": "Yellow",
+      "behavior": {
+        "good_with_kids": "good with kids",
+        "good_with_other_pets": "good with other pets",
+        "house_trained": "house_trained"
+      },
+      "compatibility": {
+        "best_suited_for": "Active families, Outdoor environments",
+        "exercise_needs": "High"
+      },
       "category": "Dog",
       "shelter_name": "Happy Tails Shelter",
-      "shelter_photo": "https://example.com/shelter_images/happy_tails.jpg",
+      "shelter_photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Bella is a lively Labrador who loves to play fetch and enjoys long walks.",
-      "image": "https://plus.unsplash.com/premium_photo-1668114375111-e90b5e975df6?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": [
+        "https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1668114375111-e90b5e975df6?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1491604612772-6853927639ef?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
     },
     {
       "id": "2",
@@ -27,11 +43,26 @@
       "location": "Dhaka, Bangladesh",
       "name": "Milo",
       "temperament": "Curious, Playful",
+      "weight": "33 kg",
+      "height": "60 cm",
+      "color": "Red",
+      "behavior": {
+        "good_with_kids": "Good with kids",
+        "good_with_other_pets": "Good with other pets",
+        "house_trained": "House trained"
+      },
+      "compatibility": {
+        "best_suited_for": "Active families, Outdoor environments",
+        "exercise_needs": "High"
+      },
       "category": "Cat",
       "shelter_name": "Purr Palace",
-      "shelter_photo": "https://example.com/shelter_images/purr_palace.jpg",
+      "shelter_photo": "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Milo is an adventurous kitten who loves to explore his surroundings.",
-      "image": "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": [
+        "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
     },
     {
       "id": "3",
@@ -46,9 +77,24 @@
       "temperament": "Calm, Affectionate",
       "category": "Dog",
       "shelter_name": "Rescue Haven",
-      "shelter_photo": "https://example.com/shelter_images/rescue_haven.jpg",
+      "shelter_photo": "https://plus.unsplash.com/premium_photo-1683121366070-5ceb7e007a97?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Charlie is a sweet senior Beagle who loves quiet evenings and gentle walks.",
-      "image": "https://images.unsplash.com/photo-1522276498395-f4f68f7f8454?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": [
+        "https://images.unsplash.com/photo-1522276498395-f4f68f7f8454?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1522276498395-f4f68f7f8454?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "weight": "10 kg",
+      "height": "40 cm",
+      "color": "Tri-color",
+      "behavior": {
+        "good_with_kids": "Good with kids",
+        "good_with_other_pets": "Good with other pets",
+        "house_trained": "House trained"
+      },
+      "compatibility": {
+        "best_suited_for": "Quiet households, Senior companions",
+        "exercise_needs": "Low"
+      }
     },
     {
       "id": "4",
@@ -63,9 +109,24 @@
       "temperament": "Independent, Calm",
       "category": "Cat",
       "shelter_name": "Feline Friends",
-      "shelter_photo": "https://example.com/shelter_images/feline_friends.jpg",
+      "shelter_photo": "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Luna is a graceful British Shorthair with a calm personality.",
-      "image": "https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=1430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": [
+        "https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=1430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=1430&auto=format&fit=crop"
+      ],
+      "weight": "2 kg",
+      "height": "20 cm",
+      "color": "Cream",
+      "behavior": {
+        "good_with_kids": "Good with kids",
+        "good_with_other_pets": "Good with other pets",
+        "house_trained": "House trained"
+      },
+      "compatibility": {
+        "best_suited_for": "Indoor environments, Families with children",
+        "exercise_needs": "Moderate"
+      }
     },
     {
       "id": "5",
@@ -80,9 +141,24 @@
       "temperament": "Playful, Loyal",
       "category": "Dog",
       "shelter_name": "Golden Heart Shelter",
-      "shelter_photo": "https://example.com/shelter_images/golden_heart.jpg",
+      "shelter_photo": "https://plus.unsplash.com/premium_photo-1670071482460-5c08776521fe?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Buddy is an energetic Golden Retriever puppy who loves to be around people.",
-      "image": "https://plus.unsplash.com/premium_photo-1661503280224-a86d7ad2a574?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": [
+        "https://plus.unsplash.com/premium_photo-1661503280224-a86d7ad2a574?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1710406095492-7e62eba19745?q=80&w=1502&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "weight": "30 kg",
+      "height": "60 cm",
+      "color": "Yellow",
+      "behavior": {
+        "good_with_kids": "Good with kids",
+        "good_with_other_pets": "Good with other pets",
+        "house_trained": "House trained"
+      },
+      "compatibility": {
+        "best_suited_for": "Active families, Outdoor environments",
+        "exercise_needs": "High"
+      }
     },
     {
       "id": "6",
@@ -97,9 +173,24 @@
       "temperament": "Talkative, Friendly",
       "category": "Bird",
       "shelter_name": "Feathered Friends",
-      "shelter_photo": "https://example.com/shelter_images/feathered_friends.jpg",
+      "shelter_photo": "https://images.unsplash.com/photo-1640951613773-54706e06851d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Coco is a chatty parrot who loves interacting with people and learning new words.",
-      "image": "https://plus.unsplash.com/premium_photo-1691784963883-1a481f97dc5a?q=80&w=1545&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "image": [
+        "https://images.unsplash.com/photo-1470116073782-48ae2ccd8ffd?q=80&w=1412&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1470116073782-48ae2ccd8ffd?q=80&w=1412&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "weight": "1 km",
+      "height": "5 cm",
+      "color": "Yellow",
+      "behavior": {
+        "good_with_kids": "Good with kids",
+        "good_with_other_pets": "Good with other pets",
+        "house_trained": "House trained"
+      },
+      "compatibility": {
+        "best_suited_for": "Active families, Outdoor environments",
+        "exercise_needs": "High"
+      }
     },
     {
       "id": "7",
@@ -115,7 +206,56 @@
       "category": "Rabbit",
       "shelter_name": "Hoppy Haven",
       "shelter_photo": "https://example.com/shelter_images/hoppy_haven.jpg",
-      "description": "Thumper is a sweet Mini Lop rabbit who enjoys cuddles and gentle petting.",
-      "image": "https://images.unsplash.com/photo-1478109214826-170faed7985c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "description": "We have had Magie since she was able to leave her mum as a puppy so 8 weeks old.Magie currently lives with two children age 7 and 13 and has many visitors to the house which are children she is great with kids.There's lots of cats birds etc around the area and in the garden on most days as she's not fussed by these.",
+      "image": [
+        "https://images.unsplash.com/photo-1478109214826-170faed7985c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1478109214826-170faed7985c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "weight": "1 kg",
+      "height": "8 cm",
+      "color": "Cream",
+      "behavior": {
+        "good_with_kids": "Good with kids",
+        "good_with_other_pets": "Good with other pets",
+        "house_trained": "House trained"
+      },
+      "compatibility": {
+        "best_suited_for": "Indoor environments, Families with children",
+        "exercise_needs": "Moderate"
+      }
+    },
+    {
+      "id": "8",
+      "animal_name": "Coco",
+      "type": "Bird",
+      "breed": "Parrot",
+      "age": "Adult",
+      "gender": "Female",
+      "size": "Small",
+      "location": "Dhaka, Bangladesh",
+      "name": "Coco",
+      "temperament": "Talkative, Friendly",
+      "category": "Bird",
+      "shelter_name": "Feathered Friends",
+      "shelter_photo": "https://example.com/shelter_images/feathered_friends.jpg",
+      "description": "Coco is a chatty parrot who loves interacting with people and learning new words. We have had Magie since she was able to leave her mum as a puppy so 8 weeks old.Magie currently lives with two children age 7 and 13 and has many visitors to the house which are children she is great with kids.There's lots of cats birds etc around the area and in the garden on most days as she's not fussed by these.",
+      "image": [
+        "https://images.unsplash.com/photo-1480044965905-02098d419e96?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1480044965905-02098d419e96?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "weight": "1 kg",
+      "height": "8 cm",
+      "color": "Cream",
+      "behavior": {
+        "good_with_kids": "Good with kids",
+        "good_with_other_pets": "Good with other pets",
+        "house_trained": "House trained"
+      },
+      "compatibility": {
+        "best_suited_for": "Indoor environments, Families with children",
+        "exercise_needs": "Moderate"
+      }
     }
   ]
+  
+  

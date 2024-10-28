@@ -7,7 +7,7 @@
         "numOfStock": 200,
         "price": 15.99,
         "ratings": 4.6,
-        "image": "dog_multivitamin.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 2,
@@ -17,7 +17,7 @@
         "numOfStock": 150,
         "price": 24.99,
         "ratings": 4.7,
-        "image": "flea_tick_prevention.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 3,
@@ -27,7 +27,7 @@
         "numOfStock": 100,
         "price": 19.99,
         "ratings": 4.5,
-        "image": "joint_health_supplement.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 4,
@@ -37,7 +37,7 @@
         "numOfStock": 80,
         "price": 7.99,
         "ratings": 4.4,
-        "image": "dog_eye_drops.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 5,
@@ -47,7 +47,7 @@
         "numOfStock": 120,
         "price": 12.49,
         "ratings": 4.8,
-        "image": "digestive_enzyme.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 6,
@@ -57,7 +57,7 @@
         "numOfStock": 95,
         "price": 16.99,
         "ratings": 4.6,
-        "image": "cat_immune_booster.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 7,
@@ -67,7 +67,7 @@
         "numOfStock": 130,
         "price": 8.99,
         "ratings": 4.5,
-        "image": "cat_hairball_remedy.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 8,
@@ -77,7 +77,7 @@
         "numOfStock": 60,
         "price": 10.99,
         "ratings": 4.7,
-        "image": "anti_fungal_shampoo.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 9,
@@ -87,7 +87,7 @@
         "numOfStock": 150,
         "price": 11.99,
         "ratings": 4.8,
-        "image": "cat_probiotics.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 10,
@@ -97,7 +97,7 @@
         "numOfStock": 75,
         "price": 6.49,
         "ratings": 4.4,
-        "image": "eye_ear_drops.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 11,
@@ -107,7 +107,7 @@
         "numOfStock": 220,
         "price": 4.99,
         "ratings": 4.7,
-        "image": "water_conditioner.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 12,
@@ -117,7 +117,7 @@
         "numOfStock": 130,
         "price": 7.99,
         "ratings": 4.6,
-        "image": "antibacterial_treatment.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 13,
@@ -127,7 +127,7 @@
         "numOfStock": 140,
         "price": 5.99,
         "ratings": 4.5,
-        "image": "fungus_cure.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 14,
@@ -137,7 +137,7 @@
         "numOfStock": 180,
         "price": 6.99,
         "ratings": 4.8,
-        "image": "ammonia_remover.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 15,
@@ -147,7 +147,7 @@
         "numOfStock": 110,
         "price": 8.49,
         "ratings": 4.4,
-        "image": "parasite_control.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 16,
@@ -157,7 +157,7 @@
         "numOfStock": 160,
         "price": 7.49,
         "ratings": 4.5,
-        "image": "rabbit_vitamin_drops.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 17,
@@ -167,7 +167,7 @@
         "numOfStock": 70,
         "price": 9.99,
         "ratings": 4.6,
-        "image": "ear_mite_treatment.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 18,
@@ -177,7 +177,7 @@
         "numOfStock": 90,
         "price": 12.99,
         "ratings": 4.7,
-        "image": "digestive_support.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 19,
@@ -187,7 +187,7 @@
         "numOfStock": 50,
         "price": 10.49,
         "ratings": 4.4,
-        "image": "fur_health_supplement.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 20,
@@ -197,6 +197,6 @@
         "numOfStock": 65,
         "price": 5.99,
         "ratings": 4.8,
-        "image": "antibiotic_ointment.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S9e6afa5dce8543038320d6a323e984e2s.jpg_720x720q80.jpg_.webp"
     }
 ]
