@@ -5,7 +5,7 @@ const AnimalCardInfo = ({item,name, icon:Icon}) => {
         <div>
             {/* <!-- Individual Info Card --> */}
             <div className="w-40 h-60 flex flex-col items-center justify-center bg-blue-100 py-5 px-5 space-y-5 rounded-md">
-              <div className=" rounded-full px-5 py-5 bg-indigo-500 flex items-center justify-center hover:scale-110 duration-300">
+              <div className=" rounded-full px-3 py-3 bg-indigo-500 flex items-center justify-center hover:scale-110 duration-300">
                 <Icon className="text-3xl text-white"/>
               </div>
               <div className="text-center ">
