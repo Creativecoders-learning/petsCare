@@ -34,8 +34,8 @@ const Registration = () => {
                               <div className="absolute right-0">
                                     <img src={AUTHENTICATIONImages.vector2} alt="" />
                               </div>
-                              <div className="absolute bottom-8 z-0">
-                                    <img src={AUTHENTICATIONImages.haddi} alt="" />
+                              <div className="absolute bottom-5 z-0">
+                                    <img className="h-[120px]" src={AUTHENTICATIONImages.haddi} alt="" />
                               </div>
                         </div>
                         <div className="flex-1"></div>
