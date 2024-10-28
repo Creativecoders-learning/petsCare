@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { CHECKOUTImages } from "../../../image-data/checkout";
 import PaypalCardForm from "../PaypalCardForm/PaypalCardForm";
 import SSLCommerceForm from "../SSLCommerceForm/SSLCommerceForm";
 import VisaCardForm from "../VisaCardForm/VisaCardForm";
 import PrimaryTitle from "../../UI/PrimaryTitle";
+import { CHECKOUTImages } from "../../../Image-data/checkout";
 
 const cards = [
       {
