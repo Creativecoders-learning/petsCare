@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "quote": "Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.",
+    "author": {
+      "name": "George Orwell",
+      "title": "Nineteen Eighty-Four",
+      "profileImage": "https://i.pravatar.cc/40?img=11",
+      "profileLink": "http://www.george-orwell.org/1984/0.html"
+    }
+  },
+  {
+    "id": 2,
+    "quote": "The only way to do great work is to love what you do.",
+    "author": {
+      "name": "Steve Jobs",
+      "title": "Apple Founder",
+      "profileImage": "https://i.pravatar.cc/40?img=22",
+      "profileLink": "https://en.wikipedia.org/wiki/Steve_Jobs"
+    }
+  },
+  {
+    "id": 3,
+    "quote": "Life is what happens when you're busy making other plans.",
+    "author": {
+      "name": "John Lennon",
+      "title": "Musician",
+      "profileImage": "https://i.pravatar.cc/40?img=33",
+      "profileLink": "https://en.wikipedia.org/wiki/John_Lennon"
+    }
+  },
+  {
+    "id": 4,
+    "quote": "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+    "author": {
+      "name": "Winston Churchill",
+      "title": "Former Prime Minister of the UK",
+      "profileImage": "https://i.pravatar.cc/40?img=44",
+      "profileLink": "https://en.wikipedia.org/wiki/Winston_Churchill"
+    }
+  },
+  {
+    "id": 5,
+    "quote": "Happiness is not something ready made. It comes from your own actions.",
+    "author": {
+      "name": "Dalai Lama",
+      "title": "Spiritual Leader",
+      "profileImage": "https://i.pravatar.cc/40?img=55",
+      "profileLink": "https://en.wikipedia.org/wiki/Dalai_Lama"
+    }
+  },
+  {
+    "id": 6,
+    "quote": "In the end, we will remember not the words of our enemies, but the silence of our friends.",
+    "author": {
+      "name": "Martin Luther King Jr.",
+      "title": "Civil Rights Leader",
+      "profileImage": "https://i.pravatar.cc/40?img=66",
+      "profileLink": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr."
+    }
+  },
+  {
+    "id": 7,
+    "quote": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "author": {
+      "name": "Nelson Mandela",
+      "title": "Former President of South Africa",
+      "profileImage": "https://i.pravatar.cc/40?img=77",
+      "profileLink": "https://en.wikipedia.org/wiki/Nelson_Mandela"
+    }
+  },
+  {
+    "id": 8,
+    "quote": "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+    "author": {
+      "name": "Ralph Waldo Emerson",
+      "title": "Poet and Philosopher",
+      "profileImage": "https://i.pravatar.cc/40?img=88",
+      "profileLink": "https://en.wikipedia.org/wiki/Ralph_Waldo_Emerson"
+    }
+  }
+]

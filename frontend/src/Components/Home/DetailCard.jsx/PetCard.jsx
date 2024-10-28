@@ -37,32 +37,32 @@ const PetCard = ({
       </div>
       <div className="flex mt-2">
         <IoLocationOutline className="text-secondary mr-2 text-lg" />
-        <p className="text-sm text-secondary font-semibold">{location}</p>
+        <p className="text-sm  text-secondary font-semibold">{location}</p>
       </div>
       <div className="flex justify-between text-sm text-gray-700 mt-2">
         <p>
-          <span className="font-medium">Breed:</span>{' '}
-          <span className="bg-violet-200 rounded-md p-1"> {breed} </span>
+          <span className="font-medium">Breed:</span>
+          <span className="bg-violet-200 rounded-md p-1 ">{breed}</span>
         </p>
         <p>
-          <span className="font-medium">Gender:</span>{' '}
+          <span className="font-medium">Gender:</span>
           <span className="bg-violet-200 rounded-md p-1"> {gender} </span>
         </p>
       </div>
       <div className="flex justify-between text-sm text-gray-700 mt-2">
         <p>
-          <span className="font-medium">Age:</span>{' '}
+          <span className="font-medium">Age:</span>
           <span className="bg-violet-200 rounded-md p-1"> {age} </span>
         </p>
         <p>
-          <span className="font-medium">Size:</span>{' '}
+          <span className="font-medium">Size:</span>
           <span className="bg-violet-200 rounded-md p-1"> {size} </span>
         </p>
       </div>
       <div className="flex-grow mt-3">
         <p className="text-gray-700 text-sm">{description}</p>
       </div>
-      <Button primary>More Info</Button>
+      <Button secondary>More Info</Button>
     </div>
   );
 };

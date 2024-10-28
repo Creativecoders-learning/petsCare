@@ -12,11 +12,28 @@ export default function ShopCard({ item = {} }) {
   const [openModal, setOpenModal] = useState(false);
   const [cartProducts, setCartProducts] = useState([]);
 
+  console.log(cartProducts);
   // handle cart button
-  const handleCartBtn = (cart) => {
+  const handleCartBtn = (product) => {
+    setCartProducts((prevCartProducts) => {
+      const existingProduct = prevCartProducts.find(item => item?.id === product?.id);
+
+      if (existingProduct) {
+        // If it exists, update the quantity
+        return prevCartProducts.map(item =>
+          item?.id === product?.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        // If it does not exist, add new product with quantity 1
+        return [...prevCartProducts, { ...product, quantity: 1 }];
+      }
+    });
+
     setOpenModal(true);
-    setCartProducts((preCart) => [...preCart, cart]);
   };
+
   return (
     <>
       <Modal openModal={openModal} setOpenModal={setOpenModal}>
@@ -26,7 +43,7 @@ export default function ShopCard({ item = {} }) {
             <p>No Products in the cart</p>
           </div>
         ) : (
-          <div className="flex flex-col gap-6 justify-start items-center px-4">
+          <div onClick={(e) => e.stopPropagation()} className="flex flex-col gap-6 justify-start items-center px-4">
             {cartProducts?.map((item) => (
               <div className="flex justify-between items-center" key={item.id}>
                 <div className="w-[20%]">
@@ -37,6 +54,7 @@ export default function ShopCard({ item = {} }) {
                 <div className="w-[60%]">
                   <h3>{item.title}</h3>
                   <span>{item.price}</span>
+                  <p>Quantity: {item.quantity}</p>
                 </div>
                 <div className="w-[20%] overflow-hidden">
                   <img src={item.image} alt={item.title} />

@@ -1,59 +1,31 @@
 import { useEffect, useState } from "react";
 import FilterOption from "../../../Components/Shop/AllProducts/FilterOption";
 import Container from "../../../Components/UI/Container";
-import usePetsFoods from "../../../Hooks/api/usePetsFoods";
 import ShopCard from "../../../Components/UI/ShopCard";
-import usePetsAccessories from "../../../Hooks/api/usePetsAccessories";
-import usePetsMedicine from "../../../Hooks/api/usePetsMedicine";
 import { useSearchParams } from "react-router-dom";
+import usePetsProducts from "../../../Hooks/api/usePetsProducts";
 
 export default function AllProducts() {
+  const { petsProducts } = usePetsProducts();
   const [searchParams] = useSearchParams();
-  const { petsFoods } = usePetsFoods();
-  const { petsAccessories } = usePetsAccessories();
-  const { petsMedicine } = usePetsMedicine();
   const [foodsByCategory, setFoodsByCategory] = useState([]);
-  const [category, setCategory] = useState("");
-  const [subCategory, setSubCategory] = useState("");
-  console.log(category, subCategory);
+  const [category, setCategory] = useState(searchParams ? searchParams.get("category") : "");
+  const [subCategory, setSubCategory] = useState(searchParams ? searchParams.get("subCategory") : "");
 
-  //   manage filtered products
+  petsProducts?.map(item => console.log(item.id))
+  
+
   useEffect(() => {
-    if(searchParams){
-      setCategory(searchParams.get("category"));
-      setSubCategory(searchParams.get("subCategory"))
-    }
-    // this is for foods data
-    if (category !== "" && subCategory === "Foods") {
-      const filteredData = petsFoods?.filter(
-        (item) =>
-          item?.category.trim().toLowerCase() === category.trim().toLowerCase()
-      );
-      console.log(filteredData);
-      setFoodsByCategory(filteredData);
-    }
+    const filteredByCategoryAndSubCategory = petsProducts?.filter(
+      (item) => item?.category === category && item?.subCategory === subCategory
+    );
 
-    // this is for accessories data
-    else if (category !== "" && subCategory === "Accessories") {
-      const filteredData = petsAccessories?.filter(
-        (item) =>
-          item?.category.trim().toLowerCase() === category.trim().toLowerCase()
-      );
-      console.log(filteredData);
-      setFoodsByCategory(filteredData);
+    if (category && subCategory) {
+      setFoodsByCategory(filteredByCategoryAndSubCategory);
+    }else {
+      setFoodsByCategory(petsProducts);
     }
-    // this is for accessories data
-    else if (category !== "" && subCategory === "Medicines") {
-      const filteredData = petsMedicine?.filter(
-        (item) =>
-          item?.category.trim().toLowerCase() === category.trim().toLowerCase()
-      );
-      console.log(filteredData);
-      setFoodsByCategory(filteredData);
-    } else {
-      setFoodsByCategory(petsFoods);
-    }
-  }, [petsFoods, petsAccessories, petsMedicine, category, subCategory, searchParams]);
+  }, [petsProducts, category, subCategory]);
 
   return (
     <Container>

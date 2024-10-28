@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
-import usePetsFoods from "../../Hooks/api/usePetsFoods";
 import Button from "../UI/Button";
 import PrimaryTitle from "../UI/PrimaryTitle";
 import ShopCard from "../UI/ShopCard";
+import usePetsProducts from "../../Hooks/api/usePetsProducts";
 
 export default function Foods() {
-  const { petsFoods } = usePetsFoods();
-
+  const { petsProducts } = usePetsProducts();
+  
+  const petsFoods = petsProducts?.filter(item => item?.subCategory === "Foods")
   console.log(petsFoods);
 
   return (
@@ -19,7 +20,7 @@ export default function Foods() {
         ))}
       </div>
       <div className="flex justify-center mt-10">
-        <Link to={"/all-products"}>
+        <Link to={`/all-products?category=Cats&subCategory=Foods`}>
           <Button secondary={true}>Load More</Button>
         </Link>
       </div>
