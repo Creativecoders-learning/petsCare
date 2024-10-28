@@ -26,14 +26,12 @@ const AdopDetails = () => {
         {/* sheleter info */}
         <div className="flex items-center gap-x-3">
           <img
-            width="40"
-            height="20"
-            className="rounded-full"
+            className="rounded-full w-16 h-16"
             src={adoption?.shelter_photo}
             alt=""
           />
           <div>
-            <h1 className="text-2xl mb-2">{adoption?.shelter_name}</h1>
+            <h1 className="text-2xl mb-1">{adoption?.shelter_name}</h1>
             <p>Location: {adoption?.location}</p>
           </div>
         </div>
@@ -109,7 +107,7 @@ const AdopDetails = () => {
           </div>
         </div>
 
-        <div className="p-6 border bg-white rounded-xl shadow-md space-y-4 my-5 mx-5 md:mx-10">
+        <div className="p-6 border bg-white rounded-xl shadow-md space-y-4 my-5 mx-5 md:mx-10 lg:mx-5">
           {/* <!-- Vaccination Table --> */}
           <div className="overflow-x-auto">
             <table className="min-w-full bg-gray-100 rounded-lg">
