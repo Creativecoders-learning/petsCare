@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "icon": "https://cdn1.iconfinder.com/data/icons/anchor/128/scissors.png",
+    "count": "333,821",
+    "label": "Total Pets Spayed & Neutered",
+    "subtitle": "Since 2011"
+  },
+  {
+    "id": 2,
+    "icon": "https://cdn1.iconfinder.com/data/icons/anchor/128/heart.png",
+    "count": "850,856",
+    "label": "Total Pets Impacted",
+    "subtitle": "Since 2011"
+  },
+  {
+    "id": 3,
+    "icon": "https://cdn2.iconfinder.com/data/icons/hearts-16/100/029-512.png",
+    "count": "289,925",
+    "label": "Total Adoptions",
+    "subtitle": "Since 2011"
+  },
+  {
+    "id": 4,
+    "icon": "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678085-house-512.png",
+    "count": "6,025+",
+    "label": "Partner Organizations",
+    "subtitle": "and counting"
+  },
+  {
+    "id": 5,
+    "icon": "https://cdn3.iconfinder.com/data/icons/clinical-3/96/injection-512.png",
+    "count": "500,000",
+    "label": "Total Vaccinations Administered",
+    "subtitle": "Since 2011"
+  },
+  {
+    "id": 6,
+    "icon": "https://cdn4.iconfinder.com/data/icons/foods-and-meals/512/Food_Meals_Bowl_with_noodles_vegetables-512.png",
+    "count": "1,200,000",
+    "label": "Meals Provided",
+    "subtitle": "Since 2011"
+  },
+  {
+    "id": 7,
+    "icon": "https://cdn4.iconfinder.com/data/icons/veterinary-indigo-vol-1/256/Adoption-512.png",
+    "count": "150",
+    "label": "Shelters Supported",
+    "subtitle": "and growing"
+  },
+  {
+    "id": 8,
+    "icon": "https://cdn2.iconfinder.com/data/icons/distance-education-7/64/edu-home-school-tele-internet-512.png",
+    "count": "2,500",
+    "label": "Community Education Sessions",
+    "subtitle": "Since 2011"
+  },
+  {
+    "id": 9,
+    "icon": "https://cdn2.iconfinder.com/data/icons/charity-16/64/benevolence-kindness-generosity-volunteer-sympathy-512.png",
+    "count": "10,000+",
+    "label": "Volunteer Hours Logged",
+    "subtitle": "Since 2011"
+  },
+  {
+    "id": 10,
+    "icon": "https://cdn4.iconfinder.com/data/icons/veterinary-indigo-vol-1/256/Adoption-512.png",
+    "count": "5,000",
+    "label": "Pets Fostered",
+    "subtitle": "Since 2011"
+  },
+  {
+    "id": 11,
+    "icon": "https://example.com/transport-icon.png",
+    "count": "1,000",
+    "label": "Transported Pets",
+    "subtitle": "to safety"
+  },
+  {
+    "id": 12,
+    "icon": "https://example.com/awareness-icon.png",
+    "count": "300",
+    "label": "Awareness Campaigns",
+    "subtitle": "Since 2011"
+  },
+  {
+    "id": 13,
+    "icon": "https://example.com/partnership-icon.png",
+    "count": "75",
+    "label": "Corporate Partnerships",
+    "subtitle": "and counting"
+  },
+  {
+    "id": 14,
+    "icon": "https://example.com/health-icon.png",
+    "count": "200,000",
+    "label": "Health Checkups Provided",
+    "subtitle": "Since 2011"
+  },
+  {
+    "id": 15,
+    "icon": "https://example.com/rehabilitation-icon.png",
+    "count": "1,500",
+    "label": "Pets Rehabilitated",
+    "subtitle": "Since 2011"
+  },
+  {
+    "id": 16,
+    "icon": "https://example.com/education-icon.png",
+    "count": "1,000",
+    "label": "Training Sessions Conducted",
+    "subtitle": "Since 2011"
+  },
+  {
+    "id": 17,
+    "icon": "https://example.com/advocacy-icon.png",
+    "count": "50",
+    "label": "Legislative Advocacy Efforts",
+    "subtitle": "Since 2011"
+  },
+  {
+    "id": 18,
+    "icon": "https://example.com/innovation-icon.png",
+    "count": "20",
+    "label": "Innovative Programs Launched",
+    "subtitle": "Since 2011"
+  },
+  {
+    "id": 19,
+    "icon": "https://example.com/impact-icon.png",
+    "count": "1,000,000",
+    "label": "Total Lives Changed",
+    "subtitle": "Since 2011"
+  },
+  {
+    "id": 20,
+    "icon": "https://example.com/feedback-icon.png",
+    "count": "4.9/5",
+    "label": "Average Satisfaction Rating",
+    "subtitle": "From our community"
+  }
+]
