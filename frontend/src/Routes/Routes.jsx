@@ -9,6 +9,7 @@ import Blog from "../Pages/Blogs/Blog";
 import AdopDetails from '../Components/Adoption/AdopDetails/AdopDetails';
 import Checkout from '../Pages/Checkout/Checkout';
 import Vets from "../Pages/Vets/Vets";
+import VetsDetails from "../Components/Vets/VetsDetails/VetsDetails";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
 import Registration from "../Pages/Authentication/Registration/Registration";
 import Login from "../Pages/Authentication/Login/Login";
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       { path: '/customer-plan', element: <CustomerPlan /> },
       { path: '/checkout', element: <Checkout /> },
       { path: "/vets", element: <Vets /> },
+      { 
+        path: "/vets-details/:id",
+         element: <VetsDetails /> ,
+      },
       { path: "/registration", element: <Registration /> },
       { path: "/login", element: <Login /> },
     ],
