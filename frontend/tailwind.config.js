@@ -8,6 +8,7 @@ export default {
         primaryLight: '#9990DA',
         primaryBold: '#19143D',
         secondary: '#0A453A',
+        myGray: "#696984"
       },
       fontFamily: {
         nunito:['Nunito'],
@@ -17,6 +18,7 @@ export default {
       boxShadow: {
         myCustomShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
       },
+      
     },
   },
   plugins: [],
