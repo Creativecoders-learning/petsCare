@@ -39,7 +39,7 @@ export default function DashboardLayout() {
                               className={`fixed top-0 bottom-0 left-0 z-40 flex w-72 flex-col border-r border-r-myGray border-opacity-30 bg-white transition-transform lg:translate-x-0 ease-in-out duration-500 ${isSideNavOpen ? "translate-x-0 " : " -translate-x-full"
                                     }`}
                         >
-                              <div className="flex justify-center items-center h-20 mt-6">
+                              <div className="flex justify-center items-center h-20 mt-6 border-b border-slate-200">
                                     <Link to="/">
                                           <h2 className="text-[24px] md:text-[28px] font-semibold text-primary">
                                                 Pets Care

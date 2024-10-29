@@ -8,6 +8,7 @@ export default {
         primaryLight: '#9990DA',
         primaryBold: '#19143D',
         secondary: '#0A453A',
+        myGray: "#696984"
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
