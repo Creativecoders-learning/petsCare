@@ -26,8 +26,10 @@ const AdopDetails = () => {
         {/* sheleter info */}
         <div className="flex items-center gap-x-3">
           <img
-            className="rounded-full w-16 h-16"
-            src={adoption?.shelter_photo}
+            width={500}
+            height={500}
+            className="size-20 rounded-full object-cover"
+            src={`${adoption?.shelter_photo ? adoption?.shelter_photo : 'https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}`}
             alt=""
           />
           <div>

@@ -11,6 +11,7 @@ export default {
         myGray: "#696984"
       },
       fontFamily: {
+        nunito:['Nunito'],
         inter: ['Inter', 'sans-serif'],
         acme: ['Acme', 'sans-serif'],
       },
