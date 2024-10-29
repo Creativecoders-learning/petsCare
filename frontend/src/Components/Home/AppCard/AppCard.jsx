@@ -1,7 +1,7 @@
 import phnMockup from './3089582-cover-removebg-preview.png';
 const AppCard = () => {
   return (
-    <div className="w-full bg-violet-100 primaryLight h-full p-8 rounded-md">
+    <div className="w-full bg-violet-100 primaryLight h-full p-8 rounded-md my-10">
       {/* Main */}
       <header className="flex lg:flex-row flex-col gap-[50px] lg:gap-0 items-center lg:mt-3">
         <div>
@@ -52,7 +52,7 @@ const AppCard = () => {
         <img
           src={phnMockup}
           alt="image"
-          className="w-full h-[50vh] lg:w-[55%]"
+          className="w-full h-[70vh] lg:w-[55%]"
         />
       </header>
     </div>
