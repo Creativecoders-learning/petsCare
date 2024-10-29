@@ -4,7 +4,6 @@ import Container from "../../UI/Container";
 import { MdTransgender } from "react-icons/md";
 import { TbTimeDuration30 } from "react-icons/tb";
 
-
 import {
   FaSearch,
   FaTemperatureHigh,
@@ -15,6 +14,7 @@ import HealthInfo from "../HealthInfo/HealthInfo";
 import Breadcrumb from "../../Shared/Breadcrumb/Breadcrumb";
 import detailsBg from "../../../assets/adoptionsImg/breeder_details_bg.jpg";
 import DropDown from "../../UI/DropDown";
+import AdoptionButton from "../../UI/AdoptionButton";
 
 const AdopDetails = () => {
   const { id } = useParams();
@@ -91,9 +91,7 @@ const AdopDetails = () => {
                 </div>
               </div>
             </div>
-            <button className="py-3 px-6 bg-red-600 hover:bg-[#0A453A] duration-300 text-white font-nunito font-extrabold text-xl">
-              Apply to Day
-            </button>
+            <AdoptionButton text={'Apply to Day'} fullWidth={false}/>
           </div>
 
           {/* sidebar */}
@@ -109,36 +107,57 @@ const AdopDetails = () => {
                 <input
                   type="text"
                   name=""
-                  className="h-10 w-full border rounded-md px-3 text-sm focus:ring-1 focus-visible:outline-none"
+                  className=" w-full border rounded-md p-3 text-sm focus:ring-1 focus-visible:outline-none"
                   placeholder="Search"
                   id=""
                 />
-                <span className="absolute right-0 top-0 bg-red-500 flex items-center justify-center text-white px-4 py-3">
+                <span className="absolute right-0 top-0 bottom-0 bg-red-500 flex items-center justify-center text-white py-3 p-3">
                   <FaSearch></FaSearch>
                 </span>
               </div>
 
               {/* location */}
-              <input type="text" name="" placeholder="location" 
-              className="flex h-10 w-full rounded-md border px-3 py-2 text-sm focus:ring-1 focus-visible:outline-none dark:border-zinc-700" />
+              <input
+                type="text"
+                name=""
+                placeholder="location"
+                className="flex w-full rounded-md border px-3 py-3 text-sm focus:ring-1 focus-visible:outline-none dark:border-zinc-700"
+              />
 
               {/* date */}
               <div className="flex items-center gap-x-2 ">
-                <input type="text" name="" 
-                className="h-10 w-full py-2 px-3 border rounded-md text-sm focus:right-5 focus-visible:outline-none  "
-                placeholder="White"
-                id="" />
-                <input type="text" name="" 
-                className="h-10 w-full py-2 px-3 border rounded-md text-sm focus:right-5 focus-visible:outline-none   "
-                placeholder="2024"
-                id="" />
+                <input
+                  type="text"
+                  name=""
+                  className=" w-full p-3 border rounded-md text-sm focus:right-5 focus-visible:outline-none  "
+                  placeholder="White"
+                  id=""
+                />
+                <input
+                  type="text"
+                  name=""
+                  className="w-full p-3 border rounded-md text-sm focus:right-5 focus-visible:outline-none   "
+                  placeholder="2024"
+                  id=""
+                />
               </div>
 
               {/* dropdown */}
               <div>
-                 <DropDown level={'Breeder'} icon={MdTransgender} items={['Breeder', 'Trainer', 'Groomer']}></DropDown>
-                 <DropDown level={'Adult'} icon={TbTimeDuration30} items={['6 Months', '9 Months', '12 Months']}></DropDown>
+                <DropDown
+                  level={"Breeder"}
+                  icon={MdTransgender}
+                  items={["Breeder", "Trainer", "Groomer"]}
+                ></DropDown>
+                <DropDown
+                  level={"Adult"}
+                  icon={TbTimeDuration30}
+                  items={["6 Months", "9 Months", "12 Months"]}
+                ></DropDown>
               </div>
+              
+              {/* apply button */}
+              <AdoptionButton text={'Adoption Now '} fullWidth={true}></AdoptionButton>
             </div>
           </div>
         </div>
