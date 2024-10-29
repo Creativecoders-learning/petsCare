@@ -12,13 +12,13 @@ const MeetAdoption = () => {
       className="px-10 py-28 bg-contain bg-repeat-round "
     >
       <Container>
-        <div  className="flex items-center justify-center gap-x-5 ">
+        <div  className="flex flex-col lg:flex-row items-center justify-center gap-x-5 gap-y-10 ">
           {/* text container */}
           <div className="lg:w-2/5 space-y-5">
             <h1 className="text-xl font-nunito text-red-500 font-bold">
               Meet Adoption
             </h1>
-            <h1 className="text-[#0A453A] text-5xl font-nunito font-extrabold">
+            <h1 className="text-[#0A453A] text-3xl md:text-4xl lg:text-5xl font-nunito font-extrabold">
               Work For <span className="text-red-500">Adoption</span> Happy Time
             </h1>
             <p className="text-lg text-gray-500 font-nunito">
