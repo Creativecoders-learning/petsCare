@@ -36,7 +36,7 @@ export default function DashboardLayout() {
                   <div className="lg:flex font-inter">
                         {/* Side Navigation */}
                         <aside
-                              className={`fixed top-0 bottom-0 left-0 z-40 flex w-72 flex-col border-r border-r-myGray border-opacity-30 bg-white transition-transform lg:translate-x-0 ease-in-out duration-500 ${isSideNavOpen ? "translate-x-0 " : " -translate-x-full"
+                              className={`fixed top-0 bottom-0 left-0 z-40 flex w-64 flex-col border-r border-r-myGray border-opacity-30 bg-white transition-transform lg:translate-x-0 ease-in-out duration-500 ${isSideNavOpen ? "translate-x-0 " : " -translate-x-full"
                                     }`}
                         >
                               <div className="flex justify-center items-center h-20 mt-6 border-b border-slate-200">
@@ -159,7 +159,7 @@ export default function DashboardLayout() {
                         </aside>
 
                         {/* Main Content Area */}
-                        <div className={`flex-1 text-black border-opacity-50 w-full ${isSideNavOpen ? "" : "lg:ml-72"}`}>
+                        <div className={`flex-1 text-black border-opacity-50 w-full ${isSideNavOpen ? "" : "lg:ml-64"}`}>
                               <Outlet />
                         </div>
                   </div>

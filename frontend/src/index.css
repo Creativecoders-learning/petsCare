@@ -26,3 +26,20 @@ red:#C30000
 light-red:#C30000
 warning:#F4B740
 success:#00BA88 */
+
+
+/* Custom scrollbar styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #0A453A;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #9D9B9B;
+  border-radius: 10px;
+}
+
