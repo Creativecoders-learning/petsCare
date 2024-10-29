@@ -1,13 +1,10 @@
 import { IoIosCloseCircle } from "react-icons/io";
 
 export default function Modal({ children, setOpenModal, openModal }) {
-  if (!openModal) return null;
 
   // handle close button
-  const handleCloseBtn = (e) => {
-    if (e.target.classList.contains('modal-overlay')) {
-      setOpenModal(false); // Close modal only when clicking on the overlay
-    }
+  const handleCloseBtn = () => {
+    setOpenModal(false);
   };
 
   return (
