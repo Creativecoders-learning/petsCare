@@ -54,7 +54,7 @@ const BlogDetails = () => {
                     )
                 }
                 <div className='bg-slate-200 px-3 py-4 border-2 rounded-md my-5 border-l-4 border-l-primary'>
-                <p className='font-inter font-bold'>Animals are the essence of our planet, showcasing beauty, strength, and diversity. Each species plays a vital role, reminding us of nature's intricate balance and the importance of conservation.</p>
+                <p className='font-inter font-bold'>Animals are the essence of our planet, showcasing beauty, strength, and diversity. Each species plays a vital role, reminding us of intricate balance and the importance of conservation.</p>
                 </div>
                 <div className='w-full h-auto'>
                     <img className='w-full h-auto' src={blog?.image} alt="" />
