@@ -13,6 +13,7 @@ import VetsDetails from "../Components/Vets/VetsDetails/VetsDetails";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
 import Registration from "../Pages/Authentication/Registration/Registration";
 import Login from "../Pages/Authentication/Login/Login";
+import DashboardLayout from "../Layout/DashboardLayout";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -30,14 +31,20 @@ const router = createBrowserRouter([
       { path: '/customer-plan', element: <CustomerPlan /> },
       { path: '/checkout', element: <Checkout /> },
       { path: "/vets", element: <Vets /> },
-      { 
+      {
         path: "/vets-details/:id",
-         element: <VetsDetails /> ,
+        element: <VetsDetails />,
       },
       { path: "/registration", element: <Registration /> },
       { path: "/login", element: <Login /> },
     ],
   },
+
+  // Dashboard
+  {
+    path: '/dashboard',
+    element: <DashboardLayout />
+  }
 ]);
 
 export default router;
