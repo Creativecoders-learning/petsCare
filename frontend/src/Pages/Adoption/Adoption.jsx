@@ -1,12 +1,15 @@
 import Categories from "../../Components/Adoption/AdoptionCategories/Categories";
-import Container from "../../Components/UI/Container";
+import MeetAdoption from "../../Components/Adoption/Meet-adoption/MeetAdoption";
+import Breadcrumb from "../../Components/Shared/Breadcrumb/Breadcrumb";
 
 
 const Adoption = () => {
     return (
-       <Container>
+      <div>
+         <Breadcrumb title={'Get Adoption'} ></Breadcrumb>
+           <MeetAdoption></MeetAdoption>
            <Categories></Categories>
-       </Container>
+      </div>
     );
 };
 

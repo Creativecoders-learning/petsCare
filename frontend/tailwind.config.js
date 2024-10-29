@@ -10,6 +10,7 @@ export default {
         secondary: '#0A453A',
       },
       fontFamily: {
+        nunito:['Nunito'],
         inter: ['Inter', 'sans-serif'],
         acme: ['Acme', 'sans-serif'],
       },
