@@ -14,6 +14,7 @@ import BlogDetails from "../Pages/Blogs/BlogDetails";
 import Registration from "../Pages/Authentication/Registration/Registration";
 import Login from "../Pages/Authentication/Login/Login";
 import DashboardLayout from "../Layout/DashboardLayout";
+import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -43,7 +44,13 @@ const router = createBrowserRouter([
   // Dashboard
   {
     path: '/dashboard',
-    element: <DashboardLayout />
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: 'admin/blog-management',
+        element: <BlogManagement />
+      }
+    ],
   }
 ]);
 
