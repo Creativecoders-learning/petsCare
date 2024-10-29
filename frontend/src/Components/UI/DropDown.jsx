@@ -1,20 +1,24 @@
 import { useState } from "react";
 
 const DropDown = ({level,icon,items}) => {
-    const [selected,setSelected]= useState();
-    const [isOpen,setIsOpen] = useState(level);
+    const [isOpen,setIsOpen] = useState(false);
+    const [selected,setSelected]= useState(level);
+
+    const toggleDropdown =()=> setIsOpen(!isOpen)
+
     const handleSelected =(item)=>{
         setSelected(item)
         setIsOpen(false)
     }
     return (
         <div className="relative">
-           <button className="flex items-center w-full border rounded-md p-3 focus-visible:outline-none">
+           <button  onClick={toggleDropdown} className="flex items-center w-full border rounded-md p-3 mb-3 focus-visible:outline-none">
                 {icon}
                 <span className="ml-2">{selected}</span>
+                <span className="ml-auto">{isOpen ? '▲' : '▼'}</span>
            </button> 
            {
-           isOpen && <div className="absolute w-full  p-3 border rounded-md shadow-lg ">
+           isOpen && <div className="absolute top-10 w-full mt-2 p-3 border bg-white rounded-md shadow-lg z-10 ">
             {
                items?.map((item,inx)=>(
                    <div onClick={()=>handleSelected(item)} key={inx}
