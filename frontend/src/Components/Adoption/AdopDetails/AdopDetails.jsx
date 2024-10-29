@@ -26,14 +26,14 @@ const AdopDetails = () => {
         {/* sheleter info */}
         <div className="flex items-center gap-x-3">
           <img
-            width="40"
-            height="20"
-            className="rounded-full"
-            src={adoption?.shelter_photo}
+            width={500}
+            height={500}
+            className="size-20 rounded-full object-cover"
+            src={`${adoption?.shelter_photo ? adoption?.shelter_photo : 'https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}`}
             alt=""
           />
           <div>
-            <h1 className="text-2xl mb-2">{adoption?.shelter_name}</h1>
+            <h1 className="text-2xl mb-1">{adoption?.shelter_name}</h1>
             <p>Location: {adoption?.location}</p>
           </div>
         </div>
@@ -109,7 +109,7 @@ const AdopDetails = () => {
           </div>
         </div>
 
-        <div className="p-6 border bg-white rounded-xl shadow-md space-y-4 my-5 mx-5 md:mx-10">
+        <div className="p-6 border bg-white rounded-xl shadow-md space-y-4 my-5 mx-5 md:mx-10 lg:mx-5">
           {/* <!-- Vaccination Table --> */}
           <div className="overflow-x-auto">
             <table className="min-w-full bg-gray-100 rounded-lg">

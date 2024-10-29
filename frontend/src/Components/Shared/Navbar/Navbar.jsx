@@ -107,6 +107,13 @@ export default function Navbar() {
                   </span>
                 </ActiveRoute>
               </li>
+              <li className="flex items-center">
+                <ActiveRoute to={'dashboard'}>
+                  <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
+                    Dashboard
+                  </span>
+                </ActiveRoute>
+              </li>
             </ul>
             {/*      <!-- Actions --> */}
             <div className="">
