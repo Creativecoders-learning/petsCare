@@ -42,7 +42,7 @@ export default function DashboardLayout() {
                               <div className="flex justify-center items-center h-20 mt-6 border-b border-slate-200">
                                     <Link to="/">
                                           <h2 className="text-[24px] md:text-[28px] font-semibold text-primary">
-                                                Pets Care
+                                                PetsCare
                                           </h2>
                                     </Link>
                               </div>
