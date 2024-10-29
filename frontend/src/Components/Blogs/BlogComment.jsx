@@ -1,22 +1,29 @@
 
+import { useState } from 'react';
 import img from '../../assets/dog3.jpg';
-import useComment from '../../Hooks/api/useComment';
 
 const BlogComment = () => {
-    const {comments} = useComment()
-    const user = true
-    console.log(user);
+    // const {comments} = useComment()
+    const [comments, setComments] = useState([])
+    const [newComment, setNewComment] = useState("")
+
+    const handleAddComment = () => {
+        if (newComment.trim()) {
+            setComments([...comments, newComment]); 
+          setNewComment(""); 
+        }
+      };
 
      //comment adding function
-     const addComment = ()=>{
-        const comment = document.getElementById('comment-input').value;
-        addData('comment', comment)
-    } 
-    function addData(key, newData) {
-        let existingData = JSON.parse(localStorage.getItem(key)) || [];
-        existingData.push(newData);
-        localStorage.setItem(key, JSON.stringify(existingData));
-      }
+    //  const addComment = ()=>{
+    //     const comment = document.getElementById('comment-input').value;
+    //     addData('comment', comment)
+    // } 
+    // function addData(key, newData) {
+    //     let existingData = JSON.parse(localStorage.getItem(key)) || [];
+    //     existingData.push(newData);
+    //     localStorage.setItem(key, JSON.stringify(existingData));
+    //   }
 
     //   show comment in the screen
 //    const showComment = ()=>{
@@ -48,11 +55,16 @@ const BlogComment = () => {
                     </div>
                     {/* comment input */}
                     <div className='flex-1'>
-                        <input id='comment-input' className='p-3 w-full focus:outline-none focus:border-blue-500 focus:ring-2 ' type="text" placeholder='Add a comment' />
+                        <input
+                        onChange={(e) => setNewComment(e.target.value)}
+                        id='comment-input' className='p-3 w-full focus:outline-none' type="text" placeholder='Add a comment' />
                         <hr className=''/>
                         
                         <div className='flex justify-end'>
-                        <button onClick={()=> addComment()} className='bg-primary hover:bg-primaryLight py-2 px-5 rounded-full text-xl font-semibold text-white mt-2'>Comment</button>
+                        <button 
+                        // onClick={()=> addComment()}
+                        onClick={handleAddComment}
+                        className='bg-primary hover:bg-[#cf4137e7] py-2 px-5 rounded-full text-xl font-semibold text-white mt-2'>Comment</button>
                         </div>
                     </div>
             </div>
@@ -67,7 +79,7 @@ const BlogComment = () => {
                         </div>
                         <article>
                         <p className='text-xl'>user name:</p>
-                        <p className='text-2xl '>{c?.comment}</p>
+                        <p className='text-2xl '>{c}</p>
                         </article>
                         </div>
                         // console.log(comment)

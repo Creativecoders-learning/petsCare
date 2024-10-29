@@ -22,6 +22,8 @@ const Blog = () => {
 //   handle filter option
 const handleFilterOption = (value) => {
     setFilterInput(value);
+    console.log(value, 'hello');
+
 }
 
   
@@ -31,19 +33,22 @@ const handleFilterOption = (value) => {
 
   return (
     <>
-      <BlogCategory handleFilterOption={handleFilterOption}/>
           <Container>
-      <div className="flex">
+      <div className="flex w-full mx-auto">
         {/* <BlogBanner /> */}
-        <div className="px-10 ">
-          <h1 className="text-primary text-2xl font-bold pt-10">ALL POSTS</h1>
-          <br />
+        <div className="px-10 lg:flex gap-10">
           {/* <CardBlog /> */}
-            <div className="grid lg:grid-cols-4 grid-cols-1 gap-5 ">
+            <div className="flex-1">
               {blogsByCategory?.map((blog) => (
                 <CardBlog key={blog?.id} blog={blog} />
               ))}
             </div>
+
+            {/* search by category */}
+            <div className="lg:w-1/3">
+             <BlogCategory handleFilterOption={handleFilterOption}/>
+            </div>
+
         </div>
       </div>
           </Container>

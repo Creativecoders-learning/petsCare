@@ -3,12 +3,14 @@ import Container from '../../Components/UI/Container';
 import useBlogs from '../../Hooks/api/useBlogs';
 import { useEffect, useState } from 'react'; 
 import BlogComment from '../../Components/Blogs/BlogComment';
+// import BlogCategory from '../../Components/Blogs/BlogCategory';
 // import Testimonial from '../../Components/Home/Testimonial/Testimonial';
 
 const BlogDetails = () => {
     const {loading, error, blogs} = useBlogs(); 
     const [items, setItems] = useState({})
     const {id} = useParams()
+    
 
     const blog =  blogs?.find(blog => blog.id === Number(id))
 
@@ -24,9 +26,10 @@ const BlogDetails = () => {
     
     return (
         <Container>
-        <div>
-            {/* blog details image */}
-            <div className='w-full lg:h-[60vh] h-[30vh] overflow-hidden m-0 p-0'>
+        <div className='flex gap-5'>
+           <div className='flex-1'>
+             {/* blog details image */}
+             <div className='w-full lg:h-[60vh] h-[30vh] overflow-hidden m-0 p-0'>
                 <img className='w-full h-full object-cover  '
                 // style={{ clipPath: 'inset(5% 0 10% 0)' }}
                 src={blog?.image} alt="" />
@@ -41,7 +44,7 @@ const BlogDetails = () => {
                 
             </article>
              {/* subtitle */}
-             <div className='mt-10 px-5 lg:w-2/3 mx-auto'>
+             <div className='mt-10 lg:w-2/3 mx-auto px-5'>
                {
                     items?.map(item => 
                         <article key={item?.title}>
@@ -50,8 +53,8 @@ const BlogDetails = () => {
                         </article>
                     )
                 }
-                <div className='bg-slate-200 px-3 py-4 border-2 rounded-md my-5 border-l-4 border-l-slate-400'>
-                <p className='font-inter'>Animals are the essence of our planet, showcasing beauty, strength, and diversity. Each species plays a vital role, reminding us of nature's intricate balance and the importance of conservation.</p>
+                <div className='bg-slate-200 px-3 py-4 border-2 rounded-md my-5 border-l-4 border-l-primary'>
+                <p className='font-inter font-bold'>Animals are the essence of our planet, showcasing beauty, strength, and diversity. Each species plays a vital role, reminding us of nature's intricate balance and the importance of conservation.</p>
                 </div>
                 <div className='w-full h-auto'>
                     <img className='w-full h-auto' src={blog?.image} alt="" />
@@ -74,9 +77,11 @@ const BlogDetails = () => {
                 </article>
                 </div>
                 <BlogComment />
-                
             </div>
+           </div>
+            
         </div>
+        
         </Container>
     );
 };
