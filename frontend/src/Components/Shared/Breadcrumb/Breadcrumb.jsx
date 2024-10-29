@@ -14,8 +14,10 @@ const Breadcrumb = ({title}) => {
            <div className='bg-[#F04336] w-72  rounded-xl ' style={{clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)'}}>
                 <h1 className='py-6 px-10 text-3xl text-white font-bold'>{title}</h1>
            </div>
+
            <div className='flex items-start gap-x-3 mt-5'>
             <h1 className='text-xl text-[#F04336] font-bold'>Home | </h1>
+            
            {pathnames.map((value, index) => {
             const to = `/${pathnames.slice(0, index + 1).join('/')}`;
             return index === pathnames.length - 1 ? (

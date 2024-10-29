@@ -3,14 +3,16 @@ import img1 from "../../../assets/dog3.jpg";
 import img2 from "../../../assets/ShopCategories/breed_services_bg.jpg";
 import bg from "../../../assets/ShopCategories/background.jpg";
 import Container from "../../UI/Container";
+import AdoptionFacts from "../Interesting-Facts/AdoptionFacts";
 
 const MeetAdoption = () => {
   return (
     <div
       style={{ backgroundImage: `url(${bg})` }}
+      className="px-10 py-28 bg-contain bg-repeat-round "
     >
       <Container>
-        <div  className="flex items-center justify-center gap-x-5 px-10 py-24">
+        <div  className="flex items-center justify-center gap-x-5 ">
           {/* text container */}
           <div className="lg:w-2/5 space-y-5">
             <h1 className="text-xl font-nunito text-red-500 font-bold">
@@ -65,7 +67,17 @@ const MeetAdoption = () => {
               </div>
             </div>
           </div>
+
         </div>
+
+
+        {/* interesting facts for adopton */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-6 lg:mt-20">
+            <AdoptionFacts title={'dogs are first bred'} percentage={'75%'} />
+            <AdoptionFacts title={'Most dogs are first'} percentage={'259%'} />
+            <AdoptionFacts title={'Dog Breeding'} percentage={'39%'} />
+            <AdoptionFacts title={'Years Of History'} percentage={'45%'} />
+          </div>
       </Container>
     </div>
   );
