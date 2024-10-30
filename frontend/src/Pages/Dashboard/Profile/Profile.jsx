@@ -56,7 +56,7 @@ const Profile = () => {
       return (
             <div className="flex flex-col md:flex-row lg:p-8 bg-gray-50 min-h-screen md:space-x-4 lg:space-x-8 p-4 space-y-8 md:space-y-0">
                   <LeftSidebar user={user} selectedSection={selectedSection} setSelectedSection={setSelectedSection} setIsEditing={setIsEditing} />
-                  <div className="flex-1 w-full bg-white h-fit shadow-lg rounded-lg pb-6 lg:p-6">
+                  <div className="flex-1 w-full bg-white h-fit shadow-lg rounded-lg pb-6 lg:px-6 lg:pt-6 lg:pb-12">
                         {renderSectionContent()}
                   </div>
             </div>
