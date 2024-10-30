@@ -40,7 +40,7 @@ const BlogDetails = () => {
             </article>
                 
             <article className='px-5'>
-                <p className='text-sm text-gray-800 my-5'>{blog?.description}</p>
+                <p className='text-xl text-gray-800 my-5'>{blog?.description}</p>
                 
             </article>
              {/* subtitle */}
@@ -49,7 +49,7 @@ const BlogDetails = () => {
                     items?.map(item => 
                         <article key={item?.title}>
                             <h1 className='text-2xl font-bold text-secondary mt-10 mb-3'>{item?.title} hello</h1>
-                            <p className='text-gray-700 mb-5'>{item?.content}</p>
+                            <p className='text-gray-700 mb-5 text-lg'>{item?.content}</p>
                         </article>
                     )
                 }

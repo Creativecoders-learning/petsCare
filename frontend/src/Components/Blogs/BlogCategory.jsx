@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { FaAngleDoubleRight, FaSearch } from "react-icons/fa";
-import newsLatterImg from '../../assets/news_icon.png'
+import dog from '../../assets/dog1.jpg'
+import dog2 from '../../assets/dog2.jpg'
+import { MdDateRange } from "react-icons/md";
+import NewsLatter from "../UI/NewsLatter";
 
 
 const BlogCategory = ({ handleFilterOption }) => {
@@ -12,10 +15,16 @@ const BlogCategory = ({ handleFilterOption }) => {
     e.preventDefault();
     handleFilterOption(searchValue);
   };
+
+  // handle  category
+  const handleCategory = ()=>{
+    const category = document.getElementsByClassName('.category')
+    console.log(category);
+  }
   return (
     <div className="">
       {/* search box */}
-     <div className="px-7 pb-8 mt- bg-secondaryLight ">
+     <div className="px-7 pb-8 mt-5 bg-secondaryLight ">
      <article>
         <h1 className="relative text-2xl font-bold text-secondary py-6 
         before:content-normal 
@@ -83,15 +92,15 @@ const BlogCategory = ({ handleFilterOption }) => {
         after:bg-primary
         ">Categories</h1>
         <article  className="pt-5">
-          <article className="flex justify-between hover:text-primary">
-          <p className="category" onClick={() => handleFilterOption()}>Dog</p>
+          <article onClick={()=>handleCategory(this)} className="flex justify-between hover:text-primary">
+          <p  className="category">Dog</p>
           <FaAngleDoubleRight />
           </article>
           <hr className="h-4 w-full mt-4"/>
         </article>
         <article className="pt-2">
-          <article className="flex justify-between hover:text-primary">
-          <p>Cat</p>
+          <article onClick={handleCategory} className="flex justify-between hover:text-primary">
+          <p className="category">Cat</p>
           <FaAngleDoubleRight />
           </article>
           <hr className="h-4 w-full mt-4"/>
@@ -112,21 +121,87 @@ const BlogCategory = ({ handleFilterOption }) => {
         </article>
       </article>
 
-        {/* news latter box */}
-        <div className="px-7 py-9 mt- bg-[#143556] my-10 ">
-          <div>
-            <img src={newsLatterImg} alt="" />
-          </div>
-          <article className="text-white text-center">
-            <h1 className="text-2xl font-bold pt-6">Subscribe <br />
-            Newsletter</h1>
-            <p className="font-semibold pt-2 mb-5">Sign-up For Latest News</p>
+        <div className="px-7 pb-3 mt-10 bg-secondaryLight rounded-md ">
+        <h1 className="relative text-2xl font-bold text-secondary py-6 
+        before:content-normal 
+        before:absolute 
+        before:w-1
+        before:h-5
+        before:left-[145px]
+        before:bottom-6
+        before:bg-primary
+        
+        after:content-normal 
+        after:absolute 
+        after:w-1
+        after:h-5
+        after:top-8
+        after:left-[138px]
+        after:bg-primary
+        ">Recent Post</h1>
+          {/* box 1 */}
+          <div className="overflow-hidden rounded  mb-10">
+        {/*  <!-- Image --> */}
+        <figure>
+          <img
+            src={dog}
+            alt="card image"
+            className="aspect-video w-full duration-300"
+          />
+        </figure>
+        {/*  <!-- Body--> */}
+        <div className="p-2">
+          <article className="flex items-center justify-between text-lg font-medium">
+            <article className="flex items-center">
+          <MdDateRange className="text-primary mr-2" />
+            <p> 22 jul 2024</p>
+            </article>
+            <p>By : <span className="text-primary"> Admin</span></p>
+            
           </article>
-          <div className="space-y-5">
-            <input className="py-3 w-full rounded-md text-center outline-none" type="text" name="" id="#" placeholder="Enter Your Email"/>
-            <button className="py-3 w-full bg-primary font-semibold text-xl text-white rounded-md">Subscribe</button>
-          </div>
+          <header className="mb-4 mt-5">
+            <h3 className="text-xl font-bold text-secondary hover:text-primary duration-300">
+            Pet needs special food like human foods
+            </h3>
+           
+          </header>
+        
         </div>
+          </div>
+          {/* box 2 */}
+          <div className="overflow-hidden rounded  mb-10">
+        {/*  <!-- Image --> */}
+        <figure>
+          <img
+            src={dog2}
+            alt="card image"
+            className="aspect-video w-full duration-300"
+          />
+        </figure>
+        {/*  <!-- Body--> */}
+        <div className="p-2">
+          <article className="flex items-center justify-between text-lg font-medium">
+            <article className="flex items-center">
+          <MdDateRange className="text-primary mr-2" />
+            <p> 22 jul 2024</p>
+            </article>
+            <p>By : <span className="text-primary"> Admin</span></p>
+            
+          </article>
+          <header className="mb-4 mt-5">
+            <h3 className="text-xl font-bold text-secondary hover:text-primary duration-300">
+            Pet needs special food like human foods
+            </h3>
+           
+          </header>
+        
+          </div>
+          </div>
+
+        </div>
+
+      {/* news latter */}
+        <NewsLatter />
     </div>
   );
 };

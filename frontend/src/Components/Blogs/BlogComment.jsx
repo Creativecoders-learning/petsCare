@@ -1,124 +1,71 @@
 
-import { useState } from 'react';
-import img from '../../assets/dog3.jpg';
+// import { useState } from 'react';
+// import img from '../../assets/dog3.jpg';
+
+import { useEffect, useState } from "react";
 
 const BlogComment = () => {
-    // const {comments} = useComment()
-    const [comments, setComments] = useState([])
-    const [newComment, setNewComment] = useState("")
-
+    const [comments, setComments] = useState([]);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [commentText, setCommentText] = useState("");
+  
+    // Load comments from localStorage on initial render
+    useEffect(() => {
+      const savedComments = localStorage.getItem("comments");
+      if (savedComments) {
+        setComments(JSON.parse(savedComments));
+      }
+    }, []);
+  
     const handleAddComment = () => {
-        if (newComment.trim()) {
-            setComments([...comments, newComment]); 
-          setNewComment(""); 
-        }
-      };
-
-     //comment adding function
-    //  const addComment = ()=>{
-    //     const comment = document.getElementById('comment-input').value;
-    //     addData('comment', comment)
-    // } 
-    // function addData(key, newData) {
-    //     let existingData = JSON.parse(localStorage.getItem(key)) || [];
-    //     existingData.push(newData);
-    //     localStorage.setItem(key, JSON.stringify(existingData));
-    //   }
-
-    //   show comment in the screen
-//    const showComment = ()=>{
-//     const body = document.getElementById('comment-body')
-//     const comment = document.getElementById('comment-input').value;
-//     const div = document.createElement('div')
-//     div.innerHTML=`
-//         <div className='flex my-9'>
-//                     <div className='w-16 h-16 mr-10'>
-//                         <img className='w-full h-full rounded-full' src="https://i.ibb.co.com/2P6D1Lm/author.jpg" alt="author image" />
-//                     </div>
-//                     <article>
-//                         <p className='text-xl'>user name:</p>
-//                         <p className='text-2xl '>${comment}</p>
-//                     </article>
-//                 </div>
-//     `
-//     body.appendChild(div)
-//    }
-//     showComment()
+      const newComment = { name, email, commentText };
+      
+      // Update the comments array and save it to localStorage
+      const updatedComments = [...comments, newComment];
+      setComments(updatedComments);
+      localStorage.setItem("comments", JSON.stringify(updatedComments));
+      
+      // Clear the input fields
+      setName("");
+      setEmail("");
+      setCommentText("");
+    };
 
     return (
-        <div>
-            {/* add comment section */}
-            <div className='mt-24  p-10 flex gap-2 '>
-                    {/* user image */}
-                    <div className='w-14 h-14 mr-2'>
-                        <img className='w-full h-full rounded-full' src={img} alt="" />
+      <>
+            <div className="px-7 py-8 my-10 bg-secondaryLight rounded-md">
+            <article>
+        <h1 className="relative text-2xl font-bold text-secondary py-6 
+        before:content-normal 
+        before:absolute 
+        before:w-16
+        before:h-[1px]
+        before:left-0
+        before:bottom-0
+        before:bg-primary
+        ">Leave A Reply</h1>
+            </article>
+            {/* input field */}
+                <form onSubmit={(e) => {
+                    e.preventDefault();
+                    handleAddComment();
+                    }} className="">
+                    <div className="mt-7 lg:flex gap-5">
+                        <input onChange={(e) => setName(e.target.value)} className="p-4 outline-none w-full rounded-sm text-lg" type="text" placeholder="Author*" />
+                        <input  onChange={(e) => setEmail(e.target.value)} className="p-4 outline-none w-full rounded-sm text-lg lg:mt-0 mt-5" type="email" placeholder="Email*" />
                     </div>
-                    {/* comment input */}
-                    <div className='flex-1'>
-                        <input
-                        onChange={(e) => setNewComment(e.target.value)}
-                        id='comment-input' className='p-3 w-full focus:outline-none' type="text" placeholder='Add a comment' />
-                        <hr className=''/>
-                        
-                        <div className='flex justify-end'>
-                        <button 
-                        // onClick={()=> addComment()}
-                        onClick={handleAddComment}
-                        className='bg-primary hover:bg-[#cf4137e7] py-2 px-5 rounded-full text-xl font-semibold text-white mt-2'>Comment</button>
+                    <div className="my-5">
+                        <textarea  onChange={(e) => setCommentText(e.target.value)} className="p-4 outline-none w-full rounded-sm text-lg" name="comment" id="" placeholder="Type Comment Here..." rows="4" cols=""></textarea>
+                        <div className="flex gap-2 text-xl text-gray-800 font-medium my-2">
+                        <input type="checkbox" name="checkbox" id="" />
+                        <p>Don't show your email address</p>
                         </div>
+                        <button  className="bg-primary text-white font-bold text-2xl py-3 px-5 mt-7">Submit Now</button>
                     </div>
+                </form>
             </div>
-
-            {/* show comment section */}
-            <div>
-                {
-                    comments?.map(c =>
-                        <div id='comment-body' key={c.comment} className='flex my-9'>
-                        <div className='w-16 h-16 mr-10'>
-                        <img className='w-full h-full rounded-full' src={c?.user} alt="author image" />
-                        </div>
-                        <article>
-                        <p className='text-xl'>user name:</p>
-                        <p className='text-2xl '>{c}</p>
-                        </article>
-                        </div>
-                        // console.log(comment)
-                       )
-                }
-
-
-                {/* comment 1 */}
-                <div className='flex my-9'>
-                    <div className='w-16 h-16 mr-10'>
-                        <img className='w-full h-full rounded-full' src="https://i.ibb.co.com/2P6D1Lm/author.jpg" alt="author image" />
-                    </div>
-                    <article>
-                        <p className='text-xl'>user name:</p>
-                        <p className='text-2xl '>user comment:</p>
-                    </article>
-                </div>
-                {/* comment 2 */}
-                <div className='flex my-9'>
-                    <div className='w-16 h-16 mr-10'>
-                        <img className='w-full h-full rounded-full' src="https://i.ibb.co.com/2P6D1Lm/author.jpg" alt="author image" />
-                    </div>
-                    <article>
-                        <p className='text-xl'>user name:</p>
-                        <p className='text-2xl font-normal'>user comment:</p>
-                    </article>
-                </div>
-                {/* comment 3 */}
-                <div className='flex my-9'>
-                    <div className='w-16 h-16 mr-10'>
-                        <img className='w-full h-full rounded-full' src="https://i.ibb.co.com/2P6D1Lm/author.jpg" alt="author image" />
-                    </div>
-                    <article>
-                        <p className='text-xl'>user name:</p>
-                        <p className='text-2xl'>user comment:</p>
-                    </article>
-                </div>
-            </div>
-        </div>
+      </>
     );
 };
 
