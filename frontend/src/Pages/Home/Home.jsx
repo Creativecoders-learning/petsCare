@@ -18,6 +18,7 @@ const Home = () => {
       <Stats />
       <AdoptionSteps />
       <Products />
+      {/* There will be an vets service section */}
       <PetNews />
       <RelationWithPets />
       <Testimonial />
