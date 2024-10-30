@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#675BC8',
+        primary: '#f04336',
         primaryLight: '#9990DA',
         primaryBold: '#19143D',
-        secondary: '#0A453A',
+        secondary: '#0a303a',
         myGray: "#696984"
       },
       fontFamily: {

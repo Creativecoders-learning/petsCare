@@ -8,7 +8,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 
 export default function ShopCard({ item = {} }) {
   const [imageLoading, setImageLoading] = useState(false);
-  const { id, image, category, title, rating, price } = item;
+  const { id, image, category, title, price } = item;
   const [openModal, setOpenModal] = useState(false);
   const [cartProducts, setCartProducts] = useState([]);
 
@@ -65,7 +65,10 @@ export default function ShopCard({ item = {} }) {
   }, []);
 
   const calculateTotalAmount = () => {
-    return cartProducts.reduce((total, item) => total + item.price * item.quantity, 0);
+    return cartProducts.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
   };
 
   return (
@@ -104,27 +107,31 @@ export default function ShopCard({ item = {} }) {
               ))}
             </div>
             <div className="flex flex-col gap-4 w-full p-4">
-              <div className="flex justify-between items-center text-xl font-medium">
+              <div className="flex justify-between items-center text-2xl font-medium px-2">
                 <span>Total:</span>
-                <span>${calculateTotalAmount()}</span>
+                <span>${calculateTotalAmount().toFixed(2)}</span>
               </div>
               <div className="w-full flex flex-col gap-4 items-center">
-                <Button secondary>View Cart</Button>
-                <Button primary>Checkout</Button>
+                <Link className="w-full" to={"/payment-process?tab=Shipping Cart"}>
+                  <Button secondary>View Cart</Button>
+                </Link>
+                <Link className="w-full" to={"/payment-process?tab=Checkout"}>
+                  <Button primary>Checkout</Button>
+                </Link>
               </div>
             </div>
           </>
         )}
       </Modal>
-      <div className="group p-6 shadow-myCustomShadow rounded-xl flex flex-col justify-between h-[500px]">
+      <div className="group p-4 shadow-myCustomShadow rounded-xl flex flex-col justify-between h-[500px]">
         <Link className="h-[90%]" to={`/productDetails/${id}`}>
           {" "}
           {/* card image */}
-          <figure className="overflow-hidden relative mb-5 h-[60%]">
+          <figure className="w-full h-[60%] overflow-hidden mb-5 p-2">
             {image && (
               <img
                 onLoad={() => setImageLoading(true)}
-                className="w-full h-full object-cover rounded group-hover:scale-[1.1] transition-all duration-500 ease-in-out"
+                className="w-full h-full object-contain rounded group-hover:scale-[1.1] transition-all duration-500 ease-in-out"
                 src={image}
                 alt="course"
               />
@@ -136,31 +143,22 @@ export default function ShopCard({ item = {} }) {
             )}
           </figure>
           {/* card body */}
-          <div className="flex-1 flex flex-col justify-between h-[40%]">
+          <div className="flex-1 flex flex-col justify-between gap-4">
             {" "}
             {/* Ensure the body takes up available space */}
-            <span className="text-[#00CBB8] text-sm font-semibold mb-3 flex items-center gap-2">
+            <span className="text-gray-500 text-sm font-semibold flex items-center gap-2">
               {category}
             </span>
-            {/* Conditionally truncate the title */}
-            <div className="flex items-center justify-between mb-2">
-              <h2 className="text-2xl text-[#2F327D] font-bold font-nunito">
-                {title}
-              </h2>
-            </div>
-            <div className="flex gap-1 justify-start items-center text-[#6E7697] mb-6">
-              {/* <Rating value={rating} /> */}
-              {/* <span className="text-sm text-[#969696]">
-                {rating ? `(${rating})` : "(0)"}
-              </span> */}
-              <p className="text-[#00CBB8] text-xl font-bold font-nunito">
-                ${price}
-              </p>
-            </div>
+            <h2 className="text-2xl text-secondary font-bold font-nunito">
+              {title}
+            </h2>
+            <p className="text-primary text-xl font-bold font-nunito">
+              ${price}
+            </p>
           </div>
         </Link>
         {/* button */}
-        <div className="flex justify-between items-center h-[10%]">
+        <div className="flex justify-between items-center">
           <Button onClick={() => handleCartBtn(item)} primary={true}>
             Add Cart
           </Button>

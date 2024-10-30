@@ -5,6 +5,7 @@ import ShopCard from "../../Components/UI/ShopCard";
 import { useSearchParams } from "react-router-dom";
 import usePetsProducts from "../../Hooks/api/usePetsProducts";
 import PrimaryTitle from "../../Components/UI/PrimaryTitle";
+import PageBanner from "../../Components/UI/PageBanner";
 
 export default function Shop() {
   const { petsProducts } = usePetsProducts();
@@ -32,9 +33,10 @@ export default function Shop() {
   }, [petsProducts, category, subCategory]);
 
   return (
-    <div className="mt-20">
+    <div className="mb-20">
+      <PageBanner title={"Our Shop"} pageName={"Shop"}/>
       <Container>
-        <div className="w-full flex justify-between items-start">
+        <div className="w-full flex justify-between items-start my-10">
           <div className="w-[25%]">
             <FilterOption
               setCategory={setCategory}
