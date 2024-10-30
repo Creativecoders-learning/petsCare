@@ -61,7 +61,7 @@ const MeetAdoption = () => {
                   The best overall dog DNA test is Embark Breed & Health Kit
                   (view at Chewy), which provid dogs
                 </p>
-                <button className="py-3 px-6 rounded-md bg-white text-red-500">
+                <button className="py-3 px-6 rounded-md bg-white text-red-500 text-xl font-bold">
                   More Pets
                 </button>
               </div>

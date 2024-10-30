@@ -15,8 +15,10 @@ import Breadcrumb from "../../Shared/Breadcrumb/Breadcrumb";
 import detailsBg from "../../../assets/adoptionsImg/breeder_details_bg.jpg";
 import DropDown from "../../UI/DropDown";
 import AdoptionButton from "../../UI/AdoptionButton";
+import AnimalCardInfo from "../../UI/AnimalCardInfo";
 
 const AdopDetails = () => {
+  const user = false;
   const { id } = useParams();
   console.log(typeof id);
   const { adoptions } = useAdoptionData();
@@ -30,8 +32,8 @@ const AdopDetails = () => {
     >
       <Breadcrumb title={"Breeder details"}></Breadcrumb>
       <Container>
-        <div className="mt-10 flex flex-col lg:flex-row gap-x-20">
-          <div className="lg:w-4/6 bg-white p-5 lg:p-10">
+        <div className="mt-10 flex flex-col lg:flex-row gap-y-5 gap-x-20">
+          <div className="lg:w-4/6 rounded-lg bg-white p-5 lg:p-10">
             {/* sheleter info */}
             <div className="flex items-center gap-x-3">
               <img
@@ -62,40 +64,99 @@ const AdopDetails = () => {
                 />
               </div>
               <div className="mt-5">
-                <div className="space-y-3 h-3/6 flex flex-col justify-start pb-3">
+                <div className="space-y-3 h-3/6 flex flex-col justify-start pb-3 mb-5">
                   <h1 className="text-2xl font-nunito font-extrabold">
                     {adoption?.animal_name} Story
                   </h1>
                   <p>{adoption?.description}</p>
                 </div>
+
                 <hr />
-                <div className=" h-3/6 mt-5 space-y-2">
-                  <HealthInfo
-                    icon={FaTemperatureHigh}
-                    title={adoption?.temperament}
-                  />
-                  <HealthInfo
-                    icon={FaWeight}
-                    title={`${adoption?.behavior?.good_with_kids}`}
-                  />
-                  <HealthInfo
-                    icon={FaTextHeight}
-                    title={adoption?.behavior?.good_with_other_pets}
-                  />
-                  <HealthInfo
-                    icon={FaWeight}
-                    title={adoption?.behavior?.house_trained}
-                  />
-                  <HealthInfo icon={FaWeight} title={adoption?.weight} />
-                  <HealthInfo icon={FaTextHeight} title={adoption?.height} />
+
+                <div className="space-y-8">
+                  {/* pet information */}
+                  <h1 className="text-2xl mt-5 font-nunito font-extrabold">
+                    Pet Information
+                  </h1>
+
+                  <div className="space-y-5">
+                    {/* adoption basic info */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-x-5 gap-y-5 ">
+                      <AnimalCardInfo
+                        name={"Gender:"}
+                        item={adoption?.gender}
+                      ></AnimalCardInfo>
+                      <AnimalCardInfo
+                        name={"Name:"}
+                        item={adoption?.name}
+                      ></AnimalCardInfo>
+                      <AnimalCardInfo
+                        name={"Color:"}
+                        item={adoption?.color}
+                      ></AnimalCardInfo>
+                      <AnimalCardInfo
+                        name={"Pet ID:"}
+                        item={adoption?.id}
+                      ></AnimalCardInfo>
+                    </div>
+
+                    {/* adoption basic info 2 */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-x-5 gap-y-5 ">
+                      <AnimalCardInfo
+                        name={"Size:"}
+                        item={adoption?.size}
+                      ></AnimalCardInfo>
+                      <AnimalCardInfo
+                        name={"Age:"}
+                        item={adoption?.age}
+                      ></AnimalCardInfo>
+                       <AnimalCardInfo
+                        name={"Breed:"}
+                        item={adoption?.breed}
+                      ></AnimalCardInfo>
+                      <AnimalCardInfo
+                        name={"City:"}
+                        item={adoption?.location}
+                      ></AnimalCardInfo>
+                     
+                    </div>
+                  </div>
+
+                   {/* behavior and health info */}
+                  <div className=" h-3/6 mt-5 space-y-2">
+                   <h1 className="text-2xl mt-5 font-nunito font-extrabold mb-5">Behavior & compatibility</h1>
+                    <HealthInfo
+                      icon={FaTemperatureHigh}
+                      title={adoption?.temperament}
+                    />
+                    <HealthInfo
+                      icon={FaWeight}
+                      title={`${adoption?.behavior?.good_with_kids}`}
+                    />
+                    <HealthInfo
+                      icon={FaTextHeight}
+                      title={adoption?.behavior?.good_with_other_pets}
+                    />
+                    <HealthInfo
+                      icon={FaWeight}
+                      title={adoption?.behavior?.house_trained}
+                    />
+                    <HealthInfo icon={FaWeight} title={adoption?.weight} />
+                    <HealthInfo icon={FaTextHeight} title={adoption?.height} />
+                  </div>
                 </div>
               </div>
             </div>
-            <AdoptionButton text={'Apply to Day'} fullWidth={false}/>
+            <AdoptionButton
+              disabled={!user}
+              text={"Apply to Day"}
+              fullWidth={false}
+              btnStyle={'w-60'}
+            />
           </div>
 
           {/* sidebar */}
-          <div className="lg:w-2/6 bg-white p-10">
+          <div className="lg:w-2/6 rounded-lg bg-white p-10">
             <h1 className="text-3xl font-nunito font-bold text-[#0A453A]">
               Find Your Pets
             </h1>
@@ -155,9 +216,12 @@ const AdopDetails = () => {
                   items={["6 Months", "9 Months", "12 Months"]}
                 ></DropDown>
               </div>
-              
+
               {/* apply button */}
-              <AdoptionButton text={'Adoption Now '} fullWidth={true}></AdoptionButton>
+              <AdoptionButton
+                text={"Find New Pets "}
+                fullWidth={true}
+              ></AdoptionButton>
             </div>
           </div>
         </div>
