@@ -9,9 +9,15 @@ import Blog from "../Pages/Blogs/Blog";
 import AdopDetails from '../Components/Adoption/AdopDetails/AdopDetails';
 import Checkout from '../Pages/Checkout/Checkout';
 import Vets from "../Pages/Vets/Vets";
+import VetsDetails from "../Components/Vets/VetsDetails/VetsDetails";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
 import AllProducts from "../Pages/Shop/AllProducts/AllProducts";
 import ProductDetails from "../Components/Shop/ProductDetails/ProductDetails";
+import Registration from "../Pages/Authentication/Registration/Registration";
+import Login from "../Pages/Authentication/Login/Login";
+import DashboardLayout from "../Layout/DashboardLayout";
+import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
+import PaymentProcess from "../Components/Shop/PaymentProcess/PaymentProcess";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -26,13 +32,32 @@ const router = createBrowserRouter([
       { path: "shop", element: <Shop /> },
       { path: "all-products", element: <AllProducts /> },
       { path: "productDetails/:id", element: <ProductDetails /> },
+      { path: "payment-process", element: <PaymentProcess /> },
       { path: "/blogs", element: <Blog /> },
       { path: "blog-details/:id", element: <BlogDetails /> },
-      { path: "/customer-plan", element: <CustomerPlan /> },
+      { path: "/customer-plan", element: <CustomerPlan /> },      
       { path: '/checkout', element: <Checkout /> },
       { path: "/vets", element: <Vets /> },
+      {
+        path: "/vets-details/:id",
+        element: <VetsDetails />,
+      },
+      { path: "/registration", element: <Registration /> },
+      { path: "/login", element: <Login /> },
     ],
   },
+
+  // Dashboard
+  {
+    path: '/dashboard',
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: 'admin/blog-management',
+        element: <BlogManagement />
+      }
+    ],
+  }
 ]);
 
 export default router;

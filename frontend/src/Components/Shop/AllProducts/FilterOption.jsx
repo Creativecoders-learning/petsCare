@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Button from "../../UI/Button";
 import Dropdown from "../../UI/Form/Dropdown";
 import Inputs from "../../UI/Form/Inputs";

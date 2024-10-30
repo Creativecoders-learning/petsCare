@@ -1,0 +1,213 @@
+[
+    {
+      "id": "1",
+      "name": "Dr. Emily Carter",
+      "degrees": ["DVM", "MS"],
+      "expertise": "Small Animal Surgery",
+      "experience": "8 years",
+      "institute": "University of California, Davis",
+      "instituteLocation": "Davis, CA",
+      "image": "https://cdn.pixabay.com/photo/2019/09/21/18/58/dog-4494554_640.jpg",
+      "awards": [
+        "Veterinarian of the Year (2021)",
+        "Small Animal Surgery Excellence Award (2019)"
+      ],
+      "work_experiences": [
+        {
+          "position": "Senior Veterinarian",
+          "organization": "Pet Care Clinic",
+          "duration": "5 years",
+          "location": "San Francisco, CA"
+        },
+        {
+          "position": "Assistant Veterinarian",
+          "organization": "Happy Paws Veterinary Hospital",
+          "duration": "3 years",
+          "location": "Los Angeles, CA"
+        }
+      ],
+      "education": [
+        {
+          "degree": "Doctor of Veterinary Medicine (DVM)",
+          "institution": "University of California, Davis",
+          "year": "2015"
+        },
+        {
+          "degree": "Master of Science in Veterinary Surgery",
+          "institution": "University of California, Davis",
+          "year": "2017"
+        }
+      ],
+      "about": "Dr. Emily Carter is a highly skilled veterinarian with extensive experience in small animal surgery. With a passion for animal welfare that began early in her life, Dr. Carter pursued her Doctor of Veterinary Medicine (DVM) degree from the prestigious University of California, Davis, where she excelled in clinical skills and specialized in surgery. After completing her DVM in 2015, she went on to attain a Master of Science in Veterinary Surgery. Over the last eight years, she has worked in several top veterinary clinics, currently holding a senior position at Pet Care Clinic in San Francisco.\n\nDr. Carter’s expertise lies in minimally invasive surgical techniques for pets, which she has perfected through years of practice and advanced training. Her commitment to ongoing learning is evident through the numerous workshops she attends and the certifications she has earned. She has a strong background in postoperative care and pain management, which has helped improve recovery outcomes for her patients. Known for her compassionate approach, Dr. Carter spends significant time educating pet owners on preventive care, making her a trusted name in the veterinary community.\n\nThroughout her career, Dr. Carter has been recognized for her contributions to veterinary surgery. In 2019, she received the Small Animal Surgery Excellence Award, and in 2021, she was honored as Veterinarian of the Year by the Animal Health Association. Her goal is to continue advancing veterinary surgical techniques and make high-quality surgical care accessible to pets everywhere.\n\nWhen she’s not in the clinic, Dr. Carter is an advocate for animal adoption and rescue. She often volunteers at animal shelters and enjoys raising awareness about pet health and responsible pet ownership. Dr. Carter is also an avid traveler and enjoys spending time in nature with her own pets. Her dedication to the field, along with her empathy and skill, makes her a standout in the veterinary community."
+    },
+    {
+      "id": "2",
+      "name": "Dr. Michael Brooks",
+      "degrees": ["DVM"],
+      "expertise": "Animal Nutrition",
+      "experience": "12 years",
+      "institute": "Cornell University",
+      "instituteLocation": "Ithaca, NY",
+      "image": "https://cdn.pixabay.com/photo/2023/12/06/19/00/dog-8434227_640.jpg",
+      "awards": ["Animal Nutritionist Award (2020)"],
+      "work_experiences": [
+        {
+          "position": "Veterinary Nutritionist",
+          "organization": "Healthy Pets Clinic",
+          "duration": "7 years",
+          "location": "New York, NY"
+        },
+        {
+          "position": "Animal Nutrition Specialist",
+          "organization": "Pet Wellness Center",
+          "duration": "5 years",
+          "location": "Philadelphia, PA"
+        }
+      ],
+      "education": [
+        {
+          "degree": "Doctor of Veterinary Medicine (DVM)",
+          "institution": "Cornell University",
+          "year": "2011"
+        }
+      ],
+      "about": "Dr. Michael Brooks is a specialized veterinary nutritionist with over a decade of experience..."
+    },
+    {
+      "id": "3",
+      "name": "Dr. Sarah Lin",
+      "degrees": ["DVM", "PhD"],
+      "expertise": "Veterinary Neurology",
+      "experience": "10 years",
+      "institute": "University of Illinois",
+      "instituteLocation": "Urbana, IL",
+      "image": "https://cdn.pixabay.com/photo/2023/12/06/19/00/dog-8434226_640.jpg",
+      "awards": ["Neurology Expert Award (2022)"],
+      "work_experiences": [
+        {
+          "position": "Neurology Specialist",
+          "organization": "Brain and Spine Vet Clinic",
+          "duration": "6 years",
+          "location": "Chicago, IL"
+        },
+        {
+          "position": "Veterinarian",
+          "organization": "Illinois Vet Hospital",
+          "duration": "4 years",
+          "location": "Springfield, IL"
+        }
+      ],
+      "education": [
+        {
+          "degree": "Doctor of Veterinary Medicine (DVM)",
+          "institution": "University of Illinois",
+          "year": "2013"
+        },
+        {
+          "degree": "PhD in Veterinary Neurology",
+          "institution": "University of Illinois",
+          "year": "2016"
+        }
+      ],
+      "about": "Dr. Sarah Lin is an experienced veterinary neurologist..."
+    },
+    {
+      "id": "4",
+      "name": "Dr. Jason Rivera",
+      "degrees": ["DVM", "MSc"],
+      "expertise": "Exotic Animals",
+      "experience": "7 years",
+      "institute": "University of Florida",
+      "instituteLocation": "Gainesville, FL",
+      "image": "https://media.istockphoto.com/id/1443407065/photo/female-veterinarian-with-a-puppy.jpg?s=612x612&w=0&k=20&c=Amu72XxmtYg4DHE7o19uv985nz64UW6ES4zTabqXIzU=",
+      "awards": ["Exotic Animal Care Award (2023)"],
+      "work_experiences": [
+        {
+          "position": "Veterinarian for Exotic Animals",
+          "organization": "Exotic Care Clinic",
+          "duration": "7 years",
+          "location": "Orlando, FL"
+        }
+      ],
+      "education": [
+        {
+          "degree": "Doctor of Veterinary Medicine (DVM)",
+          "institution": "University of Florida",
+          "year": "2015"
+        },
+        {
+          "degree": "Master of Science in Zoology",
+          "institution": "University of Florida",
+          "year": "2017"
+        }
+      ],
+      "about": "Dr. Jason Rivera specializes in exotic animal veterinary care..."
+    },
+    {
+      "id": "5",
+      "name": "Dr. Aisha Khan",
+      "degrees": ["DVM"],
+      "expertise": "Veterinary Dentistry",
+      "experience": "5 years",
+      "institute": "Texas A&M University",
+      "instituteLocation": "College Station, TX",
+      "image": "https://cdn.pixabay.com/photo/2020/11/03/15/31/doctor-5710152_960_720.jpg",
+      "awards": ["Veterinary Dentistry Excellence Award (2021)"],
+      "work_experiences": [
+        {
+          "position": "Veterinary Dentist",
+          "organization": "Texas Vet Dental Clinic",
+          "duration": "5 years",
+          "location": "Houston, TX"
+        }
+      ],
+      "education": [
+        {
+          "degree": "Doctor of Veterinary Medicine (DVM)",
+          "institution": "Texas A&M University",
+          "year": "2018"
+        }
+      ],
+      "about": "Dr. Aisha Khan is a talented veterinary dentist..."
+    },
+    {
+      "id": "6",
+      "name": "Dr. Robert Garcia",
+      "degrees": ["DVM", "MPH"],
+      "expertise": "Epidemiology and Public Health",
+      "experience": "15 years",
+      "institute": "University of Wisconsin",
+      "instituteLocation": "Madison, WI",
+      "image": "https://cdn.pixabay.com/photo/2024/03/15/14/54/ai-generated-8635125_960_720.jpg",
+      "awards": ["Public Health Excellence Award (2022)"],
+      "work_experiences": [
+        {
+          "position": "Veterinary Epidemiologist",
+          "organization": "National Animal Health Institute",
+          "duration": "10 years",
+          "location": "Madison, WI"
+        },
+        {
+          "position": "Public Health Advisor",
+          "organization": "Animal Health Center",
+          "duration": "5 years",
+          "location": "Milwaukee, WI"
+        }
+      ],
+      "education": [
+        {
+          "degree": "Doctor of Veterinary Medicine (DVM)",
+          "institution": "University of Wisconsin",
+          "year": "2005"
+        },
+        {
+          "degree": "Master of Public Health (MPH)",
+          "institution": "University of Wisconsin",
+          "year": "2007"
+        }
+      ],
+      "about": "Dr. Robert Garcia has dedicated his career to veterinary epidemiology..."
+    }
+    
+  ]
+  
