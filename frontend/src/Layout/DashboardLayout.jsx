@@ -58,6 +58,14 @@ export default function DashboardLayout() {
                                                       </span>
                                                 </DashboardActiveLink>
                                           </li>
+                                          <li>
+                                                <DashboardActiveLink to={`/dashboard/profile`}>
+                                                      <span className="flex items-center gap-3 rounded py-3 px-6">
+                                                            <RxDashboard className="block text-[18px]" />
+                                                            <span className="block text-[17px]">Profile</span>
+                                                      </span>
+                                                </DashboardActiveLink>
+                                          </li>
 
                                           {/* Routes for Normal Users */}
 
