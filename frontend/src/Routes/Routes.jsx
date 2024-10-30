@@ -15,6 +15,7 @@ import Registration from "../Pages/Authentication/Registration/Registration";
 import Login from "../Pages/Authentication/Login/Login";
 import DashboardLayout from "../Layout/DashboardLayout";
 import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
+import Profile from "../Pages/Dashboard/Profile/Profile";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: 'admin/blog-management',
         element: <BlogManagement />
+      },
+      {
+        path: 'profile',
+        element: <Profile />
       }
     ],
   }
