@@ -11,7 +11,7 @@ const Breadcrumb = ({title}) => {
     return (
         <div style={{backgroundImage: `url(${img})`}} className="bg-cover h-[16rem] flex flex-col items-start justify-center pl-10">
            <div className='bg-[#F04336] w-max  rounded-xl ' style={{clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)'}}>
-                <h1 className='py-6 pl-5 pr-10 text-3xl text-left text-white font-bold'>{title}</h1>
+                <h1 className='py-6 pl-5 pr-16 text-3xl text-left text-white font-bold'>{title}</h1>
            </div>
 
            <div className='flex items-start gap-x-3 mt-5'>

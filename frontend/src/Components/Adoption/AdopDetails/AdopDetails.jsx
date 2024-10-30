@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useAdoptionData from "../../../Hooks/useAdoptionData";
 import Container from "../../UI/Container";
 import { MdTransgender } from "react-icons/md";
@@ -18,7 +18,7 @@ import AdoptionButton from "../../UI/AdoptionButton";
 import AnimalCardInfo from "../../UI/AnimalCardInfo";
 
 const AdopDetails = () => {
-  const user = false;
+  const user = true;
   const { id } = useParams();
   console.log(typeof id);
   const { adoptions } = useAdoptionData();
@@ -147,12 +147,14 @@ const AdopDetails = () => {
                 </div>
               </div>
             </div>
+            <Link to={`/get-started`}>
             <AdoptionButton
               disabled={!user}
-              text={"Apply to Day"}
+              text={"Adoption"}
               fullWidth={false}
               btnStyle={'w-60'}
             />
+            </Link>
           </div>
 
           {/* sidebar */}
