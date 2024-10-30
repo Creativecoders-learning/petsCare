@@ -15,6 +15,7 @@ import Registration from "../Pages/Authentication/Registration/Registration";
 import Login from "../Pages/Authentication/Login/Login";
 import DashboardLayout from "../Layout/DashboardLayout";
 import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
+import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStarted";
 import Profile from "../Pages/Dashboard/Profile/Profile";
 
 const router = createBrowserRouter([
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/adoption', element: <Adoption /> },
       { path: '/adoptionDetails/:id', element: <AdopDetails></AdopDetails> },
+      {path:'/get-Started', element:<GetStarted></GetStarted>},
       { path: '/shop', element: <Shop /> },
       { path: '/blogs', element: <Blog /> },
       { path: '/blog-details/:id', element: <BlogDetails /> },

@@ -10,9 +10,9 @@ const FAQAdoption = () => {
 
 
   return (
-    <div className="flex">
+    <div className="flex flex-col lg:flex-row">
       {/* image container */}
-      <div className="lg:w-1/2 min-h-[24rem] bg-green-200 flex no-gap rounded-s-md ">
+      <div className="lg:w-1/2 lg:min-h-[24rem] bg-green-200 flex no-gap rounded-s-md ">
         <img src={img} className='size-full' alt="" />
       </div>
 
