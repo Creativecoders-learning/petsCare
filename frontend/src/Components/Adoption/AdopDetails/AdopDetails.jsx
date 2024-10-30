@@ -16,6 +16,7 @@ import detailsBg from "../../../assets/adoptionsImg/breeder_details_bg.jpg";
 import DropDown from "../../UI/DropDown";
 import AdoptionButton from "../../UI/AdoptionButton";
 import AnimalCardInfo from "../../UI/AnimalCardInfo";
+import NewsLatter from "../../UI/NewsLatter";
 
 const AdopDetails = () => {
   const user = true;
@@ -225,6 +226,9 @@ const AdopDetails = () => {
                 fullWidth={true}
               ></AdoptionButton>
             </div>
+
+            {/* newletter */}
+            <NewsLatter></NewsLatter>
           </div>
         </div>
       </Container>
