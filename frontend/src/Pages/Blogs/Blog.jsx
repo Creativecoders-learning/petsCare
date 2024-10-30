@@ -3,14 +3,13 @@ import BlogCategory from "../../Components/Blogs/BlogCategory";
 import CardBlog from "../../Components/Blogs/CardBlog";
 import Container from "../../Components/UI/Container";
 import useBlogs from "../../Hooks/api/useBlogs";
-// import SideBar from '../../Components/Blogs/SideBar';
 
 const Blog = () => {
   const { blogs, loading, error } = useBlogs();
   const [blogsByCategory, setBlogsByCategory] = useState([]);
   const [filterInput, setFilterInput] = useState("");
 
-  console.log(blogsByCategory);
+  // console.log(blogs);
 
   useEffect(() => {
     setBlogsByCategory(blogs);
@@ -23,6 +22,8 @@ const Blog = () => {
 //   handle filter option
 const handleFilterOption = (value) => {
     setFilterInput(value);
+    console.log(value, 'hello');
+
 }
 
   
@@ -32,22 +33,25 @@ const handleFilterOption = (value) => {
 
   return (
     <>
-      <BlogCategory handleFilterOption={handleFilterOption}/>
-      <div className="flex">
-        {/* <BlogBanner /> */}
-        <div className="px-10 ">
-          <h1 className="text-2xl font-bold pt-10">ALL POSTS</h1>
-          <br />
-          {/* <CardBlog /> */}
           <Container>
-            <div className="grid lg:grid-cols-4 grid-cols-1 gap-5 ">
+      <div className="flex w-full mx-auto">
+        {/* <BlogBanner /> */}
+        <div className="px-10 lg:flex gap-10">
+          {/* <CardBlog /> */}
+            <div className="flex-1">
               {blogsByCategory?.map((blog) => (
                 <CardBlog key={blog?.id} blog={blog} />
               ))}
             </div>
-          </Container>
+
+            {/* search by category */}
+            <div className="lg:w-1/3">
+             <BlogCategory handleFilterOption={handleFilterOption}/>
+            </div>
+
         </div>
       </div>
+          </Container>
     </>
   );
 };
