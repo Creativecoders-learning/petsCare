@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { IMAGES } from "../../Image-data";
 import Button from "../UI/Button";
 
@@ -32,7 +33,10 @@ export default function ShopCategories() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-x-6 gap-y-16">
       {categories?.map((item, index) => (
-        <div className="group relative cursor-pointer rounded-lg overflow-hidden" key={index}>
+        <div
+          className="group relative cursor-pointer rounded-lg overflow-hidden"
+          key={index}
+        >
           <img
             className="w-full rounded-lg transition-all duration-300 group-hover:scale-[1.2]"
             src={item.image}
@@ -44,7 +48,9 @@ export default function ShopCategories() {
               <h3 className="text-3xl">{item.title}</h3>
               <p className="text-xl">{item.description}</p>
             </div>
-            <Button primary={true}>Shop Now</Button>
+            <Link to={`/all-products?category=${item.title}&subCategory=Foods`}>
+              <Button primary={true}>Shop Now</Button>
+            </Link>
           </div>
         </div>
       ))}
