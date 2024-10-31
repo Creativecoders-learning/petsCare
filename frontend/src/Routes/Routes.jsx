@@ -17,6 +17,7 @@ import DashboardLayout from "../Layout/DashboardLayout";
 import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
 import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStarted";
 import Profile from "../Pages/Dashboard/Profile/Profile";
+import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/adoption', element: <Adoption /> },
       { path: '/adoptionDetails/:id', element: <AdopDetails></AdopDetails> },
-      {path:'/get-Started', element:<GetStarted></GetStarted>},
+      { path: '/get-Started', element: <GetStarted></GetStarted> },
       { path: '/shop', element: <Shop /> },
       { path: '/blogs', element: <Blog /> },
       { path: '/blog-details/:id', element: <BlogDetails /> },
@@ -50,13 +51,17 @@ const router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {
+        path: 'profile',
+        element: <Profile />
+      },
+      {
         path: 'admin/blog-management',
         element: <BlogManagement />
       },
       {
-        path: 'profile',
-        element: <Profile />
-      }
+        path: 'admin/user-management',
+        element: <UserManagement />
+      },
     ],
   }
 ]);
