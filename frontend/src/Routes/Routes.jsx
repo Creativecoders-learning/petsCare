@@ -20,6 +20,8 @@ import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
 import PaymentProcess from "../Components/Shop/PaymentProcess/PaymentProcess";
 import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStarted";
 import Profile from "../Pages/Dashboard/Profile/Profile";
+import ShopManagement from "../Pages/Dashboard/Admin/ShopManagement/ShopManagement";
+import MyProducts from "../Pages/Dashboard/NormalUser/MyProducts/MyProducts";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -62,6 +64,14 @@ const router = createBrowserRouter([
       {
         path: 'profile',
         element: <Profile />
+      },
+      {
+        path: 'admin/shop-management',
+        element: <ShopManagement />
+      },
+      {
+        path: 'normalUser/my-products',
+        element: <MyProducts />
       }
     ],
   }
