@@ -28,6 +28,14 @@ light-red:#C30000
 warning:#F4B740
 success:#00BA88 */
 
+.navbar-img{
+  background-image: url('https://kutto.netlify.app/img/bg/header_shape.png');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
 
 /* Custom scrollbar styles */
 .custom-scrollbar::-webkit-scrollbar {
