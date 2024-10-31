@@ -1,5 +1,4 @@
-import React from "react";
-import { FaGraduationCap, FaUser, FaCheckCircle, FaClock } from "react-icons/fa";
+import { FaGraduationCap,FaCheckCircle, FaClock } from "react-icons/fa";
 import PrimaryTitle from "../../UI/PrimaryTitle";
 
 const AccountSettings = ({ user }) => (
@@ -11,7 +10,7 @@ const AccountSettings = ({ user }) => (
                   <div className="flex items-center space-x-3 text-gray-700">
                         <FaGraduationCap className="text-indigo-500" />
                         <p className="font-medium">
-                              <span className="text-gray-900 font-semibold">Role:</span> {user?.accountSettings.role || "N/A"}
+                              <span className="text-gray-900 font-semibold">Role:</span> {user?.accountSettings?.role || "N/A"}
                         </p>
                   </div>
 
@@ -19,7 +18,7 @@ const AccountSettings = ({ user }) => (
                   <div className="flex items-center space-x-3 text-gray-700">
                         <FaCheckCircle className="text-green-500" />
                         <p className="font-medium">
-                              <span className="text-gray-900 font-semibold">Status:</span> {user?.accountSettings.status || "N/A"}
+                              <span className="text-gray-900 font-semibold">Status:</span> {user?.accountSettings?.status || "N/A"}
                         </p>
                   </div>
 
@@ -27,7 +26,7 @@ const AccountSettings = ({ user }) => (
                   <div className="flex items-center space-x-3 text-gray-700">
                         <FaClock className="text-blue-500" />
                         <p className="font-medium">
-                              <span className="text-gray-900 font-semibold">Last Login:</span> {user?.accountSettings.lastLogin || "N/A"}
+                              <span className="text-gray-900 font-semibold">Last Login:</span> {user?.accountSettings?.lastLogin || "N/A"}
                         </p>
                   </div>
             </div>
