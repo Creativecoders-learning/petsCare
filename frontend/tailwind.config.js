@@ -8,6 +8,7 @@ export default {
         primaryLight: '#9990DA',
         primaryBold: '#19143D',
         secondary: '#0a303a',
+        secondaryLight: '#f4f2eb',
         myGray: "#696984"
       },
       fontFamily: {

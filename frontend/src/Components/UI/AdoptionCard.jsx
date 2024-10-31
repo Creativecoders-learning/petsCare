@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -29,7 +28,7 @@ const AdoptionCard = ({ item }) => {
         </div>
 
         <Link to={`/adoptionDetails/${item.id}`}>
-          <button className="rounded-full bg-[#675BC8] px-6 py-3 text-[12px] font-semibold text-white hover:bg-indigo-600 sm:text-sm md:text-base">
+          <button className="rounded-full bg-[#0A453A] px-6 py-3 text-[12px] font-semibold text-white hover:bg-red-600 sm:text-sm md:text-base">
             <FaArrowRight />
           </button>
         </Link>

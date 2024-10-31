@@ -18,6 +18,8 @@ import Login from "../Pages/Authentication/Login/Login";
 import DashboardLayout from "../Layout/DashboardLayout";
 import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
 import PaymentProcess from "../Components/Shop/PaymentProcess/PaymentProcess";
+import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStarted";
+import Profile from "../Pages/Dashboard/Profile/Profile";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -36,6 +38,7 @@ const router = createBrowserRouter([
       { path: "/blogs", element: <Blog /> },
       { path: "blog-details/:id", element: <BlogDetails /> },
       { path: "/customer-plan", element: <CustomerPlan /> },      
+      {path:'/get-Started', element:<GetStarted></GetStarted>},
       { path: '/checkout', element: <Checkout /> },
       { path: "/vets", element: <Vets /> },
       {
@@ -55,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: 'admin/blog-management',
         element: <BlogManagement />
+      },
+      {
+        path: 'profile',
+        element: <Profile />
       }
     ],
   }

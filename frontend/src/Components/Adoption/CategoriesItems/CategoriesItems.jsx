@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
 
 import useAdoptionData from '../../../Hooks/useAdoptionData';
-import MeetPets from '../../UI/MeetPets';
+import AdoptionCard from '../../UI/AdoptionCard';
 
 const CategoriesItems = ({ selectedCategory }) => {
   const { adoptions } = useAdoptionData();
@@ -13,8 +12,7 @@ const CategoriesItems = ({ selectedCategory }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
       {categories.map((item) => (
-        
-        <MeetPets key={item.id} item={item}></MeetPets>
+        <AdoptionCard key={item.id} item={item}></AdoptionCard>
       ))}
     </div>
   );
