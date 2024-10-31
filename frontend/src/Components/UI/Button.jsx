@@ -17,7 +17,7 @@ const Button = ({
   const secondaryClasses =
     'bg-[#fff] text-primary border-primary hover:bg-primary hover:text-white  hover:outline outline-primaryLight';
 
-  const defaultClasses = `inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide border border-2 transition duration-300 rounded-md whitespace-nowrap  focus:text-white focus:bg-primaryBold focus-visible:outline-none disabled:cursor-not-allowed disabled:border-primaryLight disabled:bg-primaryLight disabled:shadow-none`;
+  const defaultClasses = `w-full inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide border border-2 transition duration-300 rounded-md whitespace-nowrap  focus:text-white focus:bg-primaryBold focus-visible:outline-none disabled:cursor-not-allowed disabled:border-primaryLight disabled:bg-primaryLight disabled:shadow-none`;
 
   const appliedClasses = `${defaultClasses} ${
     primary ? primaryClasses : secondary ? secondaryClasses : ''
