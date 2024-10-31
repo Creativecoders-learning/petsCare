@@ -20,6 +20,7 @@ import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
 import PaymentProcess from "../Components/Shop/PaymentProcess/PaymentProcess";
 import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStarted";
 import Profile from "../Pages/Dashboard/Profile/Profile";
+import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -56,13 +57,17 @@ const router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {
+        path: 'profile',
+        element: <Profile />
+      },
+      {
         path: 'admin/blog-management',
         element: <BlogManagement />
       },
       {
-        path: 'profile',
-        element: <Profile />
-      }
+        path: 'admin/user-management',
+        element: <UserManagement />
+      },
     ],
   }
 ]);
