@@ -82,7 +82,6 @@ const VetManagement = () => {
                   {openModal && (
                         <Modal primary={true} openModal={openModal} setOpenModal={setOpenModal}>
                               <ModalContent selectedVet={selectedVet}/>
-
                         </Modal>
                   )}
             </div>
