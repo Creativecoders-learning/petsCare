@@ -162,6 +162,16 @@ export default function DashboardLayout() {
                                                             </DashboardActiveLink>
                                                       </li>
                                                       <li>
+                                                            <DashboardActiveLink to="/dashboard/admin/vet-management">
+                                                                  <span className="flex items-center gap-3 rounded py-3 px-6">
+                                                                        <IoListSharp className="block text-[18px]" />
+                                                                        <span className="block text-[17px]">
+                                                                              Vet Management
+                                                                        </span>
+                                                                  </span>
+                                                            </DashboardActiveLink>
+                                                      </li>
+                                                      <li>
                                                             <DashboardActiveLink to="/dashboard/admin/adoption-history">
                                                                   <span className="flex items-center gap-3 rounded py-3 px-6">
                                                                         <MdOutlinePets className="block text-[18px]" />
