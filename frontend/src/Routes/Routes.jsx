@@ -21,6 +21,7 @@ import PaymentProcess from "../Components/Shop/PaymentProcess/PaymentProcess";
 import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStarted";
 import Profile from "../Pages/Dashboard/Profile/Profile";
 import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
+import MyServices from "../Pages/Dashboard/Vet/MyServices";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -38,8 +39,8 @@ const router = createBrowserRouter([
       { path: "payment-process", element: <PaymentProcess /> },
       { path: "/blogs", element: <Blog /> },
       { path: "blog-details/:id", element: <BlogDetails /> },
-      { path: "/customer-plan", element: <CustomerPlan /> },      
-      {path:'/get-Started', element:<GetStarted></GetStarted>},
+      { path: "/customer-plan", element: <CustomerPlan /> },
+      { path: '/get-Started', element: <GetStarted></GetStarted> },
       { path: '/checkout', element: <Checkout /> },
       { path: "/vets", element: <Vets /> },
       {
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
       {
         path: 'admin/user-management',
         element: <UserManagement />
+      },
+      {
+        path: 'vet/my-services',
+        element: <MyServices />
       },
     ],
   }
