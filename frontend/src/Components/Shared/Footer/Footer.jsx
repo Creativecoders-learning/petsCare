@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import Container from '../../UI/Container';
+import { Link } from "react-router-dom";
+import Container from "../../UI/Container";
 import {
   FaFacebook,
   FaInstagram,
@@ -7,19 +7,19 @@ import {
   FaPhone,
   FaTumblr,
   FaYoutube,
-} from 'react-icons/fa6';
+} from "react-icons/fa6";
 
-import { MdEmail } from 'react-icons/md';
-import Button from '../../UI/Button';
-import { SlSocialPintarest } from 'react-icons/sl';
+import { MdEmail } from "react-icons/md";
+import Button from "../../UI/Button";
+import { SlSocialPintarest } from "react-icons/sl";
 
 const Footer = () => {
   return (
     <>
-      <footer className=" text-primary font-inter h-full w-full bg-gray-200 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border border-gray-200">
+      <footer className="relative footer-img  text-primary font-inter h-full w-full rounded-md">
         {/* Main Footer */}
         <Container className="">
-          <div className="border-t border-slate-200  py-16 px-6 text-sm">
+          <div className="border-t border-slate-200  py-28 px-6 text-sm">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* How Can We Help Section */}
               <div className="space-y-4">
@@ -69,7 +69,7 @@ const Footer = () => {
                 </p>
                 <p className="flex items-center space-x-2">
                   <span className="text-primary ">
-                    {' '}
+                    {" "}
                     <MdEmail />
                   </span>
                   <span>PetsCareSupport@gmail.com</span>
@@ -97,9 +97,13 @@ const Footer = () => {
             </div>
           </div>
         </Container>
-
+        <img
+          className="w-full h-[20%] absolute top-[-10%] z-20"
+          src="https://kutto.netlify.app/img/bg/header_shape.png"
+          alt=""
+        />
         {/* Sub Footer */}
-        <div className="bg-primary py-4 text-white text-center text-sm">
+        <div className="relative bg-secondary py-4 text-white text-center text-sm">
           <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
             <span className="text-base">©2024 FurryFriends</span>
             <div className="flex space-x-4 mt-2 md:mt-0 text-base md:text-xl">
@@ -120,6 +124,13 @@ const Footer = () => {
               </Link>
             </div>
           </div>
+          <img
+            className="w-full absolute top-[-30%]"
+            src="https://kutto.netlify.app/img/bg/copyright_shape.png"
+            alt=""
+          />
+            <img className="absolute left-[5%] bottom-[50%]" src="https://kutto.netlify.app/img/images/footer_shape01.png" alt="" />
+            <img className="absolute right-[10%] bottom-[100%]" src="https://kutto.netlify.app/img/images/footer_shape02.png" alt="" />
         </div>
       </footer>
     </>
