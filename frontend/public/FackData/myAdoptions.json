@@ -1,0 +1,67 @@
+[
+    {
+      "id": 1,
+      "name": "Buddy",
+      "image": "https://example.com/images/buddy.jpg",
+      "category": "Dog",
+      "date": "2024-10-31",
+      "status": "Published"
+    },
+    {
+      "id": 2,
+      "name": "Whiskers",
+      "image": "https://example.com/images/whiskers.jpg",
+      "category": "Cat",
+      "date": "2024-10-30",
+      "status": "Processed"
+    },
+    {
+      "id": 3,
+      "name": "Tweety",
+      "image": "https://example.com/images/tweety.jpg",
+      "category": "Bird",
+      "date": "2024-10-29",
+      "status": "Published"
+    },
+    {
+      "id": 4,
+      "name": "Fluffy",
+      "image": "https://example.com/images/fluffy.jpg",
+      "category": "Rabbit",
+      "date": "2024-10-28",
+      "status": "Processed"
+    },
+    {
+      "id": 5,
+      "name": "Max",
+      "image": "https://example.com/images/max.jpg",
+      "category": "Dog",
+      "date": "2024-10-27",
+      "status": "Published"
+    },
+    {
+      "id": 6,
+      "name": "Bella",
+      "image": "https://example.com/images/bella.jpg",
+      "category": "Cat",
+      "date": "2024-10-26",
+      "status": "Processed"
+    },
+    {
+      "id": 7,
+      "name": "Polly",
+      "image": "https://example.com/images/polly.jpg",
+      "category": "Bird",
+      "date": "2024-10-25",
+      "status": "Published"
+    },
+    {
+      "id": 8,
+      "name": "Snowball",
+      "image": "https://example.com/images/snowball.jpg",
+      "category": "Rabbit",
+      "date": "2024-10-24",
+      "status": "Published"
+    }
+  ]
+  

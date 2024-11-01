@@ -20,6 +20,8 @@ import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
 import PaymentProcess from "../Components/Shop/PaymentProcess/PaymentProcess";
 import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStarted";
 import Profile from "../Pages/Dashboard/Profile/Profile";
+import MyAdoption from "../Pages/Dashboard/NormalUser/MyAdoption/MyAdoption";
+import UserChatAdoption from "../Pages/Dashboard/NormalUser/CreateAdoption/UserChatAdoption";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -62,6 +64,14 @@ const router = createBrowserRouter([
       {
         path: 'profile',
         element: <Profile />
+      },
+      {
+        path: 'normalUser/my-adoptions',
+        element: <MyAdoption></MyAdoption>
+      },
+      {
+        path: 'normalUser/user-adoptions',
+        element: <UserChatAdoption></UserChatAdoption>
       }
     ],
   }
