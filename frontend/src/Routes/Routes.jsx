@@ -23,6 +23,9 @@ import Profile from "../Pages/Dashboard/Profile/Profile";
 import ShopManagement from "../Pages/Dashboard/Admin/ShopManagement/ShopManagement";
 import MyProducts from "../Pages/Dashboard/NormalUser/MyProducts/MyProducts";
 import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
+import MyServices from "../Pages/Dashboard/Vet/MyServices";
+import Patients from "../Pages/Dashboard/Vet/Patients";
+import VetManagement from "../Pages/Dashboard/Admin/VetManagement";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -81,6 +84,18 @@ const router = createBrowserRouter([
       {
         path: "admin/user-management",
         element: <UserManagement />,
+      },
+      {
+        path: 'admin/vet-management',
+        element: <VetManagement />
+      },
+      {
+        path: 'vet/my-services',
+        element: <MyServices />
+      },
+      {
+        path: 'vet/patients',
+        element: <Patients />
       },
     ],
   },
