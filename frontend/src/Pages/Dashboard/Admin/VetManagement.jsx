@@ -3,6 +3,7 @@ import PrimaryTitle from "../../../Components/UI/PrimaryTitle";
 import useVetsData from "../../../Hooks/api/useVetsData";
 import { FaTrash, FaEye } from "react-icons/fa"; // Importing the icons
 import Modal from '../../../Components/UI/Modal';
+import ModalContent from "../../../Components/Dashboard/Admin/VetManagement/ModalContent";
 
 const VetManagement = () => {
       const { vets } = useVetsData();
@@ -80,76 +81,9 @@ const VetManagement = () => {
                   {/* Conditionally render the details modal */}
                   {openModal && (
                         <Modal primary={true} openModal={openModal} setOpenModal={setOpenModal}>
-                              <div className="w-full max-w-3xl rounded-lg">
-                                    <PrimaryTitle titleStyle="text-primaryBold font-semibold">
-                                          Veterinarian Details
-                                    </PrimaryTitle>
-                                    {selectedVet && (
-                                          <div className="space-y-4">
-                                                {/* Image and Basic Info */}
-                                                <div className="flex items-center space-x-6">
-                                                      <img
-                                                            src={selectedVet.image}
-                                                            alt={selectedVet.name}
-                                                            className="w-24 h-24 rounded-full object-cover shadow-md"
-                                                      />
-                                                      <div>
-                                                            <p className="text-lg font-semibold text-gray-700">{selectedVet.name}</p>
-                                                            <p className="text-base text-gray-600"><strong>Expertise:</strong> {selectedVet.expertise}</p>
-                                                            <p className="text-base text-gray-600"><strong>Experience:</strong> {selectedVet.experience}</p>
-                                                      </div>
-                                                </div>
+                              <ModalContent selectedVet={selectedVet}/>
 
-                                                {/* Degrees and Education */}
-                                                <div>
-                                                      <p className="text-lg font-semibold text-primary">Degrees</p>
-                                                      <ul className="list-disc list-inside text-gray-600 ml-5">
-                                                            {selectedVet.degrees.map((degree, index) => (
-                                                                  <li key={index}>{degree}</li>
-                                                            ))}
-                                                      </ul>
-                                                </div>
-
-                                                <div>
-                                                      <p className="text-lg font-semibold text-primary">Education</p>
-                                                      <ul className="list-disc list-inside text-gray-600 ml-5">
-                                                            {selectedVet.education.map((edu, index) => (
-                                                                  <li key={index}>{edu}</li>
-                                                            ))}
-                                                      </ul>
-                                                </div>
-
-                                                {/* Institute Information */}
-                                                <div>
-                                                      <p className="text-lg font-semibold text-primary">Institute</p>
-                                                      <p className="text-gray-600">{selectedVet.institute}</p>
-                                                      <p className="text-gray-500">{selectedVet.instituteLocation}</p>
-                                                </div>
-
-                                                {/* Work Experience */}
-                                                <div>
-                                                      <p className="text-lg font-semibold text-primary">Work Experience</p>
-                                                      <ul className="list-disc list-inside text-gray-600 ml-5">
-                                                            {selectedVet.work_experiences.map((exp, index) => (
-                                                                  <li key={index}>{exp}</li>
-                                                            ))}
-                                                      </ul>
-                                                </div>
-
-                                                {/* Awards */}
-                                                <div>
-                                                      <p className="text-lg font-semibold text-primary">Awards</p>
-                                                      <ul className="list-disc list-inside text-gray-600 ml-5">
-                                                            {selectedVet.awards.map((award, index) => (
-                                                                  <li key={index}>{award}</li>
-                                                            ))}
-                                                      </ul>
-                                                </div>
-                                          </div>
-                                    )}
-                              </div>
                         </Modal>
-
                   )}
             </div>
       );
