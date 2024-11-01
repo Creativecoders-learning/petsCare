@@ -22,6 +22,7 @@ import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStart
 import Profile from "../Pages/Dashboard/Profile/Profile";
 import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
 import MyServices from "../Pages/Dashboard/Vet/MyServices";
+import Patients from "../Pages/Dashboard/Vet/Patients";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: 'vet/my-services',
         element: <MyServices />
+      },
+      {
+        path: 'vet/patients',
+        element: <Patients />
       },
     ],
   }
