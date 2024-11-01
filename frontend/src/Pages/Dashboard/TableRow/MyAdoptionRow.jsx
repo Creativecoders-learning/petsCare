@@ -34,7 +34,7 @@ const MyAdoptionRow = ({item,index}) => {
     <td className="p-4 font-medium">{item?.name}</td>
     <td className="p-4">{item?.category}</td>
     <td className="p-4">{item?.date}</td>
-    <td className="p-4">{item?.rating}</td>
+    <td className="p-4">{item?.status}</td>
     <td className="p-4 flex items-center justify-center space-x-3">
           <button
                 onClick={() => setIsOpen(true)}

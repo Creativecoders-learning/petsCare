@@ -5,12 +5,18 @@ const useMyAdoptionData = () => {
     const [myAdoptions,setMyAdoptions]=useState([])
 
     useEffect(()=>{
-        fetch('myAdoptions.json')
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data)
-            setMyAdoptions(data)
-        })
+        fetch('/myAdoptions.json')
+  .then(response => {
+    console.log(response); 
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+    setMyAdoptions(data)
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  });
     },[])
 
     return [myAdoptions]
