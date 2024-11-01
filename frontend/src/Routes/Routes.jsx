@@ -6,8 +6,8 @@ import Adoption from "../Pages/Adoption/Adoption";
 import Shop from "../Pages/Shop/Shop";
 import Home from "../Pages/Home/Home";
 import Blog from "../Pages/Blogs/Blog";
-import AdopDetails from '../Components/Adoption/AdopDetails/AdopDetails';
-import Checkout from '../Pages/Checkout/Checkout';
+import AdopDetails from "../Components/Adoption/AdopDetails/AdopDetails";
+import Checkout from "../Pages/Checkout/Checkout";
 import Vets from "../Pages/Vets/Vets";
 import VetsDetails from "../Components/Vets/VetsDetails/VetsDetails";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
@@ -22,6 +22,7 @@ import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStart
 import Profile from "../Pages/Dashboard/Profile/Profile";
 import ShopManagement from "../Pages/Dashboard/Admin/ShopManagement/ShopManagement";
 import MyProducts from "../Pages/Dashboard/NormalUser/MyProducts/MyProducts";
+import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -39,9 +40,9 @@ const router = createBrowserRouter([
       { path: "payment-process", element: <PaymentProcess /> },
       { path: "/blogs", element: <Blog /> },
       { path: "blog-details/:id", element: <BlogDetails /> },
-      { path: "/customer-plan", element: <CustomerPlan /> },      
-      {path:'/get-Started', element:<GetStarted></GetStarted>},
-      { path: '/checkout', element: <Checkout /> },
+      { path: "/customer-plan", element: <CustomerPlan /> },
+      { path: "/get-Started", element: <GetStarted></GetStarted> },
+      { path: "/checkout", element: <Checkout /> },
       { path: "/vets", element: <Vets /> },
       {
         path: "/vets-details/:id",
@@ -54,27 +55,35 @@ const router = createBrowserRouter([
 
   // Dashboard
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: <DashboardLayout />,
     children: [
       {
-        path: 'admin/blog-management',
-        element: <BlogManagement />
+        path: "profile",
+        element: <Profile />,
       },
       {
-        path: 'profile',
-        element: <Profile />
+        path: "admin/blog-management",
+        element: <BlogManagement />,
       },
       {
-        path: 'admin/shop-management',
-        element: <ShopManagement />
+        path: "profile",
+        element: <Profile />,
       },
       {
-        path: 'normalUser/my-products',
-        element: <MyProducts />
-      }
+        path: "admin/shop-management",
+        element: <ShopManagement />,
+      },
+      {
+        path: "normalUser/my-products",
+        element: <MyProducts />,
+      },
+      {
+        path: "admin/user-management",
+        element: <UserManagement />,
+      },
     ],
-  }
+  },
 ]);
 
 export default router;
