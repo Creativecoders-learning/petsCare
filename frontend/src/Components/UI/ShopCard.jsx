@@ -113,10 +113,10 @@ export default function ShopCard({ item = {} }) {
               </div>
               <div className="w-full flex flex-col gap-4 items-center">
                 <Link className="w-full" to={"/payment-process?tab=Shipping Cart"}>
-                  <Button secondary>View Cart</Button>
+                  <Button secondary btnStyle="w-full">View Cart</Button>
                 </Link>
                 <Link className="w-full" to={"/payment-process?tab=Checkout"}>
-                  <Button primary>Checkout</Button>
+                  <Button primary btnStyle="w-full">Checkout</Button>
                 </Link>
               </div>
             </div>
@@ -159,7 +159,7 @@ export default function ShopCard({ item = {} }) {
         </Link>
         {/* button */}
         <div className="flex justify-between items-center">
-          <Button onClick={() => handleCartBtn(item)} primary={true}>
+          <Button btnStyle="w-full" onClick={() => handleCartBtn(item)} primary={true}>
             Add Cart
           </Button>
         </div>

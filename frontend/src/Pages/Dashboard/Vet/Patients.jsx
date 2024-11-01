@@ -1,17 +1,13 @@
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import PrimaryTitle from "../../../Components/UI/PrimaryTitle";
-
-const patientsData = [
-      { id: 1, patientName: "Buddy", ownerName: "John Doe", age: "3 years", species: "Dog", breed: "Golden Retriever", medicalIssue: "Skin Allergy", appointmentDate: "2024-10-25", treatmentStatus: "Ongoing" },
-      { id: 2, patientName: "Whiskers", ownerName: "Jane Smith", age: "5 years", species: "Cat", breed: "Siamese", medicalIssue: "Dental Issues", appointmentDate: "2024-10-10", treatmentStatus: "Completed" },
-      { id: 3, patientName: "Bella", ownerName: "Mark Johnson", age: "1 year", species: "Dog", breed: "Bulldog", medicalIssue: "Ear Infection", appointmentDate: "2024-09-30", treatmentStatus: "Ongoing" },
-      { id: 4, patientName: "Snowball", ownerName: "Emily Davis", age: "2 years", species: "Rabbit", breed: "Angora", medicalIssue: "Digestive Problems", appointmentDate: "2024-09-20", treatmentStatus: "Completed" }
-];
+import usePatientsData from "../../../Hooks/api/usePatientData";
 
 const Patients = () => {
+      const { patients } = usePatientsData();
 
-      const handleStatusChange = (id, newStatus) => {
-            console.log(id, newStatus);
-
+      const handleChatClick = (id) => {
+            console.log("Chat with patient ID:", id);
+            // Additional chat handling logic goes here
       };
 
       return (
@@ -21,38 +17,34 @@ const Patients = () => {
                         <table className="min-w-full">
                               <thead>
                                     <tr className="bg-primary text-white text-left">
-                                          <th className="text-sm p-4 font-medium">#</th>
-                                          <th className="text-sm p-4 font-medium">Patient Name</th>
-                                          <th className="text-sm p-4 font-medium">Owner Name</th>
-                                          <th className="text-sm p-4 font-medium">Age</th>
-                                          <th className="text-sm p-4 font-medium">Species</th>
-                                          <th className="text-sm p-4 font-medium">Breed</th>
-                                          <th className="text-sm p-4 font-medium">Medical Issue</th>
-                                          <th className="text-sm p-4 font-medium">Appointment Date</th>
-                                          <th className="text-sm p-4 font-medium">Treatment Status</th>
+                                          <th className="p-4 font-semibold">#</th>
+                                          <th className="p-4 font-semibold">Image</th>
+                                          <th className="p-4 font-semibold">Patient Name</th>
+                                          <th className="p-4 font-semibold">Email & Location</th>
+                                          <th className="p-4 font-semibold">Species</th>
+                                          <th className="p-4 font-semibold">Action</th>
                                     </tr>
                               </thead>
                               <tbody className="text-gray-700">
-                                    {patientsData?.map((patient, index) => (
+                                    {patients?.map((patient, index) => (
                                           <tr key={patient?.id} className={`${index % 2 === 0 ? "bg-primaryLight bg-opacity-10" : "bg-white"}`}>
-                                                <td className="text-sm p-4 font-medium">{index + 1}</td>
-                                                <td className="text-sm p-4 font-medium">{patient?.patientName}</td>
-                                                <td className="text-sm p-4">{patient?.ownerName}</td>
-                                                <td className="text-sm p-4">{patient?.age}</td>
-                                                <td className="text-sm p-4">{patient?.species}</td>
-                                                <td className="text-sm p-4">{patient?.breed}</td>
-                                                <td className="text-sm p-4">{patient?.medicalIssue}</td>
-                                                <td className="text-sm p-4">{patient?.appointmentDate}</td>
-                                                <td className="text-sm p-4">
-                                                      <select
-                                                            value={patient?.treatmentStatus}
-                                                            onChange={(e) => handleStatusChange(patient?.id, e.target.value)}
-                                                            className="border p-2 rounded"
+                                                <td className="text-base p-4 font-medium">{index + 1}</td>
+                                                <td className="p-4">
+                                                      <img src={patient?.image} alt={patient?.patientName} className="w-12 h-12 object-cover rounded-md shadow-md" />
+                                                </td>
+                                                <td className="text-base p-4 font-medium">{patient?.patientName}</td>
+                                                <td className="text-base p-4">
+                                                      <p>{patient?.email}</p>
+                                                      <span className="text-gray-500 text-sm">{patient?.location}</span>
+                                                </td>
+                                                <td className="text-base p-4">{patient?.species}</td>
+                                                <td className="text-base p-4 text-center">
+                                                      <button
+                                                            onClick={() => handleChatClick(patient?.id)}
+                                                            className="text-primary hover:text-primaryDark text-2xl"
                                                       >
-                                                            <option value="Pending">Pending</option>
-                                                            <option value="Ongoing">Ongoing</option>
-                                                            <option value="Completed">Completed</option>
-                                                      </select>
+                                                            <IoChatbubbleEllipsesOutline />
+                                                      </button>
                                                 </td>
                                           </tr>
                                     ))}
