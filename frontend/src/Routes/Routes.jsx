@@ -23,6 +23,15 @@ import Profile from "../Pages/Dashboard/Profile/Profile";
 import NormalUserBlog from "../Pages/Blogs/NormalUserBlog";
 import VetBlog from "../Pages/Blogs/VetBlog";
 import PaiChart from "../Components/UI/PaiChart";
+import ShopManagement from "../Pages/Dashboard/Admin/ShopManagement/ShopManagement";
+import MyProducts from "../Pages/Dashboard/NormalUser/MyProducts/MyProducts";
+import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
+import MyServices from "../Pages/Dashboard/Vet/MyServices";
+import Patients from "../Pages/Dashboard/Vet/Patients";
+import VetManagement from "../Pages/Dashboard/Admin/VetManagement";
+import Appointments from "../Pages/Dashboard/Vet/Appoinments";
+import AdoptionHistory from "../Pages/Dashboard/Admin/AdoptionHistory";
+import Adoptions from "../Pages/Dashboard/NormalUser/Adoptions";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -74,12 +83,46 @@ const router = createBrowserRouter([
       {
         path: 'normal-user/blogs',
         element: <NormalUserBlog />
+      },{
+        path: "admin/shop-management",
+        element: <ShopManagement />,
       },
       // vet user
       {
         path: 'vet/blogs',
         element: <VetBlog />
-      }
+      },{
+        path: "normalUser/my-products",
+        element: <MyProducts />,
+      },
+      {
+        path: "normalUser/adoptions",
+        element: <Adoptions />,
+      },
+      {
+        path: "admin/user-management",
+        element: <UserManagement />,
+      },
+      {
+        path: 'admin/vet-management',
+        element: <VetManagement />
+      },
+      {
+        path: 'admin/adoption-history',
+        element: <AdoptionHistory />
+      },
+      {
+        path: 'vet/appointments',
+        element: <Appointments />
+      },
+      {
+        path: 'vet/my-services',
+        element: <MyServices />
+      },
+      {
+        path: 'vet/patients',
+        element: <Patients />
+      },
     ],
   },
 ]);

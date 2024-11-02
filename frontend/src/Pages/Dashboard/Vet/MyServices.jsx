@@ -1,16 +1,26 @@
 import PrimaryTitle from "../../../Components/UI/PrimaryTitle";
 import { FaTrash, FaEdit } from "react-icons/fa";
 import useVetServices from "../../../Hooks/api/useVetServices";
+import { useState } from "react";
+import Modal from "../../../Components/UI/Modal";
+import ServiceModalContent from "../../../Components/Dashboard/Admin/MyServices/ServiceModalContent";
+import Button from "../../../Components/UI/Button";
+import AddServiceModal from "../../../Components/Dashboard/Admin/MyServices/AddServiceModal";
 
 const MyServices = () => {
+
+      const [selectedVetService, setSelectedVetService] = useState(null); // State for selected vet
+      const [openModal, setOpenModal] = useState(false);
+      const [modalType, setModalType] = useState("")
 
       const email = ""; // Replace with the desired email
       const { vetServices } = useVetServices(email);
 
 
-      const handleEditService = (id) => {
-            console.log(`Editing service with ID: ${id}`);
-            // Place edit functionality here
+      const handleEditService = (service) => {
+            setSelectedVetService(service);
+            setModalType("edit-service")
+            setOpenModal(true)
       };
 
       const handleDeleteService = (id) => {
@@ -18,9 +28,17 @@ const MyServices = () => {
             // Place delete functionality here
       };
 
+      const handleAddServices = () => {
+            setModalType("add-service")
+            setOpenModal(true)
+      }
+
       return (
             <div className="p-8 font-inter">
-                  <PrimaryTitle titleStyle="text-primaryBold font-semibold">My Services</PrimaryTitle>
+                  <div className="flex justify-between items-center">
+                        <PrimaryTitle titleStyle="text-primaryBold font-semibold">My Services</PrimaryTitle>
+                        <Button onClick={handleAddServices} secondary>Add Service</Button>
+                  </div>
 
                   <div className="custom-scrollbar h-[80vh] overflow-y-auto shadow-myCustomShadow bg-white rounded-lg">
                         <table className="min-w-full border border-gray-200">
@@ -50,7 +68,7 @@ const MyServices = () => {
                                                             <FaEdit />
                                                       </button>
                                                       <button
-                                                            onClick={() => handleDeleteService(service?.id)}
+                                                            onClick={() => handleDeleteService(service)}
                                                             className="p-2 text-white bg-red-500 rounded-full hover:bg-red-600 transition duration-150"
                                                       >
                                                             <FaTrash />
@@ -61,9 +79,15 @@ const MyServices = () => {
                               </tbody>
                         </table>
                   </div>
-                  {vetServices?.length === 0 && (
-                        <p className="mt-4 text-center text-gray-600">No services found.</p>
+
+                  {/* Conditionally render the details modal */}
+                  {openModal && (
+                        <Modal primary={true} openModal={openModal} setOpenModal={setOpenModal}>
+                              {modalType === 'add-service' && <AddServiceModal />}
+                              {modalType === 'edit-service' && <ServiceModalContent selectedVetService={selectedVetService} />}
+                        </Modal>
                   )}
+
             </div>
       );
 };
