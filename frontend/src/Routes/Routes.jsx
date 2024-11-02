@@ -28,6 +28,7 @@ import Patients from "../Pages/Dashboard/Vet/Patients";
 import VetManagement from "../Pages/Dashboard/Admin/VetManagement";
 import Appointments from "../Pages/Dashboard/Vet/Appoinments";
 import AdoptionHistory from "../Pages/Dashboard/Admin/AdoptionHistory";
+import Adoptions from "../Pages/Dashboard/NormalUser/Adoptions";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: "normalUser/my-products",
         element: <MyProducts />,
+      },
+      {
+        path: "normalUser/adoptions",
+        element: <Adoptions />,
       },
       {
         path: "admin/user-management",
