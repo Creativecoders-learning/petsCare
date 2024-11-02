@@ -4,6 +4,7 @@ import img2 from "../../../assets/ShopCategories/breed_services_bg.jpg";
 import bg from "../../../assets/ShopCategories/background.jpg";
 import Container from "../../UI/Container";
 import AdoptionFacts from "../Interesting-Facts/AdoptionFacts";
+import SectionContent from "../../UI/SectionContent";
 
 const MeetAdoption = () => {
   return (
@@ -13,19 +14,10 @@ const MeetAdoption = () => {
     >
       <Container>
         <div  className="flex flex-col lg:flex-row items-center justify-center gap-x-5 gap-y-10 ">
-          {/* text container */}
-          <div className="lg:w-2/5 space-y-5">
-            <h1 className="text-xl font-nunito text-red-500 font-bold">
-              Meet Adoption
-            </h1>
-            <h1 className="text-[#0A453A] text-3xl md:text-4xl lg:text-5xl font-nunito font-extrabold">
-              Work For <span className="text-red-500">Adoption</span> Happy Time
-            </h1>
-            <p className="text-lg text-gray-500 font-nunito">
-              The best overall dog DNA test is Embark Breed & Health Kit view at
-              Chewy which pres domesti dog is a sticated descendant.
-            </p>
-            <div className="space-y-2">
+          <div className="lg:w-2/5 ">
+            <SectionContent alignStayle={'text-left'} tag={' Meet Adoption'} first={'Work For'} span={'Adoption'} second={'Happy Time'} text={'The best overall dog DNA test is Embark Breed & Health Kit view at Chewy which pres domesti dog is a sticated descendant.'}/>
+
+            <div className="space-y-2 mt-5">
             <div className="flex items-center gap-x-2">
               <FaArrowRight></FaArrowRight>
               <p className="text-[#0A453A] text-base font-nunito font-bold">

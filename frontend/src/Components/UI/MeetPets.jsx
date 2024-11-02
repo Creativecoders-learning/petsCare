@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const MeetPets = ({item}) => {
     return (
-        <div className="max-w-[350px] md:w-[350px] min-h-[300px] mx-auto space-y-4 p-6  rounded hover:border duration-500 flex flex-col items-center justify-center ">
+      <div className=" min-h-[300px] mx-auto space-y-4 p-3 text-center rounded  duration-500 flex flex-col items-center justify-center ">
       {/* Card Image */}
       <img
         width={500}
@@ -23,10 +23,10 @@ const MeetPets = ({item}) => {
                 Age: {item?.age}
               </h2>
             </div>
-            <h2 className="text-[#0A453A] hover:text-red-600 sm:text-lg md:text-3xl font-nunito font-bold dark:text-black">
+            <h2 className="text-[#0A453A] hover:text-red-600 sm:text-lg md:text-2xl font-nunito font-bold dark:text-black">
               {item?.breed}
             </h2>
-            <p>{item?.description.length > 80 ? item?.description.slice(0,80) : item?.description}... </p>
+            <p className="w-[280px]">{item?.description.length > 80 ? item?.description.slice(0,80) : item?.description}... </p>
 
           </div>
 

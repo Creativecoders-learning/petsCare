@@ -1,0 +1,130 @@
+[
+      {
+            "id": 1,
+            "vetName": "Dr. Sarah Parker",
+            "email": "sarah.parker@vetclinic.com",
+            "serviceType": "Vaccination",
+            "serviceDescription": "Provides regular vaccination for dogs and cats.",
+            "price": "$50"
+      },
+      {
+            "id": 2,
+            "vetName": "Dr. Michael Lee",
+            "email": "michael.lee@vetclinic.com",
+            "serviceType": "Surgery",
+            "serviceDescription": "Performs general surgeries including spaying and neutering.",
+            "price": "$300"
+      },
+      {
+            "id": 3,
+            "vetName": "Dr. Sarah Parker",
+            "email": "sarah.parker@vetclinic.com",
+            "serviceType": "Dental Care",
+            "serviceDescription": "Dental cleaning and oral care for pets.",
+            "price": "$80"
+      },
+      {
+            "id": 4,
+            "vetName": "Dr. Emma Brown",
+            "email": "emma.brown@vetclinic.com",
+            "serviceType": "Checkup",
+            "serviceDescription": "Routine health checkups for pets.",
+            "price": "$40"
+      },
+      {
+            "id": 5,
+            "vetName": "Dr. Michael Lee",
+            "email": "michael.lee@vetclinic.com",
+            "serviceType": "Emergency Care",
+            "serviceDescription": "24/7 emergency care services for all pets.",
+            "price": "$500"
+      },
+      {
+            "id": 6,
+            "vetName": "Dr. Sarah Parker",
+            "email": "sarah.parker@vetclinic.com",
+            "serviceType": "Spay & Neuter",
+            "serviceDescription": "Professional spay and neuter services to control pet population.",
+            "price": "$120"
+      },
+      {
+            "id": 7,
+            "vetName": "Dr. Michael Lee",
+            "email": "michael.lee@vetclinic.com",
+            "serviceType": "Behavioral Consultation",
+            "serviceDescription": "Consultation for behavioral issues and training tips.",
+            "price": "$150"
+      },
+      {
+            "id": 8,
+            "vetName": "Dr. Sarah Parker",
+            "email": "sarah.parker@vetclinic.com",
+            "serviceType": "Nutrition Counseling",
+            "serviceDescription": "Diet planning and nutrition advice for pets.",
+            "price": "$90"
+      },
+      {
+            "id": 9,
+            "vetName": "Dr. Michael Lee",
+            "email": "michael.lee@vetclinic.com",
+            "serviceType": "Microchipping",
+            "serviceDescription": "Microchipping services for pet identification.",
+            "price": "$60"
+      },
+      {
+            "id": 10,
+            "vetName": "Dr. Sarah Parker",
+            "email": "sarah.parker@vetclinic.com",
+            "serviceType": "Dermatology",
+            "serviceDescription": "Skin treatments and care for pets with allergies or skin issues.",
+            "price": "$110"
+      },
+      {
+            "id": 11,
+            "vetName": "Dr. Michael Lee",
+            "email": "michael.lee@vetclinic.com",
+            "serviceType": "Radiology",
+            "serviceDescription": "Imaging services to diagnose internal issues.",
+            "price": "$250"
+      },
+      {
+            "id": 12,
+            "vetName": "Dr. Sarah Parker",
+            "email": "sarah.parker@vetclinic.com",
+            "serviceType": "Orthopedic Care",
+            "serviceDescription": "Specialized care for bone and joint health in pets.",
+            "price": "$400"
+      },
+      {
+            "id": 13,
+            "vetName": "Dr. Michael Lee",
+            "email": "michael.lee@vetclinic.com",
+            "serviceType": "Cardiology",
+            "serviceDescription": "Heart health evaluations and treatment for pets.",
+            "price": "$350"
+      },
+      {
+            "id": 14,
+            "vetName": "Dr. Sarah Parker",
+            "email": "sarah.parker@vetclinic.com",
+            "serviceType": "Oncology",
+            "serviceDescription": "Cancer diagnosis and treatment for pets.",
+            "price": "$500"
+      },
+      {
+            "id": 15,
+            "vetName": "Dr. Michael Lee",
+            "email": "michael.lee@vetclinic.com",
+            "serviceType": "Grooming",
+            "serviceDescription": "Basic grooming services for pets.",
+            "price": "$70"
+      },
+      {
+            "id": 16,
+            "vetName": "Dr. Bayezid",
+            "email": "kmbayezid955@gmail.com",
+            "serviceType": "Grooming",
+            "serviceDescription": "Basic grooming services for pets.",
+            "price": "$70"
+      }
+]

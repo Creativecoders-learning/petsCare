@@ -15,7 +15,7 @@ export default function DashboardLayout() {
       // const user = useUser();
       const user = {
             accountSettings:{
-                  role: 'Vet'
+                  role: 'NormalUser'
             }
       }
 

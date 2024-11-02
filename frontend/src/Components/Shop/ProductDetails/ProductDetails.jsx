@@ -95,13 +95,13 @@ export default function ProductDetails() {
             </div>
             {/* buttons */}
             <div className="w-full flex gap-4 items-center">
-              <Link to={"/payment-process"} className="w-full">
-              <Button primary={true}>
+              <Link to={"/payment-process"}>
+              <Button primary={true} btnStyle="w-full">
                 Buy Now
               </Button>
               </Link>
-              <Link to={"/payment-process"} className="w-full">
-                <Button secondary={true}>
+              <Link to={"/payment-process"}>
+                <Button secondary={true} btnStyle="w-full">
                   Shopping Cart
                 </Button>
               </Link>

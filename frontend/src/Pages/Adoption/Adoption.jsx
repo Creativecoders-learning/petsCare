@@ -2,6 +2,7 @@ import Categories from "../../Components/Adoption/AdoptionCategories/Categories"
 import Beginning from "../../Components/Adoption/Beginning/Beginning";
 import FAQAdoption from "../../Components/Adoption/FAQAdoption/FAQAdoption";
 import MeetAdoption from "../../Components/Adoption/Meet-adoption/MeetAdoption";
+import Puppies from "../../Components/Adoption/Puppies/Puppies";
 import Breadcrumb from "../../Components/Shared/Breadcrumb/Breadcrumb";
 
 
@@ -12,6 +13,7 @@ const Adoption = () => {
            <MeetAdoption></MeetAdoption>
            <Categories></Categories>
            <FAQAdoption></FAQAdoption>
+           <Puppies></Puppies>
            <Beginning></Beginning>
       </div>
     );

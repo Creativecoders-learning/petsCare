@@ -6,8 +6,8 @@ import Adoption from "../Pages/Adoption/Adoption";
 import Shop from "../Pages/Shop/Shop";
 import Home from "../Pages/Home/Home";
 import Blog from "../Pages/Blogs/Blog";
-import AdopDetails from '../Components/Adoption/AdopDetails/AdopDetails';
-import Checkout from '../Pages/Checkout/Checkout';
+import AdopDetails from "../Components/Adoption/AdopDetails/AdopDetails";
+import Checkout from "../Pages/Checkout/Checkout";
 import Vets from "../Pages/Vets/Vets";
 import VetsDetails from "../Components/Vets/VetsDetails/VetsDetails";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
@@ -40,9 +40,9 @@ const router = createBrowserRouter([
       { path: "payment-process", element: <PaymentProcess /> },
       { path: "/blogs", element: <Blog /> },
       { path: "blog-details/:id", element: <BlogDetails /> },
-      { path: "/customer-plan", element: <CustomerPlan /> },      
-      {path:'/get-Started', element:<GetStarted></GetStarted>},
-      { path: '/checkout', element: <Checkout /> },
+      { path: "/customer-plan", element: <CustomerPlan /> },
+      { path: "/get-Started", element: <GetStarted></GetStarted> },
+      { path: "/checkout", element: <Checkout /> },
       { path: "/vets", element: <Vets /> },
       {
         path: "/vets-details/:id",
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
 
   // Dashboard
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: <DashboardLayout />,
     children: [
       {
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
         element: <VetBlog />
       }
     ],
-  }
+  },
 ]);
 
 export default router;
