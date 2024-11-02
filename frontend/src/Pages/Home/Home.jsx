@@ -1,29 +1,25 @@
+import Puppies from '../../Components/Adoption/Puppies/Puppies';
+import About from '../../Components/Home/About/About';
 import AdoptionSteps from '../../Components/Home/AdoptionSteps/AdoptionSteps';
-import AppCard from '../../Components/Home/AppCard/AppCard';
 import Banner from '../../Components/Home/Banner/Banner';
-import DetailCard from '../../Components/Home/DetailCard.jsx/DetailCard';
-import Faq from '../../Components/Home/Faq/Faq';
 import PetNews from '../../Components/Home/PetNews/PetNews';
 import Products from '../../Components/Home/Products/Products';
-import RelationWithPets from '../../Components/Home/RelationWithPets/RelationWithPets';
 import Stats from '../../Components/Home/Stats/Stats';
-import Testimonial from '../../Components/Home/Testimonial/Testimonial';
 import Container from '../../Components/UI/Container';
 
 const Home = () => {
   return (
-    <Container className="font-inter">
+    <div>
       <Banner />
-      <DetailCard />
+      <Container className="font-inter">
+      <About></About>
+      <Puppies></Puppies>
       <Stats />
       <AdoptionSteps />
       <Products />
       <PetNews />
-      <RelationWithPets />
-      <Testimonial />
-      <Faq />
-      <AppCard />
     </Container>
+    </div>
   );
 };
 export default Home;

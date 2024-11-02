@@ -20,6 +20,8 @@ import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
 import PaymentProcess from "../Components/Shop/PaymentProcess/PaymentProcess";
 import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStarted";
 import Profile from "../Pages/Dashboard/Profile/Profile";
+import MyAdoption from "../Pages/Dashboard/NormalUser/MyAdoption/MyAdoption";
+import UserChatAdoption from "../Pages/Dashboard/NormalUser/CreateAdoption/UserChatAdoption";
 import ShopManagement from "../Pages/Dashboard/Admin/ShopManagement/ShopManagement";
 import MyProducts from "../Pages/Dashboard/NormalUser/MyProducts/MyProducts";
 import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
@@ -69,6 +71,13 @@ const router = createBrowserRouter([
         element: <Profile />,
       },
       {
+        path: 'normalUser/my-adoptions',
+        element: <MyAdoption></MyAdoption>
+      },
+      {
+        path: 'normalUser/user-adoptions',
+        element: <UserChatAdoption></UserChatAdoption>
+      },{
         path: "admin/blog-management",
         element: <BlogManagement />,
       },

@@ -1,26 +1,23 @@
-import Button from '../../UI/Button';
+import AdoptionButton from '../../UI/AdoptionButton';
 const BannerLeft = () => {
   return (
-    <div className="h-full flex flex-col p-4 items-start justify-center">
-      <div className="text-5xl md:text-7xl mt-5  font-inter text-center ">
-        <h2 className=" text-secondary ">Give a New Life to</h2>
-        <div className="font-acme mt-5">
-          <h2 className=" text-primaryLight">
-            Furry <span className="text-primaryBold">Friends</span>
+    <div className="h-full flex flex-col p-4 items-start justify-center ">
+      <div className="mt-5 text-center lg:text-left ">
+        <h2 className="text-5xl md:text-6xl font-extrabold text-white font-nunito">Give a New Life to</h2>
+        <div className="font-nunito mt-5">
+          <h2 className="text-4xl md:text-6xl font-bold text-primary">
+             Pet care
           </h2>
         </div>
       </div>
-      <p className="text-xl mt-5 text-justify">
+      <p className="w-full text-center lg:text-left lg:mx-0 lg:w-3/5 text-xl mt-5  text-gray-300">
         Pet adoption and rehoming are both vital aspects of animal welfare,
         offering hope and a fresh start to pets in need.
       </p>
-      <div className="flex justify-between items-center mt-8 w-full gap-6">
-        <Button primary btnStyle="w-3/4">
-          Adopt me
-        </Button>
-        <Button secondary btnStyle="w-3/4">
-          Rehome Now
-        </Button>
+      <div className="flex justify-center lg:justify-start items-center mt-8 w-full gap-6">
+        <AdoptionButton text={'Adoption'} btnStyle={'w-48 '}/>
+        <AdoptionButton text={'Rehome Now'} btnStyle={'w-48 '}/>
+        
       </div>
     </div>
   );

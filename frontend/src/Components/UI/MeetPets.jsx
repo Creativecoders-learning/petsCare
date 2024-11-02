@@ -26,8 +26,7 @@ const MeetPets = ({item}) => {
             <h2 className="text-[#0A453A] hover:text-red-600 sm:text-lg md:text-2xl font-nunito font-bold dark:text-black">
               {item?.breed}
             </h2>
-            <p className="w-[280px]">{item?.description.length > 80 ? item?.description.slice(0,80) : item?.description}... </p>
-
+            <p className="w-[280px]">{item?.description.length > 80 ? item?.description.slice(0,60) : item?.description}... </p>
           </div>
 
         <Link to={`/adoptionDetails/${item.id}`}>
