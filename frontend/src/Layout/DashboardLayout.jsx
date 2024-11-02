@@ -7,12 +7,17 @@ import { AiOutlineMedicineBox } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 import { MdOutlinePets } from "react-icons/md";
 import DashboardActiveLink from "../Components/UI/DashboardActiveLink";
-import useUser from "../Hooks/api/useUser";
+// import useUser from "../Hooks/api/useUser";
 
 export default function DashboardLayout() {
       const [isSideNavOpen, setIsSideNavOpen] = useState(false);
 
-      const user = useUser();
+      // const user = useUser();
+      const user = {
+            accountSettings:{
+                  role: 'Vet'
+            }
+      }
 
       const handleNavToggle = () => {
             setIsSideNavOpen((prev) => !prev);
@@ -100,14 +105,14 @@ export default function DashboardLayout() {
                                                             </DashboardActiveLink>
                                                       </li>
                                                       <li>
-                                                            <DashboardActiveLink to="/dashboard/normalUser/blogs">
+                                                            <DashboardActiveLink to="/dashboard/normal-user/blogs">
                                                                   <span className="flex items-center gap-3 rounded py-3 px-6">
                                                                         <FaBlog className="block text-[18px]" />
                                                                         <span className="block text-[17px]">Blogs</span>
                                                                   </span>
                                                             </DashboardActiveLink>
                                                       </li>
-                                                </>
+                                                </> 
                                           )}
 
                                           {/* for vet */}

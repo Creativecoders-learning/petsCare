@@ -20,6 +20,9 @@ import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
 import PaymentProcess from "../Components/Shop/PaymentProcess/PaymentProcess";
 import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStarted";
 import Profile from "../Pages/Dashboard/Profile/Profile";
+import NormalUserBlog from "../Pages/Blogs/NormalUserBlog";
+import VetBlog from "../Pages/Blogs/VetBlog";
+import PaiChart from "../Components/UI/PaiChart";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -56,12 +59,26 @@ const router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {
+        path: '/dashboard',
+        element: <PaiChart />
+      },
+      {
         path: 'admin/blog-management',
         element: <BlogManagement />
       },
       {
         path: 'profile',
         element: <Profile />
+      },
+      // normal user
+      {
+        path: 'normal-user/blogs',
+        element: <NormalUserBlog />
+      },
+      // vet user
+      {
+        path: 'vet/blogs',
+        element: <VetBlog />
       }
     ],
   }

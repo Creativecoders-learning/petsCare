@@ -3,6 +3,7 @@ import Container from '../../Components/UI/Container';
 import useBlogs from '../../Hooks/api/useBlogs';
 import { useEffect, useState } from 'react'; 
 import BlogComment from '../../Components/Blogs/BlogComment';
+import RecentBlogs from '../../Components/Blogs/RecentBlogs';
 // import BlogCategory from '../../Components/Blogs/BlogCategory';
 // import Testimonial from '../../Components/Home/Testimonial/Testimonial';
 
@@ -40,11 +41,12 @@ const BlogDetails = () => {
             </article>
                 
             <article className='px-5'>
-                <p className='text-xl text-gray-800 my-5'>{blog?.description}</p>
-                
+                <p className='text-xl text-gray-800 my-5'>{blog?.description}</p>     
             </article>
-             {/* subtitle */}
-             <div className='mt-10 lg:w-2/3 mx-auto px-5'>
+
+            <article className='lg:flex gap-5'>
+                 {/* subtitle */}
+             <div className='mt-10 px-5 flex-1'>
                {
                     items?.map(item => 
                         <article key={item?.title}>
@@ -78,6 +80,12 @@ const BlogDetails = () => {
                 </div>
                 <BlogComment />
             </div>
+                <div className='lg:w-1/3 '>
+                    <RecentBlogs />
+                </div>
+            </article>
+
+
            </div>
             
         </div>

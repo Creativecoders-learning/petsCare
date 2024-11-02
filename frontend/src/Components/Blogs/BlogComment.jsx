@@ -61,7 +61,9 @@ const BlogComment = () => {
                         <input type="checkbox" name="checkbox" id="" />
                         <p>Don't show your email address</p>
                         </div>
+
                         <button  className="bg-primary text-white font-bold text-2xl py-3 px-5 mt-7">Submit Now</button>
+                        {/* <AdoptionButton text={'Submit Now'}  /> */}
                     </div>
                 </form>
             </div>

@@ -73,7 +73,7 @@ export default function ShopCard({ item = {} }) {
 
   return (
     <>
-      <Modal openModal={openModal} setOpenModal={setOpenModal}>
+      <Modal openModal={openModal} setOpenModal={setOpenModal}> 
         {cartProducts.length === 0 ? (
           <div className="h-full flex flex-col gap-2 items-center justify-center text-xl font-medium">
             <FaShoppingCart className="text-6xl text-gray-500" />
@@ -123,6 +123,7 @@ export default function ShopCard({ item = {} }) {
           </>
         )}
       </Modal>
+      
       <div className="group p-4 shadow-myCustomShadow rounded-xl flex flex-col justify-between h-[500px]">
         <Link className="h-[90%]" to={`/productDetails/${id}`}>
           {" "}
