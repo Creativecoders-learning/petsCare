@@ -27,7 +27,6 @@ const MeetPets = ({item}) => {
               {item?.breed}
             </h2>
             <p className="w-[280px]">{item?.description.length > 80 ? item?.description.slice(0,60) : item?.description}... </p>
-
           </div>
 
         <Link to={`/adoptionDetails/${item.id}`}>
