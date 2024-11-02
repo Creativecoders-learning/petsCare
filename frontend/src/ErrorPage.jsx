@@ -1,34 +1,32 @@
-import { useNavigate, useRouteError } from 'react-router-dom';
-import Button from './Components/UI/Button';
+import { Link } from "react-router-dom";
+import Button from "./Components/UI/Button";
+import { ERRORPAGEImages } from "./Image-data/errorPage";
 
 const ErrorPage = () => {
-  const navigate = useNavigate();
-  const error = useRouteError();
-  console.error(error);
   return (
-    <>
-      <div
-        className="boxShadow px-10 w-full flex items-center flex-col justify-center py-20 rounded-xl"
-        id="error-page"
-      >
+    <div className=" flex flex-col items-center justify-center text-center px-6">
+      <div className="w-96 h-96">
         <img
-          src="https://plus.unsplash.com/premium_photo-1682310096066-20c267e20605?q=80&w=2112&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="illustration"
-          className="w-full lg:w-[400px]"
+          src={ERRORPAGEImages?.errorImage}
+          alt="404 Error"
+          className="w-full h-full object-cover"
         />
-        <p className="text-[#73718A] text-[0.9rem] sm:text-[1.2rem] w-full lg:w-[55%] text-center mt-10 lg:mt-4">
-          The page cannot be found. The requested URL was not found on this
-          server.
-        </p>
-        <p>
-          <i>{error.statusText || error.message}</i>
-        </p>
-
-        <Button onClick={() => navigate('/')} primary>
-          Back to home
-        </Button>
       </div>
-    </>
+
+      {/* Error Message */}
+      <h1 className="text-3xl sm:text-5xl font-semibold text-primary mb-4">Oops! Page Not Found</h1>
+      <p className="text-lg sm:text-xl text-gray-600 mb-6">
+        It seems the page you’re looking for doesn’t exist or has been moved.
+      </p>
+
+      {/* Navigation Options */}
+      <div className="">
+        <Link to="/">
+          <Button primary>Go home</Button>
+        </Link>
+      </div>
+    </div>
   );
 };
+
 export default ErrorPage;

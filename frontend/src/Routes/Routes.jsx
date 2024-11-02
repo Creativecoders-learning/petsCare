@@ -23,6 +23,12 @@ import Profile from "../Pages/Dashboard/Profile/Profile";
 import ShopManagement from "../Pages/Dashboard/Admin/ShopManagement/ShopManagement";
 import MyProducts from "../Pages/Dashboard/NormalUser/MyProducts/MyProducts";
 import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
+import MyServices from "../Pages/Dashboard/Vet/MyServices";
+import Patients from "../Pages/Dashboard/Vet/Patients";
+import VetManagement from "../Pages/Dashboard/Admin/VetManagement";
+import Appointments from "../Pages/Dashboard/Vet/Appoinments";
+import AdoptionHistory from "../Pages/Dashboard/Admin/AdoptionHistory";
+import Adoptions from "../Pages/Dashboard/NormalUser/Adoptions";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -67,10 +73,6 @@ const router = createBrowserRouter([
         element: <BlogManagement />,
       },
       {
-        path: "profile",
-        element: <Profile />,
-      },
-      {
         path: "admin/shop-management",
         element: <ShopManagement />,
       },
@@ -79,8 +81,32 @@ const router = createBrowserRouter([
         element: <MyProducts />,
       },
       {
+        path: "normalUser/adoptions",
+        element: <Adoptions />,
+      },
+      {
         path: "admin/user-management",
         element: <UserManagement />,
+      },
+      {
+        path: 'admin/vet-management',
+        element: <VetManagement />
+      },
+      {
+        path: 'admin/adoption-history',
+        element: <AdoptionHistory />
+      },
+      {
+        path: 'vet/appointments',
+        element: <Appointments />
+      },
+      {
+        path: 'vet/my-services',
+        element: <MyServices />
+      },
+      {
+        path: 'vet/patients',
+        element: <Patients />
       },
     ],
   },
