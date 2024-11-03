@@ -7,22 +7,19 @@ import PetNews from '../../Components/Home/PetNews/PetNews';
 import Products from '../../Components/Home/Products/Products';
 import Stats from '../../Components/Home/Stats/Stats';
 import Testimonials from '../../Components/Home/Testimonials/Testimonials';
-import Container from '../../Components/UI/Container';
 
 const Home = () => {
   return (
     <div>
       <Banner />
-      <Container className="font-inter">
+      <Products />
       <About></About>
       <Puppies></Puppies>
       <Stats />
       <AdoptionSteps />
-      <Products />
       <PetNews />
       <Testimonials></Testimonials>
       <NewsLetter/>
-    </Container>
     </div>
   );
 };

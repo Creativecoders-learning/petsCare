@@ -2,10 +2,10 @@ import AdoptionButton from '../../UI/AdoptionButton';
 const BannerLeft = () => {
   return (
     <div className="h-full flex flex-col p-4 items-start justify-center ">
-      <div className="mt-5 text-center lg:text-left ">
-        <h2 className="text-5xl md:text-6xl font-extrabold text-white font-nunito">Give a New Life to</h2>
+      <div className="mt-5 w-full text-center lg:text-left ">
+        <h2 className="text-5xl md:text-6xl font-extrabold text-white font-nunito ">Give a New Life to</h2>
         <div className="font-nunito mt-5">
-          <h2 className="text-4xl md:text-6xl font-bold text-primary">
+          <h2 className="text-4xl md:text-6xl font-bold text-white">
              Pet care
           </h2>
         </div>
@@ -15,8 +15,7 @@ const BannerLeft = () => {
         offering hope and a fresh start to pets in need.
       </p>
       <div className="flex justify-center lg:justify-start items-center mt-8 w-full gap-6">
-        <AdoptionButton text={'Adoption'} btnStyle={'w-48 '}/>
-        <AdoptionButton text={'Rehome Now'} btnStyle={'w-48 '}/>
+        <AdoptionButton text={'View more'} btnStyle={'w-48 '}/>
         
       </div>
     </div>

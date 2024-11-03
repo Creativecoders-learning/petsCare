@@ -32,7 +32,7 @@ const Carousel = ({ items }) => {
   return (
     <div ref={glideRef} className="glide-09 relative w-full">
       <div data-glide-el="track">
-        <ul className="whitespace-no-wrap flex-no-wrap flex w-full overflow-hidden p-0 gap-6">
+        <ul className="whitespace-no-wrap flex-no-wrap flex w-full overflow-hidden p-10 lg:p-0 gap-6">
           {items.map((item, index) => (
             <CarsoulsItem
               key={index}
