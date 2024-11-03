@@ -1,0 +1,106 @@
+[
+      {
+            "id": 1,
+            "name": "Alice Johnson",
+            "email": "alice.johnson@example.com",
+            "phone": "+1 (555) 234-5678",
+            "address": {
+                  "country": "USA",
+                  "state": "California",
+                  "city": "Los Angeles",
+                  "streetAddress": "1234 Oak Street"
+            },
+            "status": "Active",
+            "gender": "Female",
+            "profileCompletion": 90,
+            "socialLinks": {
+                  "facebook": "https://www.facebook.com/alicejohnson",
+                  "linkedin": "https://linkedin.com/in/alicejohnson",
+                  "twitter": "https://twitter.com/alicejohnson",
+                  "github": "https://github.com/alicejohnson"
+            },
+            "accountSettings": {
+                  "role": "NormalUser",
+                  "status": "Active",
+                  "lastLogin": "2024-10-29"
+            }
+      },
+      {
+            "id": 2,
+            "name": "Dr. Robert Smith",
+            "email": "dr.robertsmith@example.com",
+            "phone": "+1 (555) 987-6543",
+            "address": {
+                  "country": "USA",
+                  "state": "Texas",
+                  "city": "Houston",
+                  "streetAddress": "5678 Elm Street"
+            },
+            "status": "Active",
+            "gender": "Male",
+            "profileCompletion": 95,
+            "socialLinks": {
+                  "facebook": "https://www.facebook.com/robertsmith",
+                  "linkedin": "https://linkedin.com/in/robertsmith",
+                  "twitter": "https://twitter.com/robertsmith",
+                  "github": "https://github.com/robertsmith"
+            },
+            "accountSettings": {
+                  "role": "Vet",
+                  "status": "Active",
+                  "lastLogin": "2024-10-28"
+            }
+      },
+      {
+            "id": 3,
+            "name": "Emily Brown",
+            "email": "emily.brown@example.com",
+            "phone": "+1 (555) 876-5432",
+            "address": {
+                  "country": "USA",
+                  "state": "New York",
+                  "city": "New York City",
+                  "streetAddress": "4321 Maple Avenue"
+            },
+            "status": "Active",
+            "gender": "Female",
+            "profileCompletion": 100,
+            "socialLinks": {
+                  "facebook": "https://www.facebook.com/emilybrown",
+                  "linkedin": "https://linkedin.com/in/emilybrown",
+                  "twitter": "https://twitter.com/emilybrown",
+                  "github": "https://github.com/emilybrown"
+            },
+            "accountSettings": {
+                  "role": "Admin",
+                  "status": "Active",
+                  "lastLogin": "2024-10-30"
+            }
+      },
+      {
+            "id": 3,
+            "name": "Emily Brown",
+            "email": "emily.brown@example.com",
+            "phone": "+1 (555) 876-5432",
+            "address": {
+                  "country": "USA",
+                  "state": "New York",
+                  "city": "New York City",
+                  "streetAddress": "4321 Maple Avenue"
+            },
+            "status": "Active",
+            "gender": "Female",
+            "profileCompletion": 100,
+            "socialLinks": {
+                  "facebook": "https://www.facebook.com/emilybrown",
+                  "linkedin": "https://linkedin.com/in/emilybrown",
+                  "twitter": "https://twitter.com/emilybrown",
+                  "github": "https://github.com/emilybrown"
+            },
+            "accountSettings": {
+                  "role": "Vet",
+                  "status": "Inactive",
+                  "lastLogin": "2024-10-30"
+            }
+      }
+]

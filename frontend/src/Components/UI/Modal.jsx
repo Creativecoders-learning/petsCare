@@ -1,6 +1,6 @@
 import { IoIosCloseCircle } from "react-icons/io";
 
-export default function Modal({ children, setOpenModal, openModal }) {
+export default function Modal({ children, setOpenModal, openModal, primary }) {
 
   // handle close button
   const handleCloseBtn = () => {
@@ -11,7 +11,7 @@ export default function Modal({ children, setOpenModal, openModal }) {
     <>
       {/* Main modal */}
       <div
-        className={`fixed inset-0 z-50 flex justify-end items-center transition-opacity duration-300 ${
+        className={`fixed inset-0 z-50 flex ${primary ? "justify-center" : "justify-end" } items-center transition-opacity duration-300 ${
           openModal ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
@@ -25,7 +25,7 @@ export default function Modal({ children, setOpenModal, openModal }) {
 
         {/* Modal Box */}
         <div
-          className={`relative p-4 w-[30%] max-w-6xl bg-white rounded-lg shadow dark:bg-gray-700 transform transition-transform duration-300 h-full flex flex-col items-center overflow-y-scroll ${
+          className={`relative p-4 ${primary ? "w-[80%]" : "w-[30%]" } max-w-6xl bg-white rounded-lg shadow dark:bg-gray-700 transform transition-transform duration-300 ${primary ? "h-[80%]" : "h-full" } flex flex-col items-center overflow-y-scroll ${
             openModal ? "scale-100" : "scale-75"
           }`}
         >

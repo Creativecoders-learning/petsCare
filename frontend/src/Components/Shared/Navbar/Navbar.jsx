@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="relative z-20 w-full after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:backdrop-blur-sm lg:after:hidden pt-[16px]">
+      <header className="relative z-20 w-full after:absolute  after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:backdrop-blur-sm lg:after:hidden pt-[16px] pb-[8px]">
         <Container>
           <div className="relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem] z-50">
             <nav
@@ -251,7 +251,7 @@ export default function Navbar() {
           </div>
         </Container>
         <img
-          className="w-full h-full absolute top-[50%]"
+          className="w-full absolute top-[80%]"
           src="https://kutto.netlify.app/img/bg/header_shape.png"
           alt=""
         />

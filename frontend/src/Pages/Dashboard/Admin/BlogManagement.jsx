@@ -16,7 +16,7 @@ const BlogManagement = () => {
       return (
             <div className="p-8 font-inter">
                   <PrimaryTitle titleStyle="text-primaryBold font-semibold">Blog Management</PrimaryTitle>
-                  <div className="custom-scrollbar h-[80vh] overflow-y-auto shadow-myCustomShadow bg-white rounded">
+                  <div className="custom-scrollbar h-[79vh] overflow-y-auto shadow-myCustomShadow bg-white rounded">
                         <table className="min-w-full">
                               <thead>
                                     <tr className="bg-primary text-white text-left">
@@ -32,7 +32,7 @@ const BlogManagement = () => {
                               <tbody className="text-myGray">
                                     {blogs.map((blog, index) => (
                                           <tr
-                                                key={blog.id}
+                                                key={blog?.id}
                                                 className={`${index % 2 === 0 ? "bg-primaryLight bg-opacity-10" : "bg-white"
                                                       }`}
                                           >
