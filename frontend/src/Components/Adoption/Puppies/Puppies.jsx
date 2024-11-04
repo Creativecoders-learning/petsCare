@@ -5,6 +5,7 @@ import MeetPets from "../../UI/MeetPets";
 import SectionContent from "../../UI/SectionContent";
 import Slider from 'react-slick'
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import Container from "../../UI/Container";
 
 
 const Puppies = () => {
@@ -48,16 +49,18 @@ const Puppies = () => {
 
 
     return (
-        <div className=" relative py-10">
+       <Container>
+
+<div className=" py-10">
             <div className="py-10">
                 <SectionContent alignStayle={'w-full px-5 lg:px-0 lg:w-[700px] mx-auto text-center '} tag={'Meet the animals'} first={'Puppies Waiting for Adoption'} text={'The best overall dog DNA test is Embark Breed & Health Kit (view at Chewy), which provides you with a breed brwn and information most dogs'}/>
             </div>
             
-            <div className="">
-            <div className="arrow-right cursor-pointer absolute top-1/2 z-10 right-4  text-2xl rounded-md text-white bg-[#0A453A]" onClick={slideRight}>
+            <div className="relative">
+            <div className="arrow-right cursor-pointer absolute top-36 z-10 right-0 text-2xl rounded-full text-white bg-[#0A453A]" onClick={slideRight}>
                     <FaAngleRight></FaAngleRight>
                 </div>
-                <div className="arrow-left absolute top-1/2 z-10 left-4 cursor-pointer  text-2xl rounded-md text-white bg-[#0A453A]" onClick={slideLeft}>
+                <div className="arrow-left absolute top-36 z-10 left-0 cursor-pointer  text-2xl rounded-full text-white bg-[#0A453A]" onClick={slideLeft}>
                     <FaAngleLeft></FaAngleLeft>
                 </div>
             <Slider ref={sliderRef} {...settings}>
@@ -72,6 +75,7 @@ const Puppies = () => {
         </div>
          
         </div>
+       </Container>
     );
 };
 
