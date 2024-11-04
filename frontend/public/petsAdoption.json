@@ -1,8 +1,5 @@
-
-
 [
     {
-      "id": "1",
       "animal_name": "Bella",
       "type": "Dog",
       "breed": "Labrador Retriever",
@@ -35,7 +32,6 @@
       ]
     },
     {
-      "id": "2",
       "animal_name": "Milo",
       "type": "Cat",
       "breed": "Siamese",
@@ -67,7 +63,6 @@
       ]
     },
     {
-      "id": "3",
       "animal_name": "Charlie",
       "type": "Dog",
       "breed": "Beagle",
@@ -99,7 +94,6 @@
       }
     },
     {
-      "id": "4",
       "animal_name": "Luna",
       "type": "Cat",
       "breed": "British Shorthair",
@@ -131,7 +125,6 @@
       }
     },
     {
-      "id": "5",
       "animal_name": "Buddy",
       "type": "Dog",
       "breed": "Golden Retriever",
@@ -163,7 +156,6 @@
       }
     },
     {
-      "id": "6",
       "animal_name": "Coco",
       "type": "Bird",
       "breed": "Parrot",
@@ -195,7 +187,6 @@
       }
     },
     {
-      "id": "7",
       "animal_name": "Thumper",
       "type": "Rabbit",
       "breed": "Mini Lop",
@@ -227,7 +218,6 @@
       }
     },
     {
-      "id": "8",
       "animal_name": "Coco",
       "type": "Bird",
       "breed": "Parrot",
