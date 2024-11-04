@@ -7,7 +7,7 @@ import right from './images/Right.svg';
 
 const AdoptionSteps = () => {
   return (
-    <Container className="mt-20 text-center mb-10 px-4">
+    <Container className=" py-5 lg:py-12  text-center px-4">
       <h2 className="pb-5 text-[#0A453A] text-3xl md:text-4xl lg:text-5xl font-nunito font-extrabold">Pet Adoption Process</h2>
       <p className="text-secondary font-medium text-xl mb-16">3 Easy Steps</p>
 

@@ -36,7 +36,7 @@ const handleFilterOption = (value) => {
           <Container>
       <div className="flex w-full mx-auto">
         {/* <BlogBanner /> */}
-        <div className="px-10 lg:flex gap-10">
+        <div className="px-10 py-20 lg:flex gap-10">
           {/* <CardBlog /> */}
             <div className="flex-1">
               {blogsByCategory?.map((blog) => (

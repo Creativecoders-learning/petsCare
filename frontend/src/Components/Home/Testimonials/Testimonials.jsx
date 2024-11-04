@@ -51,7 +51,7 @@ const Testimonials = () => {
 
 
     return (
-        <div className=" relative pb-20">
+        <div className="relative py-5 lg:py-12">
             <SectionContent alignStayle={'text-center mb-10'} tag={'Testimonial'} first={'Our Happy Customers'}/>
 
            <div className="w-full md:w-3/6 mx-auto px-5 md:px-0 text-center">
