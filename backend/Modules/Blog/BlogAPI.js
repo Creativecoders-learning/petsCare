@@ -1,20 +1,14 @@
-const express = require('express')
-const blogRouter = express.Router()
+const express = require('express');
 
-blogRouter.get('/blogId', (req, res) => {
-    res.send('this is single blog router')
-})
+function BlogAPI(blogCollection) {
+    const blogRouter = express.Router();
 
-// Get all blogs
-blogRouter.get('/allBlogs', async (req, res) => {
-    const blogCollection = req.app.locals.blogCollection;
+    blogRouter.get('/blogs', async (req, res) => {
+        const result = await blogCollection.find().toArray()
+        res.send(result)
+    })
 
-    try {
-        const blogs = await blogCollection.find().toArray();
-        res.send('ALl blogs');
-    } catch (error) {
-        res.status(500).send('Error retrieving blogs');
-    }
-});
+    return blogRouter;
+}
 
-module.exports = blogRouter
+module.exports = BlogAPI;

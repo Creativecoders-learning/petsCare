@@ -2,10 +2,9 @@ const express = require('express')
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const cors = require('cors')
 require('dotenv').config()
-const app = express()
 const shopRouter = require('../backend/Modules/Shop/ShopAPI')
-const blogRouter = require('../backend/Modules/Blog/BlogAPI')
 const adoptionRouter = require('../backend/Modules/Adoption/AdoptionAPI')
+const app = express();
 const port = process.env.port || 8000
 
 
@@ -15,10 +14,6 @@ app.use(cors({
   origin: ['http://localhost:5173']
 }))
 
-
-app.use('/blog', blogRouter)
-
-// console.log(data)
 
 const uri = `${process.env.Mongodb_Uri}`
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -37,8 +32,13 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     // await client.connect();
 
-    app.use('/adoption',adoptionRouter)
-    app.use('/',shopRouter)
+    const database = client.db('petsCare');
+    const blogCollection = database.collection('blogs');
+
+    // app.use('/adoption', adoptionRouter)
+    // app.use('/', shopRouter)
+    const blogRouter = require('../backend/Modules/Blog/BlogAPI')(blogCollection);
+    app.use('/', blogRouter)
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
