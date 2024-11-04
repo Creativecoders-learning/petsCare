@@ -3,11 +3,23 @@ import { Link } from "react-router-dom";
 import ActiveRoute from "../../../Routes/ActiveRoute";
 import Button from "../../UI/Button";
 import Container from "../../UI/Container";
+import UseAuth from "../../../Hooks/UseAuth";
+import toast from "react-hot-toast";
 
 export default function Navbar() {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const user = false;
+  const { user, logOut } = UseAuth();
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        toast.success('Successfully logged Out!!')
+      })
+      .catch(error => {
+        toast.error(error?.message)
+      })
+  }
 
   return (
     <>
@@ -33,11 +45,10 @@ export default function Navbar() {
               {/*      <!-- Mobile trigger --> */}
               <button
                 className={`relative order-10 block h-10 w-10 self-center lg:hidden
-                ${
-                  isToggleOpen
+                ${isToggleOpen
                     ? "visible opacity-100 [&_span:nth-child(1)]:w-6 [&_span:nth-child(1)]:translate-y-0 [&_span:nth-child(1)]:rotate-45 [&_span:nth-child(2)]:-rotate-45 [&_span:nth-child(3)]:w-0 "
                     : ""
-                }
+                  }
               `}
                 onClick={() => setIsToggleOpen(!isToggleOpen)}
                 aria-expanded={isToggleOpen ? "true" : "false"}
@@ -62,11 +73,10 @@ export default function Navbar() {
               <ul
                 role="menubar"
                 aria-label="Select page"
-                className={`absolute left-0 top-0 z-[-1] w-full justify-center overflow-hidden  overflow-y-auto overscroll-contain bg-white/90 px-8 pb-12 pt-24 font-medium transition-[opacity,visibility] duration-300 lg:visible lg:relative lg:top-0  lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 lg:px-0 lg:py-0  lg:pt-0 lg:opacity-100 ${
-                  isToggleOpen
-                    ? "visible opacity-100 backdrop-blur-sm"
-                    : "invisible opacity-0"
-                }`}
+                className={`absolute left-0 top-0 z-[-1] w-full justify-center overflow-hidden  overflow-y-auto overscroll-contain bg-white/90 px-8 pb-12 pt-24 font-medium transition-[opacity,visibility] duration-300 lg:visible lg:relative lg:top-0  lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 lg:px-0 lg:py-0  lg:pt-0 lg:opacity-100 ${isToggleOpen
+                  ? "visible opacity-100 backdrop-blur-sm"
+                  : "invisible opacity-0"
+                  }`}
               >
                 <li className="flex items-center">
                   <ActiveRoute to={"/"}>
@@ -144,24 +154,23 @@ export default function Navbar() {
                       >
                         <img
                           className="w-full h-full rounded-full object-cover"
-                          src={"#"}
-                          alt="User profile"
+                          src={user?.photoURL}
+                          alt="User Profile"
                         />
                       </figure>
                       {/* Dropdown menu start */}
                       <div
-                        className={`absolute -right-14 md:right-0 mt-2 w-80 md:w-96 py-2 bg-white rounded-md shadow-lg transform transition-all duration-300 flex flex-col gap-6 ${
-                          isDropdownOpen
-                            ? "opacity-100 scale-100"
-                            : "opacity-0 scale-95 pointer-events-none"
-                        }`}
+                        className={`absolute -right-14 md:right-0 mt-2 w-80 md:w-96 py-2 bg-white rounded-md shadow-lg transform transition-all duration-300 flex flex-col gap-6 ${isDropdownOpen
+                          ? "opacity-100 scale-100"
+                          : "opacity-0 scale-95 pointer-events-none"
+                          }`}
                       >
                         {/* Dropdown head */}
                         <div className="flex flex-col items-center gap-4">
                           <figure className="w-16 h-16 rounded-full">
                             <img
                               className="w-16 h-16 rounded-full"
-                              src={user?.photoUrl}
+                              src={user?.photoURL}
                               alt="User Profile"
                             />
                           </figure>
@@ -181,6 +190,10 @@ export default function Navbar() {
                               </Button>
                             </li>
                           </Link>
+                          {/* log out */}
+                          <div onClick={handleLogOut}>
+                            <Button primary>Log out</Button>
+                          </div>
                         </div>
 
                         {/* dropdown links */}
