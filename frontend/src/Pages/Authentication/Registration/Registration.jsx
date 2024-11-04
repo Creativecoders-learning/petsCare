@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import { FaEnvelope, FaLock, FaUser, FaImage } from "react-icons/fa"; // FaUser and FaImage icons
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AUTHENTICATIONImages } from "../../../Image-data/authentication";
 import SocialLogin from "../../../Components/UI/SocialLogin";
 import UseAuth from "../../../Hooks/UseAuth";
@@ -11,6 +11,8 @@ import toast from 'react-hot-toast'
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { user, setUser, createUser, updateUser } = UseAuth();
+
+  const navigate = useNavigate();
 
   const {
     register,
@@ -32,6 +34,7 @@ const Registration = () => {
             console.log('User Created Successfully');
             setUser({ ...user, photoURL: photoUrl })
             toast.success('User Created Successfully')
+            navigate('/')
           })
           .catch(error => {
             console.log(error?.message);
