@@ -1,4 +1,6 @@
 import useGetPetData from '../../../Hooks/useGetPetData';
+import Container from '../../UI/Container';
+import SectionContent from '../../UI/SectionContent';
 import Carousel from './Carousel';
 
 const Stats = () => {
@@ -23,15 +25,16 @@ const Stats = () => {
   console.log(items);
 
   return (
-    <div className="my-20 ">
-      <h2 className="text-4xl text-center font-semibold ">
-        <p className="text-primaryBold"> {items[1]?.count} </p>
-        <span className="text-secondary "> lives touched and counting!</span>
-      </h2>
-      <div className="mt-10 ">
+   <Container>
+     <div className="py-5 lg:py-12 mx-5 md:mx-10  overflow-hidden">
+      <div className='md:w-5/6 lg:w-3/5 mx-auto text-center my-10'>
+        <SectionContent tag={'Why Choose Us?'} first={'Best Service to '} span={'Breeds'} second={'Your Loved Dog Explore '}/>
+      </div>
+      <div className="mt-10">
         {items.length > 0 && <Carousel items={items} />}
       </div>
     </div>
+   </Container>
   );
 };
 

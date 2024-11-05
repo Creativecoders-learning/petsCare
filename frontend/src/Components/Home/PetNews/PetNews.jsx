@@ -1,9 +1,10 @@
-import useGetPetData from '../../../Hooks/useGetPetData';
-import Button from '../../UI/Button';
-import PetNewsCard from './PetNewsCard';
+import useGetPetData from "../../../Hooks/useGetPetData";
+import Container from "../../UI/Container";
+import SectionContent from "../../UI/SectionContent";
+import PetNewsCard from "./PetNewsCard";
 
 const PetNews = () => {
-  const url = '/blogs.json';
+  const url = "/blogs.json";
 
   const item = 4;
   const { petData, error } = useGetPetData(item, url);
@@ -12,23 +13,23 @@ const PetNews = () => {
     return <div>{error}</div>;
   }
   return (
-    <>
-      <h2 className="text-4xl text-center font-semibold my-20 ">
-        <span className="text-secondary"> Pet News</span>
-      </h2>
+    <div className="py-5 lg:py-12">
+      <Container>
+        <SectionContent
+          alignStayle={"text-center"}
+          tag={"Our Blog"}
+          first={"Available Pets Blog "}
+        />
 
-      <div className="mt-10 mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {petData.map((pet) => (
-            <PetNewsCard key={pet.id} pet={pet} />
-          ))}
+        <div className="mt-10  p-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-4">
+            {petData.slice(0, 3).map((pet) => (
+              <PetNewsCard key={pet.id} pet={pet} />
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="flex justify-center items-center gap-5">
-        <Button secondary> Cat News</Button>
-        <Button secondary> Dog News</Button>
-      </div>
-    </>
+      </Container>
+    </div>
   );
 };
 export default PetNews;

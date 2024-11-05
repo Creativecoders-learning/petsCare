@@ -1,0 +1,78 @@
+[
+    {
+      "id": 1,
+      "receiver_name": "John Doe",
+      "receiver_image": "https://example.com/images/johndoe.jpg",
+      "receiver_email": "john.doe@example.com",
+      "location": "New York, USA",
+      "adoption_date": "2024-10-31",
+      "owner_name": "Alice Smith",
+      "owner_image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "owner_email": "alice.smith@example.com",
+      "pet_name": "Buddy",
+      "pet_category": "Dog",
+      "pet_image": "https://example.com/images/buddy.jpg",
+      "status": "Adopted"
+    },
+    {
+      "id": 2,
+      "receiver_name": "Emma Brown",
+      "receiver_image": "https://example.com/images/emmabrown.jpg",
+      "receiver_email": "emma.brown@example.com",
+      "location": "Los Angeles, USA",
+      "adoption_date": "2024-10-29",
+      "owner_name": "Michael Johnson",
+      "owner_image": "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "owner_email": "michael.johnson@example.com",
+      "pet_name": "Whiskers",
+      "pet_category": "Cat",
+      "pet_image": "https://example.com/images/whiskers.jpg",
+      "status": "Adopted"
+    },
+    {
+      "id": 3,
+      "receiver_name": "Robert Wilson",
+      "receiver_image": "https://example.com/images/robertwilson.jpg",
+      "receiver_email": "robert.wilson@example.com",
+      "location": "Chicago, USA",
+      "adoption_date": "2024-10-27",
+      "owner_name": "Sophia Lee",
+      "owner_image": "https://plus.unsplash.com/premium_photo-1683121366070-5ceb7e007a97?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "owner_email": "sophia.lee@example.com",
+      "pet_name": "Tweety",
+      "pet_category": "Bird",
+      "pet_image": "https://example.com/images/tweety.jpg",
+      "status": "Adopted"
+    },
+    {
+      "id": 4,
+      "receiver_name": "Olivia Taylor",
+      "receiver_image": "https://example.com/images/oliviataylor.jpg",
+      "receiver_email": "olivia.taylor@example.com",
+      "location": "Houston, USA",
+      "adoption_date": "2024-10-25",
+      "owner_name": "William Anderson",
+      "owner_image": "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "owner_email": "william.anderson@example.com",
+      "pet_name": "Fluffy",
+      "pet_category": "Rabbit",
+      "pet_image": "https://example.com/images/fluffy.jpg",
+      "status": "Adopted"
+    },
+    {
+      "id": 5,
+      "receiver_name": "James Moore",
+      "receiver_image": "https://example.com/images/jamesmoore.jpg",
+      "receiver_email": "james.moore@example.com",
+      "location": "Phoenix, USA",
+      "adoption_date": "2024-10-23",
+      "owner_name": "Emily Davis",
+      "owner_image": "https://plus.unsplash.com/premium_photo-1670071482460-5c08776521fe?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "owner_email": "emily.davis@example.com",
+      "pet_name": "Max",
+      "pet_category": "Dog",
+      "pet_image": "https://example.com/images/max.jpg",
+      "status": "Adopted"
+    }
+  ]
+  

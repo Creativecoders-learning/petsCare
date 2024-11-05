@@ -1,12 +1,21 @@
 import Categories from "../../Components/Adoption/AdoptionCategories/Categories";
-import Container from "../../Components/UI/Container";
+import Beginning from "../../Components/Adoption/Beginning/Beginning";
+import FAQAdoption from "../../Components/Adoption/FAQAdoption/FAQAdoption";
+import MeetAdoption from "../../Components/Adoption/Meet-adoption/MeetAdoption";
+import Puppies from "../../Components/Adoption/Puppies/Puppies";
+import Breadcrumb from "../../Components/Shared/Breadcrumb/Breadcrumb";
 
 
 const Adoption = () => {
     return (
-       <Container>
+      <div>
+         <Breadcrumb title={'Get Adoption'}></Breadcrumb>
+           <MeetAdoption></MeetAdoption>
            <Categories></Categories>
-       </Container>
+           <FAQAdoption></FAQAdoption>
+           <Puppies></Puppies>
+           <Beginning></Beginning>
+      </div>
     );
 };
 

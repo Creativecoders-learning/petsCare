@@ -1,0 +1,24 @@
+{
+      "name": "Kamruzzaman Bayezid",
+      "email": "kmbayezid955@gmail.com",
+      "photoURL": "https://i.ibb.co.com/6vHb5ZD/profile.jpg",
+      "phone": "01882888860",
+      "address": {
+            "country": "Bangladesh",
+            "district": "Chandpur",
+            "streetAddress": "Nischintapur, Matlab North"
+      },
+      "gender": "Male",
+      "profileCompletion": 85,
+      "socialLinks": {
+            "facebook": "https://www.facebook.com/kamruzzaman.baayeziid?mibextid=ZbWKwL",
+            "linkedin": "https://linkedin.com/in/johndoe",
+            "twitter": "https://twitter.com/johndoe",
+            "github": "https://github.com/kamruzzamanbayezid"
+      },
+      "accountSettings": {
+            "role": "Admin",
+            "status": "Active",
+            "lastLogin": "2024-10-29"
+      }
+}
