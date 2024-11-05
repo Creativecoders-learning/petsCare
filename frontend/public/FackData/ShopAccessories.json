@@ -7,7 +7,7 @@
         "numOfStock": 120,
         "price": 9.99,
         "ratings": 4.5,
-        "image": "dog_collar.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 2,
@@ -17,7 +17,7 @@
         "numOfStock": 90,
         "price": 15.99,
         "ratings": 4.7,
-        "image": "dog_leash.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 3,
@@ -27,7 +27,7 @@
         "numOfStock": 70,
         "price": 34.99,
         "ratings": 4.6,
-        "image": "dog_bed.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 4,
@@ -37,7 +37,7 @@
         "numOfStock": 150,
         "price": 12.99,
         "ratings": 4.4,
-        "image": "dog_water_bottle.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 5,
@@ -47,7 +47,7 @@
         "numOfStock": 60,
         "price": 17.49,
         "ratings": 4.8,
-        "image": "interactive_dog_toy.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 6,
@@ -57,7 +57,7 @@
         "numOfStock": 40,
         "price": 19.99,
         "ratings": 4.6,
-        "image": "scratching_post.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 7,
@@ -67,7 +67,7 @@
         "numOfStock": 35,
         "price": 59.99,
         "ratings": 4.7,
-        "image": "cat_tree.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 8,
@@ -77,7 +77,7 @@
         "numOfStock": 85,
         "price": 8.99,
         "ratings": 4.5,
-        "image": "self_grooming_brush.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 9,
@@ -87,7 +87,7 @@
         "numOfStock": 50,
         "price": 14.99,
         "ratings": 4.4,
-        "image": "cat_tunnel.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 10,
@@ -97,7 +97,7 @@
         "numOfStock": 100,
         "price": 5.99,
         "ratings": 4.8,
-        "image": "laser_pointer.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 11,
@@ -107,7 +107,7 @@
         "numOfStock": 30,
         "price": 29.99,
         "ratings": 4.6,
-        "image": "aquarium_filter.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 12,
@@ -117,7 +117,7 @@
         "numOfStock": 40,
         "price": 22.99,
         "ratings": 4.7,
-        "image": "aquarium_heater.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 13,
@@ -127,7 +127,7 @@
         "numOfStock": 75,
         "price": 6.99,
         "ratings": 4.5,
-        "image": "artificial_plants.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 14,
@@ -137,7 +137,7 @@
         "numOfStock": 55,
         "price": 9.49,
         "ratings": 4.4,
-        "image": "gravel_cleaner.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 15,
@@ -147,7 +147,7 @@
         "numOfStock": 65,
         "price": 19.99,
         "ratings": 4.8,
-        "image": "aquarium_light.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 16,
@@ -157,7 +157,7 @@
         "numOfStock": 25,
         "price": 89.99,
         "ratings": 4.6,
-        "image": "rabbit_hutch.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 17,
@@ -167,7 +167,7 @@
         "numOfStock": 50,
         "price": 12.49,
         "ratings": 4.5,
-        "image": "hay_feeder.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 18,
@@ -177,7 +177,7 @@
         "numOfStock": 80,
         "price": 4.99,
         "ratings": 4.7,
-        "image": "bunny_chew_toy.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 19,
@@ -187,7 +187,7 @@
         "numOfStock": 30,
         "price": 27.99,
         "ratings": 4.4,
-        "image": "rabbit_carrier.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     },
     {
         "id": 20,
@@ -197,6 +197,6 @@
         "numOfStock": 45,
         "price": 16.99,
         "ratings": 4.8,
-        "image": "cooling_pad.jpg"
+        "image": "https://img.drz.lazcdn.com/g/kf/S6a22b272903241c5a8fa9c69e16fbba3i.jpg_720x720q80.jpg_.webp"
     }
 ]

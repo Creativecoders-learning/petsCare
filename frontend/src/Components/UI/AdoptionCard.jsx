@@ -10,7 +10,7 @@ const AdoptionCard = ({ item }) => {
         width={350}
         height={190}
         className="h-[200px] w-[350px] rounded-2xl bg-gray-400 bg-cover"
-        src={item?.image}
+        src={item?.image[0]}
         alt="card navigate ui"
       />
       {/* Card Heading */}
@@ -29,7 +29,7 @@ const AdoptionCard = ({ item }) => {
         </div>
 
         <Link to={`/adoptionDetails/${item.id}`}>
-          <button className="rounded-full bg-indigo-400 px-6 py-3 text-[12px] font-semibold text-white hover:bg-indigo-500 sm:text-sm md:text-base">
+          <button className="rounded-full bg-[#675BC8] px-6 py-3 text-[12px] font-semibold text-white hover:bg-indigo-600 sm:text-sm md:text-base">
             <FaArrowRight />
           </button>
         </Link>

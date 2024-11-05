@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Button from "./Button";
 
 export default function ShopCard({ item = {} }) {
   const [imageLoading, setImageLoading] = useState(false);
@@ -46,12 +47,13 @@ export default function ShopCard({ item = {} }) {
             </span>
           </div>
         </div>
-        {/* author */}
+        {/* button */}
         <div className="flex justify-between items-center h-[10%]">
           {/* price */}
           <p className="text-[#00CBB8] text-2xl font-bold font-nunito">
             ${price}
           </p>
+          <Button primary={true}>Details</Button>
         </div>
       </div>
     </Link>
