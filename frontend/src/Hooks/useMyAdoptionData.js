@@ -7,7 +7,6 @@ const useMyAdoptionData = () => {
     useEffect(()=>{
         fetch('/myAdoptions.json')
   .then(response => {
-    console.log(response); 
     return response.json();
   })
   .then(data => {
