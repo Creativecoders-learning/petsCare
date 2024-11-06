@@ -35,6 +35,7 @@ async function run() {
     const database = client.db('petsCare');
     const blogCollection = database.collection('blogs');
     const vetsCollection = database.collection('vets');
+    const usersCollection = database.collection('users');
 
     // app.use('/adoption', adoptionRouter)
     // app.use('/', shopRouter)
@@ -46,6 +47,10 @@ async function run() {
     // vets relates api's
     const vetsRouter = require('../backend/Modules/Vet/VetApi')(vetsCollection);
     app.use('/', vetsRouter)
+
+    // users related api's
+    const usersRouter = require('../backend/Modules/Users/UsersAPi')(usersCollection);
+    app.use('/', usersRouter)
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
