@@ -1,82 +1,108 @@
 import { useParams } from "react-router-dom";
-import { FaLocationDot } from "react-icons/fa6";
-import { WiTime4 } from "react-icons/wi";
-import VetsForm from "../VetsForm/VetsForm";
 import useVetsData from "../../../Hooks/api/useVetsData";
 
+import Breadcrumb from "../../Shared/Breadcrumb/Breadcrumb";
+import LeftSide from "../../UI/VetDetail/LeftSide";
+import { useState } from "react";
+import Modal from "../../UI/Modal";
+import UseAuth from "../../../Hooks/UseAuth";
+import VetsSlot from "../../UI/VetDetail/VetsSlot";
+import Slot from "../../UI/VetDetail/Slot";
+
 const VetsDetails = () => {
+  const { user } = UseAuth();
+  const [openModal, setOpenModal] = useState(false);
   const { id } = useParams();
+  const idInt = parseInt(id);
   const { vets } = useVetsData();
-  const vet = vets?.find(item => item.id === id);
-  console.log(vet);
+  const vet = vets?.find((item) => item.id === idInt);
+
+  if (!vet) {
+    return <p>Vet not found</p>;
+  }
+
+  // book now button
+
+  const handleBookNow = () => {
+    setOpenModal(true);
+  };
 
   return (
-    <div className="mx-20 flex gap-8 mt-16">
-      <div className="w-full lg:w-[70%] border">
-        <img className="w-full h-[500px]" src={vet?.image} alt={vet?.name} />
-        
-        <div className="flex items-center justify-between px-5">
+    <div>
+      <Breadcrumb title={"Vets Details"} />
+      <div className="mx-20 flex flex-col lg:flex-row gap-8 mt-16 mb-20">
+        <div className="w-full lg:w-[70%] border">
+          <LeftSide vet={vet} />
+        </div>
+
+        {/* Vets Form Section */}
+        <div className="w-full lg:w-[30%]">
           <div>
-            <h2 className="mt-6 text-3xl font-bold mb-2">{vet?.name}</h2>
-            <h2 className="text-xl font-semibold">{vet?.institute}</h2>
-            <h2 className="text-xl">{vet?.expertise}</h2>
-          </div>
-          <div className="flex items-center gap-20 font-bold text-gray-500">
-            <div>
-              <p className="flex items-center gap-2">
-                <FaLocationDot className="text-2xl text-primary" /> 
-                {vet?.instituteLocation}
-              </p>
+            <h2 className="font-bold">
+              Select Location, Time Slot Consultation Method
+            </h2>
+            <div className="mt-8">
+              <div className="mb-5">
+                <h2 className="font-semibold text-gray-500">
+                  Select Appointment Type
+                </h2>
+                <div className="mt-5 flex items-center gap-3">
+                  <button
+                    className={`w-[140px] py-2 ${
+                      user
+                        ? "focus:bg-primary border border-primary text-black hover:border-none hover:text-white focus:text-white hover:bg-black"
+                        : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                    }`}
+                  >
+                    New{" "}
+                  </button>
+                  <button
+                    className={`w-[140px] py-2 ${
+                      user
+                        ? "focus:bg-primary border border-primary text-black hover:border-none hover:text-white focus:text-white hover:bg-black"
+                        : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                    }`}
+                  >
+                    Follow Us{" "}
+                  </button>
+                  <button
+                    className={`w-[140px] py-2 ${
+                      user
+                        ? "focus:bg-primary border border-primary text-black hover:border-none hover:text-white focus:text-white hover:bg-black"
+                        : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                    }`}
+                  >
+                    Report Show{" "}
+                  </button>
+                </div>
+                <div className="mt-10 ">
+                  <VetsSlot
+                    slot={{ name: "Slot 4", time: "11:00 AM - 12:00 PM" }}
+                  ></VetsSlot>
+                </div>
+              </div>
+              <button
+                onClick={handleBookNow}
+                className={`w-full py-3 rounded-xl mt-5 ${
+                  user
+                    ? "bg-primary text-white hover:bg-black"
+                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                }`}
+                disabled={!user}
+              >
+                {/* Book Now */}
+                {user ? "Book Now" : "Login to Book"}
+              </button>
             </div>
-            <div>
-              <p className="flex items-center gap-2">
-                <WiTime4 className="text-2xl text-primary" /> Availability
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <p className="text-gray-500 mt-10 px-5">{vet?.about}</p>
-
-        <div className="px-6 mt-10">
-          <h2 className="underline text-xl font-semibold underline-offset-8 underline-primary">Info</h2>
-
-          {/* Work Experience */}
-          <div className="mt-7">
-            <h2 className="text-xl font-semibold mb-2">Work Experience</h2>
-            <ul className="ml-5">
-              {vet?.work_experiences?.map((experience, index) => (
-                <li key={index} className="list-disc">{experience}</li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Education */}
-          <div className="mt-7">
-            <h2 className="text-xl font-semibold mb-3">Education</h2>
-            <ul className="ml-5">
-              {vet?.education?.map((edu, index) => (
-                <li key={index} className="list-disc">{edu}</li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Awards */}
-          <div className="mt-7">
-            <h2 className="text-xl font-semibold mb-3">Awards</h2>
-            <ul className="ml-5">
-              {vet?.awards?.map((award, index) => (
-                <li key={index} className="list-disc">{award}</li>
-              ))}
-            </ul>
           </div>
         </div>
       </div>
 
-      {/* Vets Form Section */}
-      <div className="w-full lg:w-[30%]">
-        <VetsForm />
-      </div>
+      {openModal && (
+        <Modal primary={true} openModal={openModal} setOpenModal={setOpenModal}>
+          <Slot />
+        </Modal>
+      )}
     </div>
   );
 };

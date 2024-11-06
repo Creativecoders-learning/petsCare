@@ -1,8 +1,5 @@
-
 import { Link, useLocation } from 'react-router-dom';
 import img from '../../../assets/breadcrumb/breadcrumb_bg.jpg'
-
-
 
 const Breadcrumb = ({title}) => {
     const location = useLocation();
