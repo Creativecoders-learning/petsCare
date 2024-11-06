@@ -18,6 +18,30 @@ function UsersAPI(usersCollection) {
             res.send(await usersCollection.find().toArray())
       })
 
+      // get user by email
+      usersRouter.get('/users/by-email/:email', async (req, res) => {
+            const email = req.params.email;
+            const query = { email: email };
+            const result = await usersCollection.find(query).toArray();
+            res.send(result)
+      })
+
+      // put method for add role
+      usersRouter.put('/users/by-email/:email', async (req, res) => {
+            const email = req.params.email;
+            const { role } = req.body;
+            const options = { upsert: true }
+            const filter = { email: email }
+            const doc = {
+                  $set: {
+                        role: role
+                  }
+            };
+            const result = await usersCollection.updateOne(filter, doc, options);
+            res.send(result)
+
+      })
+
       return usersRouter;
 }
 

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import { useForm } from "react-hook-form";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import { FaEnvelope, FaLock, FaUser, FaImage } from "react-icons/fa"; // FaUser and FaImage icons
@@ -43,9 +43,9 @@ const Registration = () => {
             }
   
             axios.post('http://localhost:8000/users', userData);
-            
+
             toast.success('User Created Successfully')
-            navigate('/')
+            navigate('/role-change')
           })
           .catch(error => {
             console.log(error?.message);
