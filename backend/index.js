@@ -33,6 +33,8 @@ async function run() {
     // await client.connect();
     const database = client.db('petsCare')
     const adoptionCollection = database.collection('adoptionCollection')
+    app.locals.adoptionCollection = adoptionCollection;
+
     const blogCollection = database.collection('blogs');
     const vetsCollection = database.collection('vets');
     const usersCollection = database.collection('users');
