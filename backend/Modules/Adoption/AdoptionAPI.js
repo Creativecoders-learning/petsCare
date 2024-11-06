@@ -3,7 +3,10 @@ const adoptionRouter = express.Router();
 
 
 adoptionRouter.get('/getAdoption',async(req,res)=>{
-     res.send('all adoption data')
+    const adoptionCollection = req.app.locals.adoptionCollection;
+    const result = await adoptionCollection.find().toArray()
+     res.send(result)
 })
+
 
 module.exports=adoptionRouter

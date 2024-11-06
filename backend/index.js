@@ -33,6 +33,9 @@ async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
     // await client.connect();
+    const database = client.db('petsCare')
+    const adoptionCollection = database.collection('adoptionCollection')
+    app.locals.adoptionCollection = adoptionCollection;
 
     app.use('/adoption',adoptionRouter)
     app.use('/',shopRouter)
