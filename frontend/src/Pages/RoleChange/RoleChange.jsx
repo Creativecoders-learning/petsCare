@@ -1,23 +1,23 @@
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { FaUser, FaPaw } from 'react-icons/fa';
 import UseAuth from '../../Hooks/UseAuth';
+import useAxios from '../../Hooks/useAxios';
 
 const RoleChange = () => {
   const navigate = useNavigate();
   const { user } = UseAuth();
+  const apiHandler = useAxios();
 
   // Function to update role
   const handleRoleSelection = async (role) => {
-    try {
-      await axios.put(`http://localhost:8000/users/by-email/${user?.email}`, { role });
 
+    try {
+      await apiHandler.put(`/users/by-email/${user.email}`, { role });
       toast.success(`Role updated to ${role}`);
-      navigate('/'); // Redirect to main page or user dashboard
+      navigate('/');
     } catch (error) {
-      console.error(error.message);
-      toast.error("Failed to update role");
+      toast.error(error?.message);
     }
   };
 
