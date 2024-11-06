@@ -4,10 +4,9 @@ const useVetsData = () => {
     const [vets, setVets] = useState([]);
 
     useEffect(() => {
-        fetch("/vetData.json")
+        fetch("/vetsData.json")
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             setVets(data);
           });
       }, []);
