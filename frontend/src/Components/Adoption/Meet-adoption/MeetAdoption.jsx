@@ -36,7 +36,7 @@ const MeetAdoption = () => {
           {/* image container */}
           <div className="lg:w-3/5 min-h-[24rem] flex no-gap rounded-s-md ">
             <div className="lg:w-1/2 bg-green-300">
-              <img src={img1} className="h-full bg-cover" alt="" />
+              <img src={img1} className="h-full object-cover" alt="" />
             </div>
             <div
               style={{ backgroundImage: `url(${img2})` }}
