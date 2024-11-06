@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import { FaEnvelope, FaLock, FaUser, FaImage } from "react-icons/fa"; // FaUser and FaImage icons
@@ -7,13 +7,14 @@ import { AUTHENTICATIONImages } from "../../../Image-data/authentication";
 import SocialLogin from "../../../Components/UI/SocialLogin";
 import UseAuth from "../../../Hooks/UseAuth";
 import toast from 'react-hot-toast'
-import axios from 'axios'
+import useAxios from "../../../Hooks/useAxios";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { user, setUser, createUser, updateUser } = UseAuth();
 
   const navigate = useNavigate();
+  const apiHandler = useAxios();
 
   const {
     register,
@@ -28,34 +29,35 @@ const Registration = () => {
     // create user
     createUser(email, password)
       .then(() => {
-
-        // Update user
+        // Update user info
         updateUser(name, photoUrl)
           .then(() => {
-            console.log('User Created Successfully');
-            setUser({ ...user, photoURL: photoUrl })
+            setUser({ ...user, name, email, photoURL: photoUrl });
 
-            // post method to store all registered user
+            // Post method to store all registered user
             const userData = {
               name: name,
               email: email,
               image: photoUrl,
-            }
-  
-            axios.post('http://localhost:8000/users', userData);
-            
-            toast.success('User Created Successfully')
-            navigate('/')
+            };
+
+            apiHandler.post('/users', userData)
+              .then(() => {
+                toast.success('User Created Successfully');
+                navigate('/role-change');
+              })
+              .catch(error => {
+                toast.error(error?.message);
+              });
           })
           .catch(error => {
-            console.log(error?.message);
-            toast.error(error?.message)
-          })
+            toast.error(error?.message);
+          });
       })
       .catch(error => {
-        console.log(error?.message);
-        toast.error(error?.message)
-      })
+        toast.error(error?.message);
+      });
+
 
   };
 
