@@ -1,30 +1,34 @@
 import { FcGoogle } from "react-icons/fc";
-import { MdOutlineFacebook } from "react-icons/md";
-
+import UseAuth from "../../Hooks/UseAuth";
+import { FaGithub } from "react-icons/fa6";
+import toast from "react-hot-toast";
 
 
 const SocialLogin = () => {
 
+      const { googleLogIn, githubLogIn } = UseAuth();
+
+      const handleSocialLogin = (media) => {
+            media()
+                  .then(() => {
+                        toast.success('Successfully logged in!!')
+                  })
+                  .catch(error => {
+                        toast.error(error?.message)
+                  })
+      }
+
       return (
             <div>
                   <div className="mb-6 flex justify-center gap-8">
-                        <button aria-label="Login with Google" type="button" className="">
+                        <button onClick={() => handleSocialLogin(googleLogIn)} aria-label="Login with Google" type="button" className="">
                               <FcGoogle className="text-3xl text-white" />
                         </button>
 
-                        <button aria-label="Login with GitHub" role="button" className="">
-                              <MdOutlineFacebook className="text-3xl text-[#1877F2]" />
+                        <button onClick={() => handleSocialLogin(githubLogIn)} aria-label="Login with GitHub" role="button" className="">
+                              <FaGithub className="text-[28px]" />
 
                         </button>
-                        {/* <button aria-label="Login with Google" type="button" className=" flex items-center justify-center w-full py-2 space-x-4 border bg-[#00095E] focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600">
-                              <FaGoogle className="text-3xl text-white" />
-
-                        </button>
-
-                        <button aria-label="Login with GitHub" role="button" className="flex items-center justify-center w-full py-2 space-x-4 border focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600 bg-[#00095E]">
-                              <FaGithub className="text-3xl text-white" />
-
-                        </button> */}
 
                   </div>
             </div>

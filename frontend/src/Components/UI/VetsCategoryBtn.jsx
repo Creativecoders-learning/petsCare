@@ -1,5 +1,4 @@
-
-const AdoptionCategoryBtn = ({items,selectedCategory,handleCategory}) => {
+const VetsCategoryBtn = ({items,selectedCategory,handleCategory}) => {
     return (
         <div className="flex items-center justify-center gap-2 lg:gap-x-5"> 
             {
@@ -10,8 +9,8 @@ const AdoptionCategoryBtn = ({items,selectedCategory,handleCategory}) => {
               ))
             }
 
-        </div>
+          </div>
     );
 };
 
-export default AdoptionCategoryBtn;
+export default VetsCategoryBtn;

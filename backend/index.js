@@ -2,19 +2,18 @@ const express = require('express')
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const cors = require('cors')
 require('dotenv').config()
-const app = express()
-const shopRouter = require('../backend/Modules/Shop/ShopAPI')
-const blogRouter = require('../backend/Modules/Blog/BlogAPI')
-const adoptionRouter = require('../backend/Modules/Adoption/AdoptionAPI')
+const shopRouter = require('../backend/Modules/Shop/ShopAPI');
+const adoptionRouter = require('../backend/Modules/Adoption/AdoptionAPI');
+
+const app = express();
 const port = process.env.port || 8000
 
 
 // middleware 
 app.use(express.json())
 app.use(cors({
-  origin:['http://localhost:5173']
+  origin: ['http://localhost:5173']
 }))
-
 
 
 const uri = `${process.env.Mongodb_Uri}`
@@ -28,7 +27,6 @@ const client = new MongoClient(uri, {
 });
 
 
-
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
@@ -37,8 +35,25 @@ async function run() {
     const adoptionCollection = database.collection('adoptionCollection')
     app.locals.adoptionCollection = adoptionCollection;
 
-    app.use('/adoption',adoptionRouter)
-    app.use('/',shopRouter)
+    const database = client.db('petsCare');
+    const blogCollection = database.collection('blogs');
+    const vetsCollection = database.collection('vets');
+    const usersCollection = database.collection('users');
+
+    // app.use('/adoption', adoptionRouter)
+    // app.use('/', shopRouter)
+
+    // Blogs related api's
+    const blogRouter = require('../backend/Modules/Blog/BlogAPI')(blogCollection);
+    app.use('/', blogRouter)
+
+    // vets relates api's
+    const vetsRouter = require('../backend/Modules/Vet/VetApi')(vetsCollection);
+    app.use('/', vetsRouter)
+
+    // users related api's
+    const usersRouter = require('../backend/Modules/Users/UsersAPi')(usersCollection);
+    app.use('/', usersRouter)
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
