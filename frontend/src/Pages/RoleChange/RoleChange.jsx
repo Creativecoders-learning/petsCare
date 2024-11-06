@@ -9,11 +9,14 @@ const RoleChange = () => {
   const { user } = UseAuth();
   const apiHandler = useAxios();
 
+  console.log('User in role-chnage', user);
+
+
   // Function to update role
   const handleRoleSelection = async (role) => {
 
     try {
-      await apiHandler.put(`/users/by-email/${user.email}`, { role });
+      await apiHandler.put(`/users/by-email/${user.email}`, { role, lastLogIn: user?.metadata?.lastLoginAt });
       toast.success(`Role updated to ${role}`);
       navigate('/');
     } catch (error) {
