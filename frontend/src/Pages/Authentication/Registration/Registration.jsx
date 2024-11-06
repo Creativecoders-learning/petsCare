@@ -7,6 +7,7 @@ import { AUTHENTICATIONImages } from "../../../Image-data/authentication";
 import SocialLogin from "../../../Components/UI/SocialLogin";
 import UseAuth from "../../../Hooks/UseAuth";
 import toast from 'react-hot-toast'
+import axios from 'axios'
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -33,6 +34,16 @@ const Registration = () => {
           .then(() => {
             console.log('User Created Successfully');
             setUser({ ...user, photoURL: photoUrl })
+
+            // post method to store all registered user
+            const userData = {
+              name: name,
+              email: email,
+              image: photoUrl,
+            }
+  
+            axios.post('http://localhost:8000/users', userData);
+            
             toast.success('User Created Successfully')
             navigate('/')
           })
