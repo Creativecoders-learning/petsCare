@@ -21,7 +21,7 @@ const previewText = getFirst30Words(blog?.description);
   return (
     <>
       <div>
-        <Link to={`/blog-details/${blog?.id}`}>
+        <Link to={`/blog-details/${blog?._id}`}>
          {/*<!-- Component: Basic blog card --> */}
          <div className="overflow-hidden rounded  mb-10">
         {/*  <!-- Image --> */}

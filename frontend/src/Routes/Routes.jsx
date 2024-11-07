@@ -32,6 +32,7 @@ import Appointments from "../Pages/Dashboard/Vet/Appoinments";
 import AdoptionHistory from "../Pages/Dashboard/Admin/AdoptionHistory";
 import Adoptions from "../Pages/Dashboard/NormalUser/Adoptions";
 import RoleChange from "../Pages/RoleChange/RoleChange";
+import MyBlogs from "../Pages/Dashboard/Vet/MyBlogs";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -118,6 +119,10 @@ const router = createBrowserRouter([
       {
         path: 'vet/patients',
         element: <Patients />
+      },
+      {
+        path: 'vet/my-blogs',
+        element: <MyBlogs />
       },
     ],
   },
