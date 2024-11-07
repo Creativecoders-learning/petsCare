@@ -8,9 +8,7 @@ function BlogAPI(blogCollection) {
     blogRouter.post('/blogs', async (req, res) => {
         const blog = req.body;
         const blogDoc = {
-            $set: {
-                ...blog
-            }
+            ...blog
         }
         const result = await blogCollection.insertOne(blogDoc);
         res.send(result)
@@ -36,6 +34,21 @@ function BlogAPI(blogCollection) {
         const query = { email: email }
         const result = await blogCollection.find(query).toArray();
         res.send(result)
+    })
+
+    // update blog
+    blogRouter.put('/blogs/blog-details/:id', async (req, res) => {
+        const blog = req.body;
+        const id = req.params.id;
+        const query = { _id: new ObjectId(id) }
+        const options = { upsert: true }
+        const updateDoc = {
+            $set: {
+                ...blog
+            }
+        }
+        const result = await blogCollection.updateOne(query, updateDoc, options);
+        res.send(result);
     })
 
     // delete vet blog by id

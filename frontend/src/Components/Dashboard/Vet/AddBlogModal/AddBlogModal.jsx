@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import PrimaryTitle from "../../../UI/PrimaryTitle";
 import useAxios from "../../../../Hooks/useAxios";
+import UseAuth from "../../../../Hooks/UseAuth";
+import toast from 'react-hot-toast';
 
 const AddBlogModal = () => {
       const { register, handleSubmit, formState: { errors } } = useForm();
@@ -11,27 +13,43 @@ const AddBlogModal = () => {
       const [imageUrl, setImageUrl] = useState("");
 
       const apiHandler = useAxios();
+      const { user } = UseAuth();
+
+      const currentDate = new Date();
+      const date = currentDate.toDateString();
+
 
       // Handle form submission
       const onSubmit = (data) => {
             const blogData = {
-                  _id: data._id || "", // Optional: generate or leave empty if handled by backend
-                  title: data.title,
-                  cardImage: imageUrl,  // for card-image in JSON
-                  coverImage: imageUrl, // for cover-image in JSON
-                  shortDescription: data.shortDescription,
-                  longDescription: data.longDescription,
-                  subtitles: subtitles,
+                  title: data?.title,
+                  category: data?.category,
+                  image: imageUrl,  // for card-image in JSON
+                  description: data?.description,
+                  subtitles: data?.subtitles,  // Collect subtitles content here
                   author: {
-                        name: data.authorName,
-                        bio: data.authorBio,
-                        profileImage: data.authorProfileImage,
+                        name: user?.displayName,
+                        email: user?.email,
+                        description: data?.authorBio,
+                        update: date,
+                        image: user?.photoURL,
                   }
             };
             console.log("Submitted Blog Data:", blogData);
 
             // Send data to backend
-            apiHandler.post("/blogs", blogData);
+            try {
+                  apiHandler.post('/blogs', blogData)
+                        .then(res => {
+                              console.log(res?.data);
+                              if (res?.data?.insertedId) {
+                                    toast.success('Blog Added Successfully')
+                              }
+                        })
+            } catch (error) {
+                  console.error(error?.message)
+
+            }
       };
 
       // Add new subtitle
@@ -95,25 +113,14 @@ const AddBlogModal = () => {
                         </div>
 
                         <div className="mb-6">
-                              <label htmlFor="shortDescription" className="block text-lg font-medium text-gray-700">Short Description</label>
-                              <input
-                                    {...register("shortDescription", { required: "Short description is required" })}
-                                    type="text"
-                                    placeholder="Brief summary of the blog"
-                                    className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
-                              />
-                              {errors.shortDescription && <p className="text-red-500 text-sm mt-2">{errors.shortDescription.message}</p>}
-                        </div>
-
-                        <div className="mb-6">
-                              <label htmlFor="longDescription" className="block text-lg font-medium text-gray-700">Long Description</label>
+                              <label htmlFor="description" className="block text-lg font-medium text-gray-700">Description</label>
                               <textarea
-                                    {...register("longDescription", { required: "Detailed description is required" })}
+                                    {...register("description", { required: "Detailed description is required" })}
                                     placeholder="Write a detailed description for your blog"
                                     className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
                                     rows="5"
                               />
-                              {errors.longDescription && <p className="text-red-500 text-sm mt-2">{errors.longDescription.message}</p>}
+                              {errors.description && <p className="text-red-500 text-sm mt-2">{errors.description.message}</p>}
                         </div>
 
                         <div className="mb-6 flex flex-col items-center">
@@ -161,23 +168,11 @@ const AddBlogModal = () => {
                         </div>
 
                         <div className="mb-6">
-                              <h3 className="text-lg font-semibold text-gray-800">Author Information</h3>
-                              <input
-                                    {...register("authorName", { required: "Author name is required" })}
-                                    type="text"
-                                    placeholder="Author's name"
-                                    className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
-                              />
+                              <label htmlFor="authorBio" className="block text-lg font-medium text-gray-700">Author bio</label>
                               <input
                                     {...register("authorBio")}
                                     type="text"
                                     placeholder="Author's bio"
-                                    className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
-                              />
-                              <input
-                                    {...register("authorProfileImage")}
-                                    type="text"
-                                    placeholder="Author's profile image URL"
                                     className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
                               />
                         </div>
@@ -187,7 +182,7 @@ const AddBlogModal = () => {
                                     type="submit"
                                     className="w-full px-4 py-3 bg-primary text-white font-semibold rounded-lg focus:outline-none transition duration-300"
                               >
-                                    Submit Blog
+                                    Add New Blog
                               </button>
                         </div>
                   </form>

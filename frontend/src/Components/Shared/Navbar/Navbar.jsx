@@ -166,8 +166,8 @@ export default function Navbar() {
                           }`}
                       >
                         {/* Dropdown head */}
-                        <div className="flex flex-col items-center gap-4">
-                          <figure className="w-16 h-16 rounded-full">
+                        <div className="flex flex-col items-center">
+                          <figure className="w-16 h-16 rounded-full mb-3">
                             <img
                               className="w-16 h-16 rounded-full"
                               src={user?.photoURL}
@@ -176,15 +176,15 @@ export default function Navbar() {
                           </figure>
                           {/* user name */}
                           <h4 className="text-2xl text-center font-nunito font-bold">
-                            {user?.name}
+                            {user?.displayName}
                           </h4>
                           {/* user email */}
-                          <p className="text-[#646464] text-center">
+                          <p className="text-[#646464] text-center mb-4">
                             {user?.email}
                           </p>
                           {/* profile */}
-                          <Link to={`/dashboard/${user?.role}/profile`}>
-                            <li className="flex items-stretch text-base">
+                          <Link to={`/dashboard/profile`}>
+                            <li className="flex items-stretch text-base mb-2">
                               <Button outlineBtn>
                                 <span className="relative">View profile</span>
                               </Button>
