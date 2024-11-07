@@ -33,7 +33,7 @@ const BlogManagement = () => {
                                     {blogs.map((blog, index) => (
                                           <tr
                                                 key={blog?.id}
-                                                className={`${index % 2 === 0 ? "bg-primaryLight bg-opacity-10" : "bg-white"
+                                                className={`${index % 2 ===  0 ? "bg-primaryLight bg-opacity-10" : "bg-white"
                                                       }`}
                                           >
                                                 <td className="p-4 font-medium">{index + 1}</td>

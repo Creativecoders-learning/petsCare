@@ -36,6 +36,7 @@ async function run() {
 
     app.use('/adoption',adoptionRouter)
     app.use('/',shopRouter)
+    app.use('/blogs', blogRouter)
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });

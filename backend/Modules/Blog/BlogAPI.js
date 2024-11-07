@@ -8,4 +8,4 @@ blogRouter.get('/allBlogs',(req,res)=>{
     res.send('this is all blog router')
 })
 
-module.exports=blogRouter
+module.exports= blogRouter
