@@ -75,7 +75,7 @@ const MyBlogs = () => {
                               My Blogs
                         </PrimaryTitle>
                         <Button onClick={handleAddServices} secondary>
-                              Add Blog
+                              Add New Blog
                         </Button>
                   </div>
 
