@@ -11,7 +11,7 @@ function BlogAPI(blogCollection) {
     })
 
     // get blog by id
-    blogRouter.get('/blogs/:id', async (req, res) => {
+    blogRouter.get('/blogs/blog-details/:id', async (req, res) => {
         const id = req.params.id;
         const query = { _id: new ObjectId(id) }
         const result = await blogCollection.findOne(query);
@@ -24,6 +24,14 @@ function BlogAPI(blogCollection) {
         const query = { email: email }
         const result = await blogCollection.find(query).toArray();
         res.send(result)
+    })
+
+    // delete vet blog by id
+    blogRouter.delete('/blogs/blog-details/:id', async (req, res) => {
+        const id = req.params.id;
+        const query = { _id: new ObjectId(id) };
+        const result = await blogCollection.deleteOne(query);
+        res.send(result);
     })
 
     return blogRouter;

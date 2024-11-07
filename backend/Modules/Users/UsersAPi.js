@@ -29,12 +29,15 @@ function UsersAPI(usersCollection) {
       // put method for add role
       usersRouter.put('/users/by-email/:email', async (req, res) => {
             const email = req.params.email;
-            const { role } = req.body;
+            const { role, lastLogIn } = req.body;
+            console.log(role,lastLogIn);
+            
             const options = { upsert: true }
             const filter = { email: email }
             const doc = {
                   $set: {
-                        role: role
+                        role: role,
+                        lastLogIn: lastLogIn
                   }
             };
             const result = await usersCollection.updateOne(filter, doc, options);

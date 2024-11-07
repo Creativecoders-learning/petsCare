@@ -103,7 +103,7 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/vet/blogs">
+                    <DashboardActiveLink to="/dashboard/vet/my-blogs">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <FaBlog className="block text-[18px]" />
                         <span className="block text-[17px]">My Blogs</span>
@@ -193,21 +193,21 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                                                            <DashboardActiveLink to="/dashboard/normalUser/my-adoptions">
-                                                                  <span className="flex items-center gap-3 rounded py-3 px-6">
-                                                                        <MdOutlinePets className="block text-[18px]" />
-                                                                        <span className="block text-[17px]"> My Adoptions</span>
-                                                                  </span>
-                                                            </DashboardActiveLink>
-                                                      </li>
-                                                      <li>
-                                                            <DashboardActiveLink to="/dashboard/normalUser/user-adoptions">
-                                                                  <span className="flex items-center gap-3 rounded py-3 px-6">
-                                                                        <MdOutlinePets className="block text-[18px]" />
-                                                                        <span className="block text-[17px]"> User Adoptions</span>
-                                                                  </span>
-                                                            </DashboardActiveLink>
-                                                      </li>
+                    <DashboardActiveLink to="/dashboard/normalUser/my-adoptions">
+                      <span className="flex items-center gap-3 rounded py-3 px-6">
+                        <MdOutlinePets className="block text-[18px]" />
+                        <span className="block text-[17px]"> My Adoptions</span>
+                      </span>
+                    </DashboardActiveLink>
+                  </li>
+                  <li>
+                    <DashboardActiveLink to="/dashboard/normalUser/user-adoptions">
+                      <span className="flex items-center gap-3 rounded py-3 px-6">
+                        <MdOutlinePets className="block text-[18px]" />
+                        <span className="block text-[17px]"> User Adoptions</span>
+                      </span>
+                    </DashboardActiveLink>
+                  </li>
                   <li>
                     <DashboardActiveLink to="/dashboard/normalUser/blogs">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
