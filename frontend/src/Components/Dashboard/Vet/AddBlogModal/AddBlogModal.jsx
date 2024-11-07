@@ -1,16 +1,37 @@
 import React, { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import axios from "axios";
 import PrimaryTitle from "../../../UI/PrimaryTitle";
+import useAxios from "../../../../Hooks/useAxios";
 
 const AddBlogModal = () => {
-      const { control, handleSubmit, formState: { errors } } = useForm();
+      const { register, handleSubmit, formState: { errors } } = useForm();
       const [imagePreview, setImagePreview] = useState(null);
       const [subtitles, setSubtitles] = useState([{ title: "", content: "" }]);
+      const [imageUrl, setImageUrl] = useState("");
+
+      const apiHandler = useAxios();
 
       // Handle form submission
       const onSubmit = (data) => {
-            console.log("Submitted Data:", data);
+            const blogData = {
+                  _id: data._id || "", // Optional: generate or leave empty if handled by backend
+                  title: data.title,
+                  cardImage: imageUrl,  // for card-image in JSON
+                  coverImage: imageUrl, // for cover-image in JSON
+                  shortDescription: data.shortDescription,
+                  longDescription: data.longDescription,
+                  subtitles: subtitles,
+                  author: {
+                        name: data.authorName,
+                        bio: data.authorBio,
+                        profileImage: data.authorProfileImage,
+                  }
+            };
+            console.log("Submitted Blog Data:", blogData);
+
+            // Send data to backend
+            apiHandler.post("/blogs", blogData);
       };
 
       // Add new subtitle
@@ -18,7 +39,7 @@ const AddBlogModal = () => {
             setSubtitles([...subtitles, { title: "", content: "" }]);
       };
 
-      // Handle image upload to ImageBB
+      // Handle image upload
       const handleImageUpload = async (event) => {
             const file = event.target.files[0];
             if (file) {
@@ -26,16 +47,12 @@ const AddBlogModal = () => {
                   formData.append("image", file);
 
                   try {
-                        // API key ঠিকমতো কাজ করছে কিনা তা চেক করতে `console.log` ব্যবহার করতে পারেন
-                        console.log("Uploading Image with API Key:", import.meta.env.VITE_IMAGEBB_API_KEY);
-
                         const response = await axios.post(
-                              `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMAGEBB_API_KEY}`,
+                              `https://api.imgbb.com/1/upload?key=597d78aa1ab369b0aa1583848b74f0f9`,
                               formData
                         );
-                        // যদি সঠিকভাবে কাজ করে তবে ইমেজের লিঙ্ক কনসোল-এ দেখা উচিত
-                        console.log("Uploaded Image URL:", response.data.data.url);
                         setImagePreview(response.data.data.url);
+                        setImageUrl(response.data.data.url);
                   } catch (error) {
                         console.error("Error uploading image", error);
                   }
@@ -43,74 +60,62 @@ const AddBlogModal = () => {
       };
 
       return (
-
-            <div className="bg-white rounded-3xl shadow-xl px-8 pb-8 w-full">
+            <div className="bg-white rounded-3xl shadow-xl px-4 md:px-8 pb-8 w-full">
                   <div className="flex justify-center">
                         <PrimaryTitle>Add New Blog</PrimaryTitle>
                   </div>
                   <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-10 mb-6">
+                              {/* Title Field */}
+                              <div className="flex-1">
+                                    <label htmlFor="title" className="block text-lg font-medium text-gray-700">Blog Title</label>
+                                    <input
+                                          {...register("title", { required: "Blog title is required" })}
+                                          type="text"
+                                          placeholder="Enter blog title"
+                                          className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+                                    />
+                                    {errors.title && <p className="text-red-500 text-sm mt-2">{errors.title.message}</p>}
+                              </div>
 
-                        {/* Title Field */}
-                        <div className="mb-6">
-                              <label htmlFor="title" className="block text-lg font-medium text-gray-700">Blog Title</label>
-                              <Controller
-                                    name="title"
-                                    control={control}
-                                    rules={{ required: "Blog title is required" }}
-                                    render={({ field }) => (
-                                          <input
-                                                {...field}
-                                                type="text"
-                                                placeholder="Enter blog title"
-                                                className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
-                                          />
-                                    )}
-                              />
-                              {errors.title && <p className="text-red-500 text-sm mt-2">{errors.title.message}</p>}
+                              {/* Category Field */}
+                              <div className="flex-1">
+                                    <label htmlFor="category" className="block text-lg font-medium text-gray-700">Category</label>
+                                    <select
+                                          {...register("category", { required: "Please select a category" })}
+                                          className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+                                    >
+                                          <option value="">Select Category</option>
+                                          <option value="Dog">Dog</option>
+                                          <option value="Cat">Cat</option>
+                                          <option value="Rabbit">Rabbit</option>
+                                    </select>
+                                    {errors.category && <p className="text-red-500 text-sm mt-2">{errors.category.message}</p>}
+                              </div>
                         </div>
 
-                        {/* Category Field */}
                         <div className="mb-6">
-                              <label htmlFor="category" className="block text-lg font-medium text-gray-700">Category</label>
-                              <Controller
-                                    name="category"
-                                    control={control}
-                                    rules={{ required: "Please select a category" }}
-                                    render={({ field }) => (
-                                          <select
-                                                {...field}
-                                                className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
-                                          >
-                                                <option value="Technology">Dog</option>
-                                                <option value="Health">Health</option>
-                                                <option value="Lifestyle">Lifestyle</option>
-                                                <option value="Business">Business</option>
-                                          </select>
-                                    )}
+                              <label htmlFor="shortDescription" className="block text-lg font-medium text-gray-700">Short Description</label>
+                              <input
+                                    {...register("shortDescription", { required: "Short description is required" })}
+                                    type="text"
+                                    placeholder="Brief summary of the blog"
+                                    className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
                               />
-                              {errors.category && <p className="text-red-500 text-sm mt-2">{errors.category.message}</p>}
+                              {errors.shortDescription && <p className="text-red-500 text-sm mt-2">{errors.shortDescription.message}</p>}
                         </div>
 
-                        {/* Description Field */}
                         <div className="mb-6">
-                              <label htmlFor="description" className="block text-lg font-medium text-gray-700">Description</label>
-                              <Controller
-                                    name="description"
-                                    control={control}
-                                    rules={{ required: "Please provide a description" }}
-                                    render={({ field }) => (
-                                          <textarea
-                                                {...field}
-                                                placeholder="Write a detailed description for your blog"
-                                                className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
-                                                rows="5"
-                                          />
-                                    )}
+                              <label htmlFor="longDescription" className="block text-lg font-medium text-gray-700">Long Description</label>
+                              <textarea
+                                    {...register("longDescription", { required: "Detailed description is required" })}
+                                    placeholder="Write a detailed description for your blog"
+                                    className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+                                    rows="5"
                               />
-                              {errors.description && <p className="text-red-500 text-sm mt-2">{errors.description.message}</p>}
+                              {errors.longDescription && <p className="text-red-500 text-sm mt-2">{errors.longDescription.message}</p>}
                         </div>
 
-                        {/* Image Upload Field */}
                         <div className="mb-6 flex flex-col items-center">
                               <label htmlFor="image" className="text-lg font-medium text-gray-700 mb-2">Upload Blog Image</label>
                               <input
@@ -126,49 +131,24 @@ const AddBlogModal = () => {
                                           className="mt-4 max-w-xs max-h-48 object-cover rounded-lg shadow-lg"
                                     />
                               )}
-                              {!imagePreview && <p className="text-gray-500 mt-2">No image selected</p>}
                         </div>
 
-                        {/* Subtitles Section */}
                         <div className="mb-6">
                               <h3 className="text-xl font-semibold text-gray-800 mb-4">Subtitles</h3>
                               {subtitles.map((subtitle, index) => (
                                     <div key={index} className="mb-6 p-6 bg-gray-50 rounded-lg shadow-md">
-                                          <div className="mb-4">
-                                                <label htmlFor={`subtitles[${index}].title`} className="block text-lg font-medium text-gray-700">Subtitle Title</label>
-                                                <Controller
-                                                      name={`subtitles[${index}].title`}
-                                                      control={control}
-                                                      defaultValue={subtitle.title}
-                                                      rules={{ required: "Subtitle title is required" }}
-                                                      render={({ field }) => (
-                                                            <input
-                                                                  {...field}
-                                                                  type="text"
-                                                                  placeholder="Enter subtitle title"
-                                                                  className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
-                                                            />
-                                                      )}
-                                                />
-                                          </div>
-
-                                          <div>
-                                                <label htmlFor={`subtitles[${index}].content`} className="block text-lg font-medium text-gray-700">Subtitle Content</label>
-                                                <Controller
-                                                      name={`subtitles[${index}].content`}
-                                                      control={control}
-                                                      defaultValue={subtitle.content}
-                                                      rules={{ required: "Subtitle content is required" }}
-                                                      render={({ field }) => (
-                                                            <textarea
-                                                                  {...field}
-                                                                  placeholder="Enter subtitle content"
-                                                                  className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
-                                                                  rows="4"
-                                                            />
-                                                      )}
-                                                />
-                                          </div>
+                                          <input
+                                                {...register(`subtitles.${index}.title`, { required: "Subtitle title is required" })}
+                                                type="text"
+                                                placeholder="Enter subtitle title"
+                                                className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+                                          />
+                                          <textarea
+                                                {...register(`subtitles.${index}.content`, { required: "Subtitle content is required" })}
+                                                placeholder="Enter subtitle content"
+                                                className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+                                                rows="4"
+                                          />
                                     </div>
                               ))}
                               <button
@@ -180,18 +160,38 @@ const AddBlogModal = () => {
                               </button>
                         </div>
 
-                        {/* Submit Button */}
+                        <div className="mb-6">
+                              <h3 className="text-lg font-semibold text-gray-800">Author Information</h3>
+                              <input
+                                    {...register("authorName", { required: "Author name is required" })}
+                                    type="text"
+                                    placeholder="Author's name"
+                                    className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+                              />
+                              <input
+                                    {...register("authorBio")}
+                                    type="text"
+                                    placeholder="Author's bio"
+                                    className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+                              />
+                              <input
+                                    {...register("authorProfileImage")}
+                                    type="text"
+                                    placeholder="Author's profile image URL"
+                                    className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+                              />
+                        </div>
+
                         <div className="mt-8">
                               <button
                                     type="submit"
-                                    className="w-full p-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none transition duration-300"
+                                    className="w-full px-4 py-3 bg-primary text-white font-semibold rounded-lg focus:outline-none transition duration-300"
                               >
                                     Submit Blog
                               </button>
                         </div>
                   </form>
             </div>
-
       );
 };
 

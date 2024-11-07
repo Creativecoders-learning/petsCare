@@ -4,6 +4,18 @@ const { ObjectId } = require('mongodb');
 function BlogAPI(blogCollection) {
     const blogRouter = express.Router();
 
+    // Add blog
+    blogRouter.post('/blogs', async (req, res) => {
+        const blog = req.body;
+        const blogDoc = {
+            $set: {
+                ...blog
+            }
+        }
+        const result = await blogCollection.insertOne(blogDoc);
+        res.send(result)
+    })
+
     // get all blogs
     blogRouter.get('/blogs', async (req, res) => {
         const result = await blogCollection.find().toArray()
