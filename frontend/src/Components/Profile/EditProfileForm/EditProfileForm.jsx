@@ -24,7 +24,7 @@ const EditProfileForm = ({ user, setIsEditing }) => {
       });
 
       const onSubmit = (data) => {
-            const { name, email, phone, country, district, streetAddress, gender, facebook, linkedin, twitter, github, status } = data || {}
+            const { name, email, phone, country, district, streetAddress, gender, facebook, linkedin, github, status } = data || {}
 
             const updatedUserInfo = {
                   name: name,
