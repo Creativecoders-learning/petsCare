@@ -15,9 +15,10 @@ const MyServices = () => {
   const [selectedVetService, setSelectedVetService] = useState(null); // State for selected vet
   const [openModal, setOpenModal] = useState(false);
   const [modalType, setModalType] = useState("");
- // Replace with the desired email
-  const { vetServices } = useVetServices("sarah.parker@vetclinic.com");
-console.log(vetServices)
+
+  const email = "sarah.parker@vetclinic.com"; // Replace with the desired email
+  const { vetServices } = useVetServices(email);
+
   const handleEditService = (service) => {
     setSelectedVetService(service);
     setModalType("edit-service");
