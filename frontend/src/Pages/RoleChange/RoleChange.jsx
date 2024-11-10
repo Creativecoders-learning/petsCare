@@ -3,38 +3,17 @@ import toast from 'react-hot-toast';
 import { FaUser, FaPaw } from 'react-icons/fa';
 import UseAuth from '../../Hooks/UseAuth';
 import useAxios from '../../Hooks/useAxios';
-import useUser from '../../Hooks/api/useUser';
 
 const RoleChange = () => {
   const navigate = useNavigate();
   const { user } = UseAuth();
   const apiHandler = useAxios();
-  const { setUserInfo } = useUser()
-
-
-  // Convert to a JavaScript Date object
-  const date = new Date(Number(user?.metadata?.lastLoginAt));
-  const formattedDate = date.toDateString();
 
   // Function to update role
   const handleRoleSelection = async (role) => {
 
     try {
-      await apiHandler.put(`/users/by-email/${user.email}`, { role, lastLogIn: user?.metadata?.lastLoginAt });
-
-      const userInfo = {
-        name: user?.displayName,
-        photoURL: user?.photoURL,
-        email: user?.email,
-        accountSettings: {
-          role: role,
-          lastLogIn: formattedDate,
-        }
-      }
-
-      // set user info into local storage
-      setUserInfo(userInfo)
-
+      await apiHandler.put(`/users/by-email/${user.email}`, { role })
       toast.success(`Role updated to ${role}`);
       navigate('/');
     } catch (error) {

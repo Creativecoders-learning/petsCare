@@ -30,7 +30,7 @@ const Login = () => {
             logIn(email, password)
                   .then(() => {
                         toast.success('Successfully logged in!!')
-                        navigate(location?.state ? location?.state : '/login')
+                        navigate('/')
                   })
                   .catch(error => {
                         toast.error(error?.message)

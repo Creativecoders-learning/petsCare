@@ -3,13 +3,14 @@ import { FaEnvelope, FaEdit, FaUser, FaAddressCard } from "react-icons/fa";
 
 const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }) => {
 
+      const [profileCompletion, setProfileCompletion] = useState(0);
+
       const calculateProfileCompletion = (user) => {
             const requiredFields = [
-                  "name", "email", "photoURL", "phone",
+                  "_id", "name", "email", "image", "role", "phone", "lastLogIn",
                   "address.country", "address.district", "address.streetAddress",
-                  "gender", "socialLinks.facebook", "socialLinks.linkedin",
-                  "socialLinks.twitter", "socialLinks.github", "accountSettings.role",
-                  "accountSettings.status", "accountSettings.lastLogin"
+                  "gender", "socialLinks.facebook", "socialLinks.linkedin", "socialLinks.github",
+                  "accountSettings.status",
             ];
 
             let filledFieldsCount = 0;
@@ -25,8 +26,6 @@ const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }
             return Math.round((filledFieldsCount / requiredFields.length) * 100);
       };
 
-      const [profileCompletion, setProfileCompletion] = useState(0);
-
       useEffect(() => {
             if (user) {
                   setProfileCompletion(calculateProfileCompletion(user));
@@ -37,7 +36,7 @@ const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }
             <div className="lg:w-1/3 bg-white shadow-lg rounded-lg p-6 flex flex-col font-inter">
                   <div className="flex flex-col items-center">
                         <img
-                              src={user?.photoURL}
+                              src={user?.image}
                               alt="User"
                               className="w-24 h-24 rounded-full mb-4"
                         />

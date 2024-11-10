@@ -11,6 +11,8 @@ const Profile = () => {
       const [isEditing, setIsEditing] = useState(false);
 
       const { user } = useUser();
+      console.log(user);
+      
 
       const renderSectionContent = () => {
             if (isEditing) {
