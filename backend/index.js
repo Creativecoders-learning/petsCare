@@ -5,8 +5,12 @@ require('dotenv').config()
 const shopRouter = require('../backend/Modules/Shop/ShopAPI');
 const adoptionRouter = require('../backend/Modules/Adoption/AdoptionAPI');
 
+
+
+
+
 const app = express();
-const port = process.env.port || 8000
+const port = process.env.port | 8000
 
 
 // middleware 
@@ -37,6 +41,7 @@ async function run() {
 
     const blogCollection = database.collection('blogs');
     const vetsCollection = database.collection('vets');
+    const vetsServicesCollection = database.collection('vetServices');
     const usersCollection = database.collection('users');
 
     // app.use('/adoption', adoptionRouter)
@@ -47,8 +52,13 @@ async function run() {
     app.use('/', blogRouter)
 
     // vets relates api's
-    const vetsRouter = require('../backend/Modules/Vet/VetApi')(vetsCollection);
-    app.use('/', vetsRouter)
+    const VetAPI = require('../backend/Modules/Vet/VetApi')(vetsCollection);
+    app.use('/', VetAPI)
+
+    // vets services related api
+    const VetServicesApi = require('./Modules/Vet/vetServicesApi')(vetsServicesCollection);
+    app.use('/', VetServicesApi)
+
 
     // users related api's
     const usersRouter = require('../backend/Modules/Users/UsersAPi')(usersCollection);

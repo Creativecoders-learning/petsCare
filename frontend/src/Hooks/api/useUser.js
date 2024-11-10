@@ -6,10 +6,12 @@ const useUser = () => {
 
       const [users, setUsers] = useState([])
       const [user, setUser] = useState({})
-
+console.log(user)
+console.log(users)
       const apiHandler = useAxios();
       const { user: authUser } = UseAuth();
       const authEmail = authUser?.email;
+console.log(authEmail)
 
       const fetchUsers = async () => {
             try {
