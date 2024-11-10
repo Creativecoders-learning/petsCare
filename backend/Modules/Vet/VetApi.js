@@ -18,6 +18,11 @@ function VetAPI(vetsCollection) {
             res.send(result)
       })
 
+      // delete vet
+      vetsRouter.delete('/vets/:id', async (req, res) => {
+            
+      })
+
       return vetsRouter;
 }
 

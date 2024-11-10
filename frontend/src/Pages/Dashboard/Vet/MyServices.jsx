@@ -12,7 +12,7 @@ const MyServices = () => {
   const [openModal, setOpenModal] = useState(false);
   const [modalType, setModalType] = useState("");
 
-  const email = ""; // Replace with the desired email
+  const email = "sarah.parker@vetclinic.com"; // Replace with the desired email
   const { vetServices } = useVetServices(email);
 
   const handleEditService = (service) => {
