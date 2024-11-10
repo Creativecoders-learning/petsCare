@@ -1,13 +1,14 @@
-import axios from "axios";
+
 import { useEffect, useState } from "react";
+import useAxios from "../useAxios";
 
 const useVetServices = (email) => {
 
       const [vetServices, setVetServices] = useState([]);
-
+const apiHandler =useAxios();
       const fetchVetServices = async () => {
             try {
-                  const response = await axios.get('/vetServices.json');
+                  const response = await apiHandler.get('/vetServices');
                   const allServices = response?.data || [];
 
                   // Filter services based on email if provided
