@@ -17,6 +17,7 @@ function VetAPI(vetsCollection) {
             const result = await vetsCollection.findOne(query);
             res.send(result)
       })
+      
 
       return vetsRouter;
 }

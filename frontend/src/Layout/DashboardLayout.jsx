@@ -7,13 +7,17 @@ import { AiOutlineMedicineBox } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 import { MdOutlinePets } from "react-icons/md";
 import DashboardActiveLink from "../Components/UI/DashboardActiveLink";
-import useUser from "../Hooks/api/useUser";
+// import useUser from "../Hooks/api/useUser";
 
 export default function DashboardLayout() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
 
-  const user = useUser();
-
+  // const user = useUser();
+  const user = {
+    accountSettings:{
+      role:'Vet'
+    }
+  }
 
   // console.log(user.accountSettings.role)
 
