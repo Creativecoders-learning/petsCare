@@ -12,8 +12,6 @@ export default function ShopCard({ item = {} }) {
   const [openModal, setOpenModal] = useState(false);
   const [cartProducts, setCartProducts] = useState([]);
 
-  console.log(cartProducts);
-
   // handle cart button
   const handleCartBtn = (product) => {
     const storedCartProducts =

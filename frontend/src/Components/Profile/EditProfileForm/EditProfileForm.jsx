@@ -1,10 +1,12 @@
 import { useForm } from "react-hook-form";
 import PrimaryTitle from "../../UI/PrimaryTitle";
-import useUser from "../../../Hooks/api/useUser";
+import useAxios from "../../../Hooks/useAxios";
+import UseAuth from "../../../Hooks/UseAuth";
 
 const EditProfileForm = ({ user, setIsEditing }) => {
 
-      const { setUserInfo } = useUser()
+      const apiHandler = useAxios();
+      const { user: authUser } = UseAuth();
 
       const { register, handleSubmit, formState: { errors } } = useForm({
             defaultValues: {
@@ -43,14 +45,16 @@ const EditProfileForm = ({ user, setIsEditing }) => {
                         github: github
                   },
                   accountSettings: {
-                        role: user?.accountSettings?.role,
                         status: status,
-                        lastLogin: user?.accountSettings?.lastLogIn
+                        lastLogin: authUser?.lastLoginAt?.lastLoginAt
                   }
             }
 
-            // set updated userInfo into localStorage
-            setUserInfo(updatedUserInfo)
+            // update profile
+            apiHandler.put(`/users/by-email/${user.email}`, updatedUserInfo);
+            console.log(updatedUserInfo);
+
+
             // console.log("Updated profile data:", updatedUserInfo);
             setIsEditing(false);
       };

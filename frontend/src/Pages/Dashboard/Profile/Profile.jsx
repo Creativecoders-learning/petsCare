@@ -6,11 +6,14 @@ import AccountSettings from "../../../Components/Profile/AccountSettings/Account
 import LeftSidebar from "../../../Components/Profile/LeftSidebar/LeftSidebar";
 import useUser from "../../../Hooks/api/useUser";
 
+
 const Profile = () => {
       const [selectedSection, setSelectedSection] = useState("profile");
       const [isEditing, setIsEditing] = useState(false);
 
       const { user } = useUser();
+      console.log(user);
+      
 
       const renderSectionContent = () => {
             if (isEditing) {

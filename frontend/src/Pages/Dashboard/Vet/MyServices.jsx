@@ -6,13 +6,11 @@ import Modal from "../../../Components/UI/Modal";
 import ServiceModalContent from "../../../Components/Dashboard/Admin/MyServices/ServiceModalContent";
 import Button from "../../../Components/UI/Button";
 import AddServiceModal from "../../../Components/Dashboard/Admin/MyServices/AddServiceModal";
-import UseAuth from "../../../Hooks/UseAuth";
 import useAxios from "../../../Hooks/useAxios";
 import Swal from 'sweetalert2'
 
 
 const MyServices = () => {
-  const {user}=UseAuth();
   const apiHandler =useAxios();
   const [selectedVetService, setSelectedVetService] = useState(null); // State for selected vet
   const [openModal, setOpenModal] = useState(false);

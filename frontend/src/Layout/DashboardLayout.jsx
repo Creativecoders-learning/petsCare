@@ -7,19 +7,12 @@ import { AiOutlineMedicineBox } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 import { MdOutlinePets } from "react-icons/md";
 import DashboardActiveLink from "../Components/UI/DashboardActiveLink";
-// import useUser from "../Hooks/api/useUser";
+import useUser from "../Hooks/api/useUser";
 
 export default function DashboardLayout() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
 
-  // const user = useUser();
-  const user = {
-    accountSettings:{
-      role:'Vet'
-    }
-  }
-
-  // console.log(user.accountSettings.role)
+  const { user } = useUser();
 
   const handleNavToggle = () => {
     setIsSideNavOpen((prev) => !prev);
@@ -80,7 +73,7 @@ export default function DashboardLayout() {
               {/* Conditional Routes Based on User Role */}
 
               {/* for vet */}
-              {user?.accountSettings?.role === "Vet" && (
+              {user?.role === "Vet" && (
                 <>
                   <li>
                     <DashboardActiveLink to="/dashboard/vet/appointments">
@@ -118,7 +111,7 @@ export default function DashboardLayout() {
               )}
 
               {/* for admin */}
-              {user?.accountSettings?.role === "Admin" && (
+              {user?.role === "Admin" && (
                 <>
                   <li>
                     <DashboardActiveLink to="/dashboard/admin/user-management">
@@ -170,7 +163,7 @@ export default function DashboardLayout() {
               )}
 
               {/* For Normal user */}
-              {user?.accountSettings?.role === "NormalUser" && (
+              {user?.role === "NormalUser" && (
                 <>
                   <li>
                     <DashboardActiveLink to="/dashboard/normalUser/my-products">
