@@ -6,8 +6,12 @@ import Modal from "../../../Components/UI/Modal";
 import ServiceModalContent from "../../../Components/Dashboard/Admin/MyServices/ServiceModalContent";
 import Button from "../../../Components/UI/Button";
 import AddServiceModal from "../../../Components/Dashboard/Admin/MyServices/AddServiceModal";
+import useAxios from "../../../Hooks/useAxios";
+import Swal from 'sweetalert2'
+
 
 const MyServices = () => {
+  const apiHandler =useAxios();
   const [selectedVetService, setSelectedVetService] = useState(null); // State for selected vet
   const [openModal, setOpenModal] = useState(false);
   const [modalType, setModalType] = useState("");
@@ -20,11 +24,30 @@ const MyServices = () => {
     setModalType("edit-service");
     setOpenModal(true);
   };
-
-  const handleDeleteService = (id) => {
-    console.log(`Deleting service with ID: ${id}`);
-    // Place delete functionality here
-  };
+ 
+  const handleDeleteService = async(id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+}).then((result) => {
+      if (result.isConfirmed) {
+            apiHandler.delete(`/vetServices/${id}`)
+                  .then(result => {
+                        if (result?.data?.deletedCount === 1) {
+                              Swal.fire({
+                                    title: "Deleted!",
+                                    text: "User has been deleted.",
+                                    icon: "success"
+                              });
+                              
+                        }
+                  })
+      }})};
 
   const handleAddServices = () => {
     setModalType("add-service");
@@ -75,7 +98,7 @@ const MyServices = () => {
                     <FaEdit />
                   </button>
                   <button
-                    onClick={() => handleDeleteService(service)}
+                    onClick={() => handleDeleteService(service._id)}
                     className="p-2 text-white bg-red-500 rounded-full hover:bg-red-600 transition duration-150"
                   >
                     <FaTrash />
