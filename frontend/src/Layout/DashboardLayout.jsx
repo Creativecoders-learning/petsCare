@@ -13,6 +13,7 @@ export default function DashboardLayout() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
 
   const { user } = useUser();
+  console.log(user)
 
   const handleNavToggle = () => {
     setIsSideNavOpen((prev) => !prev);

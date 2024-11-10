@@ -1,12 +1,11 @@
 const express = require('express')
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const cors = require('cors')
-require('dotenv').config()
-const shopRouter = require('../backend/Modules/Shop/ShopAPI');
+require('dotenv').config();
 const adoptionRouter = require('../backend/Modules/Adoption/AdoptionAPI');
 
 const app = express();
-const port = process.env.port || 8000
+const port = process.env.port | 8000;
 
 
 // middleware 
@@ -38,6 +37,7 @@ async function run() {
     const blogCollection = database.collection('blogs');
     const vetsCollection = database.collection('vets');
     const usersCollection = database.collection('users');
+    const shopProductCollection = database.collection('shop-products');
 
     // app.use('/adoption', adoptionRouter)
     // app.use('/', shopRouter)
@@ -54,6 +54,10 @@ async function run() {
     const usersRouter = require('../backend/Modules/Users/UsersAPi')(usersCollection);
     app.use('/', usersRouter)
 
+    // shop related api's
+    const sellerApi = require('./Modules/Shop/Seller/SellerApi')(shopProductCollection);
+    app.use('/', sellerApi)
+
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
@@ -63,6 +67,10 @@ async function run() {
   }
 }
 run().catch(console.dir);
+
+app.get('/', (req, res)=> {
+  res.send('This is petsCare server...')
+})
 
 app.listen(port, () => {
   console.log(`my port is ${port}`)

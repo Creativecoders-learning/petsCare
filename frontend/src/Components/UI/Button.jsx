@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 
 const Button = ({
   children,
+  dynamicType='button',
   primary = false,
   secondary = false,
   btnStyle = '',
@@ -23,7 +24,7 @@ const Button = ({
     primary ? primaryClasses : secondary ? secondaryClasses : ''
   } ${btnStyle}`;
   return (
-    <button onClick={onClick} type="button" className={`${appliedClasses}`}>
+    <button onClick={onClick} type={dynamicType} className={`${appliedClasses}`}>
       {children}
     </button>
   );
@@ -35,6 +36,7 @@ Button.propTypes = {
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
   children: PropTypes.node.isRequired,
+  dynamicType: PropTypes.string.isRequired,
 };
 
 export default Button;

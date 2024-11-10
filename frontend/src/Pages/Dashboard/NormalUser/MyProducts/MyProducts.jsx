@@ -5,16 +5,56 @@ import Button from "../../../../Components/UI/Button";
 import { useState } from "react";
 import NewProductForm from "../../../../Components/Dashboard/NormalUser/NewProductForm";
 import Modal from "../../../../Components/UI/Modal";
+import Swal from "sweetalert2";
+import useAxios from "../../../../Hooks/useAxios";
 
 export default function MyProducts() {
-  const { petsProducts } = usePetsProducts();
+  const { petsProducts, refresh  } = usePetsProducts();
   const [openModal, setOpenModal] = useState(false);
+  const apiHandler = useAxios();
+
+  // handle delete button
+  const handleDeleteBtn = (id) => {
+    console.log(id);
+
+    // ensure alert!!
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        apiHandler.delete(`/shop-products/${id}`)
+        .then((res) => {
+          if (res.data.acknowledged) {
+            refresh();
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+            });
+          }
+        })
+        .catch(err => {
+          Swal.fire({
+            title: "Something Wrong!!",
+            text: `${err.message}`,
+            icon: "error",
+          });
+        })
+      }
+    });
+  };
 
   return (
     <>
       {openModal && (
         <Modal primary={true} setOpenModal={setOpenModal} openModal={openModal}>
-          <NewProductForm />
+          <NewProductForm refresh={refresh}/>
         </Modal>
       )}
       <div className="p-8 font-inter">
@@ -40,9 +80,9 @@ export default function MyProducts() {
               </tr>
             </thead>
             <tbody className="text-myGray">
-              {petsProducts.map((blog, index) => (
+              {petsProducts.map((item, index) => (
                 <tr
-                  key={blog.id}
+                  key={item._id}
                   className={`${
                     index % 2 === 0
                       ? "bg-primaryLight bg-opacity-10"
@@ -52,15 +92,15 @@ export default function MyProducts() {
                   <td className="p-4 font-medium">{index + 1}</td>
                   <td className="p-4">
                     <img
-                      src={blog?.image}
-                      alt={blog?.title}
+                      src={item?.image}
+                      alt={item?.title}
                       className="w-12 h-12 object-cover rounded-md shadow-md"
                     />
                   </td>
-                  <td className="p-4 font-medium">{blog?.title}</td>
-                  <td className="p-4">{blog?.category}</td>
-                  <td className="p-4">{blog?.view_count}</td>
-                  <td className="p-4">{blog?.rating}</td>
+                  <td className="p-4 font-medium">{item?.title}</td>
+                  <td className="p-4">{item?.category}</td>
+                  <td className="p-4">{item?.view_count}</td>
+                  <td className="p-4">{item?.rating}</td>
                   <td className="p-4 flex items-center justify-center space-x-3">
                     <button
                       // onClick={() => handleEdit(blog?.id)}
@@ -69,7 +109,7 @@ export default function MyProducts() {
                       <FaEdit />
                     </button>
                     <button
-                      // onClick={() => handleDelete(blog?.id)}
+                      onClick={() => handleDeleteBtn(item?._id)}
                       className="p-2 text-white bg-red-500 rounded-full hover:bg-red-600 transition duration-150"
                     >
                       <FaTrash />

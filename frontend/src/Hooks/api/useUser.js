@@ -3,7 +3,6 @@ import useAxios from "../useAxios";
 import UseAuth from "../UseAuth";
 
 const useUser = () => {
-
       const [users, setUsers] = useState([])
       const [user, setUser] = useState({})
 
