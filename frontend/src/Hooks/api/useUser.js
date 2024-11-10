@@ -1,27 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useAxios from "../useAxios";
+import UseAuth from "../UseAuth";
 
 const useUser = () => {
 
-      const [user, setUser] = useState(() => {
-            const userInfo = localStorage.getItem('userInfo');
-            return userInfo ? JSON.parse(userInfo) : null;
-      });
+      const [users, setUsers] = useState([])
+      const [user, setUser] = useState({})
 
-      // get userInfo from localStorage
-      const getUserInfo = () => {
-            const userInfo = localStorage.getItem('userInfo');
-            if (userInfo) {
-                  setUser(JSON.parse(userInfo))
-                  return JSON.parse(userInfo)
+      const apiHandler = useAxios();
+      const { user: authUser } = UseAuth();
+      const authEmail = authUser?.email;
+
+      const fetchUsers = async () => {
+            try {
+                  const response = await apiHandler.get('/users');
+                  setUsers(response?.data)
+            } catch (error) {
+                  console.log(error?.message);
+
             }
       }
 
-      // set userInfo to localStorage
-      const setUserInfo = (userInfo) => {
-            localStorage.setItem('userInfo', JSON.stringify(userInfo))
-      }
+      useEffect(() => {
+            fetchUsers()
+      }, [])
 
-      return { user, setUser, getUserInfo, setUserInfo };
+
+      useEffect(() => {
+            const logInUser = users?.find(user => user?.email === authEmail);
+            setUser(logInUser);
+      }, [authEmail, users])
+
+      return { user, setUser };
 };
 
 export default useUser;
