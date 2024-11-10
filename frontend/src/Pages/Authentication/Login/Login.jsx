@@ -4,13 +4,16 @@ import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import SocialLogin from "../../../Components/UI/SocialLogin";
 import { AUTHENTICATIONImages } from "../../../Image-data/authentication";
 import { FaEnvelope, FaLock } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import UseAuth from "../../../Hooks/UseAuth";
 import toast from "react-hot-toast";
 
 const Login = () => {
       const [showPassword, setShowPassword] = useState(false);
       const { logIn } = UseAuth();
+
+      const location = useLocation();
+      const navigate = useNavigate();
 
       const {
             register,
@@ -27,6 +30,7 @@ const Login = () => {
             logIn(email, password)
                   .then(() => {
                         toast.success('Successfully logged in!!')
+                        navigate(location?.state ? location?.state : '/login')
                   })
                   .catch(error => {
                         toast.error(error?.message)

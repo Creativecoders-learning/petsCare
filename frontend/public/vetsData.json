@@ -1,0 +1,703 @@
+[
+    {
+      "id": 1,
+      "name": "Dr. Sarah Tan",
+      "category": "Holistics",
+      "date": "2024-11-06",
+      "email": "sarah.tan@holisticpets.com",
+      "image": "https://media.istockphoto.com/id/476744583/photo/smiling-female-vets-with-healthy-dog.jpg?s=612x612&w=0&k=20&c=4f-21z6cH0ZJD7HlOHGlmxdT2WyUKIAZqHTADLV4kuY=",
+      "degrees": ["DVM", "Certified Veterinary Acupuncturist (CVA)"],
+      "expertise": ["Acupuncture", "Herbal Medicine", "Chiropractic Care"],
+      "experience": "12 years",
+      "institute": "University of California, Davis - School of Veterinary Medicine",
+      "instituteLocation": "Davis, CA",
+      "awards": ["Veterinarian of the Year - Holistic Pet Awards 2019", "Excellence in Integrative Care 2021"],
+      "work_experiences": [
+        "Senior Holistic Veterinarian at Holistic Paws Clinic (2018 - Present)",
+        "Holistic Veterinary Consultant at PetWellness Group (2012 - 2018)"
+      ],
+      "education": [
+        "Doctor of Veterinary Medicine (DVM), University of California, Davis, 2011",
+        "Certified Veterinary Acupuncturist (CVA), International Veterinary Acupuncture Society, 2012"
+      ],
+      "about": "Dr. Sarah Tan is a holistic veterinarian specializing in acupuncture, herbal medicine, and chiropractic care. With over a decade of experience, she integrates natural healing methods with traditional veterinary practices to improve pets’ quality of life, particularly those with chronic pain, mobility issues, or behavioral concerns. Dr. Tan takes a personalized approach to each case, focusing on the pet’s health history and lifestyle, while collaborating with other healthcare providers to ensure holistic treatment plans."
+    },
+    {
+      "id": 2,
+      "name": "Dr. Emily Jordan",
+      "category": "Holistics",
+      "date": "2024-11-06",
+      "email": "emily.jordan@holisticpets.com",
+      "image": "https://media.istockphoto.com/id/2025553061/photo/dog-at-the-veterinarian.jpg?s=612x612&w=0&k=20&c=u_LjVNN2uHbHUpJENIceM-hUl2PHtxvUDJOFI0MilEg=",
+      "degrees": ["DVM", "Certified Veterinary Homeopath"],
+      "expertise": ["Homeopathy", "Nutritional Therapy", "Massage Therapy"],
+      "experience": "10 years",
+      "institute": "University of Melbourne - Veterinary School",
+      "instituteLocation": "Melbourne, Australia",
+      "awards": ["Holistic Veterinary Excellence Award 2022"],
+      "work_experiences": [
+        "Holistic Veterinarian at Healing Paws Clinic (2016 - Present)",
+        "Veterinary Consultant at Natural Pet Care Clinic (2012 - 2016)"
+      ],
+      "education": [
+        "Doctor of Veterinary Medicine (DVM), University of Melbourne, 2010",
+        "Certified Veterinary Homeopath, Academy of Veterinary Homeopathy, 2012"
+      ],
+      "about": "Dr. Emily Jordan is a holistic veterinarian specializing in homeopathy, nutritional therapy, and massage therapy. With a decade of experience, Dr. Jordan believes in a balanced approach to pet care, combining modern veterinary practices with natural healing methods. She focuses on treating chronic conditions, stress-related disorders, and behavioral issues through individualized treatment plans that address both the physical and emotional well-being of pets."
+    },
+    {
+      "id": 3,
+      "name": "Dr. Jennifer Reed",
+      "category": "Holistics",
+      "date": "2024-11-06",
+      "email": "jennifer.reed@holisticvetcare.com",
+      "image": "https://www.covvi.com/wp-content/uploads/2024/02/Welcoming-Emily-Sehmar-Bee-To-The-Team-At-COVVI.jpg",
+      "degrees": ["DVM", "Certified Veterinary Herbalist"],
+      "expertise": ["Herbal Medicine", "Acupuncture", "Integrative Care"],
+      "experience": "15 years",
+      "institute": "Washington State University College of Veterinary Medicine",
+      "instituteLocation": "Pullman, WA",
+      "awards": ["Best Holistic Veterinarian 2020", "Excellence in Animal Healing 2021"],
+      "work_experiences": [
+        "Senior Holistic Veterinarian at Balanced Paws Clinic (2017 - Present)",
+        "Herbal Medicine Specialist at Pet Care Integrative Clinic (2012 - 2017)"
+      ],
+      "education": [
+        "Doctor of Veterinary Medicine (DVM), Washington State University, 2009",
+        "Certified Veterinary Herbalist, American Veterinary Medical Association, 2011"
+      ],
+      "about": "Dr. Jennifer Reed is a seasoned holistic veterinarian who combines herbal medicine, acupuncture, and integrative care techniques to treat a variety of health issues in pets. With 15 years of experience, she works with pet owners to improve the overall health and well-being of their pets, often in conjunction with traditional veterinary care. Dr. Reed focuses on long-term health, offering tailored herbal treatments for everything from immune disorders to digestive problems."
+    },
+    {
+      "id": 4,
+      "name": "Dr. Anna Williams",
+      "category": "Holistics",
+      "date": "2024-11-06",
+      "email": "anna.williams@holisticpaws.com",
+      "image": "https://www.oakhill-vets.com/wp-content/uploads/2024/08/Web-Pets-Team-Alice-Tighe.png",
+      "degrees": ["DVM", "Certified Veterinary Chiropractor (CVC)"],
+      "expertise": ["Chiropractic Care", "Rehabilitation", "Pain Management"],
+      "experience": "8 years",
+      "institute": "University of Illinois College of Veterinary Medicine",
+      "instituteLocation": "Champaign, IL",
+      "awards": ["Chiropractic Care Excellence Award 2018"],
+      "work_experiences": [
+        "Veterinary Chiropractor at Paws in Motion Clinic (2016 - Present)",
+        "Rehabilitation Veterinarian at Healthy Paws Animal Clinic (2014 - 2016)"
+      ],
+      "education": [
+        "Doctor of Veterinary Medicine (DVM), University of Illinois, 2012",
+        "Certified Veterinary Chiropractor (CVC), American Veterinary Chiropractic Association, 2014"
+      ],
+      "about": "Dr. Anna Williams specializes in veterinary chiropractic care, helping pets recover from injury and maintain mobility. With 8 years of experience, Dr. Williams combines chiropractic adjustments with rehabilitation therapies to alleviate pain, improve range of motion, and help pets regain their active lifestyles. She works closely with pet owners to develop personalized treatment plans, including at-home exercises, to ensure long-term mobility and comfort for their pets."
+    },
+    {
+      "id": 5,
+      "name": "Dr. Natalie Brooks",
+      "category": "Holistics",
+      "date": "2024-11-06",
+      "email": "natalie.brooks@holisticvetcare.com",
+      "image": "https://lh3.googleusercontent.com/proxy/nmSUrG2OX0D3Y7RkIOMO3gK860uHqcMBzmoElpREsLlOutMxa7IZncnSTz6fCuC7QuOhnBULXx9iqzG9vdbPYl9Ucu02B8Fk_pPA3ZA0S2pImpyUEuPnKtnKBrcdwzTsYQpXNHr5Xa7CL-v-BukWGD2w",
+      "degrees": ["DVM", "Master of Veterinary Acupuncture"],
+      "expertise": ["Acupuncture", "Traditional Chinese Medicine", "Holistic Wellness"],
+      "experience": "9 years",
+      "institute": "University of Wisconsin-Madison School of Veterinary Medicine",
+      "instituteLocation": "Madison, WI",
+      "awards": ["Holistic Care Specialist 2021", "Best Integrative Veterinary Practitioner 2019"],
+      "work_experiences": [
+        "Lead Veterinarian at AcuPets Integrative Care (2017 - Present)",
+        "Veterinary Acupuncturist at HealthPaws Acupuncture Clinic (2013 - 2017)"
+      ],
+      "education": [
+        "Doctor of Veterinary Medicine (DVM), University of Wisconsin-Madison, 2012",
+        "Master of Veterinary Acupuncture, American Academy of Veterinary Acupuncture, 2014"
+      ],
+      "about": "Dr. Natalie Brooks is a holistic veterinarian who integrates Traditional Chinese Medicine and acupuncture to treat a variety of pet ailments. With 9 years of experience, Dr. Brooks uses acupuncture to treat conditions ranging from chronic pain and anxiety to digestive issues and arthritis. She tailors each treatment to the individual needs of the pet, working alongside conventional medicine to provide comprehensive care."
+    },
+
+    {
+      "id": 6,
+      "name": "Dr. Kevin Green",
+      "category": "Holistics",
+      "date": "2024-11-06",
+      "email": "kevin.green@naturalpetcare.com",
+      "image": "https://i.ytimg.com/vi/h4dw_wcyx2k/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBSjb0QhsUkzz7j8K8t40EN3IjdNA",
+      "degrees": ["DVM", "Certified Veterinary Homeopath"],
+      "expertise": ["Homeopathy", "Herbal Remedies", "Nutritional Support"],
+      "experience": "11 years",
+      "institute": "University of Colorado College of Veterinary Medicine",
+      "instituteLocation": "Boulder, CO",
+      "awards": ["Natural Veterinary Excellence 2021", "Holistic Care Award 2020"],
+      "work_experiences": [
+        "Holistic Veterinarian at Natural Pet Care Clinic (2015 - Present)",
+        "Veterinary Consultant at Holistic Animal Care Group (2010 - 2015)"
+      ],
+      "education": [
+        "Doctor of Veterinary Medicine (DVM), University of Colorado, 2010",
+        "Certified Veterinary Homeopath, National Center for Homeopathy, 2012"
+      ],
+      "about": "Dr. Kevin Green is a highly skilled holistic veterinarian with a focus on homeopathy and herbal remedies. With over 11 years of experience, Dr. Green offers personalized care for pets suffering from allergies, skin conditions, and digestive problems. He uses natural treatments to support pets' immune systems and overall well-being, often working in conjunction with traditional treatments to provide a comprehensive approach to veterinary care."
+    },
+    {
+        "id": 7,
+        "name": "Dr. Ethan Walker",
+        "category": "SportsCare",
+        "date": "2024-11-06",
+        "email": "ethan.walker@sportscarevet.com",
+        "image": "https://erlc.com/wp-content/uploads/2020/06/Research-Institute-2-900x600.jpg",
+        "degrees": ["DVM", "Certified Sports Rehabilitation Specialist"],
+        "expertise": ["Sports Rehabilitation", "Physical Therapy", "Joint Health"],
+        "experience": "9 years",
+        "institute": "University of Florida College of Veterinary Medicine",
+        "instituteLocation": "Gainesville, FL",
+        "awards": ["Best Sports Care Veterinarian 2020", "Innovator in Canine Rehabilitation 2019"],
+        "work_experiences": [
+          "Lead Sports Care Veterinarian at Paws & Play Rehabilitation (2017 - Present)",
+          "Veterinary Consultant at Animal Physical Therapy Services (2015 - 2017)"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine (DVM), University of Florida, 2013",
+          "Certified Sports Rehabilitation Specialist, Canine Rehabilitation Institute, 2015"
+        ],
+        "about": "Dr. Ethan Walker is a dedicated sports veterinarian specializing in physical therapy and joint health for active and senior pets. With 9 years of experience in rehabilitation, Dr. Walker helps pets recover from injuries, maintain optimal mobility, and prevent long-term damage. He integrates fitness programs and personalized therapies to ensure dogs can enjoy active lives. Dr. Walker is committed to promoting fitness for dogs through both recovery and prevention."
+    },
+
+    {
+        "id": 8,
+        "name": "Dr. Olivia Carter",
+        "category": "SportsCare",
+        "date": "2024-11-06",
+        "email": "olivia.carter@sportscarevet.com",
+        "image": "https://cdn.pixabay.com/photo/2023/12/06/19/00/dog-8434227_640.jpg",
+        "degrees": ["DVM", "Certified Canine Rehabilitation Therapist"],
+        "expertise": ["Rehabilitation Therapy", "Joint Mobility", "Pain Management"],
+        "experience": "7 years",
+        "institute": "Colorado State University College of Veterinary Medicine",
+        "instituteLocation": "Fort Collins, CO",
+        "awards": ["Excellence in Sports Care for Pets 2018", "Top Canine Rehabilitation Specialist 2021"],
+        "work_experiences": [
+          "Senior Veterinarian at Paws Forward Rehabilitation (2017 - Present)",
+          "Canine Rehab Specialist at Active Paws Animal Clinic (2015 - 2017)"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine (DVM), Colorado State University, 2014",
+          "Certified Canine Rehabilitation Therapist, American College of Veterinary Sports Medicine, 2015"
+        ],
+        "about": "Dr. Olivia Carter is a sports care veterinarian specializing in rehabilitation therapy, joint mobility, and pain management for pets. With 7 years of experience, Dr. Carter provides treatments that help pets recover from injuries and improve their movement abilities. She uses advanced rehabilitation techniques and therapies to enhance pets' quality of life, particularly those with mobility challenges due to sports-related injuries or aging."
+    },
+
+
+    {
+        "id": 9,
+        "name": "Dr. Lucas Mitchell",
+        "category": "SportsCare",
+        "date": "2024-11-06",
+        "email": "lucas.mitchell@sportscarevet.com",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq44F0kScRW99asbgL9TTzC7T9tCrMUKDF_w&s",
+        "degrees": ["DVM", "Certified Veterinary Sports Medicine Specialist"],
+        "expertise": ["Sports Medicine", "Injury Recovery", "Physical Therapy"],
+        "experience": "12 years",
+        "institute": "University of Minnesota College of Veterinary Medicine",
+        "instituteLocation": "Minneapolis, MN",
+        "awards": ["Veterinary Sports Medicine Excellence 2020", "Top Sports Rehabilitation Expert 2021"],
+        "work_experiences": [
+          "Veterinary Sports Medicine Specialist at Active Paws Sports Care (2015 - Present)",
+          "Physical Therapy Veterinarian at RecoverVet Rehabilitation (2012 - 2015)"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine (DVM), University of Minnesota, 2010",
+          "Certified Veterinary Sports Medicine Specialist, American Veterinary Medical Association, 2013"
+        ],
+        "about": "Dr. Lucas Mitchell is an expert in veterinary sports medicine, focusing on injury recovery, physical therapy, and rehabilitation for pets. With 12 years of experience, Dr. Mitchell has worked with countless pets recovering from athletic injuries. His expertise lies in creating individualized rehabilitation plans that promote healing, restore movement, and reduce pain. His holistic approach helps pets return to their active lifestyles while minimizing the risk of future injuries."
+    },
+    {
+        "id": 10,
+        "name": "Dr. Ava Harrison",
+        "category": "SportsCare",
+        "date": "2024-11-06",
+        "email": "ava.harrison@sportscarevet.com",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYeH3LfKKNDST5wOpPtRUCebMDnEAPFSKVnA&s",
+        "degrees": ["DVM", "Certified Veterinary Sports Rehabilitation Therapist"],
+        "expertise": ["Rehabilitation Therapy", "Joint Recovery", "Fitness"],
+        "experience": "8 years",
+        "institute": "Texas A&M University College of Veterinary Medicine",
+        "instituteLocation": "College Station, TX",
+        "awards": ["Rehabilitation Specialist of the Year 2021", "Excellence in Joint Recovery 2019"],
+        "work_experiences": [
+          "Rehabilitation Therapist at Vital Paws Rehabilitation Center (2017 - Present)",
+          "Veterinary Specialist at Sports Pet Rehab (2013 - 2017)"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine (DVM), Texas A&M University, 2012",
+          "Certified Veterinary Sports Rehabilitation Therapist, Veterinary Sports Medicine Association, 2014"
+        ],
+        "about": "Dr. Ava Harrison is a dedicated sports care veterinarian with expertise in rehabilitation therapy and joint recovery. Over her 8 years of experience, she has helped many pets recover from athletic injuries, particularly focusing on joint health and rehabilitation exercises. Dr. Harrison integrates fitness and strength training programs for pets of all ages, ensuring that they are not only rehabilitated but also strengthened to prevent future injuries."
+    },
+    {
+        "id": 11,
+        "name": "Dr. Mia Foster",
+        "category": "SportsCare",
+        "date": "2024-11-06",
+        "email": "mia.foster@sportscarevet.com",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgLuGnYLy0bHQGhG6ZSoKf_Bd2dbt8u-PhTA&s",
+        "degrees": ["DVM", "Certified Sports Rehabilitation Specialist"],
+        "expertise": ["Sports Therapy", "Injury Prevention", "Joint Health"],
+        "experience": "6 years",
+        "institute": "North Carolina State University College of Veterinary Medicine",
+        "instituteLocation": "Raleigh, NC",
+        "awards": ["Innovative Sports Care Award 2020", "Top Veterinarian in Sports Rehabilitation 2021"],
+        "work_experiences": [
+          "Sports Care Veterinarian at Rehabilitative Paws Clinic (2018 - Present)",
+          "Veterinary Rehab Technician at Joint Recovery Animal Clinic (2016 - 2018)"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine (DVM), North Carolina State University, 2014",
+          "Certified Sports Rehabilitation Specialist, Veterinary Sports Medicine Association, 2016"
+        ],
+        "about": "Dr. Mia Foster is a veterinarian specializing in sports therapy, injury prevention, and joint health. She combines physical therapy with targeted fitness programs to help pets recover from sports-related injuries and maintain strong, healthy joints. With 6 years of experience, Dr. Foster works with active pets, ensuring they remain injury-free and able to enjoy their favorite activities. She is passionate about educating pet owners on maintaining their pets' health and wellness throughout their lives."
+    },
+    {
+        "id": 12,
+        "name": "Dr. Noah Lee",
+        "category": "SportsCare",
+        "date": "2024-11-06",
+        "email": "noah.lee@sportscarevet.com",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmr3_ELnbFxrADHQldmcF18nsm6Pq9RayuWw&s",
+        "degrees": ["DVM", "Certified Canine Rehabilitation Therapist"],
+        "expertise": ["Rehabilitation Therapy", "Sports Injuries", "Joint Therapy"],
+        "experience": "10 years",
+        "institute": "Cornell University College of Veterinary Medicine",
+        "instituteLocation": "Ithaca, NY",
+        "awards": ["Best Canine Rehabilitation Expert 2020", "Top Sports Medicine Veterinarian 2018"],
+        "work_experiences": [
+          "Canine Rehabilitation Therapist at Paws & Play Sports Rehab (2017 - Present)",
+          "Veterinary Specialist at Active Paws Rehabilitation (2013 - 2017)"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine (DVM), Cornell University, 2011",
+          "Certified Canine Rehabilitation Therapist, Canine Rehabilitation Institute, 2014"
+        ],
+        "about": "Dr. Noah Lee is a skilled rehabilitation therapist specializing in canine sports injuries and joint therapy. Over 10 years of experience have given him the expertise to treat a wide range of injuries, from ligament tears to arthritis. Dr. Lee uses cutting-edge rehabilitation techniques to enhance the recovery process, and his holistic approach ensures that pets return to their active lives safely and with minimal risk of recurrence."
+    },
+    {
+        "id": 13,
+        "name": "Dr. Sarah Monroe",
+        "category": "OncoCare",
+        "date": "2024-11-06",
+        "email": "sarah.monroe@oncocarevet.com",
+        "image": "https://bloximages.newyork1.vip.townnews.com/chronicleonline.com/content/tncms/assets/v3/editorial/c/15/c15f3714-de8b-11eb-b6d2-fbcfe74a7f58/60e4a7543c869.image.jpg?resize=400%2C315",
+        "degrees": ["DVM", "Certified Veterinary Oncologist"],
+        "expertise": ["Chemotherapy", "Radiation Therapy", "Surgical Oncology"],
+        "experience": "15 years",
+        "institute": "University of Pennsylvania School of Veterinary Medicine",
+        "instituteLocation": "Philadelphia, PA",
+        "awards": ["Excellence in Oncology 2020", "Veterinary Cancer Care Award 2018"],
+        "work_experiences": [
+          "Veterinary Oncologist at Philadelphia Animal Cancer Center",
+          "Lead Oncologist at Advanced Pet Oncology"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine, University of Pennsylvania",
+          "Board Certification in Veterinary Oncology"
+        ],
+        "about": "Dr. Sarah Monroe is a distinguished veterinary oncologist with 15 years of experience treating pets with cancer. Specializing in chemotherapy, radiation therapy, and surgical oncology, Dr. Monroe combines advanced medical techniques with compassionate care to improve pets' quality of life. Her expertise in radiation and chemotherapy has made her a leader in her field, and she is committed to providing cutting-edge treatments tailored to each pet’s needs."
+    },
+    {
+        "id": 14,
+        "name": "Dr. Michael Chen",
+        "category": "OncoCare",
+        "date": "2024-11-06",
+        "email": "michael.chen@oncocarevet.com",
+        "image": "https://www.adventisthealthcare.com/app/files/public/michael-chen-wide.jpg",
+        "degrees": ["DVM", "Veterinary Oncology Specialist"],
+        "expertise": ["Tumor Removal", "Chemotherapy", "Immunotherapy"],
+        "experience": "10 years",
+        "institute": "Cornell University College of Veterinary Medicine",
+        "instituteLocation": "Ithaca, NY",
+        "awards": ["Oncologist of the Year 2022", "Top Veterinary Innovator 2019"],
+        "work_experiences": [
+          "Oncology Specialist at Cornell Pet Oncology Center",
+          "Senior Oncology Surgeon at Feline and Canine Cancer Clinic"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine, Cornell University",
+          "Certification in Veterinary Oncology"
+        ],
+        "about": "With a decade of experience, Dr. Michael Chen is a specialist in oncology treatments for pets, particularly focused on tumor removal, chemotherapy, and immunotherapy. His work in cancer research has contributed to innovative treatment protocols, and he is known for providing compassionate care alongside effective cancer management. Dr. Chen's approach integrates the latest medical advancements to support both pets and their families during challenging times."
+    },
+    {
+        "id": 15,
+        "name": "Dr. Lisa Patel",
+        "category": "OncoCare",
+        "date": "2024-11-06",
+        "email": "lisa.patel@oncocarevet.com",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVjxFz3YRzs_ts6uVerDhO6fpS9F5sjSa7MA&s",
+        "degrees": ["DVM", "Board-Certified Oncologist"],
+        "expertise": ["Surgical Oncology", "Cancer Pain Management", "Targeted Therapy"],
+        "experience": "12 years",
+        "institute": "University of Wisconsin-Madison School of Veterinary Medicine",
+        "instituteLocation": "Madison, WI",
+        "awards": ["Veterinary Cancer Innovator 2021", "Outstanding Oncologist Award 2019"],
+        "work_experiences": [
+          "Head Oncologist at Madison Veterinary Cancer Center",
+          "Veterinary Surgeon at Cancer Treatment Pets"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine, University of Wisconsin-Madison",
+          "Advanced Oncology Certification"
+        ],
+        "about": "Dr. Lisa Patel has over 12 years of experience specializing in oncology and cancer pain management for pets. Her targeted therapies provide options beyond traditional treatments, focusing on reducing side effects and improving outcomes. Known for her skill in both surgical and non-invasive treatments, Dr. Patel combines the latest research with personalized care for each patient."
+    },
+    {
+        "id": 16,
+        "name": "Dr. Raj Mehta",
+        "category": "OncoCare",
+        "date": "2024-11-06",
+        "email": "raj.mehta@oncocarevet.com",
+        "image": "https://content3.jdmagicbox.com/comp/indore/p8/0731px731.x731.130911120112.h9p8/catalogue/dr-hemant-mehta-mhow-indore-veterinary-doctors-ovdud.jpg",
+        "degrees": ["DVM", "Oncology Fellow"],
+        "expertise": ["Radiation Oncology", "Chemotherapy Protocols", "Immunotherapy"],
+        "experience": "8 years",
+        "institute": "University of California, Davis School of Veterinary Medicine",
+        "instituteLocation": "Davis, CA",
+        "awards": ["Radiation Oncology Award 2020", "Innovative Treatment Award 2021"],
+        "work_experiences": [
+          "Oncology Fellow at Pet Cancer Institute",
+          "Radiation Specialist at West Coast Veterinary Hospital"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine, UC Davis",
+          "Oncology Fellowship"
+        ],
+        "about": "Dr. Raj Mehta brings an innovative approach to oncology with his expertise in radiation therapy and immunotherapy protocols for pets with cancer. His dedication to minimally invasive treatments has helped many pets achieve positive outcomes, and he is known for his supportive approach, working closely with pet families throughout the treatment process."
+    },
+    {
+        "id": 17,
+        "name": "Dr. Jessica Lin",
+        "category": "OncoCare",
+        "date": "2024-11-06",
+        "email": "jessica.lin@oncocarevet.com",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvESbgIVeZOonHA9AfDRyLLvsj_e_cralHpg&s",
+        "degrees": ["DVM", "Veterinary Oncology Specialist"],
+        "expertise": ["Lymphoma Treatment", "Targeted Chemotherapy", "Surgical Oncology"],
+        "experience": "9 years",
+        "institute": "University of Florida College of Veterinary Medicine",
+        "instituteLocation": "Gainesville, FL",
+        "awards": ["Pet Cancer Caregiver Award 2022", "Top Veterinary Oncologist 2021"],
+        "work_experiences": [
+          "Veterinary Oncologist at Gainesville Pet Cancer Center",
+          "Surgical Oncologist at Advanced Animal Cancer Clinic"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine, University of Florida",
+          "Certification in Oncology"
+        ],
+        "about": "Dr. Jessica Lin has dedicated her career to advancing lymphoma and targeted chemotherapy treatments for pets. With nearly a decade of experience, she has successfully treated numerous pets with various forms of cancer. Dr. Lin is committed to providing empathetic, high-quality care and is renowned for her ability to craft individualized treatment plans that enhance the comfort and quality of life for her patients."
+    },
+    {
+        "id": 18,
+        "name": "Dr. Max Thompson",
+        "category": "OncoCare",
+        "date": "2024-11-06",
+        "email": "max.thompson@oncocarevet.com",
+        "image": "https://learningfocused.com/wp-content/uploads/2019/07/dr-max-thompson-image-01-1.jpg",
+        "degrees": ["DVM", "Certified Veterinary Oncologist"],
+        "expertise": ["Cancer Diagnosis", "Advanced Chemotherapy", "Radiation Oncology"],
+        "experience": "14 years",
+        "institute": "Texas A&M University College of Veterinary Medicine",
+        "instituteLocation": "College Station, TX",
+        "awards": ["Veterinary Oncology Excellence 2023", "Top Oncology Researcher 2021"],
+        "work_experiences": [
+          "Senior Oncologist at Texas Pet Oncology Institute",
+          "Oncology Consultant at National Animal Cancer Network"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine, Texas A&M University",
+          "Advanced Oncology Certification"
+        ],
+        "about": "Dr. Max Thompson is a certified oncologist with a strong focus on advanced chemotherapy and radiation treatments. With 14 years of experience, he provides top-notch cancer care and is highly respected for his research in early cancer detection and innovative treatment methods. Dr. Thompson believes in a holistic approach, prioritizing both medical and emotional support for pets and their owners during challenging treatments."
+      },
+      {
+        "id": 19,
+        "name": "Dr. Emily Carson",
+        "category": "Genetics",
+        "date": "2024-11-06",
+        "email": "emily.carson@geneticsvet.com",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2t2HYEA3eXka6WIoVWlTceCzIiw2PU6QUIdgQB4JZvPbDRj1tX1jWOJ33FaHrWooc2Lo&usqp=CAU",
+        "degrees": ["DVM", "PhD in Veterinary Genetics"],
+        "expertise": ["Genetic Disorders", "Canine DNA Analysis", "Gene Therapy"],
+        "experience": "12 years",
+        "institute": "University of California, Davis",
+        "instituteLocation": "Davis, CA",
+        "awards": ["Excellence in Veterinary Genetics 2021", "Top Genetic Researcher 2019"],
+        "work_experiences": [
+          "Senior Geneticist at Animal Genetics Research Center",
+          "Head of Genetic Testing at Davis Veterinary Hospital"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine, UC Davis",
+          "PhD in Veterinary Genetics"
+        ],
+        "about": "Dr. Emily Carson is a leading authority in veterinary genetics, with 12 years of experience in diagnosing and managing genetic disorders in pets. Specializing in canine DNA analysis and gene therapy, Dr. Carson has dedicated her career to improving the quality of life for pets through early detection of genetic conditions. She has developed innovative treatments that focus on managing and preventing hereditary diseases. Dr. Carson’s work is informed by her extensive research background, and she’s committed to educating pet owners on the importance of genetic testing. She has received numerous accolades for her contributions to veterinary genetics and works closely with pet families to support their pets’ health."
+      },
+      {
+        "id": 20,
+        "name": "Dr. Mark Stevens",
+        "category": "Genetics",
+        "date": "2024-11-06",
+        "email": "mark.stevens@geneticsvet.com",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpg54jKR5l0XVC4HJiG3v9XQd5oJ89LYtYnA&s",
+        "degrees": ["DVM", "Certified Animal Geneticist"],
+        "expertise": ["Genomic Medicine", "DNA Sequencing", "Animal Breeding Genetics"],
+        "experience": "10 years",
+        "institute": "Cornell University College of Veterinary Medicine",
+        "instituteLocation": "Ithaca, NY",
+        "awards": ["Geneticist of the Year 2020", "Innovative Genetic Therapy Award 2018"],
+        "work_experiences": [
+          "Genetic Medicine Specialist at Cornell Pet Genetic Lab",
+          "Animal Breeding Geneticist at National Pet Genetics Center"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine, Cornell University",
+          "Certification in Animal Genetics"
+        ],
+        "about": "With a decade of experience, Dr. Mark Stevens is a specialist in veterinary genomics, focusing on DNA sequencing and genomic medicine for pets. His work in animal breeding genetics has led to advancements in preventing hereditary diseases. Dr. Stevens’ approach emphasizes the application of genetic information to improve pet health, utilizing the latest technologies in DNA sequencing to diagnose conditions early. Recognized for his innovative contributions, Dr. Stevens is passionate about educating pet owners on genetic health and advancing the field of veterinary genetics through ongoing research."
+      },
+      {
+        "id": 21,
+        "name": "Dr. Olivia Nguyen",
+        "category": "Genetics",
+        "date": "2024-11-06",
+        "email": "olivia.nguyen@geneticsvet.com",
+        "image": "https://media.licdn.com/dms/image/sync/v2/D4E27AQHqisKYJ5pUgg/articleshare-shrink_800/articleshare-shrink_800/0/1711217075794?e=2147483647&v=beta&t=lFDIwtTC0-ljIsu0KKx98UxiOXNLzYQCWZNyuSPZTxU",
+        "degrees": ["DVM", "MSc in Genetic Counseling"],
+        "expertise": ["Inherited Diseases", "Genetic Counseling", "Gene Editing"],
+        "experience": "8 years",
+        "institute": "University of Florida College of Veterinary Medicine",
+        "instituteLocation": "Gainesville, FL",
+        "awards": ["Veterinary Genetic Counseling Award 2019", "Top Gene Editing Researcher 2020"],
+        "work_experiences": [
+          "Genetic Counselor at Veterinary Genetics Institute",
+          "Lead Gene Editing Researcher at PetGen Labs"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine, University of Florida",
+          "Master’s in Genetic Counseling"
+        ],
+        "about": "Dr. Olivia Nguyen is an experienced veterinary geneticist specializing in inherited diseases and genetic counseling for pet owners. With expertise in gene editing, Dr. Nguyen has pioneered techniques that prevent and treat genetic disorders. She is passionate about empowering pet families with knowledge about genetic health, and her counseling services provide essential insights into managing inherited conditions. Dr. Nguyen’s focus is on developing ethical, safe gene therapies that enhance pets’ quality of life, and she is recognized for her research in gene editing and counseling."
+      },
+      {
+        "id": 22,
+        "name": "Dr. Samuel Klein",
+        "category": "Genetics",
+        "date": "2024-11-06",
+        "email": "samuel.klein@geneticsvet.com",
+        "image": "https://i.ytimg.com/vi/oe2qmuz8fCE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAJfkvfGJ9gx2kvQd10wHcz40r8Xw",
+        "degrees": ["DVM", "PhD in Veterinary Genomics"],
+        "expertise": ["Genetic Testing", "Bioinformatics", "Rare Genetic Disorders"],
+        "experience": "11 years",
+        "institute": "Texas A&M University College of Veterinary Medicine",
+        "instituteLocation": "College Station, TX",
+        "awards": ["Genomics Innovator Award 2021", "Excellence in Veterinary Bioinformatics 2019"],
+        "work_experiences": [
+          "Senior Genetic Testing Specialist at Texas Pet Genomics",
+          "Bioinformatics Researcher at PetGenetics Innovations"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine, Texas A&M University",
+          "PhD in Veterinary Genomics"
+        ],
+        "about": "Dr. Samuel Klein is a veterinary geneticist with a unique expertise in bioinformatics and genetic testing for rare disorders. His innovative research has made significant strides in understanding and diagnosing complex genetic conditions. Dr. Klein’s work in bioinformatics helps identify genetic mutations that may affect pets’ health, allowing for early intervention. He is passionate about using genetic data to improve clinical outcomes and is recognized for his contributions to veterinary genomics, particularly in managing rare genetic disorders."
+      },
+      {
+        "id": 23,
+        "name": "Dr. Aisha Banerjee",
+        "category": "Genetics",
+        "date": "2024-11-06",
+        "email": "aisha.banerjee@geneticsvet.com",
+        "image": "https://wolterskluwerblogs.com/arbitration/wp-content/uploads/sites/48/2019/11/Diana-Bayzakova-1024x683.jpg",
+        "degrees": ["DVM", "Diploma in Veterinary Genetics"],
+        "expertise": ["Epigenetics", "DNA Analysis", "Behavioral Genetics"],
+        "experience": "7 years",
+        "institute": "University of Glasgow School of Veterinary Medicine",
+        "instituteLocation": "Glasgow, UK",
+        "awards": ["Veterinary Epigenetics Pioneer 2020", "Top Genetic Behaviorist 2022"],
+        "work_experiences": [
+          "Epigenetics Specialist at Pet Genetics UK",
+          "DNA Analyst at Animal Behavior Research Institute"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine, University of Glasgow",
+          "Diploma in Veterinary Genetics"
+        ],
+        "about": "Dr. Aisha Banerjee specializes in epigenetics and behavioral genetics, focusing on how genetics influences pets’ behavior and health. Her research has provided insights into the role of genetics in pet behavior, helping pet owners understand and manage their pets’ unique traits. Dr. Banerjee’s expertise in DNA analysis has led to breakthroughs in identifying behavioral markers. She is dedicated to promoting pet health through genetic insights and continues to advance the field of veterinary genetics."
+      },
+      {
+        "id": 24,
+        "name": "Dr. Leo Martins",
+        "category": "Genetics",
+        "date": "2024-11-06",
+        "email": "leo.martins@geneticsvet.com",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTzdljbH53SsIz0qz6Q6sppwBP4UjeHyUiEA&s",
+        "degrees": ["DVM", "MS in Animal Genetics"],
+        "expertise": ["Genetic Engineering", "Pet Ancestry Analysis", "Gene Therapy"],
+        "experience": "9 years",
+        "institute": "University of Sydney School of Veterinary Science",
+        "instituteLocation": "Sydney, Australia",
+        "awards": ["Innovative Genetic Engineer Award 2019", "Top Pet Ancestry Researcher 2021"],
+        "work_experiences": [
+          "Genetic Engineer at Veterinary Genomics Australia",
+          "Lead Ancestry Analyst at PetHeritage Institute"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine, University of Sydney",
+          "Master’s in Animal Genetics"
+        ],
+        "about": "Dr. Leo Martins has a deep expertise in genetic engineering and pet ancestry analysis, enabling him to uncover pets’ lineage and identify hereditary traits. He is a leader in the field of gene therapy for pets, focusing on correcting genetic disorders at the molecular level. Dr. Martins is dedicated to using genetic knowledge to inform pet health and prevent diseases, making significant strides in pet ancestry research and genetic treatments. His work emphasizes both cutting-edge science and compassionate care."
+      },
+      {
+        "id": 25,
+        "name": "Dr. Emma Thompson",
+        "category": "Medical Care",
+        "date": "2024-11-06",
+        "email": "emma.thompson@example.com",
+        "image": "https://cdn.britannica.com/28/198628-050-9F866695/Veterinarians-dental-surgery-snow-leopard-Australia-Melbourne.jpg",
+        "degrees": ["DVM", "PhD in Veterinary Medicine"],
+        "expertise": ["Orthopedic Surgery", "Internal Medicine"],
+        "experience": "15 years",
+        "institute": "Harvard Veterinary School",
+        "instituteLocation": "Boston, MA",
+        "awards": ["Veterinarian of the Year 2022", "Excellence in Veterinary Research Award"],
+        "work_experiences": [
+          "Veterinarian at City Animal Hospital",
+          "Researcher in Veterinary Orthopedics",
+          "Adjunct Professor at Harvard Veterinary School"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine - Harvard Veterinary School",
+          "PhD in Veterinary Medicine - University of Florida"
+        ],
+        "about": "Dr. Emma Thompson is an experienced veterinarian with a background in orthopedic surgery and internal medicine. She has served in multiple capacities, from practicing in renowned hospitals to contributing to groundbreaking research in the field of veterinary orthopedics. Dr. Thompson's expertise in both practical and academic aspects of veterinary medicine makes her a valuable asset to the medical care team. She has received numerous awards for her contributions to veterinary medicine, and her commitment to animal welfare is reflected in her work at the City Animal Hospital and through her mentorship of veterinary students. In addition to her professional roles, Dr. Thompson is an advocate for animal rights and frequently volunteers with rescue organizations, ensuring the well-being of stray and injured animals. Her passion for veterinary medicine is evident through her continuous involvement in both clinical practice and research. Dr. Thompson has dedicated over 15 years to improving animal healthcare standards and is always looking for new ways to innovate in her field."
+      },
+      {
+        "id": 26,
+        "name": "Dr. Michael Lee",
+        "category": "Medical Care",
+        "date": "2024-11-06",
+        "email": "michael.lee@example.com",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiI4lwC8ol9aoaBbT_rZEBODqMLXQpakSkLyjCJoCF_a3KdwpCOAaxqdV6UdFrRKB57dY&usqp=CAU",
+        "degrees": ["DVM", "MS in Animal Behavior"],
+        "expertise": ["Animal Behavior", "Emergency Medicine"],
+        "experience": "12 years",
+        "institute": "University of California, Davis",
+        "instituteLocation": "Davis, CA",
+        "awards": ["Outstanding Veterinarian Award", "Animal Welfare Award 2021"],
+        "work_experiences": [
+          "Veterinarian at Animal Care Center",
+          "Emergency Veterinarian at City Pet Hospital",
+          "Consultant in Animal Behavior Therapy"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine - University of California, Davis",
+          "Master's in Animal Behavior - University of California, Berkeley"
+        ],
+        "about": "Dr. Michael Lee is a skilled veterinarian with a focus on animal behavior and emergency care. His expertise allows him to address not only physical ailments but also behavioral issues, helping pet owners improve their pets' well-being. He has worked in various emergency settings, providing quick and effective treatment for animals in critical conditions. Dr. Lee is known for his compassionate approach, always putting the animal’s needs first. His work in animal behavior has earned him accolades and recognition within the veterinary community. In his free time, Dr. Lee volunteers at local shelters, offering his expertise to help rehabilitate animals with behavioral challenges."
+      },
+      {
+        "id": 27,
+        "name": "Dr. Sophia Martinez",
+        "category": "Medical Care",
+        "date": "2024-11-06",
+        "email": "sophia.martinez@example.com",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQro1g7z2XOd1PeZuZAhjjbyDPCfD-4iAQHAQ&s",
+        "degrees": ["DVM", "Diplomate, American College of Veterinary Internal Medicine"],
+        "expertise": ["Cardiology", "Oncology"],
+        "experience": "10 years",
+        "institute": "University of Pennsylvania School of Veterinary Medicine",
+        "instituteLocation": "Philadelphia, PA",
+        "awards": ["Veterinary Oncology Award", "Cardiology Achievement Award"],
+        "work_experiences": [
+          "Veterinarian at Heart Animal Clinic",
+          "Specialist in Veterinary Oncology",
+          "Consultant in Cardiology at National Animal Hospital"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine - University of Pennsylvania",
+          "Board Certification in Veterinary Internal Medicine"
+        ],
+        "about": "Dr. Sophia Martinez is a dedicated veterinarian specializing in cardiology and oncology. With a passion for improving the quality of life for animals suffering from heart diseases and cancer, Dr. Martinez has been instrumental in advancing treatment methods in these fields. She is a certified Diplomate with the American College of Veterinary Internal Medicine, highlighting her commitment to veterinary excellence. Dr. Martinez is actively involved in research projects that aim to develop better therapeutic strategies for animals. Her work is highly respected, and her dedication to animal health is evident through her clinical practice and ongoing studies in oncology and cardiology."
+      },
+      {
+        "id": 28,
+        "name": "Dr. Alex Chen",
+        "category": "Medical Care",
+        "date": "2024-11-06",
+        "email": "alex.chen@example.com",
+        "image": "https://media.istockphoto.com/id/1171733307/photo/vet-with-dog-and-cat-puppy-and-kitten-at-doctor.jpg?s=612x612&w=0&k=20&c=bgRM6090SMgF2-AHWdOk0OHs-fVe-o2mwkbmsKNwn3w=",
+        "degrees": ["DVM", "MSc in Veterinary Surgery"],
+        "expertise": ["Veterinary Surgery", "Orthopedics"],
+        "experience": "8 years",
+        "institute": "Cornell University College of Veterinary Medicine",
+        "instituteLocation": "Ithaca, NY",
+        "awards": ["Veterinary Surgery Excellence Award"],
+        "work_experiences": [
+          "Veterinary Surgeon at Regional Animal Hospital",
+          "Orthopedic Specialist at Central Vet Clinic",
+          "Veterinary Advisor at Canine Rehabilitation Center"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine - Cornell University",
+          "Master's in Veterinary Surgery - Cornell University"
+        ],
+        "about": "Dr. Alex Chen specializes in veterinary surgery with a focus on orthopedic procedures. Dr. Chen has performed countless surgeries, including complex orthopedic interventions that have greatly improved the lives of his patients. His commitment to precision and animal welfare is evident in every procedure he undertakes. Dr. Chen's expertise is recognized throughout the veterinary community, and he is a sought-after specialist for complicated surgical cases. Outside of his surgical practice, he spends time volunteering at animal rehabilitation centers, where he provides guidance on post-operative care and recovery for animals undergoing orthopedic treatment."
+      },
+      {
+        "id": 29,
+        "name": "Dr. Maria Patel",
+        "category": "Medical Care",
+        "date": "2024-11-06",
+        "email": "maria.patel@example.com",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE8KrxeO-QdUpdyDVjWZEZmIV7s1_lRY1wGw&s",
+        "degrees": ["DVM", "MS in Veterinary Nutrition"],
+        "expertise": ["Veterinary Nutrition", "Preventive Medicine"],
+        "experience": "7 years",
+        "institute": "University of Georgia College of Veterinary Medicine",
+        "instituteLocation": "Athens, GA",
+        "awards": ["Nutritionist of the Year", "Animal Health Advocate Award"],
+        "work_experiences": [
+          "Nutritionist at Animal Wellness Center",
+          "Veterinary Consultant in Preventive Medicine",
+          "Instructor in Veterinary Nutrition"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine - University of Georgia",
+          "Master's in Veterinary Nutrition - University of Illinois"
+        ],
+        "about": "Dr. Maria Patel is a veterinary nutritionist dedicated to improving animal health through balanced diets and preventive care. She collaborates with pet owners to design tailored nutrition plans that address specific health concerns. Dr. Patel has a background in preventive medicine, which enables her to proactively manage potential health risks in animals. She regularly contributes to veterinary journals and is passionate about educating pet owners on the importance of proper nutrition. Her contributions to preventive health make her a key player in promoting the long-term wellness of animals."
+      },
+      {
+        "id": 30,
+        "name": "Dr. James Rodriguez",
+        "category": "Medical Care",
+        "date": "2024-11-06",
+        "email": "james.rodriguez@example.com",
+        "image": "https://thememasters.club/html-templates/vets/images/photos/slide3.jpg",
+        "degrees": ["DVM", "PhD in Veterinary Immunology"],
+        "expertise": ["Immunology", "Infectious Diseases"],
+        "experience": "9 years",
+        "institute": "Texas A&M University College of Veterinary Medicine",
+        "instituteLocation": "College Station, TX",
+        "awards": ["Veterinary Immunologist Award", "Innovation in Infectious Diseases Award"],
+        "work_experiences": [
+          "Immunologist at Global Vet Health",
+          "Research Scientist in Infectious Diseases",
+          "Veterinary Consultant at Animal Health Institute"
+        ],
+        "education": [
+          "Doctor of Veterinary Medicine - Texas A&M University",
+          "PhD in Veterinary Immunology - University of Wisconsin"
+        ],
+        "about": "Dr. James Rodriguez is an expert in immunology and infectious diseases, working extensively to develop better methods for preventing and treating diseases in animals. His research has led to innovative solutions for controlling infectious outbreaks in animal populations. Dr. Rodriguez has authored numerous studies on animal immunity and is recognized as an authority in his field. He collaborates with veterinary professionals worldwide to enhance understanding of disease mechanisms and treatment options. His dedication to advancing veterinary science is reflected in his ongoing research and advisory roles."
+      }
+  ]
+  

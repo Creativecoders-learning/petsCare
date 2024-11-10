@@ -47,7 +47,8 @@ const VetsForm = () => {
             <textarea name="message" className="w-full h-20 border border-primary mt-3 p-3" placeholder="Write yor message" id=""></textarea>
           </div>
           <div>
-            <button className="w-full py-3 bg-primary text-white rounded-xl mt-5 hover:bg-black">Book Now</button>
+            <button
+            className="w-full py-3 bg-primary text-white rounded-xl mt-5 hover:bg-black">Book Now</button>
           </div>
         </form>
         </div>

@@ -9,7 +9,8 @@
       "receiver_name": "John Doe",
       "receiver_image": "https://example.com/images/johndoe.jpg",
       "receiver_email": "john.doe@example.com",
-      "location": "Chicago, USA"
+      "location": "Chicago, USA",
+      "owner_email": "mysuccessmission@gmail.com"
     },
     {
       "id": 2,
@@ -21,7 +22,8 @@
       "receiver_name": "Emma Brown",
       "receiver_image": "https://example.com/images/emmabrown.jpg",
       "receiver_email": "emma.brown@example.com",
-      "location": "Chicago, USA"
+      "location": "Chicago, USA",
+       "owner_email": "mysuccessmission@gmail.com"
     },
     {
       "id": 3,
@@ -33,7 +35,8 @@
       "receiver_name": "Robert Wilson",
       "receiver_image": "https://example.com/images/robertwilson.jpg",
       "receiver_email": "robert.wilson@example.com",
-      "location": "Chicago, USA"
+      "location": "Chicago, USA",
+       "owner_email": "mysuccessmission@gmail.com"
     },
     {
       "id": 4,
@@ -45,7 +48,8 @@
       "receiver_name": "Olivia Taylor",
       "receiver_image": "https://example.com/images/oliviataylor.jpg",
       "receiver_email": "olivia.taylor@example.com",
-      "location": "Houston, USA"
+      "location": "Houston, USA",
+      "owner_email": "mysuccessmission@gmail.com"
     },
     {
       "id": 5,
@@ -57,7 +61,8 @@
       "receiver_name": "James Moore",
       "receiver_image": "https://example.com/images/jamesmoore.jpg",
       "receiver_email": "james.moore@example.com",
-      "location": "Phoenix, USA"
+      "location": "Phoenix, USA",
+       "owner_email": "mysuccessmission@gmail.com"
     },
     {
       "id": 6,
@@ -68,7 +73,8 @@
       "status": "Adopted",
       "receiver_image": "https://example.com/images/jamesmoore.jpg",
       "receiver_email": "james.moore@example.com",
-      "location": "Phoenix, USA"
+      "location": "Phoenix, USA",
+       "owner_email": "mysuccessmission@gmail.com"
     },
     {
       "id": 7,
@@ -79,7 +85,8 @@
       "status": "Published",
       "receiver_image": "https://example.com/images/jamesmoore.jpg",
       "receiver_email": "james.moore@example.com",
-      "location": "Phoenix, USA"
+      "location": "Phoenix, USA",
+       "owner_email": "mysuccessmission@gmail.com"
     },
     {
       "id": 8,
@@ -87,9 +94,11 @@
       "image": "https://images.unsplash.com/photo-1535241749838-299277b6305f?q=80&w=1492&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "category": "Rabbit",
       "date": "2024-10-24",
-      "status": "Published","receiver_image": "https://example.com/images/jamesmoore.jpg",
+      "status": "Published",
+      "receiver_image": "https://example.com/images/jamesmoore.jpg",
       "receiver_email": "james.moore@example.com",
-      "location": "Phoenix, USA"
+      "location": "Phoenix, USA",
+       "owner_email": "mysuccessmission@gmail.com"
     }
 ]
   

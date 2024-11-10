@@ -23,6 +23,7 @@
       },
       "category": "Dog",
       "shelter_name": "Happy Tails Shelter",
+      "shelter_email":"mysuccessmission@gmail.com",
       "shelter_photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Bella is a lively Labrador who loves to play fetch and enjoys long walks.",
       "image": [
@@ -55,10 +56,11 @@
       },
       "category": "Cat",
       "shelter_name": "Purr Palace",
+      "shelter_email":"mysuccessmission@gmail.com",
       "shelter_photo": "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Milo is an adventurous kitten who loves to explore his surroundings.",
       "image": [
-        "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ]
     },
@@ -74,6 +76,7 @@
       "temperament": "Calm, Affectionate",
       "category": "Dog",
       "shelter_name": "Rescue Haven",
+      "shelter_email":"mysuccessmission@gmail.com",
       "shelter_photo": "https://plus.unsplash.com/premium_photo-1683121366070-5ceb7e007a97?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Charlie is a sweet senior Beagle who loves quiet evenings and gentle walks.",
       "image": [
@@ -105,11 +108,12 @@
       "temperament": "Independent, Calm",
       "category": "Cat",
       "shelter_name": "Feline Friends",
+      "shelter_email":"mysuccessmission@gmail.com",
       "shelter_photo": "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Luna is a graceful British Shorthair with a calm personality.",
       "image": [
-        "https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=1430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=1430&auto=format&fit=crop"
+        "https://images.pexels.com/photos/2558605/pexels-photo-2558605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=1430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       ],
       "weight": "2 kg",
       "height": "20 cm",
@@ -136,6 +140,7 @@
       "temperament": "Playful, Loyal",
       "category": "Dog",
       "shelter_name": "Golden Heart Shelter",
+      "shelter_email":"mysuccessmission@gmail.com",
       "shelter_photo": "https://plus.unsplash.com/premium_photo-1670071482460-5c08776521fe?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Buddy is an energetic Golden Retriever puppy who loves to be around people.",
       "image": [
@@ -167,6 +172,7 @@
       "temperament": "Talkative, Friendly",
       "category": "Bird",
       "shelter_name": "Feathered Friends",
+      "shelter_email":"mysuccessmission@gmail.com",
       "shelter_photo": "https://images.unsplash.com/photo-1640951613773-54706e06851d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Coco is a chatty parrot who loves interacting with people and learning new words.",
       "image": [
@@ -198,6 +204,7 @@
       "temperament": "Gentle, Affectionate",
       "category": "Rabbit",
       "shelter_name": "Hoppy Haven",
+      "shelter_email":"mysuccessmission@gmail.com",
       "shelter_photo": "https://example.com/shelter_images/hoppy_haven.jpg",
       "description": "We have had Magie since she was able to leave her mum as a puppy so 8 weeks old.Magie currently lives with two children age 7 and 13 and has many visitors to the house which are children she is great with kids.There's lots of cats birds etc around the area and in the garden on most days as she's not fussed by these.",
       "image": [
@@ -229,6 +236,7 @@
       "temperament": "Talkative, Friendly",
       "category": "Bird",
       "shelter_name": "Feathered Friends",
+      "shelter_email":"mysuccessmission@gmail.com",
       "shelter_photo": "https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Coco is a chatty parrot who loves interacting with people and learning new words. We have had Magie since she was able to leave her mum as a puppy so 8 weeks old.Magie currently lives with two children age 7 and 13 and has many visitors to the house which are children she is great with kids.There's lots of cats birds etc around the area and in the garden on most days as she's not fussed by these.",
       "image": [
@@ -247,6 +255,170 @@
         "best_suited_for": "Indoor environments, Families with children",
         "exercise_needs": "Moderate"
       }
+    },
+    {
+      "animal_name": "Golden Retriever",
+      "type": "Dog",
+      "breed": "Parrot",
+      "age": "1 year",
+      "gender": "Female",
+      "size": "Small",
+      "location": "Dhaka, Bangladesh",
+      "name": "Golden Retriever",
+      "temperament": "Talkative, Friendly",
+      "category": "Dog",
+      "shelter_name": "Feathered Friends",
+      "shelter_email":"mysuccessmission@gmail.com",
+      "shelter_photo": "https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Coco is a chatty parrot who loves interacting with people and learning new words. We have had Magie since she was able to leave her mum as a puppy so 8 weeks old.Magie currently lives with two children age 7 and 13 and has many visitors to the house which are children she is great with kids.There's lots of cats birds etc around the area and in the garden on most days as she's not fussed by these.",
+      "image": [
+        "https://images.unsplash.com/photo-1534361960057-19889db9621e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1480044965905-02098d419e96?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "weight": "1 kg",
+      "height": "8 cm",
+      "color": "Cream",
+      "behavior": {
+        "good_with_kids": "Good with kids",
+        "good_with_other_pets": "Good with other pets",
+        "house_trained": "House trained"
+      },
+      "compatibility": {
+        "best_suited_for": "Indoor environments, Families with children",
+        "exercise_needs": "Moderate"
+      }
+    },
+    {
+      "animal_name": "Bella",
+      "type": "Cat",
+      "breed": "Labrador Retriever",
+      "age": "Adult",
+      "gender": "Female",
+      "size": "Large",
+      "location": "Sylhet, Bangladesh",
+      "name": "Bella",
+      "temperament": "Friendly, Energetic",
+      "weight": "3 kg",
+      "height": "20 cm",
+      "color": "Yellow",
+      "behavior": {
+        "good_with_kids": "good with kids",
+        "good_with_other_pets": "good with other pets",
+        "house_trained": "house_trained"
+      },
+      "compatibility": {
+        "best_suited_for": "Active families, Outdoor environments",
+        "exercise_needs": "High"
+      },
+      "category": "Cat",
+      "shelter_name": "Happy Tails Shelter",
+      "shelter_email":"mysuccessmission@gmail.com",
+      "shelter_photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Bella is a lively Labrador who loves to play fetch and enjoys long walks.",
+      "image": [
+        "https://images.pexels.com/photos/58997/pexels-photo-58997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://plus.unsplash.com/premium_photo-1668114375111-e90b5e975df6?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.pexels.com/photos/1472999/pexels-photo-1472999.jpeg?auto=compress&cs=tinysrgb&w=600"
+      ]
+    },
+    {
+      "animal_name": "Bella",
+      "type": "Dog",
+      "breed": "Labrador Retriever",
+      "age": "Adult",
+      "gender": "Female",
+      "size": "Large",
+      "location": "Sylhet, Bangladesh",
+      "name": "Bella",
+      "temperament": "Friendly, Energetic",
+      "weight": "30 kg",
+      "height": "60 cm",
+      "color": "Yellow",
+      "behavior": {
+        "good_with_kids": "good with kids",
+        "good_with_other_pets": "good with other pets",
+        "house_trained": "house_trained"
+      },
+      "compatibility": {
+        "best_suited_for": "Active families, Outdoor environments",
+        "exercise_needs": "High"
+      },
+      "category": "Dog",
+      "shelter_name": "Happy Tails Shelter",
+      "shelter_email":"mysuccessmission@gmail.com",
+      "shelter_photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Bella is a lively Labrador who loves to play fetch and enjoys long walks.",
+      "image": [
+        "https://images.pexels.com/photos/164186/pexels-photo-164186.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://plus.unsplash.com/premium_photo-1668114375111-e90b5e975df6?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1491604612772-6853927639ef?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
+    },
+    {
+      "animal_name": "Bella",
+      "type": "Dog",
+      "breed": "Labrador Retriever",
+      "age": "Adult",
+      "gender": "Female",
+      "size": "Large",
+      "location": "Sylhet, Bangladesh",
+      "name": "Bella",
+      "temperament": "Friendly, Energetic",
+      "weight": "30 kg",
+      "height": "60 cm",
+      "color": "Yellow",
+      "behavior": {
+        "good_with_kids": "good with kids",
+        "good_with_other_pets": "good with other pets",
+        "house_trained": "house_trained"
+      },
+      "compatibility": {
+        "best_suited_for": "Active families, Outdoor environments",
+        "exercise_needs": "High"
+      },
+      "category": "Dog",
+      "shelter_name": "Happy Tails Shelter",
+      "shelter_email":"mysuccessmission@gmail.com",
+      "shelter_photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Bella is a lively Labrador who loves to play fetch and enjoys long walks.",
+      "image": [
+        "https://images.pexels.com/photos/247937/pexels-photo-247937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://plus.unsplash.com/premium_photo-1668114375111-e90b5e975df6?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1491604612772-6853927639ef?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
+    },
+    {
+      "animal_name": "Bella",
+      "type": "Dog",
+      "breed": "Labrador Retriever",
+      "age": "Adult",
+      "gender": "Female",
+      "size": "Large",
+      "location": "Sylhet, Bangladesh",
+      "name": "Bella",
+      "temperament": "Friendly, Energetic",
+      "weight": "30 kg",
+      "height": "60 cm",
+      "color": "Yellow",
+      "behavior": {
+        "good_with_kids": "good with kids",
+        "good_with_other_pets": "good with other pets",
+        "house_trained": "house_trained"
+      },
+      "compatibility": {
+        "best_suited_for": "Active families, Outdoor environments",
+        "exercise_needs": "High"
+      },
+      "category": "Dog",
+      "shelter_name": "Happy Tails Shelter",
+      "shelter_email":"mysuccessmission@gmail.com",
+      "shelter_photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Bella is a lively Labrador who loves to play fetch and enjoys long walks.",
+      "image": [
+        "https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://plus.unsplash.com/premium_photo-1668114375111-e90b5e975df6?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1491604612772-6853927639ef?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
     }
   ]
   
