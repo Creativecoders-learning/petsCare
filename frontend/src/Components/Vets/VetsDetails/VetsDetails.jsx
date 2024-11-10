@@ -90,7 +90,6 @@ const VetsDetails = () => {
                 }`}
                 disabled={!user}
               >
-                {/* Book Now */}
                 {user ? "Book Now" : "Login to Book"}
               </button>
             </div>
