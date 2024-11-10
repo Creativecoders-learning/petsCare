@@ -20,7 +20,7 @@ const MeetPets = ({item}) => {
             <div className="flex items-center justify-center gap-x-1 md:text-sm font-nunito ">
               <SlCalender className="text-red-600" />
               <h2 className="font-medium text-black  dark:text-black">
-                Age: {item?.age}
+                Age: {item?.age} 
               </h2>
             </div>
             <h2 className="text-[#0A453A] hover:text-red-600 sm:text-lg md:text-2xl font-nunito font-extrabold dark:text-black">
@@ -29,7 +29,7 @@ const MeetPets = ({item}) => {
             <p className="w-[280px]">{item?.description.length > 80 ? item?.description.slice(0,60) : item?.description}... </p>
           </div>
 
-        <Link to={`/adoptionDetails/${item.id}`}>
+        <Link to={`/adoptionDetails/${item._id}`}>
           <button className="rounded-full flex items-center gap-x-2  px-6 py-1 text-[12px] font-extrabold text-primary sm:text-sm md:text-base">
             Read More <FaArrowRight />
           </button>

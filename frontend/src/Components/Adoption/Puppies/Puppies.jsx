@@ -13,11 +13,12 @@ const Puppies = () => {
     const sliderRef = useRef();
 
     useEffect(()=>{
-        fetch('/meetAdoptionPets.json')
+        fetch('/petsAdoption.json')
         .then(res=>res.json())
         .then(data=> {
             // console.log(data);
-            setPuppies(data)
+            const allPuppies = data.filter(item=>item.category === "Dog")
+            setPuppies(allPuppies)
         })
     },[puppies])
 
@@ -66,7 +67,7 @@ const Puppies = () => {
             <Slider ref={sliderRef} {...settings}>
             {
                 puppies?.map(item=>(
-                   <MeetPets key={item.id} item={item}/>
+                   <MeetPets key={item._id} item={item}/>
                 ))
             }
             </Slider>

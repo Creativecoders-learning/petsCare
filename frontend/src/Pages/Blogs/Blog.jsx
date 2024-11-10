@@ -40,7 +40,7 @@ const Blog = () => {
             {/* <CardBlog /> */}
             <div className="flex-1">
               {blogsByCategory?.map((blog) => (
-                <CardBlog key={blog?.id} blog={blog} />
+                <CardBlog key={blog?._id} blog={blog} />
               ))}
             </div>
 

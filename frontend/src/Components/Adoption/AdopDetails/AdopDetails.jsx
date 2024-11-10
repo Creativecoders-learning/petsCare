@@ -23,7 +23,7 @@ const AdopDetails = () => {
   const { id } = useParams();
   console.log(typeof id);
   const { adoptions } = useAdoptionData();
-  const adoption = adoptions.find((item) => item.id === id);
+  const adoption = adoptions.find((item) => item._id === id);
   console.log(adoption);
 
   return (

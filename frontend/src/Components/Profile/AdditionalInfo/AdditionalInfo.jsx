@@ -1,4 +1,4 @@
-import { FaFacebook, FaLinkedin, FaTwitter, FaGithub, FaMapMarkerAlt } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaGithub, FaMapMarkerAlt } from "react-icons/fa";
 import { MdOutlineLocationCity, MdOutlineHome } from "react-icons/md";
 import PrimaryTitle from "../../UI/PrimaryTitle";
 
@@ -55,17 +55,7 @@ const AdditionalInfo = ({ user }) => (
                                           LinkedIn
                                     </a>
                               </li>
-                              <li className="flex items-center space-x-3">
-                                    <FaTwitter className="text-blue-400" />
-                                    <a
-                                          href={user?.socialLinks?.twitter}
-                                          target="_blank"
-                                          rel="noreferrer"
-                                          className="text-indigo-600 hover:underline"
-                                    >
-                                          Twitter
-                                    </a>
-                              </li>
+                              
                               <li className="flex items-center space-x-3">
                                     <FaGithub className="text-gray-800" />
                                     <a

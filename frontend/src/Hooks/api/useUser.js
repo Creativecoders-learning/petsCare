@@ -1,21 +1,27 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-export default function useUser() {
-      const [user, setUser] = useState({});
+const useUser = () => {
 
-      const refresh = async () => {
-            try {
-                  const response = await axios.get("/user.json"); // Updated path to JSON file
-                  setUser(response.data);
-            } catch (err) {
-                  console.log(err.message || 'An error occurred');
+      const [user, setUser] = useState(() => {
+            const userInfo = localStorage.getItem('userInfo');
+            return userInfo ? JSON.parse(userInfo) : null;
+      });
+
+      // get userInfo from localStorage
+      const getUserInfo = () => {
+            const userInfo = localStorage.getItem('userInfo');
+            if (userInfo) {
+                  setUser(JSON.parse(userInfo))
+                  return JSON.parse(userInfo)
             }
-      };
+      }
 
-      useEffect(() => {
-            refresh();
-      }, [])
+      // set userInfo to localStorage
+      const setUserInfo = (userInfo) => {
+            localStorage.setItem('userInfo', JSON.stringify(userInfo))
+      }
 
-      return user;
-}
+      return { user, setUser, getUserInfo, setUserInfo };
+};
+
+export default useUser;

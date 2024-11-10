@@ -50,7 +50,7 @@ const Beginning = () => {
             <div className="border bg-green-300">
               <img src={adoptions[currentSlider]?.image[0]} className="h-full w-full bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear" alt="" />
                {/* slider container */}
-            <div className="absolute top-24 right-3 flex flex-col justify-center items-center gap-3 p-2">
+            <div className="absolute top-1/2 right-3 flex flex-col justify-center items-center gap-3 p-2">
                 {/* sliders */}
                 {adoptions.map((slide, inx) => (
                    
