@@ -5,9 +5,9 @@ import { useState } from "react";
 import Modal from "../../../Components/UI/Modal";
 import ServiceModalContent from "../../../Components/Dashboard/Admin/MyServices/ServiceModalContent";
 import Button from "../../../Components/UI/Button";
-import AddServiceModal from "../../../Components/Dashboard/Admin/MyServices/AddServiceModal";
 import useAxios from "../../../Hooks/useAxios";
 import Swal from "sweetalert2";
+import NewServiceForm from "./NewServiceForm";
 
 const MyServices = () => {
   const apiHandler = useAxios();
@@ -113,7 +113,7 @@ const MyServices = () => {
       {/* Conditionally render the details modal */}
       {openModal && (
         <Modal primary={true} openModal={openModal} setOpenModal={setOpenModal}>
-          {modalType === "add-service" && <AddServiceModal />}
+          {modalType === "add-service" && <NewServiceForm />}
           {modalType === "edit-service" && (
             <ServiceModalContent selectedVetService={selectedVetService} />
           )}
