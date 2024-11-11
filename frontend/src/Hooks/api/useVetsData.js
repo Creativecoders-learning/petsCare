@@ -7,6 +7,7 @@ const useVetsData = () => {
         fetch("/vetsData.json")
           .then((res) => res.json())
           .then((data) => {
+            console.log(data?.category)
             setVets(data);
           });
       }, []);
