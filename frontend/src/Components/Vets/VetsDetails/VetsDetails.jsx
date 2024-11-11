@@ -13,9 +13,8 @@ const VetsDetails = () => {
   const [selectedAppointmentType, setSelectedAppointmentType] = useState(null); 
   
   const { id } = useParams();
-  const idInt = parseInt(id);
   const { vets } = useVetsData();
-  const vet = vets?.find((item) => item.id === idInt);
+  const vet = vets?.find((item) => item._id == id);
 
   if (!vet) {
     return <p>Vet not found</p>;

@@ -9,101 +9,114 @@ const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
       const [user, setUser] = useState(null);
+      const [loading, setLoading] = useState(true); // Track loading state
 
       // Create new user with email and password
       const createUser = async (email, password) => {
+            setLoading(true);
             try {
                   const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                  setUser(userCredential.user);
                   return userCredential.user;
             } catch (error) {
                   console.error("Error creating user:", error);
                   throw error;
+            } finally {
+                  setLoading(false);
             }
       };
 
       // Update user's profile with name and photo URL
       const updateUser = async (name, photoUrl) => {
+            setLoading(true);
             try {
-                  await updateProfile(auth.currentUser, {
-                        displayName: name,
-                        photoURL: photoUrl
-                  });
-                  setUser(auth.currentUser);
+                  await updateProfile(auth.currentUser, { displayName: name, photoURL: photoUrl });
+                  return auth.currentUser;
             } catch (error) {
                   console.error("Error updating profile:", error);
                   throw error;
+            } finally {
+                  setLoading(false);
             }
       };
 
       // Log in existing user with email and password
       const logIn = async (email, password) => {
+            setLoading(true);
             try {
                   const userCredential = await signInWithEmailAndPassword(auth, email, password);
-                  setUser(userCredential.user); // Set user state with the logged-in user
                   return userCredential.user;
             } catch (error) {
                   console.error("Error logging in:", error);
                   throw error;
+            } finally {
+                  setLoading(false);
             }
       };
 
       // Log in user with Google
       const googleLogIn = async () => {
+            setLoading(true);
             try {
                   const userCredential = await signInWithPopup(auth, googleProvider);
-                  setUser(userCredential.user);
                   return userCredential.user;
             } catch (error) {
                   console.error("Error with Google login:", error);
                   throw error;
+            } finally {
+                  setLoading(false);
             }
       };
 
       // Log in user with GitHub
       const githubLogIn = async () => {
+            setLoading(true);
             try {
                   const userCredential = await signInWithPopup(auth, githubProvider);
-                  setUser(userCredential.user);
                   return userCredential.user;
             } catch (error) {
                   console.error("Error with GitHub login:", error);
                   throw error;
+            } finally {
+                  setLoading(false);
             }
       };
 
       // Log out user
       const logOut = async () => {
+            setLoading(true);
             try {
                   await signOut(auth);
                   setUser(null);
             } catch (error) {
                   console.error("Error logging out:", error);
                   throw error;
+            } finally {
+                  setLoading(false);
             }
       };
 
-      // Monitor auth state changes
+      // Monitor auth state changes and set user accordingly
       useEffect(() => {
-            const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-                  console.log('Current User:', currentUser);
+            const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
                   setUser(currentUser);
+                  setLoading(false);
+                  console.log(currentUser);
+
             });
 
-            return () => {
-                  unSubscribe();
-            };
+            return () => unsubscribe();
       }, []);
 
       const authInfo = {
             user,
             setUser,
+            loading,
             createUser,
             updateUser,
             logIn,
             googleLogIn,
             githubLogIn,
-            logOut
+            logOut,
       };
 
       return (

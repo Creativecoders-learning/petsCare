@@ -7,24 +7,24 @@ import ServiceModalContent from "../../../Components/Dashboard/Admin/MyServices/
 import Button from "../../../Components/UI/Button";
 import AddServiceModal from "../../../Components/Dashboard/Admin/MyServices/AddServiceModal";
 import useAxios from "../../../Hooks/useAxios";
-import Swal from 'sweetalert2'
-
+import Swal from "sweetalert2";
 
 const MyServices = () => {
-  const apiHandler =useAxios();
+  const apiHandler = useAxios();
   const [selectedVetService, setSelectedVetService] = useState(null); // State for selected vet
   const [openModal, setOpenModal] = useState(false);
   const [modalType, setModalType] = useState("");
- // Replace with the desired email
-  const { vetServices } = useVetServices("sarah.parker@vetclinic.com");
-console.log(vetServices)
+
+  const email = "sarah.parker@vetclinic.com"; // Replace with the desired email
+  const { vetServices } = useVetServices(email);
+
   const handleEditService = (service) => {
     setSelectedVetService(service);
     setModalType("edit-service");
     setOpenModal(true);
   };
- 
-  const handleDeleteService = async(id) => {
+
+  const handleDeleteService = async (id) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -32,25 +32,26 @@ console.log(vetServices)
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
-}).then((result) => {
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
       if (result.isConfirmed) {
-            apiHandler.delete(`/vetServices/${id}`)
-                  .then(result => {
-                        if (result?.data?.deletedCount === 1) {
-                              Swal.fire({
-                                    title: "Deleted!",
-                                    text: "User has been deleted.",
-                                    icon: "success"
-                              });
-                              
-                        }
-                  })
-      }})};
+        apiHandler.delete(`/vetServices/${id}`).then((result) => {
+          if (result?.data?.deletedCount === 1) {
+            Swal.fire({
+              title: "Deleted!",
+              text: "User has been deleted.",
+              icon: "success",
+            });
+          }
+        });
+      }
+    });
+  };
 
   const handleAddServices = () => {
     setModalType("add-service");
     setOpenModal(true);
+
   };
 
   return (
@@ -79,7 +80,7 @@ console.log(vetServices)
           <tbody className="text-myGray">
             {vetServices?.map((service, index) => (
               <tr
-                key={service?.id}
+                key={service?._id}
                 className={`${
                   index % 2 === 0 ? "bg-primaryLight bg-opacity-10" : "bg-white"
                 }`}

@@ -66,7 +66,7 @@ const VetManagement = () => {
                                                             <FaEye />
                                                       </button>
                                                       <button
-                                                            onClick={() => handleDelete(vet?.id)}
+                                                            onClick={() => handleDelete(vet?._id)}
                                                             className="p-2 text-white bg-red-500 rounded-full hover:bg-red-600 transition duration-150"
                                                       >
                                                             <FaTrash />
@@ -81,7 +81,7 @@ const VetManagement = () => {
                   {/* Conditionally render the details modal */}
                   {openModal && (
                         <Modal primary={true} openModal={openModal} setOpenModal={setOpenModal}>
-                              <ModalContent selectedVet={selectedVet}/>
+                              <ModalContent selectedVet={selectedVet} />
                         </Modal>
                   )}
             </div>

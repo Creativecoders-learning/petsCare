@@ -1,18 +1,27 @@
 import { useEffect, useState } from "react";
+import toast from 'react-hot-toast';
+import useAxios from "../useAxios";
 
 const useVetsData = () => {
-    const [vets, setVets] = useState([]);
+  const [vets, setVets] = useState([]);
+  const apiHandler = useAxios();
 
-    useEffect(() => {
-        fetch("/vetsData.json")
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data?.category)
-            setVets(data);
-          });
-      }, []);
+  const fetchAllVets = async () => {
+    try {
+      const { data } = await apiHandler.get('/vets');
+      setVets(data)
+    } catch (error) {
+      toast.error(error?.message)
+      console.log(error?.message);
 
-    return {vets}
+    }
+  }
+
+  useEffect(() => {
+    fetchAllVets()
+  }, []);
+
+  return { vets }
 };
 
 export default useVetsData;

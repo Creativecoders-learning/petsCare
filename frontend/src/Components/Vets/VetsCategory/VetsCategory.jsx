@@ -5,7 +5,6 @@ import VetItem from "../VetsItem/VetsItem";
 
 const VetsCategory = () => {
   const { vets } = useVetsData();
-
   // vets button functionality
   const [selectedCategory, SetSelectedCategory] = useState("Holistics");
   const uniqueCategory = new Set();
@@ -14,7 +13,8 @@ const VetsCategory = () => {
     const isDuplicate = uniqueCategory.has(item?.category);
 
     if (!isDuplicate) {
-      uniqueCategory.add(item?.category);
+      uniqueCategory.add(item?.
+        category);
       return true;
     }
 
