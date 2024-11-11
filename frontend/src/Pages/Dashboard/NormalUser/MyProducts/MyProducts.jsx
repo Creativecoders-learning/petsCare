@@ -7,10 +7,13 @@ import NewProductForm from "../../../../Components/Dashboard/NormalUser/NewProdu
 import Modal from "../../../../Components/UI/Modal";
 import Swal from "sweetalert2";
 import useAxios from "../../../../Hooks/useAxios";
+import UpdateProductForm from "../../../../Components/Dashboard/NormalUser/UpdateProductForm";
 
 export default function MyProducts() {
-  const { petsProducts, refresh  } = usePetsProducts();
+  const { petsProducts, refresh } = usePetsProducts();
   const [openModal, setOpenModal] = useState(false);
+  const [formType, setFormType] = useState("");
+  const [updateProductId, setUpdateProductId] = useState(null);
   const apiHandler = useAxios();
 
   // handle delete button
@@ -28,33 +31,48 @@ export default function MyProducts() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        apiHandler.delete(`/shop-products/${id}`)
-        .then((res) => {
-          if (res.data.acknowledged) {
-            refresh();
+        apiHandler
+          .delete(`/shop-products/${id}`)
+          .then((res) => {
+            if (res.data.acknowledged) {
+              refresh();
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+            }
+          })
+          .catch((err) => {
             Swal.fire({
-              title: "Deleted!",
-              text: "Your file has been deleted.",
-              icon: "success",
+              title: "Something Wrong!!",
+              text: `${err.message}`,
+              icon: "error",
             });
-          }
-        })
-        .catch(err => {
-          Swal.fire({
-            title: "Something Wrong!!",
-            text: `${err.message}`,
-            icon: "error",
           });
-        })
       }
     });
+  };
+
+  // handle new form
+  const handleNewForm = () => {
+    setOpenModal(true);
+    setFormType("newForm");
+  };
+
+  // handle update form
+  const handleUpdateForm = (id) => {
+    setOpenModal(true);
+    setFormType("updateForm");
+    setUpdateProductId(id);
   };
 
   return (
     <>
       {openModal && (
         <Modal primary={true} setOpenModal={setOpenModal} openModal={openModal}>
-          <NewProductForm refresh={refresh}/>
+          {formType === "newForm" && <NewProductForm refresh={refresh} />}
+          {formType === "updateForm" && <UpdateProductForm refresh={refresh} id={updateProductId} />}
         </Modal>
       )}
       <div className="p-8 font-inter">
@@ -62,7 +80,7 @@ export default function MyProducts() {
           Manage Your Publish Products
         </PrimaryTitle>
         <div className="w-full flex justify-end my-6">
-          <Button primary onClick={() => setOpenModal(true)}>
+          <Button primary onClick={handleNewForm}>
             New Product
           </Button>
         </div>
@@ -103,7 +121,7 @@ export default function MyProducts() {
                   <td className="p-4">{item?.rating}</td>
                   <td className="p-4 flex items-center justify-center space-x-3">
                     <button
-                      // onClick={() => handleEdit(blog?.id)}
+                      onClick={() => handleUpdateForm(item._id)}
                       className="p-2 text-white bg-secondary rounded-full hover:bg-primary transition duration-150"
                     >
                       <FaEdit />
