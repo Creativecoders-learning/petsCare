@@ -1,44 +1,46 @@
+import { useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import UseAuth from "../../Hooks/UseAuth";
 import useAxios from "../../Hooks/useAxios";
+import useUsers from "../../Hooks/api/useUsers";
 
 const SocialLogin = () => {
       const { googleLogIn, githubLogIn, setUser } = UseAuth();
       const apiHandler = useAxios();
       const navigate = useNavigate();
+      const { users } = useUsers();
 
-      const handleSocialLogin = (loginMethod) => {
-            loginMethod()
-                  .then((result) => {
-                        const loggedInUser = result.user;
-                        setUser(loggedInUser);
+      const handleSocialLogin = async (loginMethod) => {
+            try {
+                  const result = await loginMethod()
 
-                        // Prepare user data to be sent to the backend
+                  const matchedUser = users?.find(user => user?.email === result?.email);
+
+                  if (!matchedUser) {
+                        setUser(result);
+
                         const userData = {
-                              name: loggedInUser.displayName,
-                              email: loggedInUser.email,
-                              image: loggedInUser.photoURL,
+                              name: result?.displayName,
+                              email: result?.email,
+                              image: result?.photoURL,
                         };
-                        console.log('User Data:', userData);
-                        // navigate('/')
 
                         // Send user data to the backend
-                        apiHandler.post('/users', userData)
-                              .then(() => {
-                                    toast.success('Successfully logged in!');
-                                    navigate('/role-change');
-                              })
-                              .catch(error => {
-                                    toast.error('Failed to save user data');
-                                    console.error(error.message);
-                              });
-                  })
-                  .catch(error => {
-                        toast.error(error?.message);
-                  });
+                        await apiHandler.post('/users', userData);
+                        toast.success('Successfully logged in!');
+
+                        navigate('/role-change');
+                  }
+
+                  navigate('/');
+
+            } catch (error) {
+                  toast.error(error?.message || 'Failed to save user data');
+                  console.error('Error during login:', error.message);
+            }
       };
 
       return (

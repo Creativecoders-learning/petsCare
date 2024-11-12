@@ -13,9 +13,9 @@ const VetsDetails = () => {
   const { user } = UseAuth();
   const [openModal, setOpenModal] = useState(false);
   const { id } = useParams();
-  const idInt = parseInt(id);
   const { vets } = useVetsData();
-  const vet = vets?.find((item) => item.id === idInt);
+  
+  const vet = vets?.find((item) => item?._id === id);
 
   if (!vet) {
     return <p>Vet not found</p>;
@@ -48,29 +48,26 @@ const VetsDetails = () => {
                 </h2>
                 <div className="mt-5 flex items-center gap-3">
                   <button
-                    className={`w-[140px] py-2 ${
-                      user
-                        ? "focus:bg-primary border border-primary text-black hover:border-none hover:text-white focus:text-white hover:bg-black"
-                        : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                    }`}
+                    className={`w-[140px] py-2 ${user
+                      ? "focus:bg-primary border border-primary text-black hover:border-none hover:text-white focus:text-white hover:bg-black"
+                      : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                      }`}
                   >
                     New{" "}
                   </button>
                   <button
-                    className={`w-[140px] py-2 ${
-                      user
-                        ? "focus:bg-primary border border-primary text-black hover:border-none hover:text-white focus:text-white hover:bg-black"
-                        : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                    }`}
+                    className={`w-[140px] py-2 ${user
+                      ? "focus:bg-primary border border-primary text-black hover:border-none hover:text-white focus:text-white hover:bg-black"
+                      : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                      }`}
                   >
                     Follow Us{" "}
                   </button>
                   <button
-                    className={`w-[140px] py-2 ${
-                      user
-                        ? "focus:bg-primary border border-primary text-black hover:border-none hover:text-white focus:text-white hover:bg-black"
-                        : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                    }`}
+                    className={`w-[140px] py-2 ${user
+                      ? "focus:bg-primary border border-primary text-black hover:border-none hover:text-white focus:text-white hover:bg-black"
+                      : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                      }`}
                   >
                     Report Show{" "}
                   </button>
@@ -83,11 +80,10 @@ const VetsDetails = () => {
               </div>
               <button
                 onClick={handleBookNow}
-                className={`w-full py-3 rounded-xl mt-5 ${
-                  user
-                    ? "bg-primary text-white hover:bg-black"
-                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                }`}
+                className={`w-full py-3 rounded-xl mt-5 ${user
+                  ? "bg-primary text-white hover:bg-black"
+                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  }`}
                 disabled={!user}
               >
                 {user ? "Book Now" : "Login to Book"}
