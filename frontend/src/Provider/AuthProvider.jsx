@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
       const createUser = async (email, password) => {
             try {
                   const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                  setUser(userCredential.user); // Set user state with the newly created user
+                  setUser(userCredential.user);
                   return userCredential.user;
             } catch (error) {
                   console.error("Error creating user:", error);

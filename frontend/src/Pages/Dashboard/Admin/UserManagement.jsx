@@ -1,18 +1,31 @@
 import { FaTrash } from "react-icons/fa";
 import useUsers from "../../../Hooks/api/useUsers";
 import PrimaryTitle from "../../../Components/UI/PrimaryTitle";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import useAxios from "../../../Hooks/useAxios";
+import toast from 'react-hot-toast';
 
 const UserManagement = () => {
       const { users, fetchUsers } = useUsers();
-      const apiHandler = useAxios()
+      const apiHandler = useAxios();
 
-      const handleRoleChange = (id, newRole) => {
-            console.log(`Changed role of user ID ${id} to ${newRole}`);
+      const handleRoleChange = async (email, prevRole, newRole) => {
+            if (prevRole === newRole) {
+                  return toast.error('Cannot change to the same role');
+            } else if (prevRole === 'Admin') {
+                  return toast.error('Cannot change the admin role');
+            }
+
+            try {
+                  await apiHandler.put(`/users/by-email/${email}`, { role: newRole });
+                  toast.success(`Role updated to ${newRole}`);
+                  fetchUsers();
+            } catch (error) {
+                  toast.error(error?.message);
+            }
       };
 
-      // delete user
+      // Delete user
       const handleDeleteUser = (email) => {
             Swal.fire({
                   title: "Are you sure?",
@@ -24,23 +37,25 @@ const UserManagement = () => {
                   confirmButtonText: "Yes, delete it!"
             }).then((result) => {
                   if (result.isConfirmed) {
-
-                        // Deleted functionality here
                         apiHandler.delete(`/users/by-email/${email}`)
                               .then(result => {
                                     if (result?.data?.deletedCount === 1) {
                                           Swal.fire({
                                                 title: "Deleted!",
-                                                text: "Your file has been deleted.",
+                                                text: "User has been deleted.",
                                                 icon: "success"
                                           });
-
-                                          // fetch the user for updating in UI
-                                          fetchUsers()
+                                          fetchUsers();
                                     }
                               })
                   }
             });
+      };
+
+      // Helper function to format the last login date
+      const formatLastLogin = (lastLogIn) => {
+            const date = new Date(Number(lastLogIn));
+            return date.toLocaleDateString();
       };
 
       return (
@@ -53,7 +68,7 @@ const UserManagement = () => {
                                           <th className="p-4 font-semibold text-center">#</th>
                                           <th className="p-4 font-semibold">Name</th>
                                           <th className="p-4 font-semibold">Email</th>
-                                          <th className="p-4 font-semibold">Status</th>
+                                          <th className="p-4 font-semibold">Last Log in</th>
                                           <th className="p-4 font-semibold">Role</th>
                                           <th className="p-4 font-semibold text-center">Actions</th>
                                     </tr>
@@ -64,11 +79,12 @@ const UserManagement = () => {
                                                 <td className="p-4 text-center font-medium">{index + 1}</td>
                                                 <td className="p-4 font-medium">{user?.name}</td>
                                                 <td className="p-4">{user?.email}</td>
-                                                <td className="p-4">{user?.accountSettings?.status}</td>
+                                                <td className="p-4">{formatLastLogin(user?.lastLogIn)}</td>
+
                                                 <td className="p-4">
                                                       <select
                                                             value={user?.role}
-                                                            onChange={(e) => handleRoleChange(user?._id, e.target.value)}
+                                                            onChange={(e) => handleRoleChange(user?.email, user?.role, e.target.value)}
                                                             className="border rounded-md p-2 bg-white text-gray-700"
                                                       >
                                                             <option value="normalUser">NormalUser</option>

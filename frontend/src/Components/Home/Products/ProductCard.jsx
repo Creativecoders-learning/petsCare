@@ -21,10 +21,10 @@ const ProductCard = ({ icon:Icon, title, count, link }) => {
 };
 
 ProductCard.propTypes = {
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  count: PropTypes.number.isRequired,
-  link: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  title: PropTypes.string,
+  count: PropTypes.number,
+  link: PropTypes.string,
 };
 
 export default ProductCard;

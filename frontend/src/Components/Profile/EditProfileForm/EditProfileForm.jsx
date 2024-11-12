@@ -1,7 +1,13 @@
 import { useForm } from "react-hook-form";
 import PrimaryTitle from "../../UI/PrimaryTitle";
+import useAxios from "../../../Hooks/useAxios";
+import UseAuth from "../../../Hooks/UseAuth";
 
 const EditProfileForm = ({ user, setIsEditing }) => {
+
+      const apiHandler = useAxios();
+      const { user: authUser } = UseAuth();
+
       const { register, handleSubmit, formState: { errors } } = useForm({
             defaultValues: {
                   name: user?.name || "",
@@ -20,7 +26,36 @@ const EditProfileForm = ({ user, setIsEditing }) => {
       });
 
       const onSubmit = (data) => {
-            console.log("Updated profile data:", data);
+            const { name, email, phone, country, district, streetAddress, gender, facebook, linkedin, github, status } = data || {}
+
+            const updatedUserInfo = {
+                  name: name,
+                  email: email,
+                  photoURL: user?.photoURL,
+                  phone: phone,
+                  address: {
+                        country: country,
+                        district: district,
+                        streetAddress: streetAddress
+                  },
+                  gender: gender,
+                  socialLinks: {
+                        facebook: facebook,
+                        linkedin: linkedin,
+                        github: github
+                  },
+                  accountSettings: {
+                        status: status,
+                        lastLogin: authUser?.lastLoginAt?.lastLoginAt
+                  }
+            }
+
+            // update profile
+            apiHandler.put(`/users/by-email/${user.email}`, updatedUserInfo);
+            console.log(updatedUserInfo);
+
+
+            // console.log("Updated profile data:", updatedUserInfo);
             setIsEditing(false);
       };
 
@@ -116,13 +151,6 @@ const EditProfileForm = ({ user, setIsEditing }) => {
                               />
                         </div>
 
-                        <div className="flex flex-col">
-                              <label className="text-gray-700 font-semibold mb-1">Twitter</label>
-                              <input
-                                    {...register("twitter")}
-                                    className="w-full p-3 border border-gray-300 rounded-md focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:outline-none transition"
-                              />
-                        </div>
 
                         <div className="flex flex-col">
                               <label className="text-gray-700 font-semibold mb-1">GitHub</label>

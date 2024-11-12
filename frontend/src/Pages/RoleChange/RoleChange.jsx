@@ -13,7 +13,7 @@ const RoleChange = () => {
   const handleRoleSelection = async (role) => {
 
     try {
-      await apiHandler.put(`/users/by-email/${user.email}`, { role });
+      await apiHandler.put(`/users/by-email/${user.email}`, { role })
       toast.success(`Role updated to ${role}`);
       navigate('/');
     } catch (error) {

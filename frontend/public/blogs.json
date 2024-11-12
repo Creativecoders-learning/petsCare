@@ -3,7 +3,6 @@
     "id": "1",
     "image": "https://i.ibb.co.com/ZmFF89N/dog1.jpg",
     "category": "Dog",
-    "email": "creativecoders.learning@gmail.com",
     "title": "Complete Dog Care Guide: Essentials",
     "description": "Taking care of a dog is a rewarding yet demanding responsibility that requires knowledge, patience, and dedication. This guide aims to help new and experienced pet owners navigate the essentials of dog care, covering every aspect from daily routines to long-term health. Whether you're considering getting a puppy or already have an adult dog, understanding their needs is crucial. From choosing the right breed to knowing what supplies to prepare, each step helps set the foundation for a healthy and happy life for your pet. Dog care also involves regular grooming, feeding, and exercise. Different breeds have specific requirements, and knowing these differences will help you tailor your approach to caring for your dog. Proper training and socialization are also key, helping your dog grow into a well-behaved companion. Finally, routine vet check-ups ensure that any health issues are caught early, and preventive care keeps your dog safe from common illnesses. In this guide, we will explore all these aspects in detail, providing tips, advice, and recommendations for every stage of your dog’s life. By the end of this guide, you will have a solid understanding of how to keep your furry friend happy, healthy, and active.",
     "subtitles": [
@@ -29,13 +28,18 @@
       }
     ],
     "view_count": 12000,
-    "rating": 4.8
+    "rating": 4.8,
+    "author": {
+      "name": "Rita Green",
+      "email": "creativecoders.learning@gmail.com",
+      "image": "https://i.ibb.co.com/8zPQyP1/instructor-3.png",
+      "bio": "Rita Green is a professional dog trainer with over 10 years of experience in working with puppies and adult dogs. She specializes in positive reinforcement training methods and believes in building strong, trusting relationships between owners and their dogs. Rita has worked with hundreds of dogs and their owners, helping them build better communication and behavioral skills."
+    }
   },
   {
     "id": "2",
     "image": "https://i.ibb.co.com/59QWggc/dog2.jpg",
     "category": "Dog",
-    "email": "creativecoders.learning@gmail.com",
     "title": "Entertaining Indoor Cats: Top Tips",
     "description": "Taking care of a dog is a rewarding yet demanding responsibility that requires knowledge, patience, and dedication. This guide aims to help new and experienced pet owners navigate the essentials of dog care, covering every aspect from daily routines to long-term health. Whether you're considering getting a puppy or already have an adult dog, understanding their needs is crucial. From choosing the right breed to knowing what supplies to prepare, each step helps set the foundation for a healthy and happy life for your pet. Dog care also involves regular grooming, feeding, and exercise. Different breeds have specific requirements, and knowing these differences will help you tailor your approach to caring for your dog. Proper training and socialization are also key, helping your dog grow into a well-behaved companion. Finally, routine vet check-ups ensure that any health issues are caught early, and preventive care keeps your dog safe from common illnesses. In this guide, we will explore all these aspects in detail, providing tips, advice, and recommendations for every stage of your dog’s life. By the end of this guide, you will have a solid understanding of how to keep your furry friend happy, healthy, and active.",
     "subtitles": [
@@ -61,13 +65,18 @@
       }
     ],
     "view_count": 12000,
-    "rating": 4.8
+    "rating": 4.8,
+    "author": {
+      "name": "Kamruzzaman Bayezid",
+      "email": "creativecoders.learning@gmail.com",
+      "image": "https://i.ibb.co.com/6vHb5ZD/profile.jpg",
+      "bio": "Kamruzzaman Bayezid is a professional animal behaviorist with a focus on cats. With over 8 years of experience working with feline companions, John is passionate about promoting the well-being of cats through creative play and enrichment activities. He works with cat owners worldwide to help them understand their pets’ needs and foster positive, healthy relationships."
+    }
   },
   {
     "id": "3",
     "image": "https://i.ibb.co.com/Lr7SPFP/dog3.jpg",
     "category": "Cat",
-    "email": "creativecoders.learning@gmail.com",
     "title": "Complete Dog Care Guide: Essentials",
     "description": "Indoor cats can sometimes become bored or restless without proper stimulation. It’s important to engage them with activities that challenge their minds and bodies. This blog explores 10 fun and simple ways to keep your feline friend entertained, ensuring they stay active and happy. From interactive toys to DIY puzzles, there are countless options that will suit different cats' personalities. Some cats enjoy chasing laser pointers, while others might prefer to sit by the window and watch birds. Training and playtime are also great opportunities for bonding. By understanding your cat’s preferences, you can introduce activities that are both fun and beneficial to their well-being. Engaging in regular play helps to prevent boredom, obesity, and behavioral issues, making life more enjoyable for your cat. In this guide, we’ll dive into various activities, offering practical tips and ideas that are easy to implement. Whether you have a kitten full of energy or a senior cat that needs gentle stimulation, you’ll find suitable activities to enrich their life.",
     "subtitles": [
@@ -93,13 +102,18 @@
       }
     ],
     "view_count": 8500,
-    "rating": 4.6
+    "rating": 4.6,
+    "author": {
+      "name": "John Wick",
+      "email": "creativecoders.learning@gmail.com",
+      "image": "https://i.ibb.co.com/0YCw3SF/instructor-1.png",
+      "bio": "Kamruzzaman Bayezid is a professional animal behaviorist with a focus on cats. With over 8 years of experience working with feline companions, John is passionate about promoting the well-being of cats through creative play and enrichment activities. He works with cat owners worldwide to help them understand their pets’ needs and foster positive, healthy relationships."
+    }
   },
   {
     "id": "4",
     "image": "https://plus.unsplash.com/premium_photo-1664299749481-ac8dc8b49754?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Cat",
-    "email": "kmbayezid955@gmail.com",
     "title": "Essential Care Guide for Senior Cats",
     "description": "As cats age, their care needs change significantly. This guide addresses the unique requirements of senior cats, focusing on nutrition, health monitoring, and comfort. From adjusting their diet to accommodate less active lifestyles to ensuring they have a cozy space to rest, every detail matters. Regular vet visits become even more crucial for early detection of age-related issues like arthritis or dental problems. By being attentive to these changes, you can help your feline friend live a longer, happier life.",
     "subtitles": [
@@ -125,7 +139,13 @@
       }
     ],
     "view_count": 10000,
-    "rating": 4.9
+    "rating": 4.9,
+    "author": {
+      "name": "Kamruzzaman Bayezid",
+      "email": "kmbayezid955@gmail.com",
+      "image": "https://i.ibb.co.com/6vHb5ZD/profile.jpg",
+      "bio": "Kamruzzaman Bayezid is a professional animal behaviorist with a focus on cats. With over 8 years of experience working with feline companions, John is passionate about promoting the well-being of cats through creative play and enrichment activities. He works with cat owners worldwide to help them understand their pets’ needs and foster positive, healthy relationships."
+    }
   },
   {
     "id": "5",
@@ -157,6 +177,11 @@
       }
     ],
     "view_count": 9500,
-    "rating": 4.7
+    "rating": 4.7,
+    "author": {
+      "name": "Kamruzzaman Bayezid",
+      "image": "https://i.ibb.co.com/6vHb5ZD/profile.jpg",
+      "bio": "Kamruzzaman Bayezid is a professional animal behaviorist with a focus on cats. With over 8 years of experience working with feline companions, John is passionate about promoting the well-being of cats through creative play and enrichment activities. He works with cat owners worldwide to help them understand their pets’ needs and foster positive, healthy relationships."
+    }
   }
 ]
