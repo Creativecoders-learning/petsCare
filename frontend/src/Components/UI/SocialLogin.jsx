@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
 import toast from "react-hot-toast";

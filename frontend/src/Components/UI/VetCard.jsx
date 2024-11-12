@@ -14,7 +14,6 @@ const VetCard = ({ vet }) => {
     institute,
     instituteLocation,
   } = vet || {};
-  console.log(vet)
   return (
     <div className="md:mx-8 lg:mx-0 mx-5">
       <div className=" p-4 shadow-xl dark:bg-gray-900 dark:text-gray-100">
