@@ -10,11 +10,12 @@ import Slot from "../../UI/VetDetail/Slot";
 const VetsDetails = () => {
   const { user } = UseAuth();
   const [openModal, setOpenModal] = useState(false);
-  const [selectedAppointmentType, setSelectedAppointmentType] = useState(null); 
-  
+  const [selectedAppointmentType, setSelectedAppointmentType] = useState(null);
+
   const { id } = useParams();
   const { vets } = useVetsData();
-  const vet = vets?.find((item) => item._id == id);
+
+  const vet = vets?.find((item) => item?._id === id);
 
   if (!vet) {
     return <p>Vet not found</p>;
@@ -52,13 +53,12 @@ const VetsDetails = () => {
                   <button
                     key={type}
                     onClick={() => handleAppointmentTypeClick(type)}
-                    className={`w-[140px] py-2 ${
-                      user
+                    className={`w-[140px] py-2 ${user
                         ? selectedAppointmentType === type
                           ? "bg-primary text-white"
                           : "border border-primary text-black hover:bg-black hover:text-white"
                         : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                    }`}
+                      }`}
                     disabled={!user}
                   >
                     {type}
@@ -70,11 +70,10 @@ const VetsDetails = () => {
           <div className="mt-8">
             <button
               onClick={handleBookNow}
-              className={`w-full py-3 rounded-xl mt-5 ${
-                user && selectedAppointmentType
+              className={`w-full py-3 rounded-xl mt-5 ${user && selectedAppointmentType
                   ? "bg-primary text-white hover:bg-black"
                   : "bg-gray-300 text-gray-500 cursor-not-allowed"
-              }`}
+                }`}
               disabled={!user || !selectedAppointmentType}
             >
               {user ? (selectedAppointmentType ? "Book Now" : "Select Appointment Type") : "Login to Book"}
