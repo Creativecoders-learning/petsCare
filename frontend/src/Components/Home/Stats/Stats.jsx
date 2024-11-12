@@ -22,7 +22,6 @@ const Stats = () => {
       }))
     : [];
 
-  console.log(items);
 
   return (
    <Container>
