@@ -3,7 +3,7 @@ import MyAdoptionRow from "../../TableRow/MyAdoptionRow";
 
 const MyAdoption = () => {
   const [myAdoptions] = useMyAdoptionData();
-  console.log(myAdoptions);
+  // console.log(myAdoptions);
 
   return (
     <div className="py-5 lg:py-10 ">
