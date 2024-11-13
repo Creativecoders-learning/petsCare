@@ -12,10 +12,7 @@ import useUser from "../Hooks/api/useUser";
 export default function DashboardLayout() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
 
-  const user = useUser();
-
-
-  // console.log(user.accountSettings.role)
+  const { user } = useUser();
 
   const handleNavToggle = () => {
     setIsSideNavOpen((prev) => !prev);
@@ -76,7 +73,7 @@ export default function DashboardLayout() {
               {/* Conditional Routes Based on User Role */}
 
               {/* for vet */}
-              {user?.accountSettings?.role === "Vet" && (
+              {user?.role === "Vet" && (
                 <>
                   <li>
                     <DashboardActiveLink to="/dashboard/vet/appointments">
@@ -103,7 +100,7 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/vet/blogs">
+                    <DashboardActiveLink to="/dashboard/vet/my-blogs">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <FaBlog className="block text-[18px]" />
                         <span className="block text-[17px]">My Blogs</span>
@@ -114,7 +111,7 @@ export default function DashboardLayout() {
               )}
 
               {/* for admin */}
-              {user?.accountSettings?.role === "Admin" && (
+              {user?.role === "Admin" && (
                 <>
                   <li>
                     <DashboardActiveLink to="/dashboard/admin/user-management">
@@ -165,11 +162,11 @@ export default function DashboardLayout() {
                 </>
               )}
 
-              {/* For Normal user */}
-              {user?.accountSettings?.role === "NormalUser" && (
+              {/* For Seller */}
+              {user?.role === "Seller" && (
                 <>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/my-products">
+                    <DashboardActiveLink to="/dashboard/seller/my-products">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <BiShoppingBag className="block text-[18px]" />
                         <span className="block text-[17px]">My Products</span>
@@ -177,7 +174,7 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/prescriptions">
+                    <DashboardActiveLink to="/dashboard/seller/prescriptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <AiOutlineMedicineBox className="block text-[18px]" />
                         <span className="block text-[17px]">Prescriptions</span>
@@ -185,7 +182,7 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/adoptions">
+                    <DashboardActiveLink to="/dashboard/seller/adoptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <MdOutlinePets className="block text-[18px]" />
                         <span className="block text-[17px]">Adoptions</span>
@@ -193,23 +190,23 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                                                            <DashboardActiveLink to="/dashboard/normalUser/my-adoptions">
-                                                                  <span className="flex items-center gap-3 rounded py-3 px-6">
-                                                                        <MdOutlinePets className="block text-[18px]" />
-                                                                        <span className="block text-[17px]"> My Adoptions</span>
-                                                                  </span>
-                                                            </DashboardActiveLink>
-                                                      </li>
-                                                      <li>
-                                                            <DashboardActiveLink to="/dashboard/normalUser/user-adoptions">
-                                                                  <span className="flex items-center gap-3 rounded py-3 px-6">
-                                                                        <MdOutlinePets className="block text-[18px]" />
-                                                                        <span className="block text-[17px]"> User Adoptions</span>
-                                                                  </span>
-                                                            </DashboardActiveLink>
-                                                      </li>
+                    <DashboardActiveLink to="/dashboard/seller/my-adoptions">
+                      <span className="flex items-center gap-3 rounded py-3 px-6">
+                        <MdOutlinePets className="block text-[18px]" />
+                        <span className="block text-[17px]"> My Adoptions</span>
+                      </span>
+                    </DashboardActiveLink>
+                  </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/blogs">
+                    <DashboardActiveLink to="/dashboard/seller/user-adoptions">
+                      <span className="flex items-center gap-3 rounded py-3 px-6">
+                        <MdOutlinePets className="block text-[18px]" />
+                        <span className="block text-[17px]"> User Adoptions</span>
+                      </span>
+                    </DashboardActiveLink>
+                  </li>
+                  <li>
+                    <DashboardActiveLink to="/dashboard/seller/blogs">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <FaBlog className="block text-[18px]" />
                         <span className="block text-[17px]">Blogs</span>

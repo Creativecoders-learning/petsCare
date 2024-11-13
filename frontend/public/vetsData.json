@@ -1,6 +1,5 @@
 [
     {
-      "id": 1,
       "name": "Dr. Sarah Tan",
       "category": "Holistics",
       "date": "2024-11-06",
@@ -23,7 +22,6 @@
       "about": "Dr. Sarah Tan is a holistic veterinarian specializing in acupuncture, herbal medicine, and chiropractic care. With over a decade of experience, she integrates natural healing methods with traditional veterinary practices to improve pets’ quality of life, particularly those with chronic pain, mobility issues, or behavioral concerns. Dr. Tan takes a personalized approach to each case, focusing on the pet’s health history and lifestyle, while collaborating with other healthcare providers to ensure holistic treatment plans."
     },
     {
-      "id": 2,
       "name": "Dr. Emily Jordan",
       "category": "Holistics",
       "date": "2024-11-06",
@@ -46,7 +44,6 @@
       "about": "Dr. Emily Jordan is a holistic veterinarian specializing in homeopathy, nutritional therapy, and massage therapy. With a decade of experience, Dr. Jordan believes in a balanced approach to pet care, combining modern veterinary practices with natural healing methods. She focuses on treating chronic conditions, stress-related disorders, and behavioral issues through individualized treatment plans that address both the physical and emotional well-being of pets."
     },
     {
-      "id": 3,
       "name": "Dr. Jennifer Reed",
       "category": "Holistics",
       "date": "2024-11-06",
@@ -69,7 +66,6 @@
       "about": "Dr. Jennifer Reed is a seasoned holistic veterinarian who combines herbal medicine, acupuncture, and integrative care techniques to treat a variety of health issues in pets. With 15 years of experience, she works with pet owners to improve the overall health and well-being of their pets, often in conjunction with traditional veterinary care. Dr. Reed focuses on long-term health, offering tailored herbal treatments for everything from immune disorders to digestive problems."
     },
     {
-      "id": 4,
       "name": "Dr. Anna Williams",
       "category": "Holistics",
       "date": "2024-11-06",
@@ -92,7 +88,6 @@
       "about": "Dr. Anna Williams specializes in veterinary chiropractic care, helping pets recover from injury and maintain mobility. With 8 years of experience, Dr. Williams combines chiropractic adjustments with rehabilitation therapies to alleviate pain, improve range of motion, and help pets regain their active lifestyles. She works closely with pet owners to develop personalized treatment plans, including at-home exercises, to ensure long-term mobility and comfort for their pets."
     },
     {
-      "id": 5,
       "name": "Dr. Natalie Brooks",
       "category": "Holistics",
       "date": "2024-11-06",
@@ -116,7 +111,6 @@
     },
 
     {
-      "id": 6,
       "name": "Dr. Kevin Green",
       "category": "Holistics",
       "date": "2024-11-06",
@@ -139,7 +133,7 @@
       "about": "Dr. Kevin Green is a highly skilled holistic veterinarian with a focus on homeopathy and herbal remedies. With over 11 years of experience, Dr. Green offers personalized care for pets suffering from allergies, skin conditions, and digestive problems. He uses natural treatments to support pets' immune systems and overall well-being, often working in conjunction with traditional treatments to provide a comprehensive approach to veterinary care."
     },
     {
-        "id": 7,
+
         "name": "Dr. Ethan Walker",
         "category": "SportsCare",
         "date": "2024-11-06",
@@ -163,7 +157,7 @@
     },
 
     {
-        "id": 8,
+
         "name": "Dr. Olivia Carter",
         "category": "SportsCare",
         "date": "2024-11-06",
@@ -188,7 +182,7 @@
 
 
     {
-        "id": 9,
+
         "name": "Dr. Lucas Mitchell",
         "category": "SportsCare",
         "date": "2024-11-06",
@@ -211,7 +205,6 @@
         "about": "Dr. Lucas Mitchell is an expert in veterinary sports medicine, focusing on injury recovery, physical therapy, and rehabilitation for pets. With 12 years of experience, Dr. Mitchell has worked with countless pets recovering from athletic injuries. His expertise lies in creating individualized rehabilitation plans that promote healing, restore movement, and reduce pain. His holistic approach helps pets return to their active lifestyles while minimizing the risk of future injuries."
     },
     {
-        "id": 10,
         "name": "Dr. Ava Harrison",
         "category": "SportsCare",
         "date": "2024-11-06",
@@ -234,7 +227,6 @@
         "about": "Dr. Ava Harrison is a dedicated sports care veterinarian with expertise in rehabilitation therapy and joint recovery. Over her 8 years of experience, she has helped many pets recover from athletic injuries, particularly focusing on joint health and rehabilitation exercises. Dr. Harrison integrates fitness and strength training programs for pets of all ages, ensuring that they are not only rehabilitated but also strengthened to prevent future injuries."
     },
     {
-        "id": 11,
         "name": "Dr. Mia Foster",
         "category": "SportsCare",
         "date": "2024-11-06",
@@ -257,7 +249,6 @@
         "about": "Dr. Mia Foster is a veterinarian specializing in sports therapy, injury prevention, and joint health. She combines physical therapy with targeted fitness programs to help pets recover from sports-related injuries and maintain strong, healthy joints. With 6 years of experience, Dr. Foster works with active pets, ensuring they remain injury-free and able to enjoy their favorite activities. She is passionate about educating pet owners on maintaining their pets' health and wellness throughout their lives."
     },
     {
-        "id": 12,
         "name": "Dr. Noah Lee",
         "category": "SportsCare",
         "date": "2024-11-06",
@@ -280,7 +271,6 @@
         "about": "Dr. Noah Lee is a skilled rehabilitation therapist specializing in canine sports injuries and joint therapy. Over 10 years of experience have given him the expertise to treat a wide range of injuries, from ligament tears to arthritis. Dr. Lee uses cutting-edge rehabilitation techniques to enhance the recovery process, and his holistic approach ensures that pets return to their active lives safely and with minimal risk of recurrence."
     },
     {
-        "id": 13,
         "name": "Dr. Sarah Monroe",
         "category": "OncoCare",
         "date": "2024-11-06",
@@ -303,7 +293,6 @@
         "about": "Dr. Sarah Monroe is a distinguished veterinary oncologist with 15 years of experience treating pets with cancer. Specializing in chemotherapy, radiation therapy, and surgical oncology, Dr. Monroe combines advanced medical techniques with compassionate care to improve pets' quality of life. Her expertise in radiation and chemotherapy has made her a leader in her field, and she is committed to providing cutting-edge treatments tailored to each pet’s needs."
     },
     {
-        "id": 14,
         "name": "Dr. Michael Chen",
         "category": "OncoCare",
         "date": "2024-11-06",
@@ -326,7 +315,6 @@
         "about": "With a decade of experience, Dr. Michael Chen is a specialist in oncology treatments for pets, particularly focused on tumor removal, chemotherapy, and immunotherapy. His work in cancer research has contributed to innovative treatment protocols, and he is known for providing compassionate care alongside effective cancer management. Dr. Chen's approach integrates the latest medical advancements to support both pets and their families during challenging times."
     },
     {
-        "id": 15,
         "name": "Dr. Lisa Patel",
         "category": "OncoCare",
         "date": "2024-11-06",
@@ -349,7 +337,6 @@
         "about": "Dr. Lisa Patel has over 12 years of experience specializing in oncology and cancer pain management for pets. Her targeted therapies provide options beyond traditional treatments, focusing on reducing side effects and improving outcomes. Known for her skill in both surgical and non-invasive treatments, Dr. Patel combines the latest research with personalized care for each patient."
     },
     {
-        "id": 16,
         "name": "Dr. Raj Mehta",
         "category": "OncoCare",
         "date": "2024-11-06",
@@ -372,7 +359,6 @@
         "about": "Dr. Raj Mehta brings an innovative approach to oncology with his expertise in radiation therapy and immunotherapy protocols for pets with cancer. His dedication to minimally invasive treatments has helped many pets achieve positive outcomes, and he is known for his supportive approach, working closely with pet families throughout the treatment process."
     },
     {
-        "id": 17,
         "name": "Dr. Jessica Lin",
         "category": "OncoCare",
         "date": "2024-11-06",
@@ -395,7 +381,6 @@
         "about": "Dr. Jessica Lin has dedicated her career to advancing lymphoma and targeted chemotherapy treatments for pets. With nearly a decade of experience, she has successfully treated numerous pets with various forms of cancer. Dr. Lin is committed to providing empathetic, high-quality care and is renowned for her ability to craft individualized treatment plans that enhance the comfort and quality of life for her patients."
     },
     {
-        "id": 18,
         "name": "Dr. Max Thompson",
         "category": "OncoCare",
         "date": "2024-11-06",
@@ -418,7 +403,6 @@
         "about": "Dr. Max Thompson is a certified oncologist with a strong focus on advanced chemotherapy and radiation treatments. With 14 years of experience, he provides top-notch cancer care and is highly respected for his research in early cancer detection and innovative treatment methods. Dr. Thompson believes in a holistic approach, prioritizing both medical and emotional support for pets and their owners during challenging treatments."
       },
       {
-        "id": 19,
         "name": "Dr. Emily Carson",
         "category": "Genetics",
         "date": "2024-11-06",
@@ -441,7 +425,6 @@
         "about": "Dr. Emily Carson is a leading authority in veterinary genetics, with 12 years of experience in diagnosing and managing genetic disorders in pets. Specializing in canine DNA analysis and gene therapy, Dr. Carson has dedicated her career to improving the quality of life for pets through early detection of genetic conditions. She has developed innovative treatments that focus on managing and preventing hereditary diseases. Dr. Carson’s work is informed by her extensive research background, and she’s committed to educating pet owners on the importance of genetic testing. She has received numerous accolades for her contributions to veterinary genetics and works closely with pet families to support their pets’ health."
       },
       {
-        "id": 20,
         "name": "Dr. Mark Stevens",
         "category": "Genetics",
         "date": "2024-11-06",
@@ -464,7 +447,6 @@
         "about": "With a decade of experience, Dr. Mark Stevens is a specialist in veterinary genomics, focusing on DNA sequencing and genomic medicine for pets. His work in animal breeding genetics has led to advancements in preventing hereditary diseases. Dr. Stevens’ approach emphasizes the application of genetic information to improve pet health, utilizing the latest technologies in DNA sequencing to diagnose conditions early. Recognized for his innovative contributions, Dr. Stevens is passionate about educating pet owners on genetic health and advancing the field of veterinary genetics through ongoing research."
       },
       {
-        "id": 21,
         "name": "Dr. Olivia Nguyen",
         "category": "Genetics",
         "date": "2024-11-06",
@@ -487,7 +469,6 @@
         "about": "Dr. Olivia Nguyen is an experienced veterinary geneticist specializing in inherited diseases and genetic counseling for pet owners. With expertise in gene editing, Dr. Nguyen has pioneered techniques that prevent and treat genetic disorders. She is passionate about empowering pet families with knowledge about genetic health, and her counseling services provide essential insights into managing inherited conditions. Dr. Nguyen’s focus is on developing ethical, safe gene therapies that enhance pets’ quality of life, and she is recognized for her research in gene editing and counseling."
       },
       {
-        "id": 22,
         "name": "Dr. Samuel Klein",
         "category": "Genetics",
         "date": "2024-11-06",
@@ -510,7 +491,6 @@
         "about": "Dr. Samuel Klein is a veterinary geneticist with a unique expertise in bioinformatics and genetic testing for rare disorders. His innovative research has made significant strides in understanding and diagnosing complex genetic conditions. Dr. Klein’s work in bioinformatics helps identify genetic mutations that may affect pets’ health, allowing for early intervention. He is passionate about using genetic data to improve clinical outcomes and is recognized for his contributions to veterinary genomics, particularly in managing rare genetic disorders."
       },
       {
-        "id": 23,
         "name": "Dr. Aisha Banerjee",
         "category": "Genetics",
         "date": "2024-11-06",
@@ -533,7 +513,6 @@
         "about": "Dr. Aisha Banerjee specializes in epigenetics and behavioral genetics, focusing on how genetics influences pets’ behavior and health. Her research has provided insights into the role of genetics in pet behavior, helping pet owners understand and manage their pets’ unique traits. Dr. Banerjee’s expertise in DNA analysis has led to breakthroughs in identifying behavioral markers. She is dedicated to promoting pet health through genetic insights and continues to advance the field of veterinary genetics."
       },
       {
-        "id": 24,
         "name": "Dr. Leo Martins",
         "category": "Genetics",
         "date": "2024-11-06",
@@ -556,7 +535,6 @@
         "about": "Dr. Leo Martins has a deep expertise in genetic engineering and pet ancestry analysis, enabling him to uncover pets’ lineage and identify hereditary traits. He is a leader in the field of gene therapy for pets, focusing on correcting genetic disorders at the molecular level. Dr. Martins is dedicated to using genetic knowledge to inform pet health and prevent diseases, making significant strides in pet ancestry research and genetic treatments. His work emphasizes both cutting-edge science and compassionate care."
       },
       {
-        "id": 25,
         "name": "Dr. Emma Thompson",
         "category": "Medical Care",
         "date": "2024-11-06",
@@ -580,7 +558,7 @@
         "about": "Dr. Emma Thompson is an experienced veterinarian with a background in orthopedic surgery and internal medicine. She has served in multiple capacities, from practicing in renowned hospitals to contributing to groundbreaking research in the field of veterinary orthopedics. Dr. Thompson's expertise in both practical and academic aspects of veterinary medicine makes her a valuable asset to the medical care team. She has received numerous awards for her contributions to veterinary medicine, and her commitment to animal welfare is reflected in her work at the City Animal Hospital and through her mentorship of veterinary students. In addition to her professional roles, Dr. Thompson is an advocate for animal rights and frequently volunteers with rescue organizations, ensuring the well-being of stray and injured animals. Her passion for veterinary medicine is evident through her continuous involvement in both clinical practice and research. Dr. Thompson has dedicated over 15 years to improving animal healthcare standards and is always looking for new ways to innovate in her field."
       },
       {
-        "id": 26,
+
         "name": "Dr. Michael Lee",
         "category": "Medical Care",
         "date": "2024-11-06",
@@ -604,7 +582,7 @@
         "about": "Dr. Michael Lee is a skilled veterinarian with a focus on animal behavior and emergency care. His expertise allows him to address not only physical ailments but also behavioral issues, helping pet owners improve their pets' well-being. He has worked in various emergency settings, providing quick and effective treatment for animals in critical conditions. Dr. Lee is known for his compassionate approach, always putting the animal’s needs first. His work in animal behavior has earned him accolades and recognition within the veterinary community. In his free time, Dr. Lee volunteers at local shelters, offering his expertise to help rehabilitate animals with behavioral challenges."
       },
       {
-        "id": 27,
+
         "name": "Dr. Sophia Martinez",
         "category": "Medical Care",
         "date": "2024-11-06",
@@ -628,7 +606,6 @@
         "about": "Dr. Sophia Martinez is a dedicated veterinarian specializing in cardiology and oncology. With a passion for improving the quality of life for animals suffering from heart diseases and cancer, Dr. Martinez has been instrumental in advancing treatment methods in these fields. She is a certified Diplomate with the American College of Veterinary Internal Medicine, highlighting her commitment to veterinary excellence. Dr. Martinez is actively involved in research projects that aim to develop better therapeutic strategies for animals. Her work is highly respected, and her dedication to animal health is evident through her clinical practice and ongoing studies in oncology and cardiology."
       },
       {
-        "id": 28,
         "name": "Dr. Alex Chen",
         "category": "Medical Care",
         "date": "2024-11-06",
@@ -652,7 +629,6 @@
         "about": "Dr. Alex Chen specializes in veterinary surgery with a focus on orthopedic procedures. Dr. Chen has performed countless surgeries, including complex orthopedic interventions that have greatly improved the lives of his patients. His commitment to precision and animal welfare is evident in every procedure he undertakes. Dr. Chen's expertise is recognized throughout the veterinary community, and he is a sought-after specialist for complicated surgical cases. Outside of his surgical practice, he spends time volunteering at animal rehabilitation centers, where he provides guidance on post-operative care and recovery for animals undergoing orthopedic treatment."
       },
       {
-        "id": 29,
         "name": "Dr. Maria Patel",
         "category": "Medical Care",
         "date": "2024-11-06",
@@ -676,7 +652,6 @@
         "about": "Dr. Maria Patel is a veterinary nutritionist dedicated to improving animal health through balanced diets and preventive care. She collaborates with pet owners to design tailored nutrition plans that address specific health concerns. Dr. Patel has a background in preventive medicine, which enables her to proactively manage potential health risks in animals. She regularly contributes to veterinary journals and is passionate about educating pet owners on the importance of proper nutrition. Her contributions to preventive health make her a key player in promoting the long-term wellness of animals."
       },
       {
-        "id": 30,
         "name": "Dr. James Rodriguez",
         "category": "Medical Care",
         "date": "2024-11-06",

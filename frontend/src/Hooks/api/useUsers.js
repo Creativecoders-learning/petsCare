@@ -1,13 +1,14 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import useAxios from "../useAxios";
 
 const useUsers = () => {
 
       const [users, setUsers] = useState([]);
+      const apiHandler = useAxios()
 
       const fetchUsers = async () => {
             try {
-                  const response = await axios.get('/users.json');
+                  const response = await apiHandler.get('/users');
                   setUsers(response?.data)
             } catch (error) {
                   console.log(error?.message);
@@ -19,7 +20,7 @@ const useUsers = () => {
             fetchUsers()
       }, [])
 
-      return { users };
+      return { users, fetchUsers };
 };
 
 export default useUsers;

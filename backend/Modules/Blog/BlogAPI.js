@@ -4,6 +4,16 @@ const { ObjectId } = require('mongodb');
 function BlogAPI(blogCollection) {
     const blogRouter = express.Router();
 
+    // Add blog
+    blogRouter.post('/blogs', async (req, res) => {
+        const blog = req.body;
+        const blogDoc = {
+            ...blog
+        }
+        const result = await blogCollection.insertOne(blogDoc);
+        res.send(result)
+    })
+
     // get all blogs
     blogRouter.get('/blogs', async (req, res) => {
         const result = await blogCollection.find().toArray()
@@ -11,7 +21,7 @@ function BlogAPI(blogCollection) {
     })
 
     // get blog by id
-    blogRouter.get('/blogs/:id', async (req, res) => {
+    blogRouter.get('/blogs/blog-details/:id', async (req, res) => {
         const id = req.params.id;
         const query = { _id: new ObjectId(id) }
         const result = await blogCollection.findOne(query);
@@ -21,9 +31,32 @@ function BlogAPI(blogCollection) {
     // get blogs by email
     blogRouter.get('/blogs/by-email/:email', async (req, res) => {
         const email = req.params.email;
-        const query = { email: email }
+        const query = { "author.email": email }
         const result = await blogCollection.find(query).toArray();
         res.send(result)
+    })
+
+    // update blog
+    blogRouter.put('/blogs/blog-details/:id', async (req, res) => {
+        const blog = req.body;
+        const id = req.params.id;
+        const query = { _id: new ObjectId(id) }
+        const options = { upsert: true }
+        const updateDoc = {
+            $set: {
+                ...blog
+            }
+        }
+        const result = await blogCollection.updateOne(query, updateDoc, options);
+        res.send(result);
+    })
+
+    // delete vet blog by id
+    blogRouter.delete('/blogs/blog-details/:id', async (req, res) => {
+        const id = req.params.id;
+        const query = { _id: new ObjectId(id) };
+        const result = await blogCollection.deleteOne(query);
+        res.send(result);
     })
 
     return blogRouter;

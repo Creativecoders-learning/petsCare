@@ -1,21 +1,37 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import useAxios from "../useAxios";
+import UseAuth from "../UseAuth";
 
-export default function useUser() {
-      const [user, setUser] = useState({});
+const useUser = () => {
 
-      const refresh = async () => {
+      const [users, setUsers] = useState([])
+      const [user, setUser] = useState({})
+
+      const apiHandler = useAxios();
+      const { user: authUser } = UseAuth();
+      const authEmail = authUser?.email;
+
+      const fetchUsers = async () => {
             try {
-                  const response = await axios.get("/user.json"); // Updated path to JSON file
-                  setUser(response.data);
-            } catch (err) {
-                  console.log(err.message || 'An error occurred');
+                  const response = await apiHandler.get('/users');
+                  setUsers(response?.data)
+            } catch (error) {
+                  console.log(error?.message);
+
             }
-      };
+      }
 
       useEffect(() => {
-            refresh();
+            fetchUsers()
       }, [])
 
-      return user;
-}
+
+      useEffect(() => {
+            const logInUser = users?.find(user => user?.email === authEmail);
+            setUser(logInUser);
+      }, [authEmail, users])
+
+      return { user, setUser, fetchUsers };
+};
+
+export default useUser;
