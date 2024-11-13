@@ -70,7 +70,7 @@ const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }
                         </button>
                   </div>
                   <button onClick={() => setIsEditing(true)} className="mt-8 w-full flex items-center justify-center space-x-2 py-2 px-4 rounded-lg bg-blue-500 text-white">
-                        <FaEdit /> <span>Edit Profile</span>
+                        <FaEdit /> <span>Update Profile</span>
                   </button>
             </div>
       );

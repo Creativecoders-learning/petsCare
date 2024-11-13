@@ -3,7 +3,7 @@ import PrimaryTitle from "../../UI/PrimaryTitle";
 import useAxios from "../../../Hooks/useAxios";
 import UseAuth from "../../../Hooks/UseAuth";
 
-const EditProfileForm = ({ user, setIsEditing }) => {
+const EditProfileForm = ({ user, setIsEditing, fetchUsers }) => {
 
       const apiHandler = useAxios();
       const { user: authUser } = UseAuth();
@@ -52,16 +52,14 @@ const EditProfileForm = ({ user, setIsEditing }) => {
 
             // update profile
             apiHandler.put(`/users/by-email/${user.email}`, updatedUserInfo);
-            console.log(updatedUserInfo);
 
-
-            // console.log("Updated profile data:", updatedUserInfo);
             setIsEditing(false);
+            fetchUsers()
       };
 
       return (
             <div className="px-8 max-h-[82vh] overflow-y-auto custom-scrollbar font-inter">
-                  <PrimaryTitle titleStyle="text-primaryBold font-semibold">Edit Profile</PrimaryTitle>
+                  <PrimaryTitle titleStyle="text-primaryBold font-semibold">Update Profile</PrimaryTitle>
 
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                         {/* Name Field */}

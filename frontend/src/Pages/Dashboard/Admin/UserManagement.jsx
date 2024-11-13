@@ -87,7 +87,7 @@ const UserManagement = () => {
                                                             onChange={(e) => handleRoleChange(user?.email, user?.role, e.target.value)}
                                                             className="border rounded-md p-2 bg-white text-gray-700"
                                                       >
-                                                            <option value="normalUser">NormalUser</option>
+                                                            <option value="Seller">Seller</option>
                                                             <option value="Vet">Vet</option>
                                                             <option value="Admin">Admin</option>
                                                       </select>

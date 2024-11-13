@@ -162,11 +162,11 @@ export default function DashboardLayout() {
                 </>
               )}
 
-              {/* For Normal user */}
-              {user?.role === "NormalUser" && (
+              {/* For Seller */}
+              {user?.role === "Seller" && (
                 <>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/my-products">
+                    <DashboardActiveLink to="/dashboard/seller/my-products">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <BiShoppingBag className="block text-[18px]" />
                         <span className="block text-[17px]">My Products</span>
@@ -174,7 +174,7 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/prescriptions">
+                    <DashboardActiveLink to="/dashboard/seller/prescriptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <AiOutlineMedicineBox className="block text-[18px]" />
                         <span className="block text-[17px]">Prescriptions</span>
@@ -182,7 +182,7 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/adoptions">
+                    <DashboardActiveLink to="/dashboard/seller/adoptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <MdOutlinePets className="block text-[18px]" />
                         <span className="block text-[17px]">Adoptions</span>
@@ -190,7 +190,7 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/my-adoptions">
+                    <DashboardActiveLink to="/dashboard/seller/my-adoptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <MdOutlinePets className="block text-[18px]" />
                         <span className="block text-[17px]"> My Adoptions</span>
@@ -198,7 +198,7 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/user-adoptions">
+                    <DashboardActiveLink to="/dashboard/seller/user-adoptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <MdOutlinePets className="block text-[18px]" />
                         <span className="block text-[17px]"> User Adoptions</span>
@@ -206,7 +206,7 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/blogs">
+                    <DashboardActiveLink to="/dashboard/seller/blogs">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <FaBlog className="block text-[18px]" />
                         <span className="block text-[17px]">Blogs</span>
