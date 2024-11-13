@@ -7,13 +7,14 @@ import useAxios from '../../Hooks/useAxios';
 const RoleChange = () => {
   const navigate = useNavigate();
   const { user } = UseAuth();
+  const lastLogIn = user?.metadata?.lastLoginAt;
+
   const apiHandler = useAxios();
 
   // Function to update role
   const handleRoleSelection = async (role) => {
-
     try {
-      await apiHandler.put(`/users/by-email/${user.email}`, { role })
+      await apiHandler.put(`/users/by-email/${user?.email}`, { role, lastLogIn })
       toast.success(`Role updated to ${role}`);
       navigate('/');
     } catch (error) {
@@ -30,13 +31,13 @@ const RoleChange = () => {
         </p>
 
         <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-          {/* Normal User Button */}
+          {/* Seller Button */}
           <button
-            onClick={() => handleRoleSelection('NormalUser')}
+            onClick={() => handleRoleSelection('Seller')}
             className="w-full md:w-1/2 flex items-center justify-center px-6 py-4 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
           >
             <FaUser className="text-2xl mr-2" />
-            <span className="text-lg font-semibold">Normal User</span>
+            <span className="text-lg font-semibold">Seller</span>
           </button>
 
           {/* Veterinarian Button */}

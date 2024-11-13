@@ -2,23 +2,23 @@ import { useEffect, useState } from "react";
 
 const useMyAdoptionData = () => {
 
-    const [myAdoptions,setMyAdoptions]=useState([])
+  const [myAdoptions, setMyAdoptions] = useState([])
 
-    useEffect(()=>{
-        fetch('/myAdoptions.json')
-  .then(response => {
-    return response.json();
-  })
-  .then(data => {
-    console.log(data);
-    setMyAdoptions(data)
-  })
-  .catch(error => {
-    console.error("Error:", error);
-  });
-    },[])
+  useEffect(() => {
+    fetch('/myAdoptions.json')
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        setMyAdoptions(data)
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+  }, [])
 
-    return [myAdoptions]
+  return [myAdoptions]
 };
 
 export default useMyAdoptionData;

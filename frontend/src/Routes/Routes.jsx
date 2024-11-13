@@ -20,17 +20,17 @@ import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
 import PaymentProcess from "../Components/Shop/PaymentProcess/PaymentProcess";
 import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStarted";
 import Profile from "../Pages/Dashboard/Profile/Profile";
-import MyAdoption from "../Pages/Dashboard/NormalUser/MyAdoption/MyAdoption";
-import UserChatAdoption from "../Pages/Dashboard/NormalUser/CreateAdoption/UserChatAdoption";
+import MyAdoption from "../Pages/Dashboard/Seller/MyAdoption/MyAdoption";
+import UserChatAdoption from "../Pages/Dashboard/Seller/CreateAdoption/UserChatAdoption";
 import ShopManagement from "../Pages/Dashboard/Admin/ShopManagement/ShopManagement";
-import MyProducts from "../Pages/Dashboard/NormalUser/MyProducts/MyProducts";
+import MyProducts from "../Pages/Dashboard/Seller/MyProducts/MyProducts";
 import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
 import MyServices from "../Pages/Dashboard/Vet/MyServices";
 import Patients from "../Pages/Dashboard/Vet/Patients";
 import VetManagement from "../Pages/Dashboard/Admin/VetManagement";
 import Appointments from "../Pages/Dashboard/Vet/Appoinments";
 import AdoptionHistory from "../Pages/Dashboard/Admin/AdoptionHistory";
-import Adoptions from "../Pages/Dashboard/NormalUser/Adoptions";
+import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
 import RoleChange from "../Pages/RoleChange/RoleChange";
 import MyBlogs from "../Pages/Dashboard/Vet/MyBlogs";
 
@@ -74,11 +74,11 @@ const router = createBrowserRouter([
         element: <Profile />,
       },
       {
-        path: 'normalUser/my-adoptions',
+        path: 'seller/my-adoptions',
         element: <MyAdoption></MyAdoption>
       },
       {
-        path: 'normalUser/user-adoptions',
+        path: 'seller/user-adoptions',
         element: <UserChatAdoption></UserChatAdoption>
       },{
         path: "admin/blog-management",
@@ -89,11 +89,11 @@ const router = createBrowserRouter([
         element: <ShopManagement />,
       },
       {
-        path: "normalUser/my-products",
+        path: "seller/my-products",
         element: <MyProducts />,
       },
       {
-        path: "normalUser/adoptions",
+        path: "seller/adoptions",
         element: <Adoptions />,
       },
       {
