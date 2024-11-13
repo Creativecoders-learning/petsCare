@@ -5,10 +5,6 @@ require('dotenv').config()
 const shopRouter = require('../backend/Modules/Shop/ShopAPI');
 const adoptionRouter = require('../backend/Modules/Adoption/AdoptionAPI');
 
-
-
-
-
 const app = express();
 const port = process.env.port | 8000
 
@@ -73,6 +69,10 @@ async function run() {
   }
 }
 run().catch(console.dir);
+
+app.get('/', (req, res) => {
+  res.send('Welcome to petCare website!!')
+})
 
 app.listen(port, () => {
   console.log(`my port is ${port}`)
