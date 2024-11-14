@@ -33,6 +33,7 @@ import AdoptionHistory from "../Pages/Dashboard/Admin/AdoptionHistory";
 import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
 import RoleChange from "../Pages/RoleChange/RoleChange";
 import MyBlogs from "../Pages/Dashboard/Vet/MyBlogs";
+import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {
+        index: true,
+        element: <Dashboard />
+      },
+      {
         path: "profile",
         element: <Profile />,
       },
@@ -80,7 +85,8 @@ const router = createBrowserRouter([
       {
         path: 'seller/user-adoptions',
         element: <UserChatAdoption></UserChatAdoption>
-      },{
+      },
+      {
         path: "admin/blog-management",
         element: <BlogManagement />,
       },
