@@ -1,6 +1,6 @@
 const express = require('express')
 
-function adoptionAPI(adoptionCollection) {
+module.exports = (adoptionCollection) =>{
     const adoptionRouter = express.Router();
 
     // add adoption 
@@ -25,4 +25,5 @@ function adoptionAPI(adoptionCollection) {
 
 }
 
-module.exports = adoptionAPI;
+
+
