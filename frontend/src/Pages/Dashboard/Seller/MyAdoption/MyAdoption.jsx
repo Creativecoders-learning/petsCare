@@ -3,9 +3,11 @@ import useMyAdoptionData from "../../../../hooks/useMyAdoptionData";
 import MyAdoptionRow from "../../TableRow/MyAdoptionRow";
 import Modal from "../../../../Components/UI/Modal";
 import { useForm } from "react-hook-form"
+import { imageUpload, uploadMultipleImages } from "../../../../Utilities/Utilities";
+import useAdoptionData from "../../../../Hooks/useAdoptionData";
 
 const MyAdoption = () => {
-  const [myAdoptions] = useMyAdoptionData();
+  const {adoptions} = useAdoptionData();
   const [openModal, setOpenModal] = useState(false);
   const {
     register,
@@ -15,10 +17,43 @@ const MyAdoption = () => {
   } = useForm()
   
 
-  const onSubmit = (data) =>{
+  const onSubmit = async(data) =>{
     console.log(data)
-    const shelter_img = data.shelter_photo[0];
-    const imageUrls = data.images.files[0]
+    const shelterImg = data.shelter_photo[0];
+    const images = data.images;
+    console.log("images",images)
+    console.log('shelter',shelterImg)
+    const imageUrls =await uploadMultipleImages(images)
+    const shelter_img = await imageUpload(shelterImg);
+    console.log('get Images',imageUrls)
+    console.log('get Images',shelter_img)
+    
+
+    const adoptionInfo = {
+      name:data.name,
+      breed:data.breed,
+      age:data.age,
+      gender:data.gender,
+      size:data.size,
+      location:data.location,
+      temperament:data.temperament,
+      weight:data.weight,
+      height:data.height,
+      color:data.color,
+      good_with_kids:`${data?.good_with_kids ? 'Good with kids' : 'N/A'}`,
+      good_with_other_pets:`${data?.good_with_other_pets ? 'Good with other pets' : 'N/A'}`,
+      house_trained:`${data?.house_trained ? 'House trained' : 'N/A'}`,
+      best_suited_for:data.best_suited_for,
+      exercise_needs:data.exercise_needs,
+      category:data.category,
+      shelter_name:data.shelter_name,
+      shelter_email:data.shelter_email,
+      shelter_photo:shelter_img?.data?.display_url,
+      description:data.description,
+      image:imageUrls
+    }
+
+    console.log(adoptionInfo)
   }
 
   // console.log(myAdoptions);
@@ -47,7 +82,7 @@ const MyAdoption = () => {
                 </tr>
               </thead>
               <tbody>
-                {myAdoptions?.map((item, index) => (
+                {adoptions?.map((item, index) => (
                   <MyAdoptionRow key={item?.id} index={index} item={item} />
                 ))}
               </tbody>
@@ -128,7 +163,7 @@ const MyAdoption = () => {
               </div>
               <div>
                 <label className="block text-gray-600">location</label>
-                <input type="email" {...register("location")} className="w-full border border-gray-300 rounded-md p-2" required />
+                <input type="text" {...register("location")} className="w-full border border-gray-300 rounded-md p-2" required />
               </div>
               <div>
                 <label className="block text-gray-600">Shelter Image</label>
