@@ -8,11 +8,15 @@ import {
       LinearScale,
       BarElement,
 } from "chart.js";
+import useAdoptionData from "../../../../Hooks/useAdoptionData";
 
 // Register required elements for the charts to work
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
 
 const VetDashboard = () => {
+
+      const { adoptions } = useAdoptionData();      
+
       const fakeAppointments = [
             { petName: "Buddy", ownerName: "Alice Johnson", date: "2024-11-15", status: "Completed" },
             { petName: "Whiskers", ownerName: "Bob Smith", date: "2024-11-16", status: "Pending" },
