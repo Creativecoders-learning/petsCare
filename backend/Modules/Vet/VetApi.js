@@ -1,8 +1,8 @@
 const express = require('express');
+const vetsRouter = express.Router();
 const { ObjectId } = require('mongodb');
 
-function VetAPI(vetsCollection) {
-      const vetsRouter = express.Router();
+module.exports = (vetsCollection)=> {
 
       // get all vets
       vetsRouter.get('/vets', async (req, res) => {
@@ -17,8 +17,12 @@ function VetAPI(vetsCollection) {
             const result = await vetsCollection.findOne(query);
             res.send(result)
       })
+      
+
+      // delete vet
+      vetsRouter.delete('/vets/:id', async (req, res) => {
+            
+      })
 
       return vetsRouter;
 }
-
-module.exports = VetAPI;

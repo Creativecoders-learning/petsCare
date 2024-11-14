@@ -1,93 +1,131 @@
 import { FaRegBookmark } from "react-icons/fa6";
-import { IoBookmarkSharp } from "react-icons/io5";
+import { IoBagCheck, IoCheckmarkSharp } from "react-icons/io5";
+import { useState } from "react";
 import UseAuth from "../../../Hooks/UseAuth";
+import Checkout from "../../../Pages/Checkout/Checkout";
+
 const Slot = () => {
   const { user } = UseAuth();
+  const [showCheckout, setShowCheckout] = useState(false);
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
+  const [bookedSlot, setBookedSlot] = useState(null); // Track only one booked slot at a time
+  const [confirmedSlots, setConfirmedSlots] = useState({});
+
+  const handleCheckoutClick = () => {
+    setShowCheckout((prev) => !prev);
+  };
+
+  const handlePaymentSuccess = () => {
+    setPaymentSuccess(true);
+  };
+
+  const handleSlotClick = (timeSlot, slotGroup) => {
+    if (!confirmedSlots[timeSlot]?.[slotGroup] && bookedSlot?.timeSlot !== timeSlot) {
+      setBookedSlot({ timeSlot, slotGroup }); // Set the currently selected slot
+    }
+  };
+
+  const handleConfirm = () => {
+    // Confirm the selected slot and mark it as unavailable
+    if (bookedSlot) {
+      setConfirmedSlots((prev) => ({
+        ...prev,
+        [bookedSlot.timeSlot]: {
+          ...(prev[bookedSlot.timeSlot] || {}),
+          [bookedSlot.slotGroup]: true,
+        },
+      }));
+      setBookedSlot(null); // Clear temporary booking
+      setPaymentSuccess(false); // Reset payment status
+      setShowCheckout(false); // Hide checkout section
+    }
+  };
+
   return (
     <div>
-      <h2 className="text-2xl font-semibold my-3 text-center mb-5">
-        Select Yor Slot
-      </h2>
-      <div className="">
-        <img className="w-full" src="https://i.ibb.co.com/MsbDWtd/Line-2.png" alt="" />
+      <h2 className="text-2xl font-semibold my-3 text-center mb-5">Select Your Slot</h2>
+      <div className="mx-16">
+        <img
+          className="w-full"
+          src="https://i.ibb.co.com/MsbDWtd/Line-2.png"
+          alt=""
+        />
         <div className="flex items-center justify-between my-5">
           <h2 className="flex items-center gap-3 font-bold text-gray-500">
             <FaRegBookmark className="text-2xl" />
             Available
           </h2>
-          <h2 className="flex items-center gap-3 font-bold  text-primary">
-            <IoBookmarkSharp className="text-2xl  " />
-            Selected
+          <button
+            onClick={handleCheckoutClick}
+            className="flex items-center gap-3 font-bold text-primary border-primary border px-2 py-2 rounded hover:bg-black hover:text-white"
+          >
+            <IoBagCheck className="text-2xl" />
+            Checkout Now
+          </button>
+        </div>
+        <img
+          className="w-full"
+          src="https://i.ibb.co.com/MsbDWtd/Line-2.png"
+          alt=""
+        />
+      </div>
+
+      {/* Slot Selection */}
+      <div className="mt-10 py-5 px-5">
+        <div className="flex items-center justify-center gap-4">
+          <h2 className="text-[18px] text-gray-500 font-bold h-[40px] w-[150px] flex items-center justify-center">
+            6:00am-9:00am
+          </h2>
+          <h2 className="text-[18px] text-gray-500 font-bold h-[40px] w-[150px] flex items-center justify-center">
+            9:00am-12:00pm
+          </h2>
+          <h2 className="text-[18px] text-gray-500 font-bold h-[40px] w-[150px] flex items-center justify-center">
+            1:00pm-3:00pm
+          </h2>
+          <h2 className="text-[18px] text-gray-500 font-bold h-[40px] w-[150px] flex items-center justify-center">
+            3:00pm-6:00pm
           </h2>
         </div>
-        <img className="w-full" src="https://i.ibb.co.com/MsbDWtd/Line-2.png" alt="" />
+
+        {/* Slot Groups */}
+        {["6:00am-9:00am", "9:00am-12:00pm", "1:00pm-3:00pm", "3:00pm-6:00pm"].map((timeSlot, i) => (
+          <div key={i} className="flex items-center justify-center gap-4 mt-5">
+            {["A", "B", "C", "D"].map((slotGroup) => (
+              <div
+                key={slotGroup}
+                onClick={() => handleSlotClick(timeSlot, slotGroup)}
+                className={`border font-bold h-[50px] w-[150px] flex items-center justify-center ${
+                  confirmedSlots[timeSlot]?.[slotGroup]
+                    ? "bg-gray-400 text-white cursor-not-allowed"
+                    : bookedSlot?.timeSlot === timeSlot && bookedSlot.slotGroup === slotGroup
+                    ? "bg-primary text-white cursor-not-allowed"
+                    : "bg-[#F7F8F8] text-gray-500 cursor-pointer"
+                }`}
+              >
+                {confirmedSlots[timeSlot]?.[slotGroup] ? (
+                  <IoCheckmarkSharp className="text-2xl" />
+                ) : (
+                  slotGroup
+                )}
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
-      
-      <div className="my-10 border py-5 px-5">
-        
-<div className="flex items-center justify-center  gap-5  ">
-<h2 className=" text-[18px] text-gray-500  font-bold  h-[50px] w-[30px] flex items-center justify-start "></h2>
-<h2 className=" text-[18px] text-gray-500  font-bold  h-[40px] w-[150px] flex items-center justify-center">Saturday</h2>
-<h2 className=" text-[18px] text-gray-500  font-bold  h-[40px] w-[150px] flex items-center justify-center">Monday</h2>
-<h2 className=" text-[18px] text-gray-500  font-bold  h-[40px] w-[150px] flex items-center justify-center">Wednesday</h2>
-<h2 className=" text-[18px] text-gray-500  font-bold  h-[40px] w-[150px] flex items-center justify-center">Thursday</h2>
-</div>
-{/* slot 1  */}
-<div className="flex items-center justify-center  gap-4 mt-3 ">
-<h2 className=" text-[18px] text-gray-500  font-bold  h-[40px] w-[30px] flex items-center justify-start ">A</h2>
-<h2 className="border  text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center ">6:00am-6:30am</h2>
-<h2 className="border  text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center">12:00pm-12:30pm</h2>
-<h2 className="border  text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center">6:00pm-6:30pm</h2>
-<h2 className="border text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center">9:00pm-9:30pm</h2>
-</div>
-{/* slot 2  */}
-<div className="flex items-center justify-center  gap-4 mt-5 ">
-<h2 className=" text-[18px] text-gray-500  font-bold  h-[40px] w-[30px] flex items-center justify-start ">B</h2>
-<h2 className="border  text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center">6:00am-6:30am</h2>
-<h2 className="border  text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center">12:00pm-12:30pm</h2>
-<h2 className="border  text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center">6:00pm-6:30pm</h2>
-<h2 className="border text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center">9:00pm-9:30pm</h2>
-</div>
-{/* slot 3  */}
-<div className="flex items-center justify-center  gap-4 mt-5 ">
-<h2 className=" text-[18px] text-gray-500  font-bold  h-[40px] w-[30px] flex items-center justify-start ">C</h2>
-<h2 className="border  text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center">6:00am-6:30am</h2>
-<h2 className="border  text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center">12:00pm-12:30pm</h2>
-<h2 className="border  text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center">6:00pm-6:30pm</h2>
-<h2 className="border text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center">9:00pm-9:30pm</h2>
-</div>
-{/* slot 4  */}
-<div className="flex items-center justify-center  gap-4 mt-5 ">
-<h2 className=" text-[18px] text-gray-500  font-bold  h-[40px] w-[30px] flex items-center justify-start ">D</h2>
-<h2 className="border  text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center">6:00am-6:30am</h2>
-<h2 className="border  text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center">12:00pm-12:30pm</h2>
-<h2 className="border  text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center">6:00pm-6:30pm</h2>
-<h2 className="border text-gray-500 bg-[#F7F8F8] font-bold  h-[50px] w-[150px] flex items-center justify-center">9:00pm-9:30pm</h2>
-</div>
-      </div>
-      <div className="flex items-center gap-5 mt-5 ">
-        <div className=" w-full">
-          <label className="">Email</label>
-          <input
-            id="email"
-            type="email"
-            defaultValue={user?.email}
-            className="w-full rounded-lg px-2 mt-2 py-2  border border-primary"
-          />
-        </div>
-        <div className=" w-full">
-          <label className="">Name</label>
-          <input
-            id="email"
-            type="email"
-            defaultValue={user?.displayName}
-            className="w-full rounded-lg px-2 mt-2 py-2  border border-primary"
-          />
-        </div>
-      </div>
+
+      {/* Conditional Checkout Component */}
+      {showCheckout && <Checkout onPaymentSuccess={handlePaymentSuccess} />}
+
+      {/* Confirm Button */}
       <div className="mt-10 flex items-center justify-center">
-        <button className="w-[250px] py-2 bg-primary hover:bg-black text-white rounded-xl font-bold text-xl">
-          Payment Now
+        <button
+          onClick={handleConfirm}
+          disabled={!paymentSuccess || !bookedSlot} // Disable until payment is successful and a slot is selected
+          className={`w-[250px] py-2 rounded-xl font-bold text-xl ${
+            paymentSuccess && bookedSlot ? "bg-primary text-white hover:bg-black" : "bg-gray-400 text-gray-600 cursor-not-allowed"
+          }`}
+        >
+          Confirm
         </button>
       </div>
     </div>

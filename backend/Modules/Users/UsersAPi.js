@@ -1,7 +1,7 @@
 const express = require('express');
+const usersRouter = express.Router();
 
-function UsersAPI(usersCollection) {
-      const usersRouter = express.Router();
+module.exports = (usersCollection) => {
 
       // post method to store all users+-
       usersRouter.post('/users', async (req, res) => {
@@ -15,14 +15,15 @@ function UsersAPI(usersCollection) {
 
       // get all users
       usersRouter.get('/users', async (req, res) => {
-            res.send(await usersCollection.find().toArray())
+            const result = await usersCollection.find({}).toArray()
+            res.send(result)
       })
 
       // get user by email
       usersRouter.get('/users/by-email/:email', async (req, res) => {
             const email = req.params.email;
             const query = { email: email };
-            const result = await usersCollection.find(query).toArray();
+            const result = await usersCollection.findOne(query);
             res.send(result)
       })
 
@@ -54,5 +55,3 @@ function UsersAPI(usersCollection) {
 
       return usersRouter;
 }
-
-module.exports = UsersAPI;

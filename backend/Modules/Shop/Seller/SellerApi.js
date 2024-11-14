@@ -1,17 +1,18 @@
 const express = require('express');
+const sellerApiRouter = express.Router();
 const { ObjectId } = require('mongodb');
 
-const sellerApi = (shopProductCollection) => {
-    const sellerApiRouter = express.Router();
 
-    // get all shop products
+module.exports = (shopProductCollection) => {
+
+
     sellerApiRouter.get('/shop-products', async (req, res) => {
-        const result = await shopProductCollection.find().toArray();
+        const result = await shopProductCollection.find({}).toArray();
         res.send(result);
     })
 
     // create products
-    sellerApiRouter.post('/shop-products', async (req, res) => {
+    sellerApiRouter.post('/create-shop-products', async (req, res) => {
         const newProduct = req.body;
         console.log(newProduct)
         const result = await shopProductCollection.insertOne(newProduct);
@@ -28,9 +29,9 @@ const sellerApi = (shopProductCollection) => {
     })
 
     // get product by id
-    sellerApiRouter.get('/shop-products/:id', async(req, res)=> {
+    sellerApiRouter.get('/shop-products/:id', async (req, res) => {
         const id = req.params.id;
-        const filter = {_id: new ObjectId(id)};
+        const filter = { _id: new ObjectId(id) };
         const result = await shopProductCollection.findOne(filter);
         res.send(result);
     })
@@ -43,8 +44,5 @@ const sellerApi = (shopProductCollection) => {
     })
 
 
-
     return sellerApiRouter;
 }
-
-module.exports = sellerApi;

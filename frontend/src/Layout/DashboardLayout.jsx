@@ -12,8 +12,11 @@ import useUser from "../Hooks/api/useUser";
 export default function DashboardLayout() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
 
-  const { user } = useUser();
-  console.log(user)
+  // const { user } = useUser();
+  // console.log(user)
+  const user = {
+    role : "Vet"
+  }
 
   const handleNavToggle = () => {
     setIsSideNavOpen((prev) => !prev);

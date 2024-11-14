@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 const VetCard = ({ vet }) => {
   const {
-    id,
+    _id,
     name,
     date,
     image,
@@ -14,7 +14,6 @@ const VetCard = ({ vet }) => {
     institute,
     instituteLocation,
   } = vet || {};
-  console.log(vet)
   return (
     <div className="md:mx-8 lg:mx-0 mx-5">
       <div className=" p-4 shadow-xl dark:bg-gray-900 dark:text-gray-100">
@@ -50,7 +49,7 @@ const VetCard = ({ vet }) => {
             <div className="flex flex-col lg:flex-row md:flex-row items-center justify-end gap-5 pt-10 pb-5">
               {/* <input type="date" name="" id="" className="border py-2 px-3" /> */}
               <h2 className="text-[18px]"><span className="font-bold">Date:</span> { date}</h2>
-              <Link to={`/vets-details/${id}`}>
+              <Link to={`/vets-details/${_id}`}>
                 <Button secondary> Book Appointment</Button>
               </Link>
             </div>

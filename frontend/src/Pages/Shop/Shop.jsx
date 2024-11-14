@@ -18,7 +18,7 @@ export default function Shop() {
     searchParams ? searchParams.get("subCategory") : ""
   );
 
-  console.log(category);
+  console.log(petsProducts);
 
   useEffect(() => {
     const filteredByCategoryAndSubCategory = petsProducts?.filter(

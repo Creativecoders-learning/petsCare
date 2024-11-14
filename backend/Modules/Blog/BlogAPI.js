@@ -1,8 +1,8 @@
 const express = require('express');
+const blogRouter = express.Router();
 const { ObjectId } = require('mongodb');
 
-function BlogAPI(blogCollection) {
-    const blogRouter = express.Router();
+module.exports = (blogCollection)=> {
 
     // Add blog
     blogRouter.post('/blogs', async (req, res) => {
@@ -61,5 +61,3 @@ function BlogAPI(blogCollection) {
 
     return blogRouter;
 }
-
-module.exports = BlogAPI;
