@@ -35,24 +35,8 @@ const MyAdoptionRow = ({item,index}) => {
     <td className="p-4">{item?.category}</td>
     <td className="p-4">{item?.date}</td>
     <td className="p-4">{item?.status}</td>
-    <td className="p-4 flex items-center justify-center space-x-3">
-          <button
-                onClick={() => setIsOpen(true)}
-                className="p-2 text-white bg-secondary rounded-full hover:bg-primary transition duration-150"
-          >
-                <FaEdit />
-          </button>
-          <button
-                onClick={() => handleDelete(item?.id)}
-                className="p-2 text-white bg-red-500 rounded-full hover:bg-red-600 transition duration-150"
-          >
-                <FaTrash />
-          </button>
-
-          {/* update status  */}
-          <UpdateStatus setIsOpen={setIsOpen} isOpen={isOpen} item={item} modalHandler={modalHandler}></UpdateStatus>
-          
-    </td>
+    <td className="p-4">{item?.admin_response}</td>
+    
 </tr>
   );
 };

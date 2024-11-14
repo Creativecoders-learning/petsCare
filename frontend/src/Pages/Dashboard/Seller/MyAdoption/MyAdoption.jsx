@@ -4,9 +4,10 @@ import MyAdoptionRow from "../../TableRow/MyAdoptionRow";
 import Modal from "../../../../Components/UI/Modal";
 import { useForm } from "react-hook-form"
 import { imageUpload, uploadMultipleImages } from "../../../../Utilities/Utilities";
+import useAdoptionData from "../../../../Hooks/useAdoptionData";
 
 const MyAdoption = () => {
-  const [myAdoptions] = useMyAdoptionData();
+  const {adoptions} = useAdoptionData();
   const [openModal, setOpenModal] = useState(false);
   const {
     register,
@@ -81,7 +82,7 @@ const MyAdoption = () => {
                 </tr>
               </thead>
               <tbody>
-                {myAdoptions?.map((item, index) => (
+                {adoptions?.map((item, index) => (
                   <MyAdoptionRow key={item?.id} index={index} item={item} />
                 ))}
               </tbody>
