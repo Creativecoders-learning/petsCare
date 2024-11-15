@@ -46,13 +46,11 @@ const MyServiceUpdate = ({ selectedService: service,onServiceUpdated,onClose }) 
       vetName: data?.vetName,
       vetEmail: data?.vetEmail,
       serviceName: data?.serviceName,
-      image: imageUrl,
+      image: imageUrl || service?.image,
       serviceType: data?.serviceType,
       shortDescription: data?.shortDescription,
       description: data?.description,
     };
-    // const serviceData = { ... data};
-    // console.log(serviceData);
     apiHandler
       .patch(`/vetServices/${service?._id}`, serviceData)
       .then((res) => {

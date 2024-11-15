@@ -4,6 +4,7 @@ import PaypalCardForm from '../PaypalCardForm/PaypalCardForm';
 import SSLCommerceForm from '../SSLCommerceForm/SSLCommerceForm';
 import VisaCardForm from '../VisaCardForm/VisaCardForm';
 import PrimaryTitle from '../../UI/PrimaryTitle';
+import StripeCard from '../StripeCardForm/StripeCard';
 
 const cards = [
   {
@@ -17,6 +18,10 @@ const cards = [
   {
     name: 'visa',
     logo: CHECKOUTImages.checkout_3,
+  },
+  {
+    name: 'Stripe',
+    logo: CHECKOUTImages.checkout_4,
   },
 ];
 
@@ -62,7 +67,7 @@ export default function CheckoutForm() {
                   : 'border-[#D9D9D9]'
               } py-2 px-4 rounded-xl`}
             >
-              <img src={item.logo} alt="" />
+              <img  className='object-contain h-[30px]' src={item.logo} alt="" />
             </figure>
           ))}
         </div>
@@ -72,6 +77,7 @@ export default function CheckoutForm() {
             <SSLCommerceForm onSubmit={onSubmit} />
           )}
           {clickedCard === 'visa' && <VisaCardForm onSubmit={onSubmit} />}
+          {clickedCard === 'Stripe' && <StripeCard onSubmit={onSubmit} />}
         </div>
       </div>
     </div>

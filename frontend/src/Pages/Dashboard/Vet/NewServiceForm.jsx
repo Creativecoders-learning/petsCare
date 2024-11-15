@@ -34,7 +34,7 @@ const NewServiceForm = () => {
       const response = await apiHandler.post("/vetServices", newServiceData);
 
       if (response.data.insertedId) {
-        toast.success(`job data added successfully`, response.data);
+        toast.success(`Service data added successfully`, response.data);
       }
     } catch (error) {
       toast.error("Error adding service:", error.message);
