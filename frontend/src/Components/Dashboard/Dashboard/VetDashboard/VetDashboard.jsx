@@ -9,13 +9,18 @@ import {
       BarElement,
 } from "chart.js";
 import useAdoptionData from "../../../../Hooks/useAdoptionData";
+import PrimaryTitle from "../../../UI/PrimaryTitle";
+import useBlogs from "../../../../Hooks/api/useBlogs";
+import UseAuth from "../../../../Hooks/UseAuth";
 
 // Register required elements for the charts to work
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
 
 const VetDashboard = () => {
 
-      const { adoptions } = useAdoptionData();      
+      const { user } = UseAuth()
+      const { adoptions } = useAdoptionData();
+      const { blogs } = useBlogs(user?.email);
 
       const fakeAppointments = [
             { petName: "Buddy", ownerName: "Alice Johnson", date: "2024-11-15", status: "Completed" },
@@ -49,7 +54,7 @@ const VetDashboard = () => {
             datasets: [
                   {
                         data: [completedAppointments, pendingAppointments],
-                        backgroundColor: ['#4CAF50', '#FF9800']
+                        backgroundColor: ['#9990DA', '#0A453A'],
                   }
             ]
       };
@@ -59,24 +64,24 @@ const VetDashboard = () => {
             datasets: [
                   {
                         data: [petTypesCount.Dog, petTypesCount.Cat, petTypesCount.Bird],
-                        backgroundColor: ['#3b82f6', '#06b6d4', '#f59e0b']
+                        backgroundColor: ['#9990DA', '#0A453A', '#696984'],
                   }
             ]
       };
 
       return (
             <div className="p-6">
-
+                  <PrimaryTitle>Vet Dashboard</PrimaryTitle>
                   {/* Summary Cards */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                        {['Total Appointments', 'Completed Appointments', 'Pending Appointments', 'Total Pets Managed'].map((title, idx) => (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
+                        {['Total Appointments', 'Completed Appointments', 'Pending Appointments', 'Total Pets Managed', 'Total Blogs'].map((title, idx) => (
                               <div
                                     key={idx}
                                     className="bg-white shadow-lg rounded-lg p-6 text-center border border-gray-100"
                               >
-                                    <h3 className="text-lg font-semibold text-gray-700">{title}</h3>
-                                    <p className="text-2xl font-bold text-primary mt-2">
-                                          {[totalAppointments, '10', 45, totalAppointments][idx]}
+                                    <h3 className="font-medium text-gray-700">{title}</h3>
+                                    <p className="text-xl font-bold text-primary mt-2">
+                                          {[totalAppointments, '10', 45, totalAppointments,blogs.length][idx]}
                                     </p>
                               </div>
                         ))}
