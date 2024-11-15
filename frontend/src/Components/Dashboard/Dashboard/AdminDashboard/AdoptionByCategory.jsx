@@ -1,15 +1,9 @@
-import { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
+import useAdoptionData from "../../../../Hooks/useAdoptionData";
 
 const AdoptionByCategory = () => {
 
-      const [adoptions, setAdoptions] = useState([]);
-
-      useEffect(() => {
-            fetch('http://localhost:8000/adoptions')
-                  .then(res => res.json())
-                  .then(data => setAdoptions(data))
-      }, [])
+      const { adoptions } = useAdoptionData();
 
       const dogs = adoptions?.filter(dog => dog?.category === 'Dog')
       const rabbits = adoptions?.filter(dog => dog?.category === 'Rabbit')

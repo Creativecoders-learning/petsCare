@@ -21,7 +21,7 @@ const UserRole = () => {
       return (
             <div className="bg-white shadow-lg rounded-lg p-6 border border-gray-100">
                   <h3 className="text-lg font-semibold mb-4">User Roles</h3>
-                  <Doughnut data={userChartData} />
+                  <Doughnut height={300} data={userChartData} />
             </div>
       );
 };

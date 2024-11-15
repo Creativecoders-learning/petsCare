@@ -12,12 +12,8 @@ import useUser from "../Hooks/api/useUser";
 export default function DashboardLayout() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
 
-  // const { user } = useUser();
+  const { user } = useUser();
 
-  const user = {
-    role: 'Admin'
-  }
-  
   const handleNavToggle = () => {
     setIsSideNavOpen((prev) => !prev);
   };
@@ -103,14 +99,6 @@ export default function DashboardLayout() {
                       </span>
                     </DashboardActiveLink>
                   </li>
-                  <li>
-                    <DashboardActiveLink to="/dashboard/vet/my-blogs">
-                      <span className="flex items-center gap-3 rounded py-3 px-6">
-                        <FaBlog className="block text-[18px]" />
-                        <span className="block text-[17px]">My Blogs</span>
-                      </span>
-                    </DashboardActiveLink>
-                  </li>
                 </>
               )}
 
@@ -170,14 +158,6 @@ export default function DashboardLayout() {
               {user?.role === "Seller" && (
                 <>
                   <li>
-                    <DashboardActiveLink to="/dashboard/seller/my-products">
-                      <span className="flex items-center gap-3 rounded py-3 px-6">
-                        <BiShoppingBag className="block text-[18px]" />
-                        <span className="block text-[17px]">My Products</span>
-                      </span>
-                    </DashboardActiveLink>
-                  </li>
-                  <li>
                     <DashboardActiveLink to="/dashboard/seller/prescriptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <AiOutlineMedicineBox className="block text-[18px]" />
@@ -202,6 +182,14 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
+                    <DashboardActiveLink to="/dashboard/seller/my-products">
+                      <span className="flex items-center gap-3 rounded py-3 px-6">
+                        <BiShoppingBag className="block text-[18px]" />
+                        <span className="block text-[17px]">My Products</span>
+                      </span>
+                    </DashboardActiveLink>
+                  </li>
+                  <li>
                     <DashboardActiveLink to="/dashboard/seller/user-adoptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <MdOutlinePets className="block text-[18px]" />
@@ -209,17 +197,18 @@ export default function DashboardLayout() {
                       </span>
                     </DashboardActiveLink>
                   </li>
-                  <li>
-                    <DashboardActiveLink to="/dashboard/seller/blogs">
-                      <span className="flex items-center gap-3 rounded py-3 px-6">
-                        <FaBlog className="block text-[18px]" />
-                        <span className="block text-[17px]">Blogs</span>
-                      </span>
-                    </DashboardActiveLink>
-                  </li>
                 </>
               )}
 
+              {/* blog route for all user */}
+              <li>
+                <DashboardActiveLink to="/dashboard/my-blogs">
+                  <span className="flex items-center gap-3 rounded py-3 px-6">
+                    <FaBlog className="block text-[18px]" />
+                    <span className="block text-[17px]">My Blogs</span>
+                  </span>
+                </DashboardActiveLink>
+              </li>
             </ul>
           </nav>
 
