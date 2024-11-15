@@ -32,8 +32,8 @@ import RoleChange from "../Pages/RoleChange/RoleChange";
 import MyBlogs from "../Pages/Dashboard/Vet/MyBlogs";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import MyAdoption from "../Pages/Dashboard/Seller/MyAdoption/MyAdoption";
-import UserChatAdoption from "../Pages/Dashboard/Seller/CreateAdoption/UserChatAdoption";
 import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
+import UserChatAdoption from "../Pages/Dashboard/Seller/userAdoption/UserChatAdoption";
 
 const router = createBrowserRouter([
   // this is basic routes
