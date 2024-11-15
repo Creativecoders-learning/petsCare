@@ -1,10 +1,14 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { FaEnvelope, FaEdit, FaUser, FaAddressCard } from "react-icons/fa";
 import { FaCamera } from "react-icons/fa6";
+import useAxios from "../../../Hooks/useAxios";
 
 const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }) => {
 
       const [profileCompletion, setProfileCompletion] = useState(0);
+      const apiHandler = useAxios();
 
       const calculateProfileCompletion = (user) => {
             const requiredFields = [
@@ -33,6 +37,30 @@ const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }
             }
       }, [user]);
 
+      const handleImageChange = async (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                  const formData = new FormData();
+                  formData.append('image', file)
+
+                  try {
+                        const response = await axios.post('https://api.imgbb.com/1/upload?key=597d78aa1ab369b0aa1583848b74f0f9', formData);
+                        console.log(response?.data?.data?.url);
+
+                        const image = response?.data?.data?.url;
+
+                        // update image
+                        await apiHandler.put(`/users/by-email/${user?.email}`, { image });
+                        toast.success(`Profile updated Successfully`);
+
+                  } catch (error) {
+                        toast.error(error?.message)
+                        console.error(error?.message)
+                  }
+            }
+
+      }
+
       return (
             <div className="lg:w-1/3 bg-white shadow-lg rounded-lg p-6 flex flex-col font-inter">
                   <div className="flex flex-col items-center">
@@ -47,15 +75,15 @@ const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }
                                     <label
                                           htmlFor="upload-image"
                                           className="absolute bottom-3 right-3 bg-blue-500 text-white p-2 rounded-full cursor-pointer"
-                                          
+
                                     >
-                                           <FaCamera />
+                                          <FaCamera />
                                           <input
                                                 type="file"
                                                 id="upload-image"
                                                 accept="image/*"
                                                 className="hidden"
-                                          // onChange={handleImageChange}
+                                                onChange={handleImageChange}
                                           />
                                     </label>
                               </div>

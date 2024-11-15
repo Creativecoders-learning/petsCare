@@ -11,9 +11,7 @@ const Profile = () => {
       const [selectedSection, setSelectedSection] = useState("profile");
       const [isEditing, setIsEditing] = useState(false);
 
-      const { user, fetchUsers } = useUser();
-      console.log(user);
-      
+      const { user, fetchUsers } = useUser();      
 
       const renderSectionContent = () => {
             if (isEditing) {
