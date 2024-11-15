@@ -87,7 +87,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'seller/user-adoptions',
-        element: <UserChatAdoption></UserChatAdoption>
+        element: <UserChatAdoption/>
       },
       {
         path: "seller/my-products",

@@ -1,17 +1,21 @@
 import { useEffect, useState } from 'react';
+import useAxios from './useAxios';
 
 const useAdoptionData = () => {
   const [adoptions, setAdoptions] = useState([]);
+  const apiHandle = useAxios()
 
+  const refetch = ()=>{
+    apiHandle.get('/getAdoption')
+    .then(res=>{
+      setAdoptions(res.data)
+    })
+  }
   useEffect(() => {
-    fetch('/petsAdoption.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setAdoptions(data);
-      });
+    refetch()
   }, []);
 
-  return { adoptions };
+  return { adoptions,refetch };
 };
 
 export default useAdoptionData;

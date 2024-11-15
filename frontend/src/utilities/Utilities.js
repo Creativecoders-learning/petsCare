@@ -30,4 +30,6 @@ export const uploadMultipleImages =async images=>{
             console.error("Error uploading image:", error);
         }
     }
+
+    return uploadedUrls;
 }
