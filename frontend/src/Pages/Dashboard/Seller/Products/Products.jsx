@@ -1,15 +1,15 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
-import PrimaryTitle from "../../../../Components/UI/PrimaryTitle";
-import usePetsProducts from "../../../../Hooks/api/usePetsProducts";
 import Button from "../../../../Components/UI/Button";
-import { useState } from "react";
-import NewProductForm from "../../../../Components/Dashboard/NormalUser/NewProductForm";
-import Modal from "../../../../Components/UI/Modal";
+import PrimaryTitle from "../../../../Components/UI/PrimaryTitle";
+import UpdateProductForm from "../../../../Components/Dashboard/Seller/UpdateProductForm";
 import Swal from "sweetalert2";
 import useAxios from "../../../../Hooks/useAxios";
-import UpdateProductForm from "../../../../Components/Dashboard/NormalUser/UpdateProductForm";
+import { useState } from "react";
+import Modal from "../../../../Components/UI/Modal";
+import NewProductForm from "../../../../Components/Dashboard/Seller/NewProductForm";
+import usePetsProducts from "../../../../Hooks/api/usePetsProducts";
 
-export default function MyProducts() {
+export default function Products() {
   const { petsProducts, refresh } = usePetsProducts();
   const [openModal, setOpenModal] = useState(false);
   const [formType, setFormType] = useState("");
@@ -72,7 +72,9 @@ export default function MyProducts() {
       {openModal && (
         <Modal primary={true} setOpenModal={setOpenModal} openModal={openModal}>
           {formType === "newForm" && <NewProductForm refresh={refresh} />}
-          {formType === "updateForm" && <UpdateProductForm refresh={refresh} id={updateProductId} />}
+          {formType === "updateForm" && (
+            <UpdateProductForm refresh={refresh} id={updateProductId} />
+          )}
         </Modal>
       )}
       <div className="p-8 font-inter">

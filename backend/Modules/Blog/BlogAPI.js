@@ -31,7 +31,7 @@ module.exports = (blogCollection)=> {
     // get blogs by email
     blogRouter.get('/blogs/by-email/:email', async (req, res) => {
         const email = req.params.email;
-        const query = { email: email }
+        const query = { "author.email": email }
         const result = await blogCollection.find(query).toArray();
         res.send(result)
     })

@@ -12,11 +12,7 @@ import useUser from "../Hooks/api/useUser";
 export default function DashboardLayout() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
 
-  // const { user } = useUser();
-  // console.log(user)
-  const user = {
-    role : "Admin"
-  }
+  const { user } = useUser(); 
 
   const handleNavToggle = () => {
     setIsSideNavOpen((prev) => !prev);
@@ -43,8 +39,9 @@ export default function DashboardLayout() {
       <div className="lg:flex font-inter">
         {/* Side Navigation */}
         <aside
-          className={`fixed top-0 bottom-0 left-0 z-40 flex w-64 flex-col border-r border-r-myGray border-opacity-30 bg-white transition-transform lg:translate-x-0 ease-in-out duration-500 ${isSideNavOpen ? "translate-x-0" : "-translate-x-full"
-            }`}
+          className={`fixed top-0 bottom-0 left-0 z-40 flex w-64 flex-col border-r border-r-myGray border-opacity-30 bg-white transition-transform lg:translate-x-0 ease-in-out duration-500 ${
+            isSideNavOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
         >
           <div className="flex justify-center items-center h-20 mt-6 border-b border-slate-200">
             <Link to="/">
@@ -151,7 +148,9 @@ export default function DashboardLayout() {
                     <DashboardActiveLink to="/dashboard/admin/adoption-history">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <MdOutlinePets className="block text-[18px]" />
-                        <span className="block text-[17px]">Adoption History</span>
+                        <span className="block text-[17px]">
+                          Adoption History
+                        </span>
                       </span>
                     </DashboardActiveLink>
                   </li>
@@ -159,26 +158,28 @@ export default function DashboardLayout() {
                     <DashboardActiveLink to="/dashboard/admin/blog-management">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <FaBlog className="block text-[18px]" />
-                        <span className="block text-[17px]">Blog Management</span>
+                        <span className="block text-[17px]">
+                          Blog Management
+                        </span>
                       </span>
                     </DashboardActiveLink>
                   </li>
                 </>
               )}
 
-              {/* For Normal user */}
-              {user?.role === "NormalUser" && (
+              {/* For Client */}
+              {user?.role === "Client" && (
                 <>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/my-products">
+                    <DashboardActiveLink to="/dashboard/client/my-orders">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
-                        <BiShoppingBag className="block text-[18px]" />
-                        <span className="block text-[17px]">My Products</span>
+                        <AiOutlineMedicineBox className="block text-[18px]" />
+                        <span className="block text-[17px]">My Orders</span>
                       </span>
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/prescriptions">
+                    <DashboardActiveLink to="/dashboard/client/prescriptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <AiOutlineMedicineBox className="block text-[18px]" />
                         <span className="block text-[17px]">Prescriptions</span>
@@ -186,7 +187,7 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/adoptions">
+                    <DashboardActiveLink to="/dashboard/client/adoptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <MdOutlinePets className="block text-[18px]" />
                         <span className="block text-[17px]">Adoptions</span>
@@ -194,7 +195,7 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/my-adoptions">
+                    <DashboardActiveLink to="/dashboard/client/my-adoptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <MdOutlinePets className="block text-[18px]" />
                         <span className="block text-[17px]"> My Adoptions</span>
@@ -202,15 +203,18 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/user-adoptions">
+                    <DashboardActiveLink to="/dashboard/client/user-adoptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <MdOutlinePets className="block text-[18px]" />
-                        <span className="block text-[17px]"> User Adoptions</span>
+                        <span className="block text-[17px]">
+                          {" "}
+                          User Adoptions
+                        </span>
                       </span>
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/normalUser/blogs">
+                    <DashboardActiveLink to="/dashboard/client/blogs">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <FaBlog className="block text-[18px]" />
                         <span className="block text-[17px]">Blogs</span>
@@ -220,6 +224,17 @@ export default function DashboardLayout() {
                 </>
               )}
 
+              {/* For Seller */}
+              {user?.role === "Seller" && (
+                <li>
+                  <DashboardActiveLink to="/dashboard/seller/products">
+                    <span className="flex items-center gap-3 rounded py-3 px-6">
+                      <BiShoppingBag className="block text-[18px]" />
+                      <span className="block text-[17px]">Products</span>
+                    </span>
+                  </DashboardActiveLink>
+                </li>
+              )}
             </ul>
           </nav>
 
@@ -236,8 +251,9 @@ export default function DashboardLayout() {
 
         {/* Main Content Area */}
         <div
-          className={`flex-1 text-black border-opacity-50 w-full ${isSideNavOpen ? "" : "lg:ml-64"
-            }`}
+          className={`flex-1 text-black border-opacity-50 w-full ${
+            isSideNavOpen ? "" : "lg:ml-64"
+          }`}
         >
           <Outlet />
         </div>
@@ -245,8 +261,9 @@ export default function DashboardLayout() {
 
       {/* Backdrop for mobile */}
       <div
-        className={`fixed top-0 bottom-0 left-0 right-0 z-30 bg-slate-900/20 transition-colors lg:hidden ${isSideNavOpen ? "block" : "hidden"
-          }`}
+        className={`fixed top-0 bottom-0 left-0 right-0 z-30 bg-slate-900/20 transition-colors lg:hidden ${
+          isSideNavOpen ? "block" : "hidden"
+        }`}
         onClick={() => setIsSideNavOpen(false)}
       ></div>
     </>

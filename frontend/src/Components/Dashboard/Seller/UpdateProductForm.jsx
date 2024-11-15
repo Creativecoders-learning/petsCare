@@ -5,13 +5,13 @@ import useAxios from "../../../Hooks/useAxios";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Swal from "sweetalert2";
-import usePetsProductById from "../../../Hooks/api/usePetsProductById";
+// import usePetsProductById from "../../../Hooks/api/usePetsProductById";
 
 const categories = ["Dogs", "Cats", "Rabbits", "Birds"];
 const subCategories = ["Foods", "Medicine", "Accessories"];
 
 export default function UpdateProductForm({ refresh, id }) {
-  const { petsProduct } = usePetsProductById(id);
+  // const { petsProduct } = usePetsProductById(id);
   const [imageUrl, setImageUrl] = useState("");
   const [imagePreview, setImagePreview] = useState(null);
   const apiHandler = useAxios();

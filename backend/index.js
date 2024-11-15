@@ -34,7 +34,6 @@ async function run() {
     // collection
     const database = client.db('petsCare')
     const adoptionCollection = database.collection('adoptionCollection')
-    app.locals.adoptionCollection = adoptionCollection;
     const blogCollection = database.collection('blogs');
     const vetsCollection = database.collection('vets');
     const vetsServicesCollection = database.collection('vetServices');
@@ -62,6 +61,9 @@ async function run() {
     const sellerApi = require('./Modules/Shop/Seller/SellerApi')(shopProductCollection);
     app.use('/', sellerApi)
 
+    // adoption related api's
+    const adoptionApi = require('./Modules/Adoption/AdoptionAPI')(adoptionCollection);
+    app.use('/', adoptionApi);
 
 
     await client.db("admin").command({ ping: 1 });

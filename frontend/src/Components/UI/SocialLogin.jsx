@@ -4,50 +4,62 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import UseAuth from "../../Hooks/UseAuth";
 import useAxios from "../../Hooks/useAxios";
+import useUsers from "../../Hooks/api/useUsers";
 
 const SocialLogin = () => {
       const { googleLogIn, githubLogIn, setUser } = UseAuth();
       const apiHandler = useAxios();
       const navigate = useNavigate();
+      const { users } = useUsers();
 
-      const handleSocialLogin = (loginMethod) => {
-            loginMethod()
-                  .then((result) => {
-                        const loggedInUser = result.user;
-                        setUser(loggedInUser);
+      const handleSocialLogin = async (loginMethod) => {
+            try {
+                  const result = await loginMethod();
+                  console.log('Result:', result);
 
-                        // Prepare user data to be sent to the backend
+                  if (!result || !result.email) {
+                        throw new Error("Invalid login result");
+                  }
+
+                  const matchedUser = users?.find(user => user?.email === result?.email);
+
+                  if (matchedUser?.email) {
+                        navigate('/');
+                  } else {
+                        setUser(result);
+
                         const userData = {
-                              name: loggedInUser.displayName,
-                              email: loggedInUser.email,
-                              image: loggedInUser.photoURL,
+                              name: result?.displayName || "Unknown User",
+                              email: result?.email,
+                              image: result?.photoURL || "",
                         };
-                        console.log('User Data:', userData);
-                        // navigate('/')
 
                         // Send user data to the backend
-                        apiHandler.post('/users', userData)
-                              .then(() => {
-                                    toast.success('Successfully logged in!');
-                                    navigate('/role-change');
-                              })
-                              .catch(error => {
-                                    toast.error('Failed to save user data');
-                                    console.error(error.message);
-                              });
-                  })
-                  .catch(error => {
-                        toast.error(error?.message);
-                  });
+                        await apiHandler.post('/users', userData);
+                        toast.success('Successfully logged in!');
+                        navigate('/role-change');
+                  }
+            } catch (error) {
+                  toast.error(error?.message || 'Failed to save user data');
+            }
       };
 
       return (
-            <div>
+            <div className="social-login-page">
+                  <h2 className="text-center text-xl font-bold mb-6">Login with Social Media</h2>
                   <div className="mb-6 flex justify-center gap-8">
-                        <button onClick={() => handleSocialLogin(googleLogIn)} aria-label="Login with Google" type="button">
+                        <button
+                              onClick={() => handleSocialLogin(googleLogIn)}
+                              aria-label="Login with Google"
+                              type="button"
+                        >
                               <FcGoogle className="text-3xl" />
                         </button>
-                        <button onClick={() => handleSocialLogin(githubLogIn)} aria-label="Login with GitHub" role="button">
+                        <button
+                              onClick={() => handleSocialLogin(githubLogIn)}
+                              aria-label="Login with GitHub"
+                              role="button"
+                        >
                               <FaGithub className="text-[28px]" />
                         </button>
                   </div>

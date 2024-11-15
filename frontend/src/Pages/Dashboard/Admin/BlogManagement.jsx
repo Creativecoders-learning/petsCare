@@ -1,16 +1,42 @@
-import { FaEdit, FaTrash } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 import useBlogs from "../../../Hooks/api/useBlogs";
 import PrimaryTitle from "../../../Components/UI/PrimaryTitle";
+import Swal from "sweetalert2";
+import useAxios from "../../../Hooks/useAxios";
 
 const BlogManagement = () => {
-      const { blogs } = useBlogs();
+      const { blogs, refresh } = useBlogs();
+      const apiHandler = useAxios();
 
-      const handleEdit = (id) => {
-            console.log("Edit blog with ID:", id);
-      };
+      // delete Blog
+      const handleDeleteBlog = (id) => {
+            Swal.fire({
+                  title: "Are you sure?",
+                  text: "You won't be able to revert this!",
+                  icon: "warning",
+                  showCancelButton: true,
+                  confirmButtonColor: "#3085d6",
+                  cancelButtonColor: "#d33",
+                  confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                  if (result.isConfirmed) {
 
-      const handleDelete = (id) => {
-            console.log("Delete blog with ID:", id);
+                        // Deleted functionality here
+                        apiHandler.delete(`/blogs/blog-details/${id}`)
+                              .then(result => {
+                                    if (result?.data?.deletedCount === 1) {
+                                          Swal.fire({
+                                                title: "Deleted!",
+                                                text: "Your file has been deleted.",
+                                                icon: "success"
+                                          });
+
+                                          // fetch the user for updating in UI
+                                          refresh()
+                                    }
+                              })
+                  }
+            });
       };
 
       return (
@@ -46,13 +72,7 @@ const BlogManagement = () => {
                                                 <td className="p-4">{blog?.rating}</td>
                                                 <td className="p-4 flex items-center justify-center space-x-3">
                                                       <button
-                                                            onClick={() => handleEdit(blog?.id)}
-                                                            className="p-2 text-white bg-secondary rounded-full hover:bg-primary transition duration-150"
-                                                      >
-                                                            <FaEdit />
-                                                      </button>
-                                                      <button
-                                                            onClick={() => handleDelete(blog?.id)}
+                                                            onClick={() => handleDeleteBlog(blog?._id)}
                                                             className="p-2 text-white bg-red-500 rounded-full hover:bg-red-600 transition duration-150"
                                                       >
                                                             <FaTrash />
