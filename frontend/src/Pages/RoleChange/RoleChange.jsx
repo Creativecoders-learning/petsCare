@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { FaUser, FaPaw } from 'react-icons/fa';
+import { FaUser, FaPaw, FaUserFriends } from 'react-icons/fa';
 import UseAuth from '../../Hooks/UseAuth';
 import useAxios from '../../Hooks/useAxios';
 
@@ -14,7 +14,7 @@ const RoleChange = () => {
   // Function to update role
   const handleRoleSelection = async (role) => {
     try {
-      await apiHandler.put(`/users/by-email/${user?.email}`, { role, lastLogIn })
+      await apiHandler.put(`/users/by-email/${user?.email}`, { role, lastLogIn });
       toast.success(`Role updated to ${role}`);
       navigate('/');
     } catch (error) {
@@ -47,6 +47,15 @@ const RoleChange = () => {
           >
             <FaPaw className="text-2xl mr-2" />
             <span className="text-lg font-semibold">Veterinarian</span>
+          </button>
+
+          {/* Client Button */}
+          <button
+            onClick={() => handleRoleSelection('Client')}
+            className="w-full md:w-1/2 flex items-center justify-center px-6 py-4 bg-purple-600 text-white rounded-lg shadow-md hover:bg-purple-700 transition duration-300"
+          >
+            <FaUserFriends className="text-2xl mr-2" />
+            <span className="text-lg font-semibold">Client</span>
           </button>
         </div>
       </div>

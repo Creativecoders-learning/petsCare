@@ -55,10 +55,7 @@ const router = createBrowserRouter([
       { path: "/get-Started", element: <GetStarted></GetStarted> },
       { path: "/checkout", element: <Checkout /> },
       { path: "/vets", element: <Vets /> },
-      {
-        path: "/vets-details/:id",
-        element: <VetsDetails />,
-      },
+      { path: "/vets-details/:id", element: <VetsDetails /> },
       { path: "/registration", element: <Registration /> },
       { path: "/role-change", element: <RoleChange /> },
       { path: "/login", element: <Login /> },
@@ -78,14 +75,26 @@ const router = createBrowserRouter([
         path: "profile",
         element: <Profile />,
       },
+
+      // Seller routes
       {
-        path: 'seller/my-adoptions',
+        path: 'client/my-adoptions',
         element: <MyAdoption></MyAdoption>
       },
       {
-        path: 'seller/user-adoptions',
+        path: 'client/user-adoptions',
         element: <UserChatAdoption></UserChatAdoption>
       },
+      {
+        path: "client/my-products",
+        element: <MyProducts />,
+      },
+      {
+        path: "client/adoptions",
+        element: <Adoptions />,
+      },
+
+      // admin routes
       {
         path: "admin/blog-management",
         element: <BlogManagement />,
@@ -93,14 +102,6 @@ const router = createBrowserRouter([
       {
         path: "admin/shop-management",
         element: <ShopManagement />,
-      },
-      {
-        path: "seller/my-products",
-        element: <MyProducts />,
-      },
-      {
-        path: "seller/adoptions",
-        element: <Adoptions />,
       },
       {
         path: "admin/user-management",
@@ -114,6 +115,8 @@ const router = createBrowserRouter([
         path: 'admin/adoption-history',
         element: <AdoptionHistory />
       },
+
+      // vet routes
       {
         path: 'vet/appointments',
         element: <Appointments />
