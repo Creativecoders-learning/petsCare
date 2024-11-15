@@ -5,14 +5,17 @@ const useAdoptionData = () => {
   const [adoptions, setAdoptions] = useState([]);
   const apiHandle = useAxios()
 
-  useEffect(() => {
+  const refetch = ()=>{
     apiHandle.get('/getAdoption')
     .then(res=>{
       setAdoptions(res.data)
     })
+  }
+  useEffect(() => {
+    refetch()
   }, []);
 
-  return { adoptions };
+  return { adoptions,refetch };
 };
 
 export default useAdoptionData;

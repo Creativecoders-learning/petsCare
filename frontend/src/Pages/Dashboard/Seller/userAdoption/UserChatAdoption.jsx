@@ -3,7 +3,7 @@ import useUserAdoption from "../../../../hooks/useUserAdoption";
 
 
 const UserChatAdoption = () => {
-    const {userAdoptions }= useUserAdoption([]);
+    const {userAdoptions,refetch }= useUserAdoption([]);
 
     return (
         <div className="py-5 lg:py-10 ">
@@ -57,7 +57,7 @@ const UserChatAdoption = () => {
             </thead>
             <tbody>
               {userAdoptions?.map((item,index) => (
-                <UserAdoptionRow key={item?.id} item={item} index={index}/>
+                <UserAdoptionRow key={item?.id} item={item} index={index} refetch={refetch}/>
               ))}
             </tbody>
           </table>

@@ -3,7 +3,7 @@ const { ObjectId } = require('mongodb');
 
 module.exports = (receiver,adoptionCollection) =>{
     const adoptionRouter = express.Router();
-    console.log(receiver)
+    // console.log(receiver)
     // add adoption 
     adoptionRouter.post('/addAdoption', async (req, res) => {
         const adoptionInfo = req.body;
@@ -24,8 +24,9 @@ module.exports = (receiver,adoptionCollection) =>{
     })
 
     // update admin response status 
-    adoptionRouter.patch('/updatedAdminResponse',async(req,res)=>{
-        const id = req.query.id;
+    adoptionRouter.patch('/updatedAdminResponse/:id',async(req,res)=>{
+        const id = req.params.id;
+        console.log('adminId',id)
         const query = {_id:new ObjectId(id)}
         const adoption = req.body;
         const option = {upsert: true}
@@ -56,7 +57,7 @@ module.exports = (receiver,adoptionCollection) =>{
     adoptionRouter.delete('/delete/:id', async (req, res) => {
         try {
             const id = req.params.id;
-            console.log('ID received:', id);
+            // console.log('ID received:', id);
     
             if (!ObjectId.isValid(id)) {
                 console.log('Invalid ID format');
