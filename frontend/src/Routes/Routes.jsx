@@ -21,7 +21,6 @@ import PaymentProcess from "../Components/Shop/PaymentProcess/PaymentProcess";
 import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStarted";
 import Profile from "../Pages/Dashboard/Profile/Profile";
 import MyAdoption from "../Pages/Dashboard/Seller/MyAdoption/MyAdoption";
-import UserChatAdoption from "../Pages/Dashboard/Seller/CreateAdoption/UserChatAdoption";
 import ShopManagement from "../Pages/Dashboard/Admin/ShopManagement/ShopManagement";
 import MyProducts from "../Pages/Dashboard/Seller/MyProducts/MyProducts";
 import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
@@ -34,6 +33,7 @@ import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
 import RoleChange from "../Pages/RoleChange/RoleChange";
 import MyBlogs from "../Pages/Dashboard/Vet/MyBlogs";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
+import UserChatAdoption from "../Pages/Dashboard/Seller/userAdoption/UserChatAdoption";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -84,7 +84,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'seller/user-adoptions',
-        element: <UserChatAdoption></UserChatAdoption>
+        element: <UserChatAdoption/>
       },
       {
         path: "admin/blog-management",

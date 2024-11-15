@@ -12,7 +12,11 @@ import useUser from "../Hooks/api/useUser";
 export default function DashboardLayout() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
 
-  const { user } = useUser();
+  // const { user } = useUser();
+
+  const user = {
+    role: 'Admin'
+  }
   
   const handleNavToggle = () => {
     setIsSideNavOpen((prev) => !prev);

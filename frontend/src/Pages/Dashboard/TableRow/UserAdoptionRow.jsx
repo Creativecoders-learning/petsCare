@@ -1,12 +1,23 @@
 
 import { MdDelete } from "react-icons/md";
+import useAdoptionData from "../../../Hooks/useAdoptionData";
+import toast from "react-hot-toast";
+import useAxios from "../../../Hooks/useAxios";
 
 const UserAdoptionRow = ({item,index}) => {
+    const axios = useAxios()
+    const {refetch} = useAdoptionData()
 
     // handle delete item
-    const handleDelete =(id)=>{
+    const handleDelete =async(id)=>{
         console.log(id)
         //  show alert for successfully delete adoption
+    const res = await axios.delete(`/delete/${id}`)
+    console.log(res.data)
+    if(res.data.deletedCount > 0){
+      toast.success('pets adoption successfully deleted')
+      refetch()
+    }
     }
 
   return (
