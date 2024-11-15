@@ -31,9 +31,9 @@ import AdoptionHistory from "../Pages/Dashboard/Admin/AdoptionHistory";
 import RoleChange from "../Pages/RoleChange/RoleChange";
 import MyBlogs from "../Pages/Dashboard/Vet/MyBlogs";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
-import MyAdoption from "../Pages/Dashboard/Client/MyAdoption/MyAdoption";
-import UserChatAdoption from "../Pages/Dashboard/Client/CreateAdoption/UserChatAdoption";
-import Adoptions from "../Pages/Dashboard/Client/Adoptions";
+import MyAdoption from "../Pages/Dashboard/Seller/MyAdoption/MyAdoption";
+import UserChatAdoption from "../Pages/Dashboard/Seller/CreateAdoption/UserChatAdoption";
+import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -75,22 +75,26 @@ const router = createBrowserRouter([
         path: "profile",
         element: <Profile />,
       },
+      {
+        path: 'my-blogs',
+        element: <MyBlogs />
+      },
 
       // Seller routes
       {
-        path: 'client/my-adoptions',
+        path: 'seller/my-adoptions',
         element: <MyAdoption></MyAdoption>
       },
       {
-        path: 'client/user-adoptions',
+        path: 'seller/user-adoptions',
         element: <UserChatAdoption></UserChatAdoption>
       },
       {
-        path: "client/my-products",
+        path: "seller/my-products",
         element: <MyProducts />,
       },
       {
-        path: "client/adoptions",
+        path: "seller/adoptions",
         element: <Adoptions />,
       },
 
@@ -128,10 +132,6 @@ const router = createBrowserRouter([
       {
         path: 'vet/patients',
         element: <Patients />
-      },
-      {
-        path: 'vet/my-blogs',
-        element: <MyBlogs />
       },
     ],
   },
