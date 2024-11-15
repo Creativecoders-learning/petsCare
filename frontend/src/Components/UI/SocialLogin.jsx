@@ -46,7 +46,7 @@ const SocialLogin = () => {
 
       return (
             <div className="social-login-page">
-                  <h2 className="text-center text-2xl font-bold mb-6">Login with Social Media</h2>
+                  <h2 className="text-center text-xl font-bold mb-6">Login with Social Media</h2>
                   <div className="mb-6 flex justify-center gap-8">
                         <button
                               onClick={() => handleSocialLogin(googleLogIn)}
