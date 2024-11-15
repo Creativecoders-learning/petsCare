@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaEnvelope, FaEdit, FaUser, FaAddressCard } from "react-icons/fa";
+import { FaCamera } from "react-icons/fa6";
 
 const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }) => {
 
@@ -35,11 +36,30 @@ const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }
       return (
             <div className="lg:w-1/3 bg-white shadow-lg rounded-lg p-6 flex flex-col font-inter">
                   <div className="flex flex-col items-center">
-                        <img
-                              src={user?.image}
-                              alt="User"
-                              className="w-24 h-24 rounded-full mb-4"
-                        />
+                        <figure className="relative">
+                              <img
+                                    src={user?.image}
+                                    alt="User"
+                                    className="w-28 h-28 rounded-full mb-4 border-8 border-blue-500"
+                              />
+                              {/* Edit Icon Overlay with FaEdit */}
+                              <div title="Upload image">
+                                    <label
+                                          htmlFor="upload-image"
+                                          className="absolute bottom-3 right-3 bg-blue-500 text-white p-2 rounded-full cursor-pointer"
+                                          
+                                    >
+                                           <FaCamera />
+                                          <input
+                                                type="file"
+                                                id="upload-image"
+                                                accept="image/*"
+                                                className="hidden"
+                                          // onChange={handleImageChange}
+                                          />
+                                    </label>
+                              </div>
+                        </figure>
                         <h1 className="text-xl font-semibold text-primaryBold">{user?.name}</h1>
                         <p className="text-gray-600 mt-1 flex items-center"><FaEnvelope className="mr-1" /> {user?.email}</p>
                   </div>
