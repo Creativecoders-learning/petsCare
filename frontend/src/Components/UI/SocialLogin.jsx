@@ -14,41 +14,52 @@ const SocialLogin = () => {
 
       const handleSocialLogin = async (loginMethod) => {
             try {
-                  const result = await loginMethod()
+                  const result = await loginMethod();
+                  console.log('Result:', result);
+
+                  if (!result || !result.email) {
+                        throw new Error("Invalid login result");
+                  }
 
                   const matchedUser = users?.find(user => user?.email === result?.email);
 
-                  if (!matchedUser) {
+                  if (matchedUser?.email) {
+                        navigate('/');
+                  } else {
                         setUser(result);
 
                         const userData = {
-                              name: result?.displayName,
+                              name: result?.displayName || "Unknown User",
                               email: result?.email,
-                              image: result?.photoURL,
+                              image: result?.photoURL || "",
                         };
 
                         // Send user data to the backend
                         await apiHandler.post('/users', userData);
                         toast.success('Successfully logged in!');
-
                         navigate('/role-change');
                   }
-
-                  navigate('/');
-
             } catch (error) {
                   toast.error(error?.message || 'Failed to save user data');
-                  console.error('Error during login:', error.message);
             }
       };
 
       return (
-            <div>
+            <div className="social-login-page">
+                  <h2 className="text-center text-2xl font-bold mb-6">Login with Social Media</h2>
                   <div className="mb-6 flex justify-center gap-8">
-                        <button onClick={() => handleSocialLogin(googleLogIn)} aria-label="Login with Google" type="button">
+                        <button
+                              onClick={() => handleSocialLogin(googleLogIn)}
+                              aria-label="Login with Google"
+                              type="button"
+                        >
                               <FcGoogle className="text-3xl" />
                         </button>
-                        <button onClick={() => handleSocialLogin(githubLogIn)} aria-label="Login with GitHub" role="button">
+                        <button
+                              onClick={() => handleSocialLogin(githubLogIn)}
+                              aria-label="Login with GitHub"
+                              role="button"
+                        >
                               <FaGithub className="text-[28px]" />
                         </button>
                   </div>

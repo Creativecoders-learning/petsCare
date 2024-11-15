@@ -14,7 +14,7 @@ const SalesByCategory = () => {
       return (
             <div className="bg-white shadow-lg rounded-lg p-6 border border-gray-100">
                   <h3 className="text-lg font-semibold mb-4">Sales by Category</h3>
-                  <Bar data={shopRevenueData} />
+                  <Bar data={shopRevenueData} height={300} />
             </div>
       );
 };

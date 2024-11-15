@@ -1,4 +1,3 @@
-import React from "react";
 import { FaVideo, FaComment } from "react-icons/fa";
 import PrimaryTitle from "../../../Components/UI/PrimaryTitle";
 
