@@ -9,11 +9,14 @@ const port = process.env.PORT | 8000;
 // middleware 
 app.use(express.json())
 app.use(cors({
-  origin: ['https://petscarefrontend.netlify.app']
+  origin: [
+    "http://localhost:5173",
+    "https://petscarefrontend.netlify.app"
+  ]
 }))
 
 
-const uri =process.env.DB_URI;
+const uri = process.env.DB_URI;
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -59,7 +62,7 @@ async function run() {
     const sellerApi = require('./Modules/Shop/Seller/SellerApi')(shopProductCollection);
     app.use('/', sellerApi)
 
-    
+
 
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");

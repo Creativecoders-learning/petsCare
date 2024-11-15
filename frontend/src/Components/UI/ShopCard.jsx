@@ -8,7 +8,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 
 export default function ShopCard({ item = {} }) {
   const [imageLoading, setImageLoading] = useState(false);
-  const { id, image, category, title, price } = item;
+  const { _id, image, category, title, price } = item;
   const [openModal, setOpenModal] = useState(false);
   const [cartProducts, setCartProducts] = useState([]);
 
@@ -87,7 +87,7 @@ export default function ShopCard({ item = {} }) {
                 >
                   <div className="w-[20%]">
                     <span
-                      onClick={() => handleDeleteClick(item.id)}
+                      onClick={() => handleDeleteClick(item._id)}
                       className="cursor-pointer hover:text-[#ff4b36]"
                     >
                       <FaRegTrashAlt />
@@ -122,7 +122,7 @@ export default function ShopCard({ item = {} }) {
         )}
       </Modal>
       <div className="group p-4 shadow-myCustomShadow rounded-xl flex flex-col justify-between h-[500px]">
-        <Link className="h-[90%]" to={`/productDetails/${id}`}>
+        <Link className="h-[90%]" to={`/productDetails/${_id}`}>
           {" "}
           {/* card image */}
           <figure className="w-full h-[60%] overflow-hidden mb-5 p-2">

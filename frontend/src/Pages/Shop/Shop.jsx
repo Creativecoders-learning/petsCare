@@ -36,17 +36,17 @@ export default function Shop() {
     <div className="mb-20">
       <PageBanner title={"Our Shop"} pageName={"Shop"}/>
       <Container>
-        <div className="w-full flex justify-between items-start my-10">
-          <div className="w-[25%]">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-start my-10">
+          <div className="w-full lg:w-[25%] overflow-y-auto">
             <FilterOption
               setCategory={setCategory}
               setSubCategory={setSubCategory}
             />
           </div>
 
-          <div className="w-[75%]flex flex-col gap-4">
+          <div className="w-full lg:w-[75%]flex flex-col gap-4">
             <PrimaryTitle>Shop</PrimaryTitle>
-            <div className="grid grid-cols-3 gap-x-6 gap-y-10">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-10">
               {foodsByCategory?.map((item) => (
                 <ShopCard key={item.id} item={item} />
               ))}

@@ -15,7 +15,7 @@ export default function DashboardLayout() {
   // const { user } = useUser();
   // console.log(user)
   const user = {
-    role : "Vet"
+    role : "Admin"
   }
 
   const handleNavToggle = () => {

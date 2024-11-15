@@ -4,6 +4,7 @@ import usePetsProducts from "../../../../Hooks/api/usePetsProducts";
 
 export default function ShopManagement() {
     const {petsProducts} = usePetsProducts();
+
   return (
     <div className="p-8 font-inter">
       <PrimaryTitle titleStyle="text-primaryBold font-semibold">
@@ -25,7 +26,7 @@ export default function ShopManagement() {
           <tbody className="text-myGray">
             {petsProducts.map((blog, index) => (
               <tr
-                key={blog.id}
+                key={blog._id}
                 className={`${
                   index % 2 === 0 ? "bg-primaryLight bg-opacity-10" : "bg-white"
                 }`}
@@ -50,7 +51,7 @@ export default function ShopManagement() {
                     <FaEdit />
                   </button>
                   <button
-                    // onClick={() => handleDelete(blog?.id)}
+                    // onClick={() => handleDelete(blog?._id)}
                     className="p-2 text-white bg-red-500 rounded-full hover:bg-red-600 transition duration-150"
                   >
                     <FaTrash />
