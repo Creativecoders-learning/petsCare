@@ -20,19 +20,20 @@ import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
 import PaymentProcess from "../Components/Shop/PaymentProcess/PaymentProcess";
 import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStarted";
 import Profile from "../Pages/Dashboard/Profile/Profile";
-import MyAdoption from "../Pages/Dashboard/NormalUser/MyAdoption/MyAdoption";
-import UserChatAdoption from "../Pages/Dashboard/NormalUser/CreateAdoption/UserChatAdoption";
+import MyAdoption from "../Pages/Dashboard/Seller/MyAdoption/MyAdoption";
+import UserChatAdoption from "../Pages/Dashboard/Seller/CreateAdoption/UserChatAdoption";
 import ShopManagement from "../Pages/Dashboard/Admin/ShopManagement/ShopManagement";
-import MyProducts from "../Pages/Dashboard/NormalUser/MyProducts/MyProducts";
+import MyProducts from "../Pages/Dashboard/Seller/MyProducts/MyProducts";
 import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
 import MyServices from "../Pages/Dashboard/Vet/MyServices";
 import Patients from "../Pages/Dashboard/Vet/Patients";
 import VetManagement from "../Pages/Dashboard/Admin/VetManagement";
 import Appointments from "../Pages/Dashboard/Vet/Appoinments";
 import AdoptionHistory from "../Pages/Dashboard/Admin/AdoptionHistory";
-import Adoptions from "../Pages/Dashboard/NormalUser/Adoptions";
+import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
 import RoleChange from "../Pages/RoleChange/RoleChange";
 import MyBlogs from "../Pages/Dashboard/Vet/MyBlogs";
+import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -54,10 +55,7 @@ const router = createBrowserRouter([
       { path: "/get-Started", element: <GetStarted></GetStarted> },
       { path: "/checkout", element: <Checkout /> },
       { path: "/vets", element: <Vets /> },
-      {
-        path: "/vets-details/:id",
-        element: <VetsDetails />,
-      },
+      { path: "/vets-details/:id", element: <VetsDetails /> },
       { path: "/registration", element: <Registration /> },
       { path: "/role-change", element: <RoleChange /> },
       { path: "/login", element: <Login /> },
@@ -70,31 +68,40 @@ const router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {
+        index: true,
+        element: <Dashboard />
+      },
+      {
         path: "profile",
         element: <Profile />,
       },
+
+      // Seller routes
       {
-        path: 'normalUser/my-adoptions',
+        path: 'client/my-adoptions',
         element: <MyAdoption></MyAdoption>
       },
       {
-        path: 'normalUser/user-adoptions',
+        path: 'client/user-adoptions',
         element: <UserChatAdoption></UserChatAdoption>
-      },{
+      },
+      {
+        path: "client/my-products",
+        element: <MyProducts />,
+      },
+      {
+        path: "client/adoptions",
+        element: <Adoptions />,
+      },
+
+      // admin routes
+      {
         path: "admin/blog-management",
         element: <BlogManagement />,
       },
       {
         path: "admin/shop-management",
         element: <ShopManagement />,
-      },
-      {
-        path: "normalUser/my-products",
-        element: <MyProducts />,
-      },
-      {
-        path: "normalUser/adoptions",
-        element: <Adoptions />,
       },
       {
         path: "admin/user-management",
@@ -108,6 +115,8 @@ const router = createBrowserRouter([
         path: 'admin/adoption-history',
         element: <AdoptionHistory />
       },
+
+      // vet routes
       {
         path: 'vet/appointments',
         element: <Appointments />

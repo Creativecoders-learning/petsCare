@@ -11,13 +11,11 @@ const Profile = () => {
       const [selectedSection, setSelectedSection] = useState("profile");
       const [isEditing, setIsEditing] = useState(false);
 
-      const { user } = useUser();
-      console.log(user);
-      
+      const { user, fetchUsers } = useUser();      
 
       const renderSectionContent = () => {
             if (isEditing) {
-                  return <EditProfileForm user={user} setIsEditing={setIsEditing} />;
+                  return <EditProfileForm user={user} setIsEditing={setIsEditing} fetchUsers={fetchUsers} />;
             }
             switch (selectedSection) {
                   case "profile":

@@ -31,7 +31,7 @@ const useUser = () => {
             setUser(logInUser);
       }, [authEmail, users])
 
-      return { user, setUser };
+      return { user, setUser, fetchUsers };
 };
 
 export default useUser;
