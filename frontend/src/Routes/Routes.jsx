@@ -20,8 +20,6 @@ import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
 import PaymentProcess from "../Components/Shop/PaymentProcess/PaymentProcess";
 import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStarted";
 import Profile from "../Pages/Dashboard/Profile/Profile";
-import MyAdoption from "../Pages/Dashboard/Seller/MyAdoption/MyAdoption";
-import UserChatAdoption from "../Pages/Dashboard/Seller/CreateAdoption/UserChatAdoption";
 import ShopManagement from "../Pages/Dashboard/Admin/ShopManagement/ShopManagement";
 import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
 import MyServices from "../Pages/Dashboard/Vet/MyServices";
@@ -29,11 +27,13 @@ import Patients from "../Pages/Dashboard/Vet/Patients";
 import VetManagement from "../Pages/Dashboard/Admin/VetManagement";
 import Appointments from "../Pages/Dashboard/Vet/Appoinments";
 import AdoptionHistory from "../Pages/Dashboard/Admin/AdoptionHistory";
-import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
 import RoleChange from "../Pages/RoleChange/RoleChange";
 import MyBlogs from "../Pages/Dashboard/Vet/MyBlogs";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import Products from "../Pages/Dashboard/Seller/Products/Products";
+import MyAdoption from "../Pages/Dashboard/Client/MyAdoption/MyAdoption";
+import UserChatAdoption from "../Pages/Dashboard/Client/CreateAdoption/UserChatAdoption";
+import Adoptions from "../Pages/Dashboard/Client/Adoptions";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -76,7 +76,7 @@ const router = createBrowserRouter([
         element: <Profile />,
       },
 
-      // Seller routes
+      // client routes
       {
         path: 'client/my-adoptions',
         element: <MyAdoption></MyAdoption>
