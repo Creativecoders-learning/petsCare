@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react'
 import { Dialog, Listbox, Transition } from '@headlessui/react'
 import { BsCheckLg } from 'react-icons/bs'
 import { AiOutlineDown } from 'react-icons/ai'
-const roles = ['publish', 'processing','completed']
+const roles = ['Approved', 'Reject','Pending']
 
 const UpdateStatus = ({
   setIsOpen,
@@ -46,7 +46,7 @@ const UpdateStatus = ({
                   as='h3'
                   className='text-lg font-medium text-center leading-6 text-gray-900'
                 >
-                  Update User Role
+                  Update Admin Response 
                 </Dialog.Title>
                 <div className='mt-4 w-full'>
                   <Listbox value={selected} onChange={setSelected}>

@@ -1,25 +1,38 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import ActiveRoute from "../../../Routes/ActiveRoute";
 import Button from "../../UI/Button";
 import Container from "../../UI/Container";
 import UseAuth from "../../../Hooks/UseAuth";
 import toast from "react-hot-toast";
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function Navbar() {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const { user, logOut } = UseAuth();
+  const { user, logOut, cartStatus, setCartStatus} = UseAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedCartProducts =
+      JSON.parse(localStorage.getItem("cartProducts")) || [];
+    setCartStatus(storedCartProducts.length);
+  }, [setCartStatus]);
+
+  // handle shop cart icon
+  const handleShopCart = () => {
+    navigate("/payment-process")
+  }
 
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        toast.success('Successfully logged Out!!')
+        toast.success("Successfully logged Out!!");
       })
-      .catch(error => {
-        toast.error(error?.message)
-      })
-  }
+      .catch((error) => {
+        toast.error(error?.message);
+      });
+  };
 
   return (
     <>
@@ -45,10 +58,11 @@ export default function Navbar() {
               {/*      <!-- Mobile trigger --> */}
               <button
                 className={`relative order-10 block h-10 w-10 self-center lg:hidden
-                ${isToggleOpen
+                ${
+                  isToggleOpen
                     ? "visible opacity-100 [&_span:nth-child(1)]:w-6 [&_span:nth-child(1)]:translate-y-0 [&_span:nth-child(1)]:rotate-45 [&_span:nth-child(2)]:-rotate-45 [&_span:nth-child(3)]:w-0 "
                     : ""
-                  }
+                }
               `}
                 onClick={() => setIsToggleOpen(!isToggleOpen)}
                 aria-expanded={isToggleOpen ? "true" : "false"}
@@ -73,10 +87,11 @@ export default function Navbar() {
               <ul
                 role="menubar"
                 aria-label="Select page"
-                className={`absolute left-0 top-0 z-[-1] w-full justify-center overflow-hidden  overflow-y-auto overscroll-contain bg-white/90 px-8 pb-12 pt-24 font-medium transition-[opacity,visibility] duration-300 lg:visible lg:relative lg:top-0  lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 lg:px-0 lg:py-0  lg:pt-0 lg:opacity-100 ${isToggleOpen
-                  ? "visible opacity-100 backdrop-blur-sm"
-                  : "invisible opacity-0"
-                  }`}
+                className={`absolute left-0 top-0 z-[-1] w-full justify-center overflow-hidden  overflow-y-auto overscroll-contain bg-white/90 px-8 pb-12 pt-24 font-medium transition-[opacity,visibility] duration-300 lg:visible lg:relative lg:top-0  lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 lg:px-0 lg:py-0  lg:pt-0 lg:opacity-100 ${
+                  isToggleOpen
+                    ? "visible opacity-100 backdrop-blur-sm"
+                    : "invisible opacity-0"
+                }`}
               >
                 <li className="flex items-center">
                   <ActiveRoute to={"/"}>
@@ -129,7 +144,13 @@ export default function Navbar() {
                 </li>
               </ul>
               {/*      <!-- Actions --> */}
-              <div className="">
+              <div className="flex items-center gap-10">
+                <div onClick={handleShopCart} className="relative p-4 cursor-pointer hover:scale-[1.1] transition-all duration-300 ease-in-out">
+                  <div className="absolute top-0 right-0 px-2 py-1  rounded-full text-xs bg-red-400 text-white">
+                    {cartStatus}
+                  </div>
+                  <FaShoppingCart className="text-2xl" />
+                </div>
                 {!user ? (
                   <>
                     <div className="flex gap-4 items-center">
@@ -160,10 +181,11 @@ export default function Navbar() {
                       </figure>
                       {/* Dropdown menu start */}
                       <div
-                        className={`absolute -right-14 md:right-0 mt-2 w-80 md:w-96 py-2 bg-white rounded-md shadow-lg transform transition-all duration-300 flex flex-col gap-6 ${isDropdownOpen
-                          ? "opacity-100 scale-100"
-                          : "opacity-0 scale-95 pointer-events-none"
-                          }`}
+                        className={`absolute -right-14 md:right-0 mt-2 w-80 md:w-96 py-2 bg-white rounded-md shadow-lg transform transition-all duration-300 flex flex-col gap-6 ${
+                          isDropdownOpen
+                            ? "opacity-100 scale-100"
+                            : "opacity-0 scale-95 pointer-events-none"
+                        }`}
                       >
                         {/* Dropdown head */}
                         <div className="flex flex-col items-center">
@@ -263,11 +285,13 @@ export default function Navbar() {
             </nav>
           </div>
         </Container>
-        <img
-          className="w-full absolute top-[80%]"
-          src="https://kutto.netlify.app/img/bg/header_shape.png"
-          alt=""
-        />
+        <div>
+          <img
+            className="w-full absolute top-[80%]"
+            src="https://kutto.netlify.app/img/bg/header_shape.png"
+            alt=""
+          />
+        </div>
       </header>
     </>
   );

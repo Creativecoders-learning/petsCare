@@ -36,7 +36,7 @@ export default function ShoppingCart({handleProgress}) {
       ) : (
         <>
           <div className="flex justify-between">
-            <div className="w-[70%] flex flex-col gap-6  items-start px-10 overflow-y-scroll">
+            <div className="w-[70%] flex flex-col gap-6  items-start px-10 overflow-y-auto">
               {cartProducts?.map((item) => (
                 <div
                   className="flex items-center justify-between w-full h-[100px] overflow-hidden border-b border-gray-400 "

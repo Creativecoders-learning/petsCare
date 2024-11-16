@@ -70,6 +70,14 @@ export default function DashboardLayout() {
                   </span>
                 </DashboardActiveLink>
               </li>
+              <li>
+                <DashboardActiveLink to={`/dashboard/my-orders`}>
+                  <span className="flex items-center gap-3 rounded py-3 px-6">
+                    <RxDashboard className="block text-[18px]" />
+                    <span className="block text-[17px]">My Orders</span>
+                  </span>
+                </DashboardActiveLink>
+              </li>
 
               {/* Conditional Routes Based on User Role */}
 
@@ -97,14 +105,6 @@ export default function DashboardLayout() {
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <MdOutlinePets className="block text-[18px]" />
                         <span className="block text-[17px]">Patients</span>
-                      </span>
-                    </DashboardActiveLink>
-                  </li>
-                  <li>
-                    <DashboardActiveLink to="/dashboard/vet/my-blogs">
-                      <span className="flex items-center gap-3 rounded py-3 px-6">
-                        <FaBlog className="block text-[18px]" />
-                        <span className="block text-[17px]">My Blogs</span>
                       </span>
                     </DashboardActiveLink>
                   </li>
@@ -167,19 +167,11 @@ export default function DashboardLayout() {
                 </>
               )}
 
-              {/* For Client */}
-              {user?.role === "Client" && (
+              {/* For Seller */}
+              {user?.role === "Seller" && (
                 <>
                   <li>
-                    <DashboardActiveLink to="/dashboard/client/my-orders">
-                      <span className="flex items-center gap-3 rounded py-3 px-6">
-                        <AiOutlineMedicineBox className="block text-[18px]" />
-                        <span className="block text-[17px]">My Orders</span>
-                      </span>
-                    </DashboardActiveLink>
-                  </li>
-                  <li>
-                    <DashboardActiveLink to="/dashboard/client/prescriptions">
+                    <DashboardActiveLink to="/dashboard/seller/prescriptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <AiOutlineMedicineBox className="block text-[18px]" />
                         <span className="block text-[17px]">Prescriptions</span>
@@ -187,7 +179,7 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/client/adoptions">
+                    <DashboardActiveLink to="/dashboard/seller/adoptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <MdOutlinePets className="block text-[18px]" />
                         <span className="block text-[17px]">Adoptions</span>
@@ -195,7 +187,7 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/client/my-adoptions">
+                    <DashboardActiveLink to="/dashboard/seller/my-adoptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <MdOutlinePets className="block text-[18px]" />
                         <span className="block text-[17px]"> My Adoptions</span>
@@ -203,38 +195,33 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/client/user-adoptions">
+                    <DashboardActiveLink to="/dashboard/seller/products">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
-                        <MdOutlinePets className="block text-[18px]" />
-                        <span className="block text-[17px]">
-                          {" "}
-                          User Adoptions
-                        </span>
+                        <BiShoppingBag className="block text-[18px]" />
+                        <span className="block text-[17px]">Products</span>
                       </span>
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/client/blogs">
+                    <DashboardActiveLink to="/dashboard/seller/user-adoptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
-                        <FaBlog className="block text-[18px]" />
-                        <span className="block text-[17px]">Blogs</span>
+                        <MdOutlinePets className="block text-[18px]" />
+                        <span className="block text-[17px]"> User Adoptions</span>
                       </span>
                     </DashboardActiveLink>
                   </li>
                 </>
               )}
 
-              {/* For Seller */}
-              {user?.role === "Seller" && (
-                <li>
-                  <DashboardActiveLink to="/dashboard/seller/products">
-                    <span className="flex items-center gap-3 rounded py-3 px-6">
-                      <BiShoppingBag className="block text-[18px]" />
-                      <span className="block text-[17px]">Products</span>
-                    </span>
-                  </DashboardActiveLink>
-                </li>
-              )}
+              {/* blog route for all user */}
+              <li>
+                <DashboardActiveLink to="/dashboard/my-blogs">
+                  <span className="flex items-center gap-3 rounded py-3 px-6">
+                    <FaBlog className="block text-[18px]" />
+                    <span className="block text-[17px]">My Blogs</span>
+                  </span>
+                </DashboardActiveLink>
+              </li>
             </ul>
           </nav>
 

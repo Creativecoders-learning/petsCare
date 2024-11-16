@@ -30,10 +30,11 @@ import AdoptionHistory from "../Pages/Dashboard/Admin/AdoptionHistory";
 import RoleChange from "../Pages/RoleChange/RoleChange";
 import MyBlogs from "../Pages/Dashboard/Vet/MyBlogs";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
+import MyAdoption from "../Pages/Dashboard/Seller/MyAdoption/MyAdoption";
+import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
+import UserChatAdoption from "../Pages/Dashboard/Seller/userAdoption/UserChatAdoption";
 import Products from "../Pages/Dashboard/Seller/Products/Products";
-import MyAdoption from "../Pages/Dashboard/Client/MyAdoption/MyAdoption";
-import UserChatAdoption from "../Pages/Dashboard/Client/CreateAdoption/UserChatAdoption";
-import Adoptions from "../Pages/Dashboard/Client/Adoptions";
+import MyOrders from "../Pages/Dashboard/Clients/MyOrders/MyOrders";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -43,22 +44,22 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/adoption", element: <Adoption /> },
-      { path: "/adoptionDetails/:id", element: <AdopDetails></AdopDetails> },
+      { path: "adoption", element: <Adoption /> },
+      { path: "adoptionDetails/:id", element: <AdopDetails></AdopDetails> },
       { path: "shop", element: <Shop /> },
       { path: "all-products", element: <AllProducts /> },
       { path: "productDetails/:id", element: <ProductDetails /> },
       { path: "payment-process", element: <PaymentProcess /> },
-      { path: "/blogs", element: <Blog /> },
+      { path: "blogs", element: <Blog /> },
       { path: "blog-details/:id", element: <BlogDetails /> },
-      { path: "/customer-plan", element: <CustomerPlan /> },
-      { path: "/get-Started", element: <GetStarted></GetStarted> },
-      { path: "/checkout", element: <Checkout /> },
-      { path: "/vets", element: <Vets /> },
-      { path: "/vets-details/:id", element: <VetsDetails /> },
-      { path: "/registration", element: <Registration /> },
-      { path: "/role-change", element: <RoleChange /> },
-      { path: "/login", element: <Login /> },
+      { path: "customer-plan", element: <CustomerPlan /> },
+      { path: "get-Started", element: <GetStarted></GetStarted> },
+      { path: "checkout", element: <Checkout /> },
+      { path: "vets", element: <Vets /> },
+      { path: "vets-details/:id", element: <VetsDetails /> },
+      { path: "registration", element: <Registration /> },
+      { path: "role-change", element: <RoleChange /> },
+      { path: "login", element: <Login /> },
     ],
   },
 
@@ -75,22 +76,30 @@ const router = createBrowserRouter([
         path: "profile",
         element: <Profile />,
       },
-
-      // client routes
       {
-        path: 'client/my-adoptions',
+        path: "my-orders",
+        element: <MyOrders />,
+      },
+      {
+        path: 'my-blogs',
+        element: <MyBlogs />
+      },
+
+      // seller routes
+      {
+        path: 'seller/my-adoptions',
         element: <MyAdoption></MyAdoption>
       },
       {
-        path: 'client/user-adoptions',
-        element: <UserChatAdoption></UserChatAdoption>
+        path: 'seller/user-adoptions',
+        element: <UserChatAdoption/>
       },
       {
-        path: "client/products",
+        path: "seller/products",
         element: <Products />,
       },
       {
-        path: "client/adoptions",
+        path: "seller/adoptions",
         element: <Adoptions />,
       },
 
@@ -128,10 +137,6 @@ const router = createBrowserRouter([
       {
         path: 'vet/patients',
         element: <Patients />
-      },
-      {
-        path: 'vet/my-blogs',
-        element: <MyBlogs />
       },
     ],
   },

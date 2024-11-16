@@ -33,12 +33,14 @@ async function run() {
 
     // collection
     const database = client.db('petsCare')
+    const receiver = database.collection('receiver')
     const adoptionCollection = database.collection('adoptionCollection')
     const blogCollection = database.collection('blogs');
     const vetsCollection = database.collection('vets');
     const vetsServicesCollection = database.collection('vetServices');
     const usersCollection = database.collection('users');
     const shopProductCollection = database.collection('shop-products');
+   
 
     // Blogs related api's
     const BlogAPI = require('./Modules/Blog/BlogAPI')(blogCollection);
@@ -62,7 +64,7 @@ async function run() {
     app.use('/', sellerApi)
 
     // adoption related api's
-    const adoptionApi = require('./Modules/Adoption/AdoptionAPI')(adoptionCollection);
+    const adoptionApi = require('./Modules/Adoption/AdoptionAPI')(receiver,adoptionCollection);
     app.use('/', adoptionApi);
 
 

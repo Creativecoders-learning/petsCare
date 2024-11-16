@@ -5,12 +5,14 @@ import Button from "./Button";
 import Modal from "./Modal";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaRegTrashAlt } from "react-icons/fa";
+import UseAuth from "../../Hooks/UseAuth";
 
-export default function ShopCard({ item = {} }) {
+export default function ShopCard({ item }) {
   const [imageLoading, setImageLoading] = useState(false);
   const { _id, image, category, title, price } = item;
   const [openModal, setOpenModal] = useState(false);
   const [cartProducts, setCartProducts] = useState([]);
+  const { setCartStatus } = UseAuth();
 
   // handle cart button
   const handleCartBtn = (product) => {
@@ -19,14 +21,16 @@ export default function ShopCard({ item = {} }) {
 
     // Check if the product already exists in the cart
     const existingProduct = storedCartProducts.find(
-      (item) => item.id === product.id
+      (item) => item._id === product._id
     );
 
     let updatedCartProducts;
     if (existingProduct) {
       // If it exists, update the quantity
       updatedCartProducts = storedCartProducts.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        item._id === product._id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
       );
     } else {
       // If it does not exist, add new product with quantity 1
@@ -41,6 +45,7 @@ export default function ShopCard({ item = {} }) {
 
     // Update state with the new cart products to reflect in the UI
     setCartProducts(updatedCartProducts);
+    setCartStatus(updatedCartProducts.length || 0);
 
     // Open the modal to show updated cart
     setOpenModal(true);
@@ -83,7 +88,7 @@ export default function ShopCard({ item = {} }) {
               {cartProducts?.map((item) => (
                 <div
                   className="flex justify-between items-center"
-                  key={item.id}
+                  key={item._id}
                 >
                   <div className="w-[20%]">
                     <span
@@ -110,11 +115,18 @@ export default function ShopCard({ item = {} }) {
                 <span>${calculateTotalAmount().toFixed(2)}</span>
               </div>
               <div className="w-full flex flex-col gap-4 items-center">
-                <Link className="w-full" to={"/payment-process?tab=Shipping Cart"}>
-                  <Button secondary btnStyle="w-full">View Cart</Button>
+                <Link
+                  className="w-full"
+                  to={"/payment-process?tab=Shipping Cart"}
+                >
+                  <Button secondary btnStyle="w-full">
+                    View Cart
+                  </Button>
                 </Link>
                 <Link className="w-full" to={"/payment-process?tab=Checkout"}>
-                  <Button primary btnStyle="w-full">Checkout</Button>
+                  <Button primary btnStyle="w-full">
+                    Checkout
+                  </Button>
                 </Link>
               </div>
             </div>
@@ -157,7 +169,11 @@ export default function ShopCard({ item = {} }) {
         </Link>
         {/* button */}
         <div className="flex justify-between items-center">
-          <Button btnStyle="w-full" onClick={() => handleCartBtn(item)} primary={true}>
+          <Button
+            btnStyle="w-full"
+            onClick={() => handleCartBtn(item)}
+            primary={true}
+          >
             Add Cart
           </Button>
         </div>
