@@ -26,9 +26,9 @@ const VetsDetails = () => {
     setOpenModal(true);
   };
 
-  // Appointment type button click handler
+  // Appointment type button c
   const handleAppointmentTypeClick = (type) => {
-    setSelectedAppointmentType(type); // Set the selected type
+    setSelectedAppointmentType(type);
   };
 
   return (
