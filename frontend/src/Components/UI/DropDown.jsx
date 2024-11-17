@@ -12,16 +12,16 @@ const DropDown = ({level,icon:Icon,items,updateFielder,filterKey}) => {
         setIsOpen(false)
     }
     return (
-        <div className="relative">
-           <button  onClick={toggleDropdown} className="flex items-center w-full border bg-white border-gray-300 rounded-md p-3  focus-visible:outline-none">
+        <div className="relative max-w-max">
+           <button  onClick={toggleDropdown} className="flex items-center justify-start text-left w-full border bg-white border-gray-300 rounded-md p-4 focus-visible:outline-none">
                 <Icon className='text-gray-500'/>
-                <span className="ml-2 mr-6 text-gray-500">{selected}</span>
+                <span className="ml-1 pr-2 text-gray-700">{selected}</span>
                 <span className="ml-auto text-[#0A453A]">{isOpen ? '▲' : '▼'}</span>
            </button> 
 
            {/* dropdown menu */}
            {
-           isOpen && <div className="absolute top-10 w-full mt-2 p-2 border bg-white rounded-md shadow-lg z-20 ">
+           isOpen && <div className="absolute top-10 max-w-fit mt-3 p-4 border bg-white rounded-md shadow-lg z-20 ">
             {
                items?.map((item,inx)=>(
                    <div onClick={()=>handleSelected(item)} key={inx}

@@ -9,23 +9,24 @@ import { FaSearch } from 'react-icons/fa';
 import AdoptionCard from '../../UI/AdoptionCard';
 
 const Categories = () => {
-  const { filteredAdoption,filters,applyFilter,updateFielder, loading, err, refetch} = useAdoptionData();
-  
+  const { filteredAdoption, filters, applyFilter, updateFielder, loading, err, refetch } = useAdoptionData();
+
 
   return (
     <div className='py-10'>
-      <div className='lg:w-5/6 bg-slate-200 mx-auto p-5 rounded-md '>
+        {/* added filter by tabs */}
+        <div className='lg:max-w-max bg-slate-200 mx-auto p-5 rounded-md'>
           {/* filtering option */}
           <div className="space-y-3 ">
-             <div className='flex gap-5 justify-center items-center'>
-             <div className="">
+            <div className='flex gap-5 justify-center items-center'>
+              <div className="">
                 {/* location field */}
                 <input
                   type="text"
                   name="location"
                   className=" w-full border rounded-md p-3 text-sm focus:ring-1 focus-visible:outline-none"
                   placeholder="location"
-                  onChange={(e)=> updateFielder(e.target.name, e.target.value)}
+                  onChange={(e) => updateFielder(e.target.name, e.target.value)}
                   id=""
                 />
               </div>
@@ -37,63 +38,62 @@ const Categories = () => {
                   name="color"
                   className=" w-full p-3 border rounded-md text-sm focus:right-5 focus-visible:outline-none  "
                   placeholder="Color"
-                  onChange={(e)=> updateFielder(e.target.name, e.target.value)}
+                  onChange={(e) => updateFielder(e.target.name, e.target.value)}
                   id=""
                 />
               </div>
 
               {/* dropdown */}
-                <DropDown
-                  level={"Category"}
-                  icon={MdTransgender}
-                  items={["Dog", "Cat", "Bird","Rabbit"]}
-                  updateFielder={updateFielder}
-                  filterKey="category"
-                ></DropDown>
-                <DropDown
-                  level={"Breeder"}
-                  icon={MdTransgender}
-                  items={["Labrador Retriever","Siamese","Parrot","Mini Lop", "Golden Retriever","Beagle", "British Shorthair"]}
-                  updateFielder={updateFielder}
-                   filterKey="breed"
-                ></DropDown>
-                <DropDown
-                  level={"Adult"}
-                  icon={TbTimeDuration30}
-                  items={["Adult", "Puppy", "Senior"]}
-                  updateFielder={updateFielder}
-                  filterKey="age"
-                ></DropDown>
-                {/* apply button */}
+              <DropDown
+                level={"Category"}
+                icon={MdTransgender}
+                items={["Dog", "Cat", "Bird", "Rabbit"]}
+                updateFielder={updateFielder}
+                filterKey="category"
+              ></DropDown>
+              <DropDown
+                level={"Breeder"}
+                icon={MdTransgender}
+                items={["Labrador Retriever", "Siamese", "Parrot", "Mini Lop", "Golden Retriever", "Beagle", "British Shorthair"]}
+                updateFielder={updateFielder}
+                filterKey="breed"
+              ></DropDown>
+              <DropDown
+                level={"Adult"}
+                icon={TbTimeDuration30}
+                items={["Adult", "Puppy", "Senior"]}
+                updateFielder={updateFielder}
+                filterKey="age"
+              ></DropDown>
+              {/* apply button */}
               <AdoptionButton
                 onclick={applyFilter}
                 text={"Find New Pets "}
                 btnStyle={'w-48'}
               ></AdoptionButton>
-             </div>
-
-              
             </div>
-      </div>
+
+
+          </div>
+        </div>
 
       <div className="text-center p-10">
         <h1 className="text-3xl">Pets Available For Adoption Nearby</h1>
-        {/* added filter by tabs */}
-        <div className=" mt-10">
-         
+
+        <div className=" mt-5">
           {/* Category Card items */}
           <div>
-          {filteredAdoption.length > 0 ? (
-          <div className='grid gap-5 lg:gap-10 grid-cols-3 items-center justify-items-center p-10 '>
-            {
-              filteredAdoption?.map((adoption)=>(
-                <AdoptionCard key={adoption?._id} item={adoption}></AdoptionCard>
-              ))
-            }
-          </div>
-        ) : (
-          <p>No pets found matching the criteria.</p>
-        )}
+            {filteredAdoption.length > 0 ? (
+              <div className='grid gap-5 lg:gap-10 grid-cols-3 items-center justify-items-center p-10 '>
+                {
+                  filteredAdoption?.map((adoption) => (
+                    <AdoptionCard key={adoption?._id} item={adoption}></AdoptionCard>
+                  ))
+                }
+              </div>
+            ) : (
+              <p>No pets found matching the criteria.</p>
+            )}
           </div>
         </div>
       </div>
