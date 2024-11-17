@@ -76,6 +76,9 @@ const StripeCardForm = () => {
     setLoading(false);
   };
 
+  console.log(import.meta.env.VITE_Payment_Gateway_PK);
+
+
   return (
     <div>
       <div>
@@ -84,25 +87,25 @@ const StripeCardForm = () => {
         </h2>
       </div>
       <form onSubmit={handleSubmit}>
-      <CardElement
-        options={{
-          style: {
-            base: {
-              fontSize: '16px',
-              color: '#424770',
-              '::placeholder': {
-                color: '#aab7c4',
+        <CardElement
+          options={{
+            style: {
+              base: {
+                fontSize: '16px',
+                color: '#424770',
+                '::placeholder': {
+                  color: '#aab7c4',
+                },
+              },
+              invalid: {
+                color: '#9e2146',
               },
             },
-            invalid: {
-              color: '#9e2146',
-            },
-          },
-        }}
-      />
-      <button className="w-full mt-6 text-white bg-primary hover:bg-black py-2 text-x rounded" type="submit" disabled={!stripe}>
-        Pay
-      </button>
+          }}
+        />
+        <button className="w-full mt-6 text-white bg-primary hover:bg-black py-2 text-x rounded" type="submit" disabled={!stripe}>
+          Pay
+        </button>
       </form>
     </div>
   );
