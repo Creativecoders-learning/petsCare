@@ -37,7 +37,7 @@ export default function Checkout() {
       <div className="flex flex-col lg:flex-row xl:flex-row justify-between items-start gap-10 mb-20 mt-10">
         {/* Left Side - Checkout Form */}
         <div className="w-full lg:w-[60%] xl:w-[60%] shadow-xl p-10 rounded-xl bg-white">
-          <CheckoutForm />
+          <CheckoutForm price={Number(price)} plan={plan} />
         </div>
 
         {/* Right Side - Plan Details */}
@@ -58,7 +58,7 @@ export default function Checkout() {
                 </p>
 
                 <p className={`text-${color} mt-2 text-3xl font-bold`}>
-                  {price}
+                  ${price}
                   <span className="text-lg font-normal"> / month</span>
                 </p>
 
