@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import Button from "../../UI/Button";
+import UseAuth from "../../../Hooks/UseAuth";
 
 const countries = [
       "Bangladesh",
@@ -30,14 +31,7 @@ const currencies = [
 
 export default function SSLCommerceForm({ onSubmit }) {
 
-      const user = {
-            "name": "Kamruzzaman Bayezid",
-            "email": "kamruzzamanbayezid07@gmail.com",
-            "photoUrl": "www.//fds.lf",
-            "gender": "male",
-            "password": "123456"
-      }
-
+      const { user } = UseAuth();
 
       const {
             register,
@@ -45,7 +39,7 @@ export default function SSLCommerceForm({ onSubmit }) {
             formState: { errors },
       } = useForm({
             defaultValues: {
-                  name: user?.name || "",
+                  name: user?.displayName || "",
                   email: user?.email || "",
             },
       });
@@ -145,7 +139,7 @@ export default function SSLCommerceForm({ onSubmit }) {
                                           {...register("country", { required: true })}
                                           className="w-full px-6 py-3 border focus:outline-none focus:border-[#49BBBD] border-[#D9D9D9] placeholder:text-[#9D9B9B] placeholder:text-base placeholder:font-light outline-none rounded-xl"
                                     >
-                                          <option value="" disabled selected>
+                                          <option value="" disabled defaultValue='Select Country'>
                                                 Select Country
                                           </option>
                                           {countries?.map((item, index) => (
@@ -215,12 +209,12 @@ export default function SSLCommerceForm({ onSubmit }) {
                   </div>
 
                   <div className="flex justify-end">
-                        {/* <input
-                              className="bg-[#49BBBD] px-12 py-4 rounded-xl text-white cursor-pointer w-full"
+                        <input
+                              className="bg-primary px-12 py-4 rounded-xl text-white cursor-pointer w-full"
                               type="submit"
                               value="Pay"
-                        /> */}
-                        <Button btnStyle="w-full" primary>Pay</Button>
+                        />
+                        {/* <Button btnStyle="w-full" primary>Pay</Button> */}
                   </div>
             </form>
       );

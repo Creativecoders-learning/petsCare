@@ -1,9 +1,14 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { FaEnvelope, FaEdit, FaUser, FaAddressCard } from "react-icons/fa";
+import { FaCamera } from "react-icons/fa6";
+import useAxios from "../../../Hooks/useAxios";
 
 const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }) => {
 
       const [profileCompletion, setProfileCompletion] = useState(0);
+      const apiHandler = useAxios();
 
       const calculateProfileCompletion = (user) => {
             const requiredFields = [
@@ -32,16 +37,58 @@ const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }
             }
       }, [user]);
 
+      const handleImageChange = async (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                  const formData = new FormData();
+                  formData.append('image', file)
+
+                  try {
+                        const response = await axios.post('https://api.imgbb.com/1/upload?key=597d78aa1ab369b0aa1583848b74f0f9', formData);
+
+                        const image = response?.data?.data?.url;
+
+                        // update image
+                        await apiHandler.put(`/users/by-email/${user?.email}`, { image });
+                        toast.success(`Profile updated Successfully`);
+
+                  } catch (error) {
+                        toast.error(error?.message)
+                        console.error(error?.message)
+                  }
+            }
+
+      }
+
       return (
             <div className="lg:w-1/3 bg-white shadow-lg rounded-lg p-6 flex flex-col font-inter">
                   <div className="flex flex-col items-center">
-                        <img
-                              src={user?.image}
-                              alt="User"
-                              className="w-24 h-24 rounded-full mb-4"
-                        />
+                        <figure className="relative">
+                              <img
+                                    src={user?.image}
+                                    alt="User"
+                                    className="w-32 h-32 rounded-full mb-4 border-8 border-primary"
+                              />
+                              {/* Edit Icon Overlay with FaEdit */}
+                              <div title="Edit image">
+                                    <label
+                                          htmlFor="upload-image"
+                                          className="absolute bottom-3 right-3 bg-primary text-white p-2 rounded-full cursor-pointer"
+
+                                    >
+                                          <FaCamera />
+                                          <input
+                                                type="file"
+                                                id="upload-image"
+                                                accept="image/*"
+                                                className="hidden"
+                                                onChange={handleImageChange}
+                                          />
+                                    </label>
+                              </div>
+                        </figure>
                         <h1 className="text-xl font-semibold text-primaryBold">{user?.name}</h1>
-                        <p className="text-gray-600 mt-1 flex items-center"><FaEnvelope className="mr-1" /> {user?.email}</p>
+                        <p className="text-gray-600 mt-1 flex items-center"><FaEnvelope className="mr-1 text-primary" /> {user?.email}</p>
                   </div>
                   <div className="mt-6">
                         <div className="flex justify-between items-center">
@@ -69,8 +116,8 @@ const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }
                               <FaUser /> <span>Account Settings</span>
                         </button>
                   </div>
-                  <button onClick={() => setIsEditing(true)} className="mt-8 w-full flex items-center justify-center space-x-2 py-2 px-4 rounded-lg bg-blue-500 text-white">
-                        <FaEdit /> <span>Edit Profile</span>
+                  <button onClick={() => setIsEditing(true)} className="mt-8 w-full flex items-center justify-center space-x-2 py-2 px-4 rounded-lg bg-primary text-white">
+                        <FaEdit /> <span>Update Profile</span>
                   </button>
             </div>
       );

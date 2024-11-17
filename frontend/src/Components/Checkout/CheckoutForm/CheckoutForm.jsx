@@ -5,6 +5,7 @@ import SSLCommerceForm from '../SSLCommerceForm/SSLCommerceForm';
 import VisaCardForm from '../VisaCardForm/VisaCardForm';
 import PrimaryTitle from '../../UI/PrimaryTitle';
 import StripeCard from '../StripeCardForm/StripeCard';
+import useAxios from '../../../Hooks/useAxios';
 
 const cards = [
   {
@@ -25,8 +26,10 @@ const cards = [
   },
 ];
 
-export default function CheckoutForm() {
+export default function CheckoutForm({ price, plan }) {
   const [clickedCard, setClickedCard] = useState('paypal');
+  const apiHandler = useAxios();
+
 
   // Form submission handler
   const onSubmit = (data) => {
@@ -39,8 +42,24 @@ export default function CheckoutForm() {
       city: data.city,
       post_code: data.postCode,
       currency: data.currency,
+      price: price,
+      plan: plan,
     };
-    console.log('Payment Info:', paymentInfo);
+
+    apiHandler.post('/order', paymentInfo)
+      .then(res => {
+        console.log(res);
+        if (res?.data?.url) {
+          window.location.replace(res?.data?.url)
+        }
+        else {
+          console.error('Failed to get GatewayPageURL:', res?.data);
+        }
+      })
+      .catch(error => {
+        console.log(error?.message);
+      })
+
   };
 
   return (
@@ -61,11 +80,10 @@ export default function CheckoutForm() {
             <figure
               key={index}
               onClick={() => setClickedCard(item.name)}
-              className={`cursor-pointer border-[1px] ${
-                clickedCard === item.name
-                  ? 'border-[#49BBBD]'
-                  : 'border-[#D9D9D9]'
-              } py-2 px-4 rounded-xl`}
+              className={`cursor-pointer border-[1px] ${clickedCard === item.name
+                ? 'border-[#49BBBD]'
+                : 'border-[#D9D9D9]'
+                } py-2 px-4 rounded-xl`}
             >
               <img  className='object-contain h-[30px]' src={item.logo} alt="" />
             </figure>

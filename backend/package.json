@@ -16,5 +16,6 @@
     "express": "^4.21.1",
     "mongodb": "^6.10.0",
     "stripe": "^17.3.1"
+    "sslcommerz-lts": "^1.1.0"
   }
 }

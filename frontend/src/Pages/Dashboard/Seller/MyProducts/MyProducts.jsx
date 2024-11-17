@@ -3,8 +3,8 @@ import PrimaryTitle from "../../../../Components/UI/PrimaryTitle";
 import usePetsProducts from "../../../../Hooks/api/usePetsProducts";
 import Button from "../../../../Components/UI/Button";
 import { useState } from "react";
-import NewProductForm from "../../../../Components/Dashboard/NormalUser/NewProductForm";
 import Modal from "../../../../Components/UI/Modal";
+import NewProductForm from "../../../../Components/Dashboard/Seller/NewProductForm";
 
 export default function MyProducts() {
   const { petsProducts } = usePetsProducts();
