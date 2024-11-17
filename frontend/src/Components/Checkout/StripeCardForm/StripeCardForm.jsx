@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 
 const StripeCardForm = () => {
   const { id } = useParams();
+  console.log(id);
   const { user } = UseAuth();
   const apiHandler = useAxios();
   const { vets } = useVetsData();

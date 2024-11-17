@@ -67,7 +67,6 @@ const MyServices = () => {
    // edit service 
    const handleEditService = (service) => {
     setSelectedService(service);
-    console.log(service)
     setModalType("edit-service");
     setOpenModal(true);
   };

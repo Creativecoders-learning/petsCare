@@ -8,6 +8,7 @@ import { BiShoppingBag } from "react-icons/bi";
 import { MdOutlinePets } from "react-icons/md";
 import DashboardActiveLink from "../Components/UI/DashboardActiveLink";
 import useUser from "../Hooks/api/useUser";
+import { FaUserDoctor } from "react-icons/fa6";
 
 export default function DashboardLayout() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
@@ -170,6 +171,14 @@ export default function DashboardLayout() {
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <AiOutlineMedicineBox className="block text-[18px]" />
                         <span className="block text-[17px]">Prescriptions</span>
+                      </span>
+                    </DashboardActiveLink>
+                  </li>
+                  <li>
+                    <DashboardActiveLink to="/dashboard/client/vew-appointments">
+                      <span className="flex items-center gap-3 rounded py-3 px-6">
+                        <FaUserDoctor  className="block text-[18px]" />
+                        <span className="block text-[17px]">Vew Appointments</span>
                       </span>
                     </DashboardActiveLink>
                   </li>

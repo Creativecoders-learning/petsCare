@@ -1,7 +1,7 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 const MyServicesRow = ({ service, index,handleDeleteService,handleEditService }) => {
-  const { vetName, vetEmail, serviceType, imageUrl,_id } = service || {};
+  const { vetName, vetEmail, serviceType, image,_id } = service || {};
 
   return (
     <tr
@@ -13,7 +13,7 @@ const MyServicesRow = ({ service, index,handleDeleteService,handleEditService })
       <td className="p-4 font-medium">{index + 1}</td>
       <td className="p-4 font-medium">
         <img
-          src={imageUrl}
+          src={image}
           className="w-12 h-12 object-cover rounded-md shadow-md"
         />
       </td>

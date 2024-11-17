@@ -4,7 +4,7 @@ const LeftSide = ({ vet }) => {
   return (
     <div>
       <img className="w-full h-[500px]" src={vet.image} alt={vet.name} />
-
+<p>{vet?.category}</p>
       <div className="flex items-center justify-between px-5">
         <div>
           <h2 className="mt-6 text-3xl font-bold mb-2">{vet.name}</h2>

@@ -25,7 +25,7 @@ const NewServiceForm = () => {
   const onSubmit = async (data) => {
     const newServiceData = {
       ...data,
-      imageUrl,
+      image:imageUrl,
       status: "Pending",
     };
     console.log(newServiceData);

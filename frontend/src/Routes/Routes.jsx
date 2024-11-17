@@ -34,6 +34,7 @@ import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
 import RoleChange from "../Pages/RoleChange/RoleChange";
 import MyBlogs from "../Pages/Dashboard/Vet/MyBlogs";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
+import ViewAppointments from "../Pages/Dashboard/Vet/ViewAppointments";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -92,6 +93,10 @@ const router = createBrowserRouter([
       {
         path: "client/adoptions",
         element: <Adoptions />,
+      },
+      {
+        path: "client/vew-appointments",
+        element: <ViewAppointments />,
       },
 
       // admin routes
