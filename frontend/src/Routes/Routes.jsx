@@ -34,6 +34,8 @@ import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import MyAdoption from "../Pages/Dashboard/Seller/MyAdoption/MyAdoption";
 import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
 import UserChatAdoption from "../Pages/Dashboard/Seller/userAdoption/UserChatAdoption";
+import PaymentSuccess from "../Pages/Payments/PaymentSuccess/PaymentSuccess";
+import PaymentFail from "../Pages/Payments/PaymentFail/PaymentFail";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -59,6 +61,8 @@ const router = createBrowserRouter([
       { path: "/registration", element: <Registration /> },
       { path: "/role-change", element: <RoleChange /> },
       { path: "/login", element: <Login /> },
+      { path: "/payment/success/:transId", element: <PaymentSuccess /> },
+      { path: "/payment/fail/:transId", element: <PaymentFail /> },
     ],
   },
 
@@ -67,6 +71,8 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <DashboardLayout />,
     children: [
+
+      // common dashboard routs
       {
         index: true,
         element: <Dashboard />
@@ -87,7 +93,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'seller/user-adoptions',
-        element: <UserChatAdoption/>
+        element: <UserChatAdoption />
       },
       {
         path: "seller/my-products",

@@ -44,7 +44,7 @@ const CustomerPlan = () => {
                                           <li>✔ Monthly updates</li>
                                     </ul>
                                     <button
-                                          onClick={() => handleSelectPlan("Basic", "$10", "blue-600",)}
+                                          onClick={() => handleSelectPlan("Basic", "10", "blue-600",)}
                                           className="mt-8 w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-semibold">
                                           Select Basic
                                     </button>
@@ -61,7 +61,7 @@ const CustomerPlan = () => {
                                           <li>✔ Access to exclusive resources</li>
                                     </ul>
                                     <button
-                                          onClick={() => handleSelectPlan("Standard", "$30", "green-600")}
+                                          onClick={() => handleSelectPlan("Standard", "30", "green-600")}
                                           className="mt-8 w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-semibold">
                                           Select Standard
                                     </button>
@@ -78,7 +78,7 @@ const CustomerPlan = () => {
                                           <li>✔ Personalized sessions</li>
                                     </ul>
                                     <button
-                                          onClick={() => handleSelectPlan("Pro", "$50", "primaryBold")}
+                                          onClick={() => handleSelectPlan("Pro", "50", "primaryBold")}
                                           className="mt-8 w-full py-3 bg-primaryBold text-white rounded-lg hover:bg-gray-900 transition-colors font-semibold">
                                           Select Pro
                                     </button>
