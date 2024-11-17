@@ -1,4 +1,4 @@
-const VewVetsRow = () => {
+const MyDoctorsRow = () => {
   return (
     <tr>
       <td className="text-sm p-4 font-medium">{+1}</td>
@@ -17,4 +17,4 @@ const VewVetsRow = () => {
   );
 };
 
-export default VewVetsRow;
+export default MyDoctorsRow;

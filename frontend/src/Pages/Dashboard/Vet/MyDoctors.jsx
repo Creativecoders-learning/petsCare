@@ -1,7 +1,7 @@
 import PrimaryTitle from "../../../Components/UI/PrimaryTitle";
-import VewVetsRow from "./VewVetsRow";
+import MyDoctorsRow from "./MyDoctorsRow";
 
-const ViewAppointments = () => {
+const MyDoctors = () => {
   return (
     <div className="p-8 font-inter">
       <PrimaryTitle titleStyle="text-primaryBold font-semibold">
@@ -20,7 +20,7 @@ const ViewAppointments = () => {
             </tr>
           </thead>
           <tbody className="text-myGray">
-              <VewVetsRow />
+              <MyDoctorsRow />
           </tbody>
         </table>
       </div>
@@ -28,4 +28,4 @@ const ViewAppointments = () => {
   );
 };
 
-export default ViewAppointments;
+export default MyDoctors;
