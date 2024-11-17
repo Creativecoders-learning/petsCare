@@ -177,7 +177,6 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-<<<<<<< HEAD
                     <DashboardActiveLink to="/dashboard/client/my-doctors">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <FaUserDoctor  className="block text-[18px]" />
@@ -186,10 +185,7 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
-                    <DashboardActiveLink to="/dashboard/client/adoptions">
-=======
                     <DashboardActiveLink to="/dashboard/seller/adoptions">
->>>>>>> 32c130b1a14f4b33a5bc7e119ca09c3f4bc5a7fc
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <MdOutlinePets className="block text-[18px]" />
                         <span className="block text-[17px]">Adoptions</span>

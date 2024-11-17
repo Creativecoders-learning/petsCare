@@ -3,17 +3,29 @@ import PrimaryTitle from "../../../../Components/UI/PrimaryTitle";
 import ServiceManagementRow from "../../../../Components/UI/VetManagment/ServiceManagementRow";
 import useMyServices from "../../../../Hooks/api/useMyServices";
 import Modal from "../../../../Components/UI/Modal";
+import AdminFeedbackForm from "./AdminFeedbackForm";
+import ServiceManagementView from "./ServiceManagementView";
 
 const VetServiceManagement = () => {
   const { myServices, refresh } = useMyServices();
   const [openModal, setOpenModal] = useState(false);
-  const [selectedService, setSelectedService] = useState(null);
+  const [serviceId, setServiceId] = useState(null);
+  const [modalType, setModalType] = useState('');
+  console.log(serviceId)
 
   const handleAdminReviewBtn = (service) => {
-    setSelectedService(service)
+    console.log(service)
+    setModalType('admin-review')
+    setServiceId(service)
     setOpenModal(true);
   };
-  
+
+  const handleFeedbackBtn = (id) => {
+    console.log(id)
+    setServiceId(id)
+    setModalType('admin-feedback')
+    setOpenModal(true);
+  };
 
   return (
     <div className="p-8 font-inter">
@@ -45,8 +57,7 @@ const VetServiceManagement = () => {
                 items={items}
                 refresh={refresh}
                 handleAdminReviewBtn={handleAdminReviewBtn}
-                // handleDeleteService={handleDeleteService}
-                // handleEditService={handleEditService}
+                handleFeedbackBtn={handleFeedbackBtn}
               ></ServiceManagementRow>
             ))}
           </tbody>
@@ -54,7 +65,14 @@ const VetServiceManagement = () => {
       </div>
       {openModal && (
         <Modal primary={true} openModal={openModal} setOpenModal={setOpenModal}>
-          {/* <ServiceManagementForm selectedService={selectedService} /> */}
+          { modalType=== 'admin-review' &&
+            <ServiceManagementView
+            serviceId={serviceId}
+              />
+          }
+           { modalType=== 'admin-feedback' &&
+            <AdminFeedbackForm  serviceId={serviceId} />
+          }
         </Modal>
       )}
     </div>

@@ -12,7 +12,6 @@ const VetCard = ({ vet }) => {
     expertise,
     experience,
     institute,
-    category,
     instituteLocation,
   } = vet || {};
   return (

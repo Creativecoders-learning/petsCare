@@ -31,16 +31,13 @@ import AdoptionHistory from "../Pages/Dashboard/Admin/AdoptionHistory";
 import RoleChange from "../Pages/RoleChange/RoleChange";
 import MyBlogs from "../Pages/Dashboard/Vet/MyBlogs";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
-<<<<<<< HEAD
 import MyDoctors from "../Pages/Dashboard/Vet/MyDoctors";
 import VetServiceManagement from "../Pages/Dashboard/Admin/VetsManagement/VetServiceManagement";
-=======
 import MyAdoption from "../Pages/Dashboard/Seller/MyAdoption/MyAdoption";
 import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
 import UserChatAdoption from "../Pages/Dashboard/Seller/userAdoption/UserChatAdoption";
 import PaymentSuccess from "../Pages/Payments/PaymentSuccess/PaymentSuccess";
 import PaymentFail from "../Pages/Payments/PaymentFail/PaymentFail";
->>>>>>> 32c130b1a14f4b33a5bc7e119ca09c3f4bc5a7fc
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -76,7 +73,6 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <DashboardLayout />,
     children: [
-
       // common dashboard routs
       {
         index: true,
@@ -87,27 +83,23 @@ const router = createBrowserRouter([
         element: <Profile />,
       },
       {
-        path: 'my-blogs',
-        element: <MyBlogs />
+        path: "my-blogs",
+        element: <MyBlogs />,
       },
 
       // Seller routes
       {
-<<<<<<< HEAD
         path: "client/my-adoptions",
         element: <MyAdoption></MyAdoption>,
       },
       {
         path: "client/user-adoptions",
         element: <UserChatAdoption></UserChatAdoption>,
-=======
-        path: 'seller/my-adoptions',
-        element: <MyAdoption></MyAdoption>
       },
+      { path: "seller/my-adoptions", element: <MyAdoption></MyAdoption> },
       {
-        path: 'seller/user-adoptions',
-        element: <UserChatAdoption />
->>>>>>> 32c130b1a14f4b33a5bc7e119ca09c3f4bc5a7fc
+        path: "seller/user-adoptions",
+        element: <UserChatAdoption />,
       },
       {
         path: "seller/my-products",
@@ -161,13 +153,10 @@ const router = createBrowserRouter([
         path: "vet/patients",
         element: <Patients />,
       },
-<<<<<<< HEAD
       {
         path: "vet/my-blogs",
         element: <MyBlogs />,
       },
-=======
->>>>>>> 32c130b1a14f4b33a5bc7e119ca09c3f4bc5a7fc
     ],
   },
 ]);

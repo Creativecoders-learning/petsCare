@@ -19,7 +19,8 @@ function VetServicesApi(vetsServicesCollection) {
 
   // manage 
   vetsServiceRouter.patch("/update-vets-service/:id", async (req, res) => {
-    const {updatedData} =req.body;
+    const {updatedData,adminFeedback} =req.body;
+    console.log(updatedData,adminFeedback)
     const id = req.params.id;
     console.log(updatedData,id)
     const option = { upsert: true };
@@ -27,6 +28,7 @@ function VetServicesApi(vetsServicesCollection) {
     const doc ={
       $set:{
         status:updatedData,
+        adminFeedback:adminFeedback
         
       }
     }

@@ -4,15 +4,41 @@ import useVetsData from "../../../../Hooks/api/useVetsData";
 import { FaTrash, FaEye } from "react-icons/fa"; // Importing the icons
 import Modal from "../../../../Components/UI/Modal";
 import ModalContent from "../../../../Components/Dashboard/Admin/VetManagement/ModalContent";
+import Swal from "sweetalert2";
+import useAxios from "../../../../Hooks/useAxios";
 
 const VetManagement = () => {
-  const { vets } = useVetsData();
-  const [selectedVet, setSelectedVet] = useState(null); // State for selected vet
-  const [openModal, setOpenModal] = useState(false); // State for modal visibility
-
-  const handleDelete = (id) => {
-    console.log("Deleting vet with id:", id);
-    // Add your delete functionality here
+  const apiHandler=useAxios();
+  const { vets,refresh } = useVetsData();
+  const [selectedVet, setSelectedVet] = useState(null);
+  const [openModal, setOpenModal] = useState(false);
+ 
+  
+  const handleDelete = async (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        apiHandler.delete(`/vets-delete/${id}`).then((result) => {
+          if (result?.data?.deletedCount === 1) {
+            refresh()
+            Swal.fire({
+              title: "Deleted!",
+              text: "vet daa has been deleted.",
+              icon: "success",
+            });
+            // Remove the deleted service from the state
+            
+          }
+        });
+      }
+    });
   };
 
   const handleViewDetails = (vet) => {

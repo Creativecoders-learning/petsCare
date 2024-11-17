@@ -3,7 +3,7 @@ import { FaEye } from "react-icons/fa";
 import { RiFeedbackFill } from "react-icons/ri";
 import Swal from "sweetalert2";
 import useAxios from "../../../Hooks/useAxios";
-const ServiceManagementRow = ({ items, index, refresh,handleAdminReviewBtn }) => {
+const ServiceManagementRow = ({ items, index, refresh,handleAdminReviewBtn,handleFeedbackBtn }) => {
   const { vetName, vetEmail, serviceType, status, image, _id } = items || {};
   const apiHandler = useAxios();
   const { register } = useForm();
@@ -28,8 +28,6 @@ const ServiceManagementRow = ({ items, index, refresh,handleAdminReviewBtn }) =>
       });
     console.log(publishStatus, productId);
   };
-
-
 
   return (
     <tr
@@ -99,7 +97,7 @@ const ServiceManagementRow = ({ items, index, refresh,handleAdminReviewBtn }) =>
             <FaEye />
           </button>
           <button
-            // onClick={handleFeedbackBtn}
+            onClick={()=>handleFeedbackBtn(_id)}
             className="p-2 text-white bg-red-500 rounded-full hover:bg-red-600 transition duration-150"
           >
             <RiFeedbackFill />
