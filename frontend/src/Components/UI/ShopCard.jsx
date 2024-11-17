@@ -29,14 +29,18 @@ export default function ShopCard({ item }) {
       // If it exists, update the quantity
       updatedCartProducts = storedCartProducts.map((item) =>
         item._id === product._id
-          ? { ...item, quantity: item.quantity + 1 }
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+              totalPrice: (item.quantity + 1) * item.price,
+            }
           : item
       );
     } else {
       // If it does not exist, add new product with quantity 1
       updatedCartProducts = [
         ...storedCartProducts,
-        { ...product, quantity: 1 },
+        { ...product, quantity: 1, totalPrice: product.price },
       ];
     }
 
@@ -100,7 +104,7 @@ export default function ShopCard({ item }) {
                   </div>
                   <div className="w-[60%]">
                     <h3>{item.title}</h3>
-                    <span>{item.price}</span>
+                    <span>{item.totalPrice}</span>
                     <p>Quantity: {item.quantity}</p>
                   </div>
                   <div className="w-[20%] overflow-hidden">
@@ -174,7 +178,7 @@ export default function ShopCard({ item }) {
             onClick={() => handleCartBtn(item)}
             primary={true}
           >
-            Add Cart
+            Add to Cart
           </Button>
         </div>
       </div>

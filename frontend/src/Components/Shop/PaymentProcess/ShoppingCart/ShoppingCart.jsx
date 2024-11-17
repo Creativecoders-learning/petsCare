@@ -9,7 +9,7 @@ export default function ShoppingCart({handleProgress}) {
   useEffect(() => {
     const storedCartProducts = JSON.parse(localStorage.getItem("cartProducts"));
     setCartProducts(storedCartProducts);
-  }, [cartProducts]);
+  }, []);
 
   const calculateTotalAmount = () => {
     return cartProducts.reduce(
@@ -20,7 +20,7 @@ export default function ShoppingCart({handleProgress}) {
 
   const handleDeleteClick = (productId) => {
     const updatedCartProducts = cartProducts.filter(
-      (item) => item.id !== productId
+      (item) => item._id !== productId
     );
 
     localStorage.setItem("cartProducts", JSON.stringify(updatedCartProducts));
@@ -45,7 +45,7 @@ export default function ShoppingCart({handleProgress}) {
                   <div className="flex items-center justify-start gap-4 h-full">
                     <span
                       className="text-xl cursor-pointer"
-                      onClick={() => handleDeleteClick(item.id)}
+                      onClick={() => handleDeleteClick(item._id)}
                     >
                       <FaRegTrashAlt />
                     </span>
@@ -59,8 +59,8 @@ export default function ShoppingCart({handleProgress}) {
                   </div>
                   <div className="w-[80%] flex justify-between">
                     <h2>{item.title}</h2>
-                    <span>${item.price}</span>
-                    <span>${item.price}</span>
+                    <span>{item.quantity}</span>
+                    <span>${item.totalPrice}</span>
                   </div>
                 </div>
               ))}

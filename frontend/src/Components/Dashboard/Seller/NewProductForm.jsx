@@ -43,7 +43,7 @@ export default function NewProductForm({refresh}) {
 
   // handle create product form
   const onSubmit = (data) => {
-    const newProductData = { ...data, image: imageUrl, ratting: 0 };
+    const newProductData = { ...data, image: imageUrl, ratting: 0, publishStatus : "Pending", adminFeedback: "No Feedback Yet!!" };
     console.log(newProductData);
     apiHandler.post("/shop-products", newProductData)
     .then((res) => {
