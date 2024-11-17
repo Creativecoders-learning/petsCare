@@ -27,7 +27,7 @@ import MyProducts from "../Pages/Dashboard/Seller/MyProducts/MyProducts";
 import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
 import MyServices from "../Pages/Dashboard/Vet/MyServices";
 import Patients from "../Pages/Dashboard/Vet/Patients";
-import VetManagement from "../Pages/Dashboard/Admin/VetManagement";
+import VetManagement from "../Pages/Dashboard/Admin/VetsManagement/VetManagement";
 import Appointments from "../Pages/Dashboard/Vet/Appoinments";
 import AdoptionHistory from "../Pages/Dashboard/Admin/AdoptionHistory";
 import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
@@ -35,6 +35,7 @@ import RoleChange from "../Pages/RoleChange/RoleChange";
 import MyBlogs from "../Pages/Dashboard/Vet/MyBlogs";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import MyDoctors from "../Pages/Dashboard/Vet/MyDoctors";
+import VetServiceManagement from "../Pages/Dashboard/Admin/VetsManagement/VetServiceManagement";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -70,7 +71,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Dashboard />
+        element: <Dashboard />,
       },
       {
         path: "profile",
@@ -79,12 +80,12 @@ const router = createBrowserRouter([
 
       // Seller routes
       {
-        path: 'client/my-adoptions',
-        element: <MyAdoption></MyAdoption>
+        path: "client/my-adoptions",
+        element: <MyAdoption></MyAdoption>,
       },
       {
-        path: 'client/user-adoptions',
-        element: <UserChatAdoption></UserChatAdoption>
+        path: "client/user-adoptions",
+        element: <UserChatAdoption></UserChatAdoption>,
       },
       {
         path: "client/my-products",
@@ -113,30 +114,34 @@ const router = createBrowserRouter([
         element: <UserManagement />,
       },
       {
-        path: 'admin/vet-management',
-        element: <VetManagement />
+        path: "admin/vet-management",
+        element: <VetManagement />,
       },
       {
-        path: 'admin/adoption-history',
-        element: <AdoptionHistory />
+        path: "admin/vet-service-management",
+        element: <VetServiceManagement />,
+      },
+      {
+        path: "admin/adoption-history",
+        element: <AdoptionHistory />,
       },
 
       // vet routes
       {
-        path: 'vet/appointments',
-        element: <Appointments />
+        path: "vet/appointments",
+        element: <Appointments />,
       },
       {
-        path: 'vet/my-services',
-        element: <MyServices />
+        path: "vet/my-services",
+        element: <MyServices />,
       },
       {
-        path: 'vet/patients',
-        element: <Patients />
+        path: "vet/patients",
+        element: <Patients />,
       },
       {
-        path: 'vet/my-blogs',
-        element: <MyBlogs />
+        path: "vet/my-blogs",
+        element: <MyBlogs />,
       },
     ],
   },

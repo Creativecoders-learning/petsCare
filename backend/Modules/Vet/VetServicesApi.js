@@ -17,6 +17,23 @@ function VetServicesApi(vetsServicesCollection) {
     res.send(result);
   });
 
+  // manage 
+  vetsServiceRouter.patch("/update-vets-service/:id", async (req, res) => {
+    const {updatedData} =req.body;
+    const id = req.params.id;
+    console.log(updatedData,id)
+    const option = { upsert: true };
+    const query = { _id: new ObjectId(id) };
+    const doc ={
+      $set:{
+        status:updatedData,
+        
+      }
+    }
+    const result = await vetsServicesCollection.updateOne(query,doc,option);
+    res.send(result);
+  });
+
   //   service deleted
   vetsServiceRouter.delete("/vetServices/:id", async (req, res) => {
     const result = await vetsServicesCollection.deleteOne({
