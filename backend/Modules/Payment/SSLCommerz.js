@@ -1,9 +1,9 @@
 const express = require('express');
 const { ObjectId } = require('mongodb');
 const SSLCommerzPayment = require('sslcommerz-lts');
+const SSLCommerzRouter = express.Router();
 
-function SSLCommerzAPI(ordersCollection) {
-      const SSLCommerzRouter = express.Router();
+module.exports = (ordersCollection) => {
 
       const store_id = process.env.STORE_ID;
       const store_passwd = process.env.STORE_PASSWORD;
@@ -91,5 +91,3 @@ function SSLCommerzAPI(ordersCollection) {
 
       return SSLCommerzRouter;
 }
-
-module.exports = SSLCommerzAPI;

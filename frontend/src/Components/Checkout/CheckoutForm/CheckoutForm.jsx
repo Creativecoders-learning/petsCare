@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { CHECKOUTImages } from '../../../Image-data/checkout';
 import PaypalCardForm from '../PaypalCardForm/PaypalCardForm';
 import SSLCommerceForm from '../SSLCommerceForm/SSLCommerceForm';
-import VisaCardForm from '../VisaCardForm/VisaCardForm';
 import PrimaryTitle from '../../UI/PrimaryTitle';
 import StripeCard from '../StripeCardForm/StripeCard';
 import useAxios from '../../../Hooks/useAxios';
@@ -15,10 +14,6 @@ const cards = [
   {
     name: 'SSLCommerce',
     logo: CHECKOUTImages.checkout_2,
-  },
-  {
-    name: 'visa',
-    logo: CHECKOUTImages.checkout_3,
   },
   {
     name: 'Stripe',
@@ -75,7 +70,7 @@ export default function CheckoutForm({ price, plan }) {
             every transaction.
           </p>
         </div>
-        <div className="flex justify-between gap-6 w-full lg:w-[70%] xl:w-[70%] py-10">
+        <div className="flex justify-center gap-6 w-full lg:w-[70%] xl:w-[70%] py-10">
           {cards?.map((item, index) => (
             <figure
               key={index}
@@ -94,7 +89,6 @@ export default function CheckoutForm({ price, plan }) {
           {clickedCard === 'SSLCommerce' && (
             <SSLCommerceForm onSubmit={onSubmit} />
           )}
-          {clickedCard === 'visa' && <VisaCardForm onSubmit={onSubmit} />}
           {clickedCard === 'Stripe' && <StripeCard onSubmit={onSubmit} />}
         </div>
       </div>
