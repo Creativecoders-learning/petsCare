@@ -1,51 +1,100 @@
 import 'react-tabs/style/react-tabs.css';
-
+import { MdTransgender } from "react-icons/md";
+import { TbTimeDuration30 } from "react-icons/tb";
 import { useState } from 'react';
-import CategoriesItems from '../CategoriesItems/CategoriesItems';
-import AdoptionCategoryBtn from '../../UI/AdoptionCategoryBtn';
 import useAdoptionData from '../../../Hooks/useAdoptionData';
+import AdoptionButton from '../../UI/AdoptionButton';
+import DropDown from '../../UI/DropDown';
+import { FaSearch } from 'react-icons/fa';
+import AdoptionCard from '../../UI/AdoptionCard';
 
 const Categories = () => {
-  const { adoptions } = useAdoptionData();
-  const [selectedCategory, SetSelectedCategory] = useState('Dog');
-  const unickCategories = new Set();
+  const { filteredAdoption, filters, applyFilter, updateFielder, loading, err, refetch } = useAdoptionData();
 
-  // unick category filtering
-  const withoutDublicateCategories = adoptions.filter((item) => {
-    const isDublicate = unickCategories.has(item?.category);
-
-    if (!isDublicate) {
-      unickCategories.add(item?.category);
-      return true;
-    }
-
-    return false;
-  });
-
-  // handleSelected category
-  const handleCategory = (category) => {
-    SetSelectedCategory(category);
-  };
 
   return (
-    <div className="text-center p-10">
-      <h1 className="text-3xl">Pets Available For Adoption Nearby</h1>
-      {/* added filter by tabs */}
-      <div className=" mt-10">
-        {/* category Option or button */}
-        <div>
-          <AdoptionCategoryBtn
-            items={withoutDublicateCategories}
-            selectedCategory={selectedCategory}
-            handleCategory={handleCategory}
-          />
+    <div className='py-10'>
+        {/* added filter by tabs */}
+        <div className='lg:max-w-max bg-slate-200 mx-auto p-5 rounded-md'>
+          {/* filtering option */}
+          <div className="space-y-3 ">
+            <div className='flex gap-5 justify-center items-center'>
+              <div className="">
+                {/* location field */}
+                <input
+                  type="text"
+                  name="location"
+                  className=" w-full border rounded-md p-3 text-sm focus:ring-1 focus-visible:outline-none"
+                  placeholder="location"
+                  onChange={(e) => updateFielder(e.target.name, e.target.value)}
+                  id=""
+                />
+              </div>
+
+              {/* color */}
+              <div className="flex items-center gap-x-2 ">
+                <input
+                  type="text"
+                  name="color"
+                  className=" w-full p-3 border rounded-md text-sm focus:right-5 focus-visible:outline-none  "
+                  placeholder="Color"
+                  onChange={(e) => updateFielder(e.target.name, e.target.value)}
+                  id=""
+                />
+              </div>
+
+              {/* dropdown */}
+              <DropDown
+                level={"Category"}
+                icon={MdTransgender}
+                items={["Dog", "Cat", "Bird", "Rabbit"]}
+                updateFielder={updateFielder}
+                filterKey="category"
+              ></DropDown>
+              <DropDown
+                level={"Breeder"}
+                icon={MdTransgender}
+                items={["Labrador Retriever", "Siamese", "Parrot", "Mini Lop", "Golden Retriever", "Beagle", "British Shorthair"]}
+                updateFielder={updateFielder}
+                filterKey="breed"
+              ></DropDown>
+              <DropDown
+                level={"Adult"}
+                icon={TbTimeDuration30}
+                items={["Adult", "Puppy", "Senior"]}
+                updateFielder={updateFielder}
+                filterKey="age"
+              ></DropDown>
+              {/* apply button */}
+              <AdoptionButton
+                onclick={applyFilter}
+                text={"Find New Pets "}
+                btnStyle={'w-48'}
+              ></AdoptionButton>
+            </div>
+
+
+          </div>
         </div>
 
-        {/* Category Card items */}
-        <div>
-          <CategoriesItems
-            selectedCategory={selectedCategory}
-          ></CategoriesItems>
+      <div className="text-center p-10">
+        <h1 className="text-3xl">Pets Available For Adoption Nearby</h1>
+
+        <div className=" mt-5">
+          {/* Category Card items */}
+          <div>
+            {filteredAdoption.length > 0 ? (
+              <div className='grid gap-5 lg:gap-10 grid-cols-3 items-center justify-items-center p-10 '>
+                {
+                  filteredAdoption?.map((adoption) => (
+                    <AdoptionCard key={adoption?._id} item={adoption}></AdoptionCard>
+                  ))
+                }
+              </div>
+            ) : (
+              <p>No pets found matching the criteria.</p>
+            )}
+          </div>
         </div>
       </div>
     </div>

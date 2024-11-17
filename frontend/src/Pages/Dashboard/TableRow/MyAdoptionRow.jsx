@@ -4,16 +4,6 @@ import { FaTrash } from "react-icons/fa6";
 import UpdateStatus from "../Common/Modal/UpdateStatus"
 
 const MyAdoptionRow = ({item,index}) => {
-    const [isOpen,setIsOpen]=useState(false);
-    const [status,setStatus]=useState(item?.status)
-
-    const modalHandler =async(selected)=>{
-        
-            console.log(selected);
-            setStatus(status)
-            setIsOpen(false)
-
-    }
 
     // handle delete item
     const handleDelete =(id)=>{
@@ -35,7 +25,7 @@ const MyAdoptionRow = ({item,index}) => {
     <td className="p-4">{item?.category}</td>
     <td className="p-4">{item?.date}</td>
     <td className="p-4">{item?.status}</td>
-    <td className="p-4">{item?.admin_response}</td>
+    <td className="p-4 text-center">{item?.admin_response}</td>
     
 </tr>
   );

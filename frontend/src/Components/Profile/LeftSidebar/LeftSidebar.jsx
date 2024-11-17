@@ -45,7 +45,6 @@ const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }
 
                   try {
                         const response = await axios.post('https://api.imgbb.com/1/upload?key=597d78aa1ab369b0aa1583848b74f0f9', formData);
-                        console.log(response?.data?.data?.url);
 
                         const image = response?.data?.data?.url;
 
@@ -68,13 +67,13 @@ const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }
                               <img
                                     src={user?.image}
                                     alt="User"
-                                    className="w-28 h-28 rounded-full mb-4 border-8 border-blue-500"
+                                    className="w-32 h-32 rounded-full mb-4 border-8 border-primary"
                               />
                               {/* Edit Icon Overlay with FaEdit */}
-                              <div title="Upload image">
+                              <div title="Edit image">
                                     <label
                                           htmlFor="upload-image"
-                                          className="absolute bottom-3 right-3 bg-blue-500 text-white p-2 rounded-full cursor-pointer"
+                                          className="absolute bottom-3 right-3 bg-primary text-white p-2 rounded-full cursor-pointer"
 
                                     >
                                           <FaCamera />
@@ -89,7 +88,7 @@ const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }
                               </div>
                         </figure>
                         <h1 className="text-xl font-semibold text-primaryBold">{user?.name}</h1>
-                        <p className="text-gray-600 mt-1 flex items-center"><FaEnvelope className="mr-1" /> {user?.email}</p>
+                        <p className="text-gray-600 mt-1 flex items-center"><FaEnvelope className="mr-1 text-primary" /> {user?.email}</p>
                   </div>
                   <div className="mt-6">
                         <div className="flex justify-between items-center">
@@ -117,7 +116,7 @@ const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }
                               <FaUser /> <span>Account Settings</span>
                         </button>
                   </div>
-                  <button onClick={() => setIsEditing(true)} className="mt-8 w-full flex items-center justify-center space-x-2 py-2 px-4 rounded-lg bg-blue-500 text-white">
+                  <button onClick={() => setIsEditing(true)} className="mt-8 w-full flex items-center justify-center space-x-2 py-2 px-4 rounded-lg bg-primary text-white">
                         <FaEdit /> <span>Update Profile</span>
                   </button>
             </div>

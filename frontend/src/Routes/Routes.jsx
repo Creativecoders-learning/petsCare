@@ -20,8 +20,6 @@ import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
 import PaymentProcess from "../Components/Shop/PaymentProcess/PaymentProcess";
 import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStarted";
 import Profile from "../Pages/Dashboard/Profile/Profile";
-import MyAdoption from "../Pages/Dashboard/Seller/MyAdoption/MyAdoption";
-import UserChatAdoption from "../Pages/Dashboard/Seller/CreateAdoption/UserChatAdoption";
 import ShopManagement from "../Pages/Dashboard/Admin/ShopManagement/ShopManagement";
 import MyProducts from "../Pages/Dashboard/Seller/MyProducts/MyProducts";
 import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
@@ -30,12 +28,19 @@ import Patients from "../Pages/Dashboard/Vet/Patients";
 import VetManagement from "../Pages/Dashboard/Admin/VetsManagement/VetManagement";
 import Appointments from "../Pages/Dashboard/Vet/Appoinments";
 import AdoptionHistory from "../Pages/Dashboard/Admin/AdoptionHistory";
-import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
 import RoleChange from "../Pages/RoleChange/RoleChange";
 import MyBlogs from "../Pages/Dashboard/Vet/MyBlogs";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
+<<<<<<< HEAD
 import MyDoctors from "../Pages/Dashboard/Vet/MyDoctors";
 import VetServiceManagement from "../Pages/Dashboard/Admin/VetsManagement/VetServiceManagement";
+=======
+import MyAdoption from "../Pages/Dashboard/Seller/MyAdoption/MyAdoption";
+import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
+import UserChatAdoption from "../Pages/Dashboard/Seller/userAdoption/UserChatAdoption";
+import PaymentSuccess from "../Pages/Payments/PaymentSuccess/PaymentSuccess";
+import PaymentFail from "../Pages/Payments/PaymentFail/PaymentFail";
+>>>>>>> 32c130b1a14f4b33a5bc7e119ca09c3f4bc5a7fc
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -61,6 +66,8 @@ const router = createBrowserRouter([
       { path: "/registration", element: <Registration /> },
       { path: "/role-change", element: <RoleChange /> },
       { path: "/login", element: <Login /> },
+      { path: "/payment/success/:transId", element: <PaymentSuccess /> },
+      { path: "/payment/fail/:transId", element: <PaymentFail /> },
     ],
   },
 
@@ -69,6 +76,8 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <DashboardLayout />,
     children: [
+
+      // common dashboard routs
       {
         index: true,
         element: <Dashboard />,
@@ -77,22 +86,35 @@ const router = createBrowserRouter([
         path: "profile",
         element: <Profile />,
       },
+      {
+        path: 'my-blogs',
+        element: <MyBlogs />
+      },
 
       // Seller routes
       {
+<<<<<<< HEAD
         path: "client/my-adoptions",
         element: <MyAdoption></MyAdoption>,
       },
       {
         path: "client/user-adoptions",
         element: <UserChatAdoption></UserChatAdoption>,
+=======
+        path: 'seller/my-adoptions',
+        element: <MyAdoption></MyAdoption>
       },
       {
-        path: "client/my-products",
+        path: 'seller/user-adoptions',
+        element: <UserChatAdoption />
+>>>>>>> 32c130b1a14f4b33a5bc7e119ca09c3f4bc5a7fc
+      },
+      {
+        path: "seller/my-products",
         element: <MyProducts />,
       },
       {
-        path: "client/adoptions",
+        path: "seller/adoptions",
         element: <Adoptions />,
       },
       {
@@ -139,10 +161,13 @@ const router = createBrowserRouter([
         path: "vet/patients",
         element: <Patients />,
       },
+<<<<<<< HEAD
       {
         path: "vet/my-blogs",
         element: <MyBlogs />,
       },
+=======
+>>>>>>> 32c130b1a14f4b33a5bc7e119ca09c3f4bc5a7fc
     ],
   },
 ]);

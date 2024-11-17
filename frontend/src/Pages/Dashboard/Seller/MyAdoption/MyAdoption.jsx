@@ -5,10 +5,14 @@ import Modal from "../../../../Components/UI/Modal";
 import { useForm } from "react-hook-form"
 import { imageUpload, uploadMultipleImages } from "../../../../Utilities/Utilities";
 import useAdoptionData from "../../../../Hooks/useAdoptionData";
+import useAxios from "../../../../Hooks/useAxios";
+import toast from "react-hot-toast";
 
 const MyAdoption = () => {
   const {adoptions} = useAdoptionData();
+  console.log('adoption',adoptions)
   const [openModal, setOpenModal] = useState(false);
+  const apiHandle = useAxios()
   const {
     register,
     handleSubmit,
@@ -35,11 +39,14 @@ const MyAdoption = () => {
       age:data.age,
       gender:data.gender,
       size:data.size,
+      date:data.date,
       location:data.location,
       temperament:data.temperament,
       weight:data.weight,
       height:data.height,
       color:data.color,
+      admin_response:'pending',
+      status:'published',
       good_with_kids:`${data?.good_with_kids ? 'Good with kids' : 'N/A'}`,
       good_with_other_pets:`${data?.good_with_other_pets ? 'Good with other pets' : 'N/A'}`,
       house_trained:`${data?.house_trained ? 'House trained' : 'N/A'}`,
@@ -53,6 +60,12 @@ const MyAdoption = () => {
       image:imageUrls
     }
 
+  const res = await apiHandle.post('/addAdoption',adoptionInfo)
+  if(res.data.insertedData){
+    toast.success('your adoption has been created')
+  }
+    console.log(res.data)
+
     console.log(adoptionInfo)
   }
 
@@ -65,7 +78,7 @@ const MyAdoption = () => {
           My Adoption
         </h1>
         <div className="text-right mr-40">
-          <button onClick={() => setOpenModal(true)} className="py-3 px-10 bg-primary hover:bg-primaryBold rounded-md text-white">Create Adoption</button>
+          <button onClick={() => setOpenModal(true)} className="py-3 px-10 bg-primary hover:bg-primaryBold rounded-md text-white">Add Pets for Adoption</button>
         </div>
         <div className="py-4 px-5">
           <div className=" max-w-screen-lg mx-auto custom-scrollbar h-[80vh] overflow-y-auto overflow-x-auto shadow rounded-lg overflow-hidden">
@@ -126,7 +139,7 @@ const MyAdoption = () => {
               </div>
               <div>
                 <label className="block text-gray-600">Size</label>
-                <input type="text" className="w-full border border-gray-300 rounded-md p-2" required />
+                <input type="text" {...register("size")} className="w-full border border-gray-300 rounded-md p-2" required />
               </div>
               <div>
                 <label className="block text-gray-600">Weight</label>
