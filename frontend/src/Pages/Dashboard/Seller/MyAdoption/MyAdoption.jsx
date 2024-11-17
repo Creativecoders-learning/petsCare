@@ -78,7 +78,7 @@ const MyAdoption = () => {
           My Adoption
         </h1>
         <div className="text-right mr-40">
-          <button onClick={() => setOpenModal(true)} className="py-3 px-10 bg-primary hover:bg-primaryBold rounded-md text-white">Create Adoption</button>
+          <button onClick={() => setOpenModal(true)} className="py-3 px-10 bg-primary hover:bg-primaryBold rounded-md text-white">Add Pets for Adoption</button>
         </div>
         <div className="py-4 px-5">
           <div className=" max-w-screen-lg mx-auto custom-scrollbar h-[80vh] overflow-y-auto overflow-x-auto shadow rounded-lg overflow-hidden">
