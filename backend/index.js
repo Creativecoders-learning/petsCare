@@ -16,7 +16,7 @@ app.use(cors({
 }))
 
 
-const uri = process.env.DB_URI;
+const uri = process.env.Mongodb_Uri;
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,

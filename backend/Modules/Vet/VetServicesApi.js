@@ -36,7 +36,7 @@ function VetServicesApi(vetsServicesCollection) {
   vetsServiceRouter.patch("/vetServices/:id", async (req, res) => {
     const { id } = req.params;
     const updateData = req.body;
-    
+    console.log(updateData)
     const query = { _id: new ObjectId(id) };
     const updateDoc = { $set: updateData };
     
