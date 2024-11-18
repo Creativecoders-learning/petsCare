@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const AdoptionCard = ({ item }) => {
   return (
-    <div className="max-w-[350px] mx-auto space-y-4 rounded border p-6 md:w-[350px]  min-h-[300px]">
+    <div className=" mx-auto space-y-4 rounded border p-6 min-h-[300px]">
       {/* Card Image */}
       <img
         width={500}

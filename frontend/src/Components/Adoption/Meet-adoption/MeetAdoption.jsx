@@ -10,10 +10,10 @@ const MeetAdoption = () => {
   return (
     <div
       style={{ backgroundImage: `url(${bg})` }}
-      className="px-10 py-28 bg-contain bg-repeat-round "
+      className="px-32 py-28 bg-contain bg-repeat-round "
     >
       <Container>
-        <div  className="flex flex-col lg:flex-row items-center justify-center gap-x-5 gap-y-10 ">
+        <div  className="flex flex-col lg:flex-row items-center justify-center lg:gap-x-32 lg:gap-y-10">
           <div className="lg:w-2/5 ">
             <SectionContent alignStayle={'text-left'} tag={' Meet Adoption'} first={'Work For'} span={'Adoption'} second={'Happy Time'} text={'The best overall dog DNA test is Embark Breed & Health Kit view at Chewy which pres domesti dog is a sticated descendant.'}/>
 
