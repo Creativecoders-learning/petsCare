@@ -1,8 +1,13 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
 
-const MyServicesRow = ({ service, index,handleDeleteService,handleEditService }) => {
-  const { vetName, vetEmail, serviceType, imageUrl,_id } = service || {};
-
+const MyServicesRow = ({
+  service,
+  index,
+  handleDeleteService,
+  handleEditService,
+}) => {
+  const { vetName, vetEmail, serviceType,serviceName, image, _id } = service || {};
+  console.log(service.status);
   return (
     <tr
       key={service?._id}
@@ -13,20 +18,16 @@ const MyServicesRow = ({ service, index,handleDeleteService,handleEditService })
       <td className="p-4 font-medium">{index + 1}</td>
       <td className="p-4 font-medium">
         <img
-          src={imageUrl}
+          src={image}
           className="w-12 h-12 object-cover rounded-md shadow-md"
         />
       </td>
       <td className="p-4 font-medium">{vetName}</td>
+      <td className="p-4 font-medium">{
+serviceName}</td>
       <td className="p-4">{vetEmail}</td>
       <td className="p-4">{serviceType}</td>
-      <td
-        className={`p-4 ${
-          service?.status ? "text-yellow-500 " : "text-primary "
-        }`}
-      >
-        {service?.status || "Pending"}
-      </td>
+     
       <td className="p-4 flex justify-center gap-2">
         <button
           onClick={() => handleEditService(service)}

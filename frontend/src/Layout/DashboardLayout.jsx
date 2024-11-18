@@ -8,6 +8,7 @@ import { BiShoppingBag } from "react-icons/bi";
 import { MdOutlinePets } from "react-icons/md";
 import DashboardActiveLink from "../Components/UI/DashboardActiveLink";
 import useUser from "../Hooks/api/useUser";
+import { FaUserDoctor } from "react-icons/fa6";
 
 export default function DashboardLayout() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
@@ -126,6 +127,16 @@ export default function DashboardLayout() {
                     </DashboardActiveLink>
                   </li>
                   <li>
+                    <DashboardActiveLink to="/dashboard/admin/vet-service-management">
+                      <span className="flex items-center gap-3 rounded py-3 px-6">
+                        <IoListSharp className="block text-[18px]" />
+                        <span className="block text-[17px]">
+                        Service Management
+                        </span>
+                      </span>
+                    </DashboardActiveLink>
+                  </li>
+                  <li>
                     <DashboardActiveLink to="/dashboard/admin/shop-management">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <IoListSharp className="block text-[18px]" />
@@ -162,6 +173,14 @@ export default function DashboardLayout() {
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <AiOutlineMedicineBox className="block text-[18px]" />
                         <span className="block text-[17px]">Prescriptions</span>
+                      </span>
+                    </DashboardActiveLink>
+                  </li>
+                  <li>
+                    <DashboardActiveLink to="/dashboard/client/my-doctors">
+                      <span className="flex items-center gap-3 rounded py-3 px-6">
+                        <FaUserDoctor  className="block text-[18px]" />
+                        <span className="block text-[17px]">My Doctors</span>
                       </span>
                     </DashboardActiveLink>
                   </li>

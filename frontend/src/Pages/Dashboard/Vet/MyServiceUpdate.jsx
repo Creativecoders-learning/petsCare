@@ -11,6 +11,7 @@ const serviceType = [
   "Medical Care",
 ];
 const MyServiceUpdate = ({ selectedService: service,onServiceUpdated,onClose }) => {
+  console.log(service)
   const {
     register,
     handleSubmit,
@@ -42,11 +43,12 @@ const MyServiceUpdate = ({ selectedService: service,onServiceUpdated,onClose }) 
 
   // update
   const onSubmit = async (data) => {
+    console.log(data)
     const serviceData = {
       vetName: data?.vetName,
       vetEmail: data?.vetEmail,
       serviceName: data?.serviceName,
-      image: imageUrl || service?.image,
+      image: imageUrl,
       serviceType: data?.serviceType,
       shortDescription: data?.shortDescription,
       description: data?.description,
@@ -54,6 +56,7 @@ const MyServiceUpdate = ({ selectedService: service,onServiceUpdated,onClose }) 
     apiHandler
       .patch(`/vetServices/${service?._id}`, serviceData)
       .then((res) => {
+        console.log(res)
         if (res?.data?.modifiedCount === 1) {
           toast.success("Successfully Update the Service");
           onServiceUpdated(); // Call this to refresh the list

@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 const useMyServices = () => {
   const [myServices, setMyServices] = useState([]);
   const apiHandler = useAxios();
-  const fetchAllVets = async () => {
+  const refresh = async () => {
     try {
       const { data } = await apiHandler.get('/vetServices');
       setMyServices(data)
@@ -16,9 +16,9 @@ const useMyServices = () => {
   }
 
   useEffect(() => {
-    fetchAllVets()
+    refresh()
   }, []);
 
-  return [myServices]
+  return {myServices,refresh}
 };
 export default useMyServices;

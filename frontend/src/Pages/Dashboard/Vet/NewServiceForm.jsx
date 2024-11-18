@@ -25,8 +25,9 @@ const NewServiceForm = () => {
   const onSubmit = async (data) => {
     const newServiceData = {
       ...data,
-      imageUrl,
+      image:imageUrl,
       status: "Pending",
+      adminFeedback:"no feedback !"
     };
     console.log(newServiceData);
 
@@ -163,6 +164,104 @@ const NewServiceForm = () => {
             )}
           </div>
         </div>
+        {/* row-3  */}
+        <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-10 mb-6">
+          {/* degrees Field */}
+          <div className="flex-1">
+            <label
+              htmlFor="title"
+              className="block text-lg font-medium text-gray-700"
+            >
+              Degrees
+            </label>
+            <input
+              {...register("degrees", {
+                required: "This field is required",
+              })}
+              type="text"
+              placeholder="Enter Service Name"
+              className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+            />
+            {errors.degrees && (
+              <p className="text-red-500 text-sm mt-2">
+                {errors.degrees.message}
+              </p>
+            )}
+          </div>
+          {/* institute Field */}
+          <div className="flex-1">
+            <label
+              htmlFor="title"
+              className="block text-lg font-medium text-gray-700"
+            >
+    Institute
+            </label>
+            <input
+              {...register("institute", {
+                required: "This field is required",
+              })}
+              type="text"
+              placeholder="Enter Service Name"
+              className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+            />
+            {errors.institute && (
+              <p className="text-red-500 text-sm mt-2">
+                {errors.institute.message}
+              </p>
+            )}
+          </div>
+
+          
+        </div>
+        {/* row-4  */}
+        <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-10 mb-6">
+          {/* expertise Field */}
+          <div className="flex-1">
+            <label
+              htmlFor="title"
+              className="block text-lg font-medium text-gray-700"
+            >
+              Expertise
+            </label>
+            <input
+              {...register("expertise", {
+                required: "This field is required",
+              })}
+              type="text"
+              placeholder="Enter Service Name"
+              className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+            />
+            {errors.expertise && (
+              <p className="text-red-500 text-sm mt-2">
+                {errors.expertise.message}
+              </p>
+            )}
+          </div>
+          {/* experience Field */}
+          <div className="flex-1">
+            <label
+              htmlFor="title"
+              className="block text-lg font-medium text-gray-700"
+            >
+              Experience 
+            </label>
+            <input
+              {...register("experience", {
+                required: "This field is required",
+              })}
+              type="text"
+              placeholder="Enter Service Name"
+              className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+            />
+            {errors.experience && (
+              <p className="text-red-500 text-sm mt-2">
+                {errors.experience.message}
+              </p>
+            )}
+          </div>
+
+          
+        </div>
         {/* img uploading  */}
         <div className="mb-6 flex flex-col items-start">
           <label
@@ -192,7 +291,7 @@ const NewServiceForm = () => {
             htmlFor="description"
             className="block text-lg font-medium text-gray-700"
           >
-            Short Description
+            Description
           </label>
           <textarea
             {...register("shortDescription", {
@@ -208,29 +307,6 @@ const NewServiceForm = () => {
             </p>
           )}
         </div>
-        {/* description  */}
-        <div className="mb-6">
-          <label
-            htmlFor="description"
-            className="block text-lg font-medium text-gray-700"
-          >
-            Description
-          </label>
-          <textarea
-            {...register("description", {
-              required: "This field is required",
-            })}
-            placeholder="Write a detailed description for your Service"
-            className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
-            rows="5"
-          />
-          {errors.description && (
-            <p className="text-red-500 text-sm mt-2">
-              {errors.description.message}
-            </p>
-          )}
-        </div>
-
         <div className="mt-8">
           <button
             type="submit"
