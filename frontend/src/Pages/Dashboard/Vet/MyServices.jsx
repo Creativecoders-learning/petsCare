@@ -100,9 +100,9 @@ const MyServices = () => {
               <th className="p-4 font-semibold">#</th>
               <th className="p-4 font-semibold">Image</th>
               <th className="p-4 font-semibold">Vet Name</th>
+              <th className="p-4 font-semibold">Service Name</th>
               <th className="p-4 font-semibold">Service Email</th>
               <th className="p-4 font-semibold">Service Type</th>
-              <th className="p-4 font-semibold">Status</th>
               <th className="p-4 font-semibold text-center">Actions</th>
             </tr>
           </thead>
