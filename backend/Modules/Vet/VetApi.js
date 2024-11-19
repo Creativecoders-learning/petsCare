@@ -18,7 +18,14 @@ function VetAPI(vetsCollection) {
         const result = await vetsCollection.findOne(query);
         res.send(result)
     })
-
+    // vet management delete 
+    vetsRouter.delete("/vets-delete/:id", async (req, res) => {
+        console.log(req.params.id)
+        const result = await vetsCollection.deleteOne({
+          _id: new ObjectId(req.params.id),
+        });
+        res.send(result);
+      });
 
     // Payment method section
     vetsRouter.post('/create-payment-intent', async (req, res) => {

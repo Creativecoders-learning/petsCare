@@ -6,7 +6,7 @@ const useVetsData = () => {
   const [vets, setVets] = useState([]);
   const apiHandler = useAxios();
 
-  const fetchAllVets = async () => {
+  const refresh = async () => {
     try {
       const { data } = await apiHandler.get('/vets');
       setVets(data)
@@ -18,10 +18,10 @@ const useVetsData = () => {
   }
 
   useEffect(() => {
-    fetchAllVets()
+    refresh()
   }, []);
 
-  return { vets }
+  return { vets,refresh }
 };
 
 export default useVetsData;

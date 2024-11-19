@@ -17,6 +17,25 @@ function VetServicesApi(vetsServicesCollection) {
     res.send(result);
   });
 
+  // manage 
+  vetsServiceRouter.patch("/update-vets-service/:id", async (req, res) => {
+    const {updatedData,adminFeedback} =req.body;
+    console.log(updatedData,adminFeedback)
+    const id = req.params.id;
+    console.log(updatedData,id)
+    const option = { upsert: true };
+    const query = { _id: new ObjectId(id) };
+    const doc ={
+      $set:{
+        status:updatedData,
+        adminFeedback:adminFeedback
+        
+      }
+    }
+    const result = await vetsServicesCollection.updateOne(query,doc,option);
+    res.send(result);
+  });
+
   //   service deleted
   vetsServiceRouter.delete("/vetServices/:id", async (req, res) => {
     const result = await vetsServicesCollection.deleteOne({
@@ -36,7 +55,7 @@ function VetServicesApi(vetsServicesCollection) {
   vetsServiceRouter.patch("/vetServices/:id", async (req, res) => {
     const { id } = req.params;
     const updateData = req.body;
-    
+    console.log(updateData)
     const query = { _id: new ObjectId(id) };
     const updateDoc = { $set: updateData };
     
