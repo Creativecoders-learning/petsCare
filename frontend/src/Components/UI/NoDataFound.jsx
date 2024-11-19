@@ -1,8 +1,9 @@
 import React from "react";
+// import EmptyIllustration from "../../../Assets/EmptyIllustration.svg"; // Import an SVG illustration
 
 const NoDataFound = () => {
       return (
-            <div className="bg-secondaryLight w-full border border-red-700">
+            <div className="bg-secondaryLight h-[60vh] flex items-center justify-center">
                   <div className="text-center">
                         <div className="bg-primaryLight p-6 rounded-full inline-block">
                               <svg
@@ -22,15 +23,11 @@ const NoDataFound = () => {
                               No Data Found
                         </h1>
                         <p className="text-myGray mt-2">
-                              We couldn’t find any relevant information right now.
+                        You haven’t created any data yet. Start by clicking the button above.
                         </p>
-                        <button
-                              onClick={() => (window.location.href = "/")}
-                              className="bg-primary text-white px-6 py-2 rounded-lg mt-4 shadow hover:bg-primaryBold transition"
-                        >
-                              Go Back Home
-                        </button>
+                        
                   </div>
+            
             </div>
       );
 };

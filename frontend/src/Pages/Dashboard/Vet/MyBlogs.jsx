@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import Modal from "../../../Components/UI/Modal";
 import AddBlogModal from "../../../Components/Dashboard/Vet/AddBlogModal/AddBlogModal";
 import UpdateBlogModal from "../../../Components/Dashboard/Vet/AddBlogModal/UpdateBlogModal";
+import NoDataFound from "../../../Components/UI/NoDataFound";
 
 const MyBlogs = () => {
       const { user } = UseAuth()
@@ -18,7 +19,7 @@ const MyBlogs = () => {
       const [modalType, setModalType] = useState("");
       const apiHandler = useAxios()
 
-      const { blogs, refresh } = useBlogs(user?.email);
+      const { blogs, refresh } = useBlogs([]);
 
       // for reload owner blogs
       useEffect(() => {
@@ -79,62 +80,74 @@ const MyBlogs = () => {
                         </Button>
                   </div>
 
-                  <div className="custom-scrollbar h-[80vh] overflow-y-auto shadow-myCustomShadow bg-white rounded-lg">
-                        <table className="min-w-full border border-gray-200">
-                              <thead>
-                                    <tr className="bg-primary text-white text-left">
-                                          <th className="p-4 font-semibold">#</th>
-                                          <th className="p-4 font-semibold">Image</th>
-                                          <th className="p-4 font-semibold">Title</th>
-                                          <th className="p-4 font-semibold">Category</th>
-                                          <th className="p-4 font-semibold">Rating && View</th>
-                                          <th className="p-4 font-semibold text-center">Actions</th>
-                                    </tr>
-                              </thead>
-                              <tbody className="text-myGray">
-                                    {blogs?.map((blog, index) => (
-                                          <tr
-                                                key={blog?._id}
-                                                className={`${index % 2 === 0 ? "bg-primaryLight bg-opacity-10" : "bg-white"
-                                                      }`}
-                                          >
-                                                <td className="p-4 font-medium">{index + 1}</td>
-                                                <td className="p-4">
-                                                      <img src={blog?.image} alt={blog?.title} className="w-12 h-12 object-cover rounded-md shadow-md" />
-                                                </td>
-                                                <td className="p-4 font-medium">{blog?.title}</td>
-                                                <td className="p-4">{blog?.category}</td>
-                                                <td className="p-4">
-                                                      <p className="flex items-center gap-1">
-                                                            <Rating
-                                                                  style={{ maxWidth: 100 }}
-                                                                  value={blog?.rating}
-                                                                  readOnly
-                                                            />
-                                                            ({blog?.rating})
-                                                      </p>
-                                                      <span><span className="text-sm">Total View</span> {blog?.view_count}</span>
-                                                </td>
-
-                                                <td className="p-4 flex justify-center gap-2">
-                                                      <button
-                                                            onClick={() => handleUpdateBlog(blog)}
-                                                            className="p-2 text-white bg-secondary rounded-full hover:bg-primary transition duration-150"
-                                                      >
-                                                            <FaEdit />
-                                                      </button>
-                                                      <button
-                                                            onClick={() => handleDeleteBlog(blog?._id)}
-                                                            className="p-2 text-white bg-red-500 rounded-full hover:bg-red-600 transition duration-150"
-                                                      >
-                                                            <FaTrash />
-                                                      </button>
-                                                </td>
+                  {blogs?.length > 0 ? (
+                        <div className="custom-scrollbar h-[80vh] overflow-y-auto shadow-myCustomShadow bg-white rounded-lg">
+                              <table className="min-w-full border border-gray-200">
+                                    <thead>
+                                          <tr className="bg-primary text-white text-left">
+                                                <th className="p-4 font-semibold">#</th>
+                                                <th className="p-4 font-semibold">Image</th>
+                                                <th className="p-4 font-semibold">Title</th>
+                                                <th className="p-4 font-semibold">Category</th>
+                                                <th className="p-4 font-semibold">Rating & Views</th>
+                                                <th className="p-4 font-semibold text-center">Actions</th>
                                           </tr>
-                                    ))}
-                              </tbody>
-                        </table>
-                  </div>
+                                    </thead>
+                                    <tbody className="text-myGray">
+                                          {blogs.map((blog, index) => (
+                                                <tr
+                                                      key={blog?._id}
+                                                      className={`${index % 2 === 0
+                                                            ? "bg-primaryLight bg-opacity-10"
+                                                            : "bg-white"
+                                                            }`}
+                                                >
+                                                      <td className="p-4 font-medium">{index + 1}</td>
+                                                      <td className="p-4">
+                                                            <img
+                                                                  src={blog?.image}
+                                                                  alt={blog?.title}
+                                                                  className="w-12 h-12 object-cover rounded-md shadow-md"
+                                                            />
+                                                      </td>
+                                                      <td className="p-4 font-medium">{blog?.title}</td>
+                                                      <td className="p-4">{blog?.category}</td>
+                                                      <td className="p-4">
+                                                            <p className="flex items-center gap-1">
+                                                                  <Rating
+                                                                        style={{ maxWidth: 100 }}
+                                                                        value={blog?.rating}
+                                                                        readOnly
+                                                                  />
+                                                                  ({blog?.rating})
+                                                            </p>
+                                                            <span>
+                                                                  <span className="text-sm">Total Views</span>{" "}
+                                                                  {blog?.view_count}
+                                                            </span>
+                                                      </td>
+                                                      <td className="p-4 flex justify-center gap-2">
+                                                            <button
+                                                                  onClick={() => handleUpdateBlog(blog)}
+                                                                  className="p-2 text-white bg-secondary rounded-full hover:bg-primary transition duration-150"
+                                                            >
+                                                                  <FaEdit />
+                                                            </button>
+                                                            <button
+                                                                  onClick={() => handleDeleteBlog(blog?._id)}
+                                                                  className="p-2 text-white bg-red-500 rounded-full hover:bg-red-600 transition duration-150"
+                                                            >
+                                                                  <FaTrash />
+                                                            </button>
+                                                      </td>
+                                                </tr>
+                                          ))}
+                                    </tbody>
+                              </table>
+                        </div>
+                  ) : (
+                        <NoDataFound />
+                  )}
 
                   {/* Conditionally render the details modal */}
                   {openModal && (
