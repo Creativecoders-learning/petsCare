@@ -1,9 +1,9 @@
 const express = require('express');
 const { ObjectId } = require('mongodb');
 const SSLCommerzPayment = require('sslcommerz-lts');
+const SSLCommerzRouter = express.Router();
 
-function SSLCommerzAPI(ordersCollection) {
-      const SSLCommerzRouter = express.Router();
+module.exports = (ordersCollection) => {
 
       const store_id = process.env.STORE_ID;
       const store_passwd = process.env.STORE_PASSWORD;
@@ -11,20 +11,22 @@ function SSLCommerzAPI(ordersCollection) {
 
       SSLCommerzRouter.post('/order', async (req, res) => {
             const order = req.body;
-            const { name, email, address, country, phone, city, post_code, currency, price, plan } = order || {};
+            const { name, email, address, country, phone, city, post_code, currency, price, plan, progress } = order || {};
+            console.log(order)
 
             const tran_ID = new ObjectId().toString()
+            console.log(tran_ID)
 
             const data = {
                   total_amount: price,
                   currency: currency,
                   tran_id: tran_ID, // use unique tran_id for each api call
-                  success_url: `http://localhost:8000/payment/success/${tran_ID}`,
+                  success_url: `http://localhost:8000/payment/success/${tran_ID}?progress=${progress}`,
                   fail_url: `http://localhost:8000/payment/fail/${tran_ID}`,
                   cancel_url: 'http://localhost:3030/cancel',
                   ipn_url: 'http://localhost:3030/ipn',
                   shipping_method: 'Courier',
-                  product_name: plan,
+                  product_name: "Product Name",
                   product_category: 'Electronic',
                   product_profile: 'general',
                   cus_name: name,
@@ -46,6 +48,8 @@ function SSLCommerzAPI(ordersCollection) {
                   ship_country: 'Bangladesh',
             };
 
+            console.log(data)
+
             const sslcz = new SSLCommerzPayment(store_id, store_passwd, is_live)
             sslcz.init(data).then(async (apiResponse) => {
                   // Redirect the user to payment gateway
@@ -63,14 +67,19 @@ function SSLCommerzAPI(ordersCollection) {
 
       SSLCommerzRouter.post('/payment/success/:transId', async (req, res) => {
             const tran_ID = req.params.transId;
+            const  {progress} = req.query;
             const query = { transactionId: tran_ID };
             const updateStatus = {
                   $set: {
                         paidStatus: true
                   }
             }
+            console.log(progress)
             const result = await ordersCollection.updateOne(query, updateStatus)
             if (result.modifiedCount > 0) {
+                  if(progress === "Checkout"){
+                        res.redirect(`http://localhost:5173/payment/success/${tran_ID}`)
+                  }
                   res.redirect(`http://localhost:5173/payment/success/${tran_ID}`)
             }
       })
@@ -91,5 +100,3 @@ function SSLCommerzAPI(ordersCollection) {
 
       return SSLCommerzRouter;
 }
-
-module.exports = SSLCommerzAPI;

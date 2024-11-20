@@ -20,6 +20,12 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true); // Track loading state
   const [cartStatus, setCartStatus] = useState(0);
+  const [progress, setProgress] = useState("ShippingCart");
+
+  // handle progress
+  const handleProgress = (value) => {
+    setProgress(value)
+  }
 
   // Create new user with email and password
   const createUser = async (email, password) => {
@@ -139,6 +145,8 @@ const AuthProvider = ({ children }) => {
     logOut,
     cartStatus,
     setCartStatus,
+    progress,
+    handleProgress
   };
 
   return (

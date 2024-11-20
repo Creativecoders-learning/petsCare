@@ -2,11 +2,33 @@ import { useLocation } from "react-router-dom";
 import CheckoutForm from "../../Components/Checkout/CheckoutForm/CheckoutForm";
 import PrimaryTitle from "../../Components/UI/PrimaryTitle";
 import Container from "../../Components/UI/Container";
+import { useEffect, useState } from "react";
 
-export default function Checkout() {
+export default function Checkout({ progress }) {
   const location = useLocation();
   const { plan, color, price } = location?.state || {};
+  const [cartProducts, setCartProducts] = useState([]);
 
+  useEffect(() => {
+    if (progress === "Checkout") {
+      const storedCartProducts = JSON.parse(
+        localStorage.getItem("cartProducts")
+      );
+      setCartProducts(storedCartProducts);
+    }
+  }, [progress]);
+
+  
+  // total price
+  const totalPrice = () => {
+    return cartProducts.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+  };
+  console.log(cartProducts)
+  console.log(totalPrice)
+  
   // Content based on plan type
   const planDetails = {
     Basic: [
@@ -32,12 +54,14 @@ export default function Checkout() {
   return (
     <Container>
       <div className="mt-10">
-        <h2 className="text-2xl font-bold text-center">Choice Your Payment Option</h2>
+        <h2 className="text-2xl font-bold text-center">
+          Choice Your Payment Option
+        </h2>
       </div>
       <div className="flex flex-col lg:flex-row xl:flex-row justify-between items-start gap-10 mb-20 mt-10">
         {/* Left Side - Checkout Form */}
         <div className="w-full lg:w-[60%] xl:w-[60%] shadow-xl p-10 rounded-xl bg-white">
-          <CheckoutForm price={Number(price)} plan={plan} />
+          <CheckoutForm progress={progress} price={Number(price) || Number(totalPrice()) || 0} plan={plan} />
         </div>
 
         {/* Right Side - Plan Details */}

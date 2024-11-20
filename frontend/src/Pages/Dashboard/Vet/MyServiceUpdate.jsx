@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { useForm } from "react-hook-form";
 import useAxios from "../../../Hooks/useAxios";
-import toast from "react-hot-toast";
+import { useForm } from "react-hook-form";
 import PrimaryTitle from "../../../Components/UI/PrimaryTitle";
-
+import toast from "react-hot-toast";
 const serviceType = [
   "Holistics",
   "SportsCare",
@@ -11,38 +10,15 @@ const serviceType = [
   "Genetics",
   "Medical Care",
 ];
-
-const WorkingHours = 12;
-
-const NewServiceForm = () => {
-  const apiHandler = useAxios();
+const MyServiceUpdate = ({ selectedService: service,onServiceUpdated,onClose }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [imagePreview, setImagePreview] = useState(null);
+  const apiHandler = useAxios();
+  const [imagePreview, setImagePreview] = useState(service?.image);
   const [imageUrl, setImageUrl] = useState("");
-  const boxCount = WorkingHours / 3;
-
-  const onSubmit = async (data) => {
-    const newServiceData = {
-      ...data,
-      imageUrl,
-      status: "Pending",
-    };
-    console.log(newServiceData);
-
-    try {
-      const response = await apiHandler.post("/vetServices", newServiceData);
-
-      if (response.data.insertedId) {
-        toast.success(`Service data added successfully`, response.data);
-      }
-    } catch (error) {
-      toast.error("Error adding service:", error.message);
-    }
-  };
 
   // Handle image upload
   const handleImageUpload = async (event) => {
@@ -64,10 +40,35 @@ const NewServiceForm = () => {
     }
   };
 
+  // update
+  const onSubmit = async (data) => {
+    const serviceData = {
+      vetName: data?.vetName,
+      vetEmail: data?.vetEmail,
+      serviceName: data?.serviceName,
+      image: imageUrl || service?.image,
+      serviceType: data?.serviceType,
+      shortDescription: data?.shortDescription,
+      description: data?.description,
+    };
+    apiHandler
+      .patch(`/vetServices/${service?._id}`, serviceData)
+      .then((res) => {
+        if (res?.data?.modifiedCount === 1) {
+          toast.success("Successfully Update the Service");
+          onServiceUpdated(); // Call this to refresh the list
+          onClose();
+        }
+      })
+      .catch((error) => {
+        toast.error(error?.message);
+      });
+  };
+
   return (
     <div className="w-[80%]">
       <div className="flex justify-center">
-        <PrimaryTitle>Add Service</PrimaryTitle>
+        <PrimaryTitle>Update Service</PrimaryTitle>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* row-1  */}
@@ -83,7 +84,7 @@ const NewServiceForm = () => {
             <input
               {...register("vetName", { required: "This field is required" })}
               type="text"
-              placeholder="Enter Vets Name"
+              defaultValue={service?.vetName}
               className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
             />
             {errors.vetName && (
@@ -102,8 +103,8 @@ const NewServiceForm = () => {
             </label>
             <input
               {...register("vetEmail", { required: "This field is required" })}
+              defaultValue={service?.vetEmail}
               type="email"
-              placeholder="Enter Vets Email"
               className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
             />
             {errors.vetEmail && (
@@ -127,8 +128,8 @@ const NewServiceForm = () => {
               {...register("serviceName", {
                 required: "This field is required",
               })}
+              defaultValue={service?.serviceName}
               type="text"
-              placeholder="Enter Service Name"
               className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
             />
             {errors.serviceName && (
@@ -150,6 +151,7 @@ const NewServiceForm = () => {
               {...register("serviceType", {
                 required: "Please select a Type",
               })}
+              defaultValue={service?.serviceType}
               className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
             >
               <option value="">Select Type</option>
@@ -189,35 +191,6 @@ const NewServiceForm = () => {
           )}
         </div>
 
-        {/* schedule */}
-        <div className="mb-6 flex flex-col items-start">
-          <label className="text-lg font-medium text-gray-700 mb-2">
-            Schedule
-          </label>
-          <div className="w-full flex gap-10 justify-around px-10 py-10 border-2 border-gray-300 rounded-lg">
-            {Array.from({ length: boxCount }).map((_, index) => (
-              <div key={index} className="w-full border-2 border-gray-300">
-                <div className="flex flex-col items-center gap-4 pb-4">
-                  <input
-                    {...register(`scheduleTime.${index}`, {
-                      required: "This field is required",
-                    })}
-                    type="text"
-                    placeholder="Set Schedule Time"
-                    className="w-full p-2 border-b-2 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
-                  />
-                  {errors.scheduleTime && errors.scheduleTime[index] && (
-                    <p className="text-red-500 text-sm mt-2">
-                      {errors.scheduleTime[index].message}
-                    </p>
-                  )}
-                  <p>4 Set Available</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* short des  */}
         <div className="mb-6">
           <label
@@ -230,7 +203,7 @@ const NewServiceForm = () => {
             {...register("shortDescription", {
               required: "This field is required",
             })}
-            placeholder="Write a detailed description for your Service"
+            defaultValue={service?.shortDescription}
             className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200 h-[80px]"
             rows="5"
           />
@@ -252,7 +225,7 @@ const NewServiceForm = () => {
             {...register("description", {
               required: "This field is required",
             })}
-            placeholder="Write a detailed description for your Service"
+            defaultValue={service?.description}
             className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
             rows="5"
           />
@@ -268,7 +241,7 @@ const NewServiceForm = () => {
             type="submit"
             className="w-full px-4 py-3 bg-primary text-white font-semibold rounded-lg focus:outline-none transition duration-300"
           >
-            Add New Service
+            Update Service
           </button>
         </div>
       </form>
@@ -276,4 +249,4 @@ const NewServiceForm = () => {
   );
 };
 
-export default NewServiceForm;
+export default MyServiceUpdate;

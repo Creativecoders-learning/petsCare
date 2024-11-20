@@ -15,6 +15,7 @@ export default function ProductDetails() {
   const [cartProducts, setCartProducts] = useState([]);
   const { setCartStatus } = UseAuth();
   const [quantity, setQuantity] = useState(0);
+  const {handleProgress} = UseAuth();
 
   // handle cart button
   const handleCartBtn = (product) => {
@@ -155,13 +156,7 @@ export default function ProductDetails() {
           <div className="flex px-6 py-4 h-[70vh]">
             {/* image */}
             <div className="w-1/2 flex flex-col gap-2 justify-between items-center overflow-hidden">
-              <div className="h-[80%] p-4 bg-[#F5F2EB]">
-                <img
-                  className="w-full h-full object-contain"
-                  src={petsProduct?.image}
-                  alt=""
-                />
-              </div>
+              ZF 
               <div className="w-[80%] h-[20%] flex justify-start gap-4">
                 <div className="p-2 bg-[#F5F2EB] w-full h-full">
                   <img
@@ -238,7 +233,7 @@ export default function ProductDetails() {
                   Add to Cart
                 </Button>
                 <Link to={"/payment-process"}>
-                  <Button primary={true} btnStyle="w-full">
+                  <Button onClick={()=>handleProgress("ShippingCart")} primary={true} btnStyle="w-full">
                     Buy Now
                   </Button>
                 </Link>

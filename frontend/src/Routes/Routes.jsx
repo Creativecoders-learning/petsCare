@@ -33,13 +33,10 @@ import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import MyAdoption from "../Pages/Dashboard/Seller/MyAdoption/MyAdoption";
 import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
 import UserChatAdoption from "../Pages/Dashboard/Seller/userAdoption/UserChatAdoption";
-<<<<<<< HEAD
 import Products from "../Pages/Dashboard/Seller/Products/Products";
 import MyOrders from "../Pages/Dashboard/Clients/MyOrders/MyOrders";
-=======
 import PaymentSuccess from "../Pages/Payments/PaymentSuccess/PaymentSuccess";
 import PaymentFail from "../Pages/Payments/PaymentFail/PaymentFail";
->>>>>>> 2823745565f702791594f3b49f804b0da011fbab
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -57,7 +54,6 @@ const router = createBrowserRouter([
       { path: "payment-process", element: <PaymentProcess /> },
       { path: "blogs", element: <Blog /> },
       { path: "blog-details/:id", element: <BlogDetails /> },
-<<<<<<< HEAD
       { path: "customer-plan", element: <CustomerPlan /> },
       { path: "get-Started", element: <GetStarted></GetStarted> },
       { path: "checkout", element: <Checkout /> },
@@ -66,7 +62,6 @@ const router = createBrowserRouter([
       { path: "registration", element: <Registration /> },
       { path: "role-change", element: <RoleChange /> },
       { path: "login", element: <Login /> },
-=======
       { path: "/customer-plan", element: <CustomerPlan /> },
       { path: "/get-Started", element: <GetStarted></GetStarted> },
       { path: "/checkout", element: <Checkout /> },
@@ -77,7 +72,6 @@ const router = createBrowserRouter([
       { path: "/login", element: <Login /> },
       { path: "/payment/success/:transId", element: <PaymentSuccess /> },
       { path: "/payment/fail/:transId", element: <PaymentFail /> },
->>>>>>> 2823745565f702791594f3b49f804b0da011fbab
     ],
   },
 

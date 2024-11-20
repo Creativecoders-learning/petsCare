@@ -206,7 +206,7 @@ export default function DashboardLayout() {
                     <DashboardActiveLink to="/dashboard/seller/user-adoptions">
                       <span className="flex items-center gap-3 rounded py-3 px-6">
                         <MdOutlinePets className="block text-[18px]" />
-                        <span className="block text-[17px]"> User Adoptions</span>
+                        <span className="block text-[17px]">Adopted Pets</span>
                       </span>
                     </DashboardActiveLink>
                   </li>

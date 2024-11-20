@@ -6,7 +6,7 @@ import Checkout from "../../../Pages/Checkout/Checkout";
 const Slot = () => {
   const [showCheckout, setShowCheckout] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
-  const [bookedSlot, setBookedSlot] = useState(null); 
+  const [bookedSlot, setBookedSlot] = useState(null); // Track only one booked slot at a time
   const [confirmedSlots, setConfirmedSlots] = useState({});
 
   const handleCheckoutClick = () => {
@@ -14,16 +14,17 @@ const Slot = () => {
   };
 
   const handlePaymentSuccess = () => {
-    setPaymentSuccess(true); 
+    setPaymentSuccess(true);
   };
 
   const handleSlotClick = (timeSlot, slotGroup) => {
     if (!confirmedSlots[timeSlot]?.[slotGroup] && bookedSlot?.timeSlot !== timeSlot) {
-      setBookedSlot({ timeSlot, slotGroup }); 
+      setBookedSlot({ timeSlot, slotGroup }); // Set the currently selected slot
     }
   };
 
   const handleConfirm = () => {
+    // Confirm the selected slot and mark it as unavailable
     if (bookedSlot) {
       setConfirmedSlots((prev) => ({
         ...prev,
@@ -42,7 +43,11 @@ const Slot = () => {
     <div>
       <h2 className="text-2xl font-semibold my-3 text-center mb-5">Select Your Slot</h2>
       <div className="mx-16">
-        <img className="w-full" src="https://i.ibb.co.com/MsbDWtd/Line-2.png" alt="" />
+        <img
+          className="w-full"
+          src="https://i.ibb.co.com/MsbDWtd/Line-2.png"
+          alt=""
+        />
         <div className="flex items-center justify-between my-5">
           <h2 className="flex items-center gap-3 font-bold text-gray-500">
             <FaRegBookmark className="text-2xl" />
@@ -56,7 +61,11 @@ const Slot = () => {
             Checkout Now
           </button>
         </div>
-        <img className="w-full" src="https://i.ibb.co.com/MsbDWtd/Line-2.png" alt="" />
+        <img
+          className="w-full"
+          src="https://i.ibb.co.com/MsbDWtd/Line-2.png"
+          alt=""
+        />
       </div>
 
       {/* Slot Selection */}
@@ -109,11 +118,9 @@ const Slot = () => {
       <div className="mt-10 flex items-center justify-center">
         <button
           onClick={handleConfirm}
-          disabled={!paymentSuccess || !bookedSlot} // Enable only after successful payment and slot selection
+          disabled={!paymentSuccess || !bookedSlot} // Disable until payment is successful and a slot is selected
           className={`w-[250px] py-2 rounded-xl font-bold text-xl ${
-            paymentSuccess && bookedSlot
-              ? "bg-primary text-white hover:bg-black"
-              : "bg-gray-400 text-gray-600 cursor-not-allowed"
+            paymentSuccess && bookedSlot ? "bg-primary text-white hover:bg-black" : "bg-gray-400 text-gray-600 cursor-not-allowed"
           }`}
         >
           Confirm

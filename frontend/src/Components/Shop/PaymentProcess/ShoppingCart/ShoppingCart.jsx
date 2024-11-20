@@ -2,9 +2,11 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaRegTrashAlt } from "react-icons/fa";
 import Button from "../../../UI/Button";
 import { useEffect, useState } from "react";
+import UseAuth from "../../../../Hooks/UseAuth";
 
-export default function ShoppingCart({handleProgress}) {
+export default function ShoppingCart() {
   const [cartProducts, setCartProducts] = useState([]);
+  const {handleProgress} = UseAuth();
 
   useEffect(() => {
     const storedCartProducts = JSON.parse(localStorage.getItem("cartProducts"));
