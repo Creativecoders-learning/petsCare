@@ -4,6 +4,7 @@ import CardBlog from "../../Components/Blogs/CardBlog";
 import Container from "../../Components/UI/Container";
 import useBlogs from "../../Hooks/api/useBlogs";
 import NoDataFound from "../../Components/UI/NoDataFound";
+import Breadcrumb from "../../Components/Shared/Breadcrumb/Breadcrumb";
 
 const Blog = () => {
   const { blogs, loading, error } = useBlogs();
@@ -28,10 +29,13 @@ const Blog = () => {
 
   return (
     <>
+      {/* Blogs Banner */}
+      <Breadcrumb title="All Blogs" />
+      
       <Container>
         <div className="flex w-full mx-auto">
           {/* <BlogBanner /> */}
-          <div className="px-10 py-20 lg:flex gap-10">
+          <div className="px-10 py-10 lg:flex gap-10">
             {/* <CardBlog /> */}
             {
               blogsByCategory.length > 0 ?
