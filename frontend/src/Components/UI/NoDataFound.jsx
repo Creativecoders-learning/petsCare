@@ -1,7 +1,7 @@
 
 const NoDataFound = ({ text = "data" }) => {
       return (
-            <div className="bg-secondaryLight h-[60vh] flex items-center justify-center">
+            <div className="bg-secondaryLight rounded-md h-[60vh] flex items-center justify-center">
                   <div className="text-center">
                         <div className="bg-primaryLight p-6 rounded-full inline-block">
                               <svg
