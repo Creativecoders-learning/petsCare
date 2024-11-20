@@ -1,6 +1,4 @@
 import { MdDateRange } from "react-icons/md";
-import dog from '../../assets/dog1.jpg'
-import dog2 from '../../assets/dog2.jpg'
 import useBlogs from "../../Hooks/api/useBlogs";
 import { Link } from "react-router-dom";
 
@@ -14,8 +12,9 @@ const RecentBlogs = () => {
             return dateB - dateA; // Most recent first
       });
 
-      console.log(sortedBlogs);
 
+      if (loading) return <p>Loading...</p>;
+      if (error) return <p>Error: {error}</p>;
 
       return (
             <div className="px-7 pb-3 mt-10 bg-secondaryLight rounded-md ">
