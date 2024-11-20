@@ -10,12 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@cometchat-pro/chat": "^3.0.13",
+    "@cometchat-pro/react-ui-kit": "^3.0.12-pluto.beta.2",
     "@cometchat/chat-uikit-react": "^4.3.22",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@glidejs/glide": "^3.6.2",
     "@headlessui/react": "^2.2.0",
     "@smastrom/react-rating": "^1.5.0",
+    "@zegocloud/zego-uikit-prebuilt": "^2.12.3",
     "axios": "^1.7.7",
     "firebase": "^11.0.1",
     "prop-types": "^15.8.1",

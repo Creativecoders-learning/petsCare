@@ -34,6 +34,7 @@ import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import MyAdoption from "../Pages/Dashboard/Seller/MyAdoption/MyAdoption";
 import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
 import UserChatAdoption from "../Pages/Dashboard/Seller/userAdoption/UserChatAdoption";
+import Meeting from "../Pages/Dashboard/Seller/Meeting/Meeting";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/adoption", element: <Adoption /> },
+      {
+        path: "getStarted/:meeting",
+        element: <Meeting></Meeting>
+      },
       { path: "/adoptionDetails/:id", element: <AdopDetails></AdopDetails> },
       { path: "shop", element: <Shop /> },
       { path: "all-products", element: <AllProducts /> },
@@ -97,6 +102,7 @@ const router = createBrowserRouter([
         path: "seller/adoptions",
         element: <Adoptions />,
       },
+     
 
       // admin routes
       {
