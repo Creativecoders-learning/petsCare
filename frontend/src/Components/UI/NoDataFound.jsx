@@ -1,7 +1,5 @@
-import React from "react";
-// import EmptyIllustration from "../../../Assets/EmptyIllustration.svg"; // Import an SVG illustration
 
-const NoDataFound = () => {
+const NoDataFound = ({ text = "data" }) => {
       return (
             <div className="bg-secondaryLight h-[60vh] flex items-center justify-center">
                   <div className="text-center">
@@ -20,14 +18,14 @@ const NoDataFound = () => {
                               </svg>
                         </div>
                         <h1 className="text-2xl font-bold text-secondary mt-4">
-                              No Data Found
+                              No {text} Found
                         </h1>
                         <p className="text-myGray mt-2">
-                        You haven’t created any data yet. Start by clicking the button above.
+                              You haven’t created any {text} data yet. Start by clicking the button above.
                         </p>
-                        
+
                   </div>
-            
+
             </div>
       );
 };

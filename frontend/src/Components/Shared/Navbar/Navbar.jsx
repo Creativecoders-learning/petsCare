@@ -16,7 +16,7 @@ export default function Navbar() {
 
   const loggedInUser = users?.find(matchedUser => matchedUser?.email === user?.email)
   console.log(loggedInUser?.image);
-  
+
 
   const handleLogOut = () => {
     logOut()
@@ -127,13 +127,13 @@ export default function Navbar() {
                     </span>
                   </ActiveRoute>
                 </li>
-                <li className="flex items-center">
+                {/* <li className="flex items-center">
                   <ActiveRoute to={"dashboard"}>
                     <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
                       Dashboard
                     </span>
                   </ActiveRoute>
-                </li>
+                </li> */}
               </ul>
               {/*      <!-- Actions --> */}
               <div className="">
@@ -190,13 +190,23 @@ export default function Navbar() {
                             {loggedInUser?.email}
                           </p>
                           {/* profile */}
-                          <Link to={`/dashboard/profile`}>
-                            <li className="flex items-stretch text-base mb-2">
-                              <Button outlineBtn>
-                                <span className="relative">View profile</span>
-                              </Button>
-                            </li>
-                          </Link>
+                          <div className="flex items-center gap-3">
+                            <Link to={`/dashboard/profile`}>
+                              <li className="flex items-stretch text-base mb-2">
+                                <Button outlineBtn>
+                                  <span className="relative">View profile</span>
+                                </Button>
+                              </li>
+                            </Link>
+                            <Link to={`/dashboard`}>
+                              <li className="flex items-stretch text-base mb-2">
+                                <Button outlineBtn>
+                                  <span className="relative">Dashboard</span>
+                                </Button>
+                              </li>
+                            </Link>
+                          </div>
+
                           {/* log out */}
                           <div onClick={handleLogOut}>
                             <Button primary>Log out</Button>

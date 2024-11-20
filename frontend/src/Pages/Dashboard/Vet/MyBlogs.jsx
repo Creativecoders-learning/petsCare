@@ -19,7 +19,7 @@ const MyBlogs = () => {
       const [modalType, setModalType] = useState("");
       const apiHandler = useAxios()
 
-      const { blogs, refresh } = useBlogs([]);
+      const { blogs, refresh } = useBlogs(user?.email);
 
       // for reload owner blogs
       useEffect(() => {
@@ -146,7 +146,7 @@ const MyBlogs = () => {
                               </table>
                         </div>
                   ) : (
-                        <NoDataFound />
+                        <NoDataFound text="Blogs" />
                   )}
 
                   {/* Conditionally render the details modal */}
