@@ -40,8 +40,8 @@ const BlogDetails = () => {
             if (response?.data?.modifiedCount > 0) {
 
                 // average review calculate
-                const totalRating = existingReviews.reduce((sum, review) => sum + review?.rating, 0);
-                const averageRating = parseFloat((totalRating / reviews?.length).toFixed(1))
+                const totalRating = updatedReviews.reduce((sum, review) => sum + review?.rating, 0);
+                const averageRating = (totalRating / reviews?.length).toFixed(1)
 
                 // Send updated average reviews to the backend
                 await apiHandler.put(`/blogs/blog-details/${id}`, {
