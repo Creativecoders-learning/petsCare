@@ -3,7 +3,6 @@ import useBlogs from "../../Hooks/api/useBlogs";
 
 const RelatedBlogs = ({ blog }) => {
 
-      console.log(blog);
       const { blogs } = useBlogs();
 
       const relatedBlogs = blogs?.filter(relatedBlog => relatedBlog?.category === blog?.category);
