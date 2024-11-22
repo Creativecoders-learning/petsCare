@@ -3,6 +3,7 @@ import Container from "../../Components/UI/Container";
 import useBlogs from "../../Hooks/api/useBlogs";
 import { useEffect, useState } from "react";
 import BlogComment from "../../Components/Blogs/BlogComment";
+import RelatedBlogs from "../../Components/Blogs/RelatedBlogs";
 
 const BlogDetails = () => {
     const { loading, error, blogs } = useBlogs();
@@ -113,22 +114,7 @@ const BlogDetails = () => {
                         </div>
 
                         {/* Related Blogs */}
-                        <div className="bg-secondaryLight p-6 rounded-lg shadow-md">
-                            <h3 className="text-lg font-bold mb-4 text-secondary">
-                                Related Blogs
-                            </h3>
-                            <ul className="space-y-3">
-                                <li className="text-primary hover:underline cursor-pointer">
-                                    • Exploring Pet Care
-                                </li>
-                                <li className="text-primary hover:underline cursor-pointer">
-                                    • Animal Health Insights
-                                </li>
-                                <li className="text-primary hover:underline cursor-pointer">
-                                    • Tips for First-Time Pet Owners
-                                </li>
-                            </ul>
-                        </div>
+                        <RelatedBlogs blog={blog} />
 
                         {/* Blog comments */}
                         <BlogComment />

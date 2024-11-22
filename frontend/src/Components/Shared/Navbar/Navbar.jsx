@@ -4,29 +4,16 @@ import ActiveRoute from "../../../Routes/ActiveRoute";
 import Button from "../../UI/Button";
 import Container from "../../UI/Container";
 import UseAuth from "../../../Hooks/UseAuth";
-import toast from "react-hot-toast";
 import useUsers from "../../../Hooks/api/useUsers";
+import UserDropdownProfile from "../../UI/UserDropdownProfile";
 
 export default function Navbar() {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const { users } = useUsers()
-  const { user, logOut } = UseAuth();
+  const { user } = UseAuth();
 
   const loggedInUser = users?.find(matchedUser => matchedUser?.email === user?.email)
-  console.log(loggedInUser?.image);
-
-
-  const handleLogOut = () => {
-    logOut()
-      .then(() => {
-        toast.success('Successfully logged Out!!')
-      })
-      .catch(error => {
-        toast.error(error?.message)
-      })
-  }
 
   return (
     <>
@@ -151,71 +138,9 @@ export default function Navbar() {
                 ) : (
                   <>
                     {/* User profile */}
-                    <div className="relative">
-                      <figure
-                        className="w-12 h-12 rounded-full overflow-hidden cursor-pointer"
-                        onClick={() => {
-                          setIsDropdownOpen(!isDropdownOpen);
-                          setIsToggleOpen(false);
-                        }}
-                      >
-                        <img
-                          className="w-full h-full rounded-full object-cover"
-                          src={loggedInUser?.image}
-                          alt="User Profile"
-                        />
-                      </figure>
-                      {/* Dropdown menu start */}
-                      <div
-                        className={`absolute -right-14 md:right-0 mt-2 w-80 md:w-96 py-2 bg-white rounded-md shadow-lg transform transition-all duration-300 flex flex-col gap-6 ${isDropdownOpen
-                          ? "opacity-100 scale-100"
-                          : "opacity-0 scale-95 pointer-events-none"
-                          }`}
-                      >
-                        {/* Dropdown head */}
-                        <div className="flex flex-col items-center">
-                          <figure className="w-16 h-16 rounded-full mb-3">
-                            <img
-                              className="w-16 h-16 rounded-full"
-                              src={loggedInUser?.image}
-                              alt="User Profile"
-                            />
-                          </figure>
-                          {/* user name */}
-                          <h4 className="text-2xl text-center font-nunito font-bold">
-                            {loggedInUser?.name}
-                          </h4>
-                          {/* user email */}
-                          <p className="text-[#646464] text-center mb-4">
-                            {loggedInUser?.email}
-                          </p>
-                          {/* profile */}
-                          <div className="flex items-center gap-3">
-                            <Link to={`/dashboard/profile`}>
-                              <li className="flex items-stretch text-base mb-2">
-                                <Button outlineBtn>
-                                  <span className="relative">View profile</span>
-                                </Button>
-                              </li>
-                            </Link>
-                            <Link to={`/dashboard`}>
-                              <li className="flex items-stretch text-base mb-2">
-                                <Button outlineBtn>
-                                  <span className="relative">Dashboard</span>
-                                </Button>
-                              </li>
-                            </Link>
-                          </div>
-
-                          {/* log out */}
-                          <div onClick={handleLogOut}>
-                            <Button primary>Log out</Button>
-                          </div>
-                        </div>
-
-                      </div>
-                      {/* Dropdown menu end */}
-                    </div>
+                    <UserDropdownProfile
+                      loggedInUser={loggedInUser}
+                    />
                   </>
                 )}
               </div>

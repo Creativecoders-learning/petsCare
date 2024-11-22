@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const RecentBlogs = () => {
 
       const { blogs, loading, error } = useBlogs();
+
       // Sort blogs by `author.update` in descending order
       const sortedBlogs = blogs?.sort((a, b) => {
             const dateA = new Date(a?.author?.update || "1970-01-01");
