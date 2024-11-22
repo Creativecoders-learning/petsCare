@@ -1,32 +1,37 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaStar } from "react-icons/fa";
+import UseAuth from "../../Hooks/UseAuth";
 
 const ReviewSystem = ({ onSubmitReview }) => {
       const { register, handleSubmit, reset } = useForm(); // React Hook Form
       const [rating, setRating] = useState(0);
+      const { user } = UseAuth();
+      const name = user?.displayName;
+      const email = user?.email;
+      const image = user?.photoURL;
 
       const onSubmit = (data) => {
-            const reviewData = { ...data, rating };
+            const reviewData = { name, email, image, ...data, rating };
             if (onSubmitReview) {
-                  onSubmitReview(reviewData); // Pass review data to parent component
+                  onSubmitReview(reviewData);
             }
-            reset(); // Reset form fields
-            setRating(0); // Reset rating
+            reset();
+            setRating(0);
       };
 
       return (
-            <div className="max-w-md mx-auto bg-secondaryLight p-8 rounded-xl shadow-lg">
+            <div className="bg-secondaryLight p-8 rounded-xl shadow-lg">
                   <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Write a Review</h2>
 
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                        {/* Name Input */}
+                        {/* Title Input */}
                         <div>
-                              <label className="block text-lg font-medium text-gray-700 mb-2">Your Name</label>
+                              <label className="block text-lg font-medium text-gray-700 mb-2">Title</label>
                               <input
                                     type="text"
-                                    {...register("name", { required: true })}
-                                    placeholder="Enter your name"
+                                    {...register("title", { required: true })}
+                                    placeholder="Enter your title"
                                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300"
                               />
                         </div>
@@ -64,7 +69,7 @@ const ReviewSystem = ({ onSubmitReview }) => {
                                     className="w-full bg-primary text-white py-2 rounded-md font-medium "
                               >
                                     Submit Review
-                              </button>  
+                              </button>
                         </div>
                   </form>
             </div>

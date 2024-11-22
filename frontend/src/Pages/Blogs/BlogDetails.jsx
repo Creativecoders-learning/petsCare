@@ -2,19 +2,21 @@ import { useParams } from "react-router-dom";
 import Container from "../../Components/UI/Container";
 import useBlogs from "../../Hooks/api/useBlogs";
 import { useEffect, useState } from "react";
-// import BlogComment from "../../Components/Blogs/BlogComment";
 import RelatedBlogs from "../../Components/Blogs/RelatedBlogs";
 import ReviewSystem from "../../Components/ReviewSystem/ReviewSystem";
 import useAxios from "../../Hooks/useAxios";
+import toast from 'react-hot-toast';
+import ReviewCard from "../../Components/UI/ReviewCard";
 
 const BlogDetails = () => {
-    const { loading, error, blogs } = useBlogs();
+    const { loading, error, blogs, refresh } = useBlogs();
     const [subtitles, setSubtitles] = useState([]);
     const { id } = useParams();
 
     const apiHandler = useAxios()
 
     const blog = blogs?.find((blog) => blog?._id === id);
+    const reviews = blog?.reviews;
 
     useEffect(() => {
         if (blog?.subtitles) {
@@ -25,18 +27,22 @@ const BlogDetails = () => {
     const handleReviewSystem = async (reviewData) => {
         try {
             // Fetch the existing blog details
-            const response = await apiHandler.get(`/blogs/blog-details/${id}`);
-            const existingReviews = response.data.reviews || [];
+            const existingBlog = await apiHandler.get(`/blogs/blog-details/${id}`);
+            const existingReviews = existingBlog?.data?.reviews || [];
 
             // Append the new review to the existing reviews
-            // const updatedReviews = [...existingReviews, reviewData];
+            const updatedReviews = [...existingReviews, reviewData];
 
             // Send updated reviews to the backend
-            // await apiHandler.post(`/blogs/blog-details/${id}`, {
-            //     reviews: updatedReviews,
-            // });
+            const response = await apiHandler.put(`/blogs/blog-details/${id}`, {
+                reviews: updatedReviews,
+            });
+            if (response?.data?.modifiedCount > 0) {
+                toast.success('Review Added Successfully!!')
 
-            console.log("Review submitted successfully:", existingReviews);
+                refresh();
+            }
+            // console.log("Review data:", reviewData);
         } catch (error) {
             console.error("Error submitting review:", error);
         }
@@ -64,7 +70,7 @@ const BlogDetails = () => {
 
     return (
         <Container>
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-10 mb-16">
                 {/* Hero Section */}
                 <div className="relative">
                     <img
@@ -100,7 +106,7 @@ const BlogDetails = () => {
                     </div>
 
                     {/* Sidebar */}
-                    <div className="lg:col-span-4 space-y-6">
+                    <div className="lg:col-span-4 space-y-6 px-4 lg:px-0">
                         {/* Author Info */}
                         <div className="bg-gradient-to-r from-primary to-primaryLight text-secondaryLight p-6 rounded-lg shadow-md">
                             <div className="flex items-center">
@@ -139,8 +145,8 @@ const BlogDetails = () => {
                         {/* Related Blogs */}
                         <RelatedBlogs blog={blog} />
 
-                        {/* Blog comments */}
-                        {/* <BlogComment /> */}
+                        {/* All reviews */}
+                        <ReviewCard reviews={reviews} />
 
                         {/* Reviews System */}
                         <ReviewSystem onSubmitReview={handleReviewSystem} />
