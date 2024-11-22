@@ -2,23 +2,46 @@ import { useParams } from "react-router-dom";
 import Container from "../../Components/UI/Container";
 import useBlogs from "../../Hooks/api/useBlogs";
 import { useEffect, useState } from "react";
-import BlogComment from "../../Components/Blogs/BlogComment";
+// import BlogComment from "../../Components/Blogs/BlogComment";
 import RelatedBlogs from "../../Components/Blogs/RelatedBlogs";
+import ReviewSystem from "../../Components/ReviewSystem/ReviewSystem";
+import useAxios from "../../Hooks/useAxios";
 
 const BlogDetails = () => {
     const { loading, error, blogs } = useBlogs();
     const [subtitles, setSubtitles] = useState([]);
     const { id } = useParams();
 
+    const apiHandler = useAxios()
+
     const blog = blogs?.find((blog) => blog?._id === id);
 
     useEffect(() => {
         if (blog?.subtitles) {
             setSubtitles(blog?.subtitles);
-            console.log(Object.keys(blog).join());
-
         }
     }, [blog]);
+
+    const handleReviewSystem = async (reviewData) => {
+        try {
+            // Fetch the existing blog details
+            const response = await apiHandler.get(`/blogs/blog-details/${id}`);
+            const existingReviews = response.data.reviews || [];
+
+            // Append the new review to the existing reviews
+            // const updatedReviews = [...existingReviews, reviewData];
+
+            // Send updated reviews to the backend
+            // await apiHandler.post(`/blogs/blog-details/${id}`, {
+            //     reviews: updatedReviews,
+            // });
+
+            console.log("Review submitted successfully:", existingReviews);
+        } catch (error) {
+            console.error("Error submitting review:", error);
+        }
+    };
+
 
     if (loading)
         return (
@@ -117,7 +140,10 @@ const BlogDetails = () => {
                         <RelatedBlogs blog={blog} />
 
                         {/* Blog comments */}
-                        <BlogComment />
+                        {/* <BlogComment /> */}
+
+                        {/* Reviews System */}
+                        <ReviewSystem onSubmitReview={handleReviewSystem} />
                     </div>
                 </div>
             </div>
