@@ -38,8 +38,17 @@ const BlogDetails = () => {
                 reviews: updatedReviews,
             });
             if (response?.data?.modifiedCount > 0) {
-                toast.success('Review Added Successfully!!')
 
+                // average review calculate
+                const totalRating = existingReviews.reduce((sum, review) => sum + review?.rating, 0);
+                const averageRating = parseFloat((totalRating / reviews?.length).toFixed(1))
+
+                // Send updated average reviews to the backend
+                await apiHandler.put(`/blogs/blog-details/${id}`, {
+                    rating: averageRating,
+                });
+
+                toast.success('Review Added Successfully!!');
                 refresh();
             }
             // console.log("Review data:", reviewData);
@@ -145,11 +154,12 @@ const BlogDetails = () => {
                         {/* Related Blogs */}
                         <RelatedBlogs blog={blog} />
 
+                        {/* Reviews System */}
+                        <ReviewSystem onSubmitReview={handleReviewSystem} />
+
                         {/* All reviews */}
                         <ReviewCard reviews={reviews} />
 
-                        {/* Reviews System */}
-                        <ReviewSystem onSubmitReview={handleReviewSystem} />
                     </div>
                 </div>
             </div>
