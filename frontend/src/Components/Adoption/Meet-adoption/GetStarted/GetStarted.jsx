@@ -8,15 +8,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
 import { UIKitSettingsBuilder } from "@cometchat/uikit-shared";
 import { CometChatConversationsWithMessages, CometChatUIKit } from "@cometchat/chat-uikit-react";
-// import { CometChatConversationsWithMessages } from "@cometchat/chat-uikit-react";
+import { FaVideo } from "react-icons/fa";
 
+const id = Math.floor(Math.random()*1000)
 const GetStarted = () => {
 
-  const [value,setValue] = useState();
+  const [value, setValue] = useState();
+  
   const navigate = useNavigate()
 
-  const handleJoin= useCallback(()=>{
-    navigate(`/getStarted/${value}`)
+  const handleJoin = useCallback(() => {
+    setValue(`mabcdzy${id}`)
+    navigate(`/getMeeting/${value}`)
   })
 
   useEffect(() => {
@@ -39,12 +42,12 @@ const GetStarted = () => {
     CometChatUIKit.init(UIKitSettings)
       .then(() => {
         console.log("Initialization completed successfully");
-        
+
         // Login or create user
-       const UID = 'cometchat-uid-5'; 
+        const UID = 'cometchat-uid-5';
 
         CometChatUIKit.getLoggedinUser().then((user) => {
-          console.log('loggedUser',user)
+          console.log('loggedUser', user)
           if (!user) {
             //Login user
             CometChatUIKit.login(UID)
@@ -65,7 +68,7 @@ const GetStarted = () => {
 
   }, []);
 
- 
+
 
   return (
     <div>
@@ -109,9 +112,16 @@ const GetStarted = () => {
                     The domestic dog is a domesticated
                   </p>
                 </div>
-                <div>
-                  <input type="text" name="" id="" value={value} onChange={(e)=> setValue(e.target.value)} className="p-3 border  " placeholder="meet link here" />
-                  <button onClick={handleJoin} className="px-5 py-3 ml-5 rounded-md border ">Join Here </button>
+                <div className="flex items-center justify-start gap-x-0">
+                  <h1 className=" text-2xl font-medium mt-5">Adoption Meet </h1>
+                  <button onClick={handleJoin} className="group size-[80px] relative">
+                 <span className="group-hover:shadow-[0px_0px_30px_2px_#0d87f8] group-hover:rotate-180 duration-500 z-30 absolute flex justify-center items-center bg-gradient-to-tr from-[#0d87f8] to-[#70c4ff] bottom-0 left-1/2 transform -translate-x-1/2 rounded-full size-[54px] bg-white">
+                  <FaVideo className="text-white"/>
+                  </span>
+                  <span className="bg-gradient-to-tr bottom-0 left-1/2  transform -translate-x-1/2  from-[#0d87f8]/80 to-[#70c4ff]/80 duration-300  absolute rounded-full z-20 size-0 group-hover:w-[60px] group-hover:h-[64px]"></span> 
+                  <span className="bg-gradient-to-tr bottom-0 left-1/2 from-[#0d87f8]/50 to-[#70c4ff]/50 transform -translate-x-1/2 duration-500 absolute rounded-full z-20 size-0 group-hover:size-[80px] hover:duration-300"></span>
+                 </button>
+
                 </div>
               </div>
             </div>
