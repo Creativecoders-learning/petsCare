@@ -36,6 +36,7 @@ import VetServiceManagement from "../Pages/Dashboard/Admin/VetsManagement/VetSer
 import MyAdoption from "../Pages/Dashboard/Seller/MyAdoption/MyAdoption";
 import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
 import UserChatAdoption from "../Pages/Dashboard/Seller/userAdoption/UserChatAdoption";
+import Meeting from "../Pages/Dashboard/Seller/Meeting/Meeting";
 import PaymentSuccess from "../Pages/Payments/PaymentSuccess/PaymentSuccess";
 import PaymentFail from "../Pages/Payments/PaymentFail/PaymentFail";
 
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/adoption", element: <Adoption /> },
+      {
+        path: "getMeeting/:meeting",
+        element: <Meeting></Meeting>
+      },
       { path: "/adoptionDetails/:id", element: <AdopDetails></AdopDetails> },
       { path: "shop", element: <Shop /> },
       { path: "all-products", element: <AllProducts /> },
@@ -108,10 +113,6 @@ const router = createBrowserRouter([
       {
         path: "seller/adoptions",
         element: <Adoptions />,
-      },
-      {
-        path: "client/my-doctors",
-        element: <MyDoctors />,
       },
 
       // admin routes
