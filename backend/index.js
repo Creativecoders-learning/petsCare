@@ -16,7 +16,7 @@ app.use(cors({
 }))
 
 
-const uri = process.env.DB_URI;
+const uri = process.env.Mongodb_Uri;
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -40,7 +40,8 @@ async function run() {
     const vetsServicesCollection = database.collection('vetServices');
     const usersCollection = database.collection('users');
     const shopProductCollection = database.collection('shop-products');
-   
+    const ordersCollection = database.collection('orders');
+
 
     // Blogs related api's
     const BlogAPI = require('./Modules/Blog/BlogAPI')(blogCollection);
@@ -64,8 +65,12 @@ async function run() {
     app.use('/', sellerApi)
 
     // adoption related api's
-    const adoptionApi = require('./Modules/Adoption/AdoptionAPI')(receiver,adoptionCollection);
+    const adoptionApi = require('./Modules/Adoption/AdoptionAPI')(receiver, adoptionCollection);
     app.use('/', adoptionApi);
+
+    // payment related api's
+    const SSLCommerzApi = require('./Modules/Payment/SSLCommerz')(ordersCollection);
+    app.use('/', SSLCommerzApi)
 
 
     await client.db("admin").command({ ping: 1 });

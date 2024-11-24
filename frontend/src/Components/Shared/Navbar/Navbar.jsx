@@ -4,22 +4,16 @@ import ActiveRoute from "../../../Routes/ActiveRoute";
 import Button from "../../UI/Button";
 import Container from "../../UI/Container";
 import UseAuth from "../../../Hooks/UseAuth";
-import toast from "react-hot-toast";
+import useUsers from "../../../Hooks/api/useUsers";
+import UserDropdownProfile from "../../UI/UserDropdownProfile";
 
 export default function Navbar() {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const { user, logOut } = UseAuth();
 
-  const handleLogOut = () => {
-    logOut()
-      .then(() => {
-        toast.success('Successfully logged Out!!')
-      })
-      .catch(error => {
-        toast.error(error?.message)
-      })
-  }
+  const { users } = useUsers()
+  const { user } = UseAuth();
+
+  const loggedInUser = users?.find(matchedUser => matchedUser?.email === user?.email)
 
   return (
     <>
@@ -120,13 +114,13 @@ export default function Navbar() {
                     </span>
                   </ActiveRoute>
                 </li>
-                <li className="flex items-center">
+                {/* <li className="flex items-center">
                   <ActiveRoute to={"dashboard"}>
                     <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
                       Dashboard
                     </span>
                   </ActiveRoute>
-                </li>
+                </li> */}
               </ul>
               {/*      <!-- Actions --> */}
               <div className="">
@@ -144,119 +138,9 @@ export default function Navbar() {
                 ) : (
                   <>
                     {/* User profile */}
-                    <div className="relative">
-                      <figure
-                        className="w-12 h-12 rounded-full overflow-hidden cursor-pointer"
-                        onClick={() => {
-                          setIsDropdownOpen(!isDropdownOpen);
-                          setIsToggleOpen(false);
-                        }}
-                      >
-                        <img
-                          className="w-full h-full rounded-full object-cover"
-                          src={user?.photoURL}
-                          alt="User Profile"
-                        />
-                      </figure>
-                      {/* Dropdown menu start */}
-                      <div
-                        className={`absolute -right-14 md:right-0 mt-2 w-80 md:w-96 py-2 bg-white rounded-md shadow-lg transform transition-all duration-300 flex flex-col gap-6 ${isDropdownOpen
-                          ? "opacity-100 scale-100"
-                          : "opacity-0 scale-95 pointer-events-none"
-                          }`}
-                      >
-                        {/* Dropdown head */}
-                        <div className="flex flex-col items-center">
-                          <figure className="w-16 h-16 rounded-full mb-3">
-                            <img
-                              className="w-16 h-16 rounded-full"
-                              src={user?.photoURL}
-                              alt="User Profile"
-                            />
-                          </figure>
-                          {/* user name */}
-                          <h4 className="text-2xl text-center font-nunito font-bold">
-                            {user?.displayName}
-                          </h4>
-                          {/* user email */}
-                          <p className="text-[#646464] text-center mb-4">
-                            {user?.email}
-                          </p>
-                          {/* profile */}
-                          <Link to={`/dashboard/profile`}>
-                            <li className="flex items-stretch text-base mb-2">
-                              <Button outlineBtn>
-                                <span className="relative">View profile</span>
-                              </Button>
-                            </li>
-                          </Link>
-                          {/* log out */}
-                          <div onClick={handleLogOut}>
-                            <Button primary>Log out</Button>
-                          </div>
-                        </div>
-
-                        {/* dropdown links */}
-                        <ul className="px-6">
-                          {/* <li className="flex items-stretch">
-                              <ActiveRoute
-                                to={`/dashboard/${user?.role}/charts`}
-                              >
-                                <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
-                                  <span>
-                                    <RxDashboard className="block text-[18px]" />
-                                  </span>
-                                  <span>Dashboard</span>
-                                </span>
-                              </ActiveRoute>
-                            </li> */}
-                          {/* Dropdown Content */}
-                          {/* {user?.role === "instructor" ? (
-                              <li className="flex items-stretch">
-                                <ActiveRoute
-                                  to={`/dashboard/${user?.role}/my-courses`}
-                                >
-                                  <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
-                                    <span>
-                                      <IoListSharp className="block text-[18px]" />
-                                    </span>
-                                    <span>Your Courses</span>
-                                  </span>
-                                </ActiveRoute>
-                              </li>
-                            ) : (
-                              ""
-                            )}
-                            <li className="flex items-stretch">
-                              <ActiveRoute
-                                to={`/dashboard/${user?.role}/settings`}
-                              >
-                                <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
-                                  <span>
-                                    <IoSettingsOutline className="block text-[18px]" />
-                                  </span>
-                                  <span>Settings</span>
-                                </span>
-                              </ActiveRoute>
-                            </li>
-
-                            <li className="flex items-stretch">
-                              <button
-                                onClick={handleLogoutBtn}
-                                className="w-full transition-colors duration-300 hover:text-primary"
-                              >
-                                <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
-                                  <span>
-                                    <FiLogOut className="block text-[18px]" />
-                                  </span>
-                                  <span>Logout</span>
-                                </span>
-                              </button>
-                            </li> */}
-                        </ul>
-                      </div>
-                      {/* Dropdown menu end */}
-                    </div>
+                    <UserDropdownProfile
+                      loggedInUser={loggedInUser}
+                    />
                   </>
                 )}
               </div>

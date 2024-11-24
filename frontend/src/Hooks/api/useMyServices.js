@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
-import toast from 'react-hot-toast';
 import useAxios from "../useAxios";
+import toast from "react-hot-toast";
 
-const useVetsData = () => {
-  const [vets, setVets] = useState([]);
+const useMyServices = () => {
+  const [myServices, setMyServices] = useState([]);
   const apiHandler = useAxios();
-
   const refresh = async () => {
     try {
-      const { data } = await apiHandler.get('/vets');
-      setVets(data)
+      const { data } = await apiHandler.get('/vetServices');
+      setMyServices(data)
     } catch (error) {
       toast.error(error?.message)
       console.log(error?.message);
-
     }
   }
 
@@ -21,7 +19,6 @@ const useVetsData = () => {
     refresh()
   }, []);
 
-  return { vets,refresh }
+  return {myServices,refresh}
 };
-
-export default useVetsData;
+export default useMyServices;

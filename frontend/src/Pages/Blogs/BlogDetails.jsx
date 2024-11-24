@@ -1,86 +1,168 @@
-import { useParams } from 'react-router-dom'
-import Container from '../../Components/UI/Container';
-import useBlogs from '../../Hooks/api/useBlogs';
-import { useEffect, useState } from 'react';
-import BlogComment from '../../Components/Blogs/BlogComment';
-// import BlogCategory from '../../Components/Blogs/BlogCategory';
-// import Testimonial from '../../Components/Home/Testimonial/Testimonial';
+import { useParams } from "react-router-dom";
+import Container from "../../Components/UI/Container";
+import useBlogs from "../../Hooks/api/useBlogs";
+import { useEffect, useState } from "react";
+import RelatedBlogs from "../../Components/Blogs/RelatedBlogs";
+import ReviewSystem from "../../Components/ReviewSystem/ReviewSystem";
+import useAxios from "../../Hooks/useAxios";
+import toast from 'react-hot-toast';
+import ReviewCard from "../../Components/UI/ReviewCard";
 
 const BlogDetails = () => {
-    const { loading, error, blogs } = useBlogs();
-    const [items, setItems] = useState({})
-    const { id } = useParams()
+    const { loading, error, blogs, refresh } = useBlogs();
+    const [subtitles, setSubtitles] = useState([]);
+    const { id } = useParams();
 
-    const blog = blogs?.find(blog => blog?._id === id)
+    const apiHandler = useAxios()
 
-    // console.log( blog?.author)
+    const blog = blogs?.find((blog) => blog?._id === id);
+    const reviews = blog?.reviews;
+
     useEffect(() => {
-        const subBlog = blog?.subtitles
-        setItems(subBlog)
-    }, [blog])
+        if (blog?.subtitles) {
+            setSubtitles(blog?.subtitles);
+        }
+    }, [blog]);
 
-    if (loading) return <p>Loading...</p>;
-    if (!blog) return <div>Blog not found</div>;
-    if (error) return <p>Error: {error}</p>;
+    const handleReviewSystem = async (reviewData) => {
+        try {
+            // Fetch the existing blog details
+            const existingBlog = await apiHandler.get(`/blogs/blog-details/${id}`);
+            const existingReviews = existingBlog?.data?.reviews || [];
+
+            // Append the new review to the existing reviews
+            const updatedReviews = [...existingReviews, reviewData];
+
+            // Send updated reviews to the backend
+            const response = await apiHandler.put(`/blogs/blog-details/${id}`, {
+                reviews: updatedReviews,
+            });
+            if (response?.data?.modifiedCount > 0) {
+
+                // average review calculate
+                const totalRating = updatedReviews.reduce((sum, review) => sum + review?.rating, 0);
+                const averageRating = (totalRating / reviews?.length).toFixed(1)
+
+                // Send updated average reviews to the backend
+                await apiHandler.put(`/blogs/blog-details/${id}`, {
+                    rating: averageRating,
+                });
+
+                toast.success('Review Added Successfully!!');
+                refresh();
+            }
+            // console.log("Review data:", reviewData);
+        } catch (error) {
+            console.error("Error submitting review:", error);
+        }
+    };
+
+
+    if (loading)
+        return (
+            <div className="flex items-center justify-center min-h-screen">
+                <p className="text-lg text-primaryLight">Loading...</p>
+            </div>
+        );
+    if (error)
+        return (
+            <div className="flex items-center justify-center min-h-screen">
+                <p className="text-lg text-primary">Error: {error}</p>
+            </div>
+        );
+    if (!blog)
+        return (
+            <div className="flex items-center justify-center min-h-screen">
+                <p className="text-lg text-secondary">Blog not found.</p>
+            </div>
+        );
 
     return (
         <Container>
-            <div className='flex gap-5'>
-                <div className='flex-1'>
-                    {/* blog details image */}
-                    <div className='w-full lg:h-[60vh] h-[30vh] overflow-hidden m-0 p-0'>
-                        <img className='w-full h-full object-cover  '
-                            // style={{ clipPath: 'inset(5% 0 10% 0)' }}
-                            src={blog?.image} alt="" />
-                    </div>
-                    <article className='text-center mt-5 mb-3 px-5'>
-                        <p className='text-gray-600'>PET BLOG / <span className='font-semibold text-gray-950'>{blog?.category}</span></p>
-                        <h1 className="text-3xl text-primary font-bold">{blog?.title}</h1>
-                    </article>
-
-                    <article className='px-5'>
-                        <p className='text-xl text-gray-800 my-5'>{blog?.description}</p>
-
-                    </article>
-                    {/* subtitle */}
-                    <div className='mt-10 lg:w-2/3 mx-auto px-5'>
-                        {
-                            items?.map(item =>
-                                <article key={item?.title}>
-                                    <h1 className='text-2xl font-bold text-secondary mt-10 mb-3'>{item?.title} hello</h1>
-                                    <p className='text-gray-700 mb-5 text-lg'>{item?.content}</p>
-                                </article>
-                            )
-                        }
-                        <div className='bg-slate-200 px-3 py-4 border-2 rounded-md my-5 border-l-4 border-l-primary'>
-                            <p className='font-inter font-bold'>Animals are the essence of our planet, showcasing beauty, strength, and diversity. Each species plays a vital role, reminding us of intricate balance and the importance of conservation.</p>
-                        </div>
-                        <div className='w-full h-auto'>
-                            <img className='w-full h-auto' src={blog?.image} alt="" />
-                        </div>
-
-                        {/* author info */}
-                        <div className='mt-10 mb-5 border-2 border-primary rounded-md p-3 lg:flex  items-center'>
-                            {/* author image */}
-                            <div className='flex-1'>
-                                <div className='lg:rounded-full lg:w-56 w-full h-auto  lg:h-56'>
-                                    <img className='w-full h-full lg:rounded-full object-cover' src={blog?.author?.image} alt="" />
-                                </div>
-
-                            </div>
-                            {/* author name */}
-                            <article className='lg:w-2/3 lg:pl-5 lg:pt-0 pt-4 lg:px-0 px-3'>
-                                <h1 className="text-primary text-xl  font-semibold mt-0 mb-2">AUTHOR</h1>
-                                <p className='text-primaryBold text-2xl  font-bold underline mb-2'>{blog?.author?.name}</p>
-                                <p className='text-sm text-gray-700'>{blog?.author?.description}</p>
-                            </article>
-                        </div>
-                        <BlogComment />
+            <div className="flex flex-col gap-10 mb-16">
+                {/* Hero Section */}
+                <div className="relative">
+                    <img
+                        src={blog?.image}
+                        alt={blog?.title}
+                        className="w-full h-[400px] object-cover rounded-lg"
+                    />
+                    <div className="absolute bottom-4 left-4 bg-opacity-70 bg-secondary text-secondaryLight p-4 rounded-md">
+                        <h1 className="text-4xl font-bold">{blog?.title}</h1>
+                        <p className="mt-2 text-sm uppercase text-primaryLight">
+                            Category: {blog?.category}
+                        </p>
                     </div>
                 </div>
 
-            </div>
+                {/* Blog Content */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
+                    {/* Main Content */}
+                    <div className="lg:col-span-8">
+                        <div className="bg-secondaryLight p-6 rounded-lg shadow-md">
+                            <p className="text-gray-800 text-lg leading-relaxed">{blog?.description}</p>
+                            <div className="mt-6 space-y-6">
+                                {subtitles.map((subtitle, index) => (
+                                    <div key={index} className="p-4 bg-white rounded-lg shadow-sm">
+                                        <h2 className="text-xl font-semibold text-primary">
+                                            {subtitle?.title}
+                                        </h2>
+                                        <p className="mt-2 text-secondary">{subtitle?.content}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
 
+                    {/* Sidebar */}
+                    <div className="lg:col-span-4 space-y-6 px-4 lg:px-0">
+                        {/* Author Info */}
+                        <div className="bg-gradient-to-r from-primary to-primaryLight text-secondaryLight p-6 rounded-lg shadow-md">
+                            <div className="flex items-center">
+                                <img
+                                    src={blog?.author?.image}
+                                    alt={blog?.author?.name}
+                                    className="w-16 h-16 rounded-full border-4 border-secondaryLight object-cover"
+                                />
+                                <div className="ml-4">
+                                    <h3 className="text-lg font-bold">{blog?.author?.name}</h3>
+                                    <p className="text-sm text-secondaryLight">Author</p>
+                                </div>
+                            </div>
+                            <p className="mt-4">{blog?.author?.description}</p>
+                        </div>
+
+                        {/* Blog Stats */}
+                        <div className="bg-white p-6 rounded-lg shadow-md">
+                            <h3 className="text-lg font-bold text-secondary mb-4">
+                                Blog Stats
+                            </h3>
+                            <div className="flex justify-between text-myGray mb-2">
+                                <span>Views</span>
+                                <span className="font-semibold text-primary">
+                                    {blog?.view_count || 0}
+                                </span>
+                            </div>
+                            <div className="flex justify-between text-myGray">
+                                <span>Rating</span>
+                                <span className="font-semibold text-primary">
+                                    {blog?.rating || "N/A"}
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* Related Blogs */}
+                        <RelatedBlogs blog={blog} />
+
+                        {/* Reviews System */}
+                        <ReviewSystem onSubmitReview={handleReviewSystem} />
+
+                        {/* All reviews */}
+                        <ReviewCard reviews={reviews} />
+
+                    </div>
+                </div>
+            </div>
         </Container>
     );
 };

@@ -25,16 +25,20 @@ import MyProducts from "../Pages/Dashboard/Seller/MyProducts/MyProducts";
 import UserManagement from "../Pages/Dashboard/Admin/UserManagement";
 import MyServices from "../Pages/Dashboard/Vet/MyServices";
 import Patients from "../Pages/Dashboard/Vet/Patients";
-import VetManagement from "../Pages/Dashboard/Admin/VetManagement";
+import VetManagement from "../Pages/Dashboard/Admin/VetsManagement/VetManagement";
 import Appointments from "../Pages/Dashboard/Vet/Appoinments";
 import AdoptionHistory from "../Pages/Dashboard/Admin/AdoptionHistory";
 import RoleChange from "../Pages/RoleChange/RoleChange";
 import MyBlogs from "../Pages/Dashboard/Vet/MyBlogs";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
+import MyDoctors from "../Pages/Dashboard/Vet/MyDoctors";
+import VetServiceManagement from "../Pages/Dashboard/Admin/VetsManagement/VetServiceManagement";
 import MyAdoption from "../Pages/Dashboard/Seller/MyAdoption/MyAdoption";
 import Adoptions from "../Pages/Dashboard/Seller/Adoptions";
 import UserChatAdoption from "../Pages/Dashboard/Seller/userAdoption/UserChatAdoption";
 import Meeting from "../Pages/Dashboard/Seller/Meeting/Meeting";
+import PaymentSuccess from "../Pages/Payments/PaymentSuccess/PaymentSuccess";
+import PaymentFail from "../Pages/Payments/PaymentFail/PaymentFail";
 
 const router = createBrowserRouter([
   // this is basic routes
@@ -64,6 +68,8 @@ const router = createBrowserRouter([
       { path: "/registration", element: <Registration /> },
       { path: "/role-change", element: <RoleChange /> },
       { path: "/login", element: <Login /> },
+      { path: "/payment/success/:transId", element: <PaymentSuccess /> },
+      { path: "/payment/fail/:transId", element: <PaymentFail /> },
     ],
   },
 
@@ -72,27 +78,33 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <DashboardLayout />,
     children: [
+      // common dashboard routs
       {
         index: true,
-        element: <Dashboard />
+        element: <Dashboard />,
       },
       {
         path: "profile",
         element: <Profile />,
       },
       {
-        path: 'my-blogs',
-        element: <MyBlogs />
+        path: "my-blogs",
+        element: <MyBlogs />,
       },
 
       // Seller routes
       {
-        path: 'seller/my-adoptions',
-        element: <MyAdoption></MyAdoption>
+        path: "client/my-adoptions",
+        element: <MyAdoption></MyAdoption>,
       },
       {
-        path: 'seller/user-adoptions',
-        element: <UserChatAdoption/>
+        path: "client/user-adoptions",
+        element: <UserChatAdoption></UserChatAdoption>,
+      },
+      { path: "seller/my-adoptions", element: <MyAdoption></MyAdoption> },
+      {
+        path: "seller/user-adoptions",
+        element: <UserChatAdoption />,
       },
       {
         path: "seller/my-products",
@@ -102,7 +114,6 @@ const router = createBrowserRouter([
         path: "seller/adoptions",
         element: <Adoptions />,
       },
-     
 
       // admin routes
       {
@@ -118,26 +129,34 @@ const router = createBrowserRouter([
         element: <UserManagement />,
       },
       {
-        path: 'admin/vet-management',
-        element: <VetManagement />
+        path: "admin/vet-management",
+        element: <VetManagement />,
       },
       {
-        path: 'admin/adoption-history',
-        element: <AdoptionHistory />
+        path: "admin/vet-service-management",
+        element: <VetServiceManagement />,
+      },
+      {
+        path: "admin/adoption-history",
+        element: <AdoptionHistory />,
       },
 
       // vet routes
       {
-        path: 'vet/appointments',
-        element: <Appointments />
+        path: "vet/appointments",
+        element: <Appointments />,
       },
       {
-        path: 'vet/my-services',
-        element: <MyServices />
+        path: "vet/my-services",
+        element: <MyServices />,
       },
       {
-        path: 'vet/patients',
-        element: <Patients />
+        path: "vet/patients",
+        element: <Patients />,
+      },
+      {
+        path: "vet/my-blogs",
+        element: <MyBlogs />,
       },
     ],
   },
