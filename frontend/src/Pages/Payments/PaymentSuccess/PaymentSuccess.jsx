@@ -1,21 +1,11 @@
-import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import UseAuth from "../../../Hooks/UseAuth";
+import useOrderById from "../../../Hooks/api/useOrderById";
 
 const PaymentSuccess = () => {
   const { transId } = useParams();
-  const [orders, setOrders] = useState([]);
-  const {handleProgress} = UseAuth();
-  console.log("transId", transId);
+  const {order} = useOrderById(transId)
+  console.log("transId", transId, order);
 
-  useEffect(() => {
-    fetch("http://localhost:8000/orders")
-      .then((res) => res.json())
-      .then((data) => setOrders(data));
-  }, []);
-
-  const paymentInfo = orders?.find((order) => order?.transactionId === transId);
-  console.log("PaymentInfo:", paymentInfo);
 
   return (
     <div className="min-h-screen bg-secondaryLight flex items-center justify-center px-6">
@@ -47,20 +37,20 @@ const PaymentSuccess = () => {
             <ul className="space-y-2">
               <li>
                 <span className="font-bold text-myGray">Name:</span>{" "}
-                {paymentInfo?.order?.name}
+                {order?.name}
               </li>
               <li>
                 <span className="font-bold text-myGray">Email:</span>{" "}
-                {paymentInfo?.order?.email}
+                {order?.email}
               </li>
               <li>
                 <span className="font-bold text-myGray">Phone:</span>{" "}
-                {paymentInfo?.order?.phone}
+                {order?.phone}
               </li>
               <li>
                 <span className="font-bold text-myGray">Address:</span>{" "}
-                {paymentInfo?.order?.address}, {paymentInfo?.order?.city},{" "}
-                {paymentInfo?.order?.country}
+                {order?.address}, {order?.city},{" "}
+                {order?.country}
               </li>
             </ul>
           </div>
@@ -73,19 +63,19 @@ const PaymentSuccess = () => {
             <ul className="space-y-2">
               <li>
                 <span className="font-bold text-myGray">Plan:</span>{" "}
-                {paymentInfo?.order?.plan}
+                {order?.plan}
               </li>
               <li>
                 <span className="font-bold text-myGray">Amount:</span>{" "}
-                {paymentInfo?.order?.price} {paymentInfo?.order?.currency}
+                {order?.price} {order?.currency}
               </li>
               <li>
                 <span className="font-bold text-myGray">Post Code:</span>{" "}
-                {paymentInfo?.order?.post_code}
+                {order?.post_code}
               </li>
               <li>
                 <span className="font-bold text-myGray">Transaction Id:</span>{" "}
-                {paymentInfo?.transactionId}
+                {order?.transId}
               </li>
             </ul>
           </div>
@@ -101,9 +91,9 @@ const PaymentSuccess = () => {
               Back to Home
             </button>
           </Link>
-          <Link to="/payment-process">
-            <button onClick={()=> handleProgress('OrderSuccess')} className="bg-primaryLight text-white px-6 py-2 rounded-lg shadow hover:bg-primary transition">
-              GO to Next
+          <Link to="/dashboard/payment-history">
+            <button className="bg-primaryLight text-white px-6 py-2 rounded-lg shadow hover:bg-primary transition">
+              Go to Next
             </button>
           </Link>
         </div>

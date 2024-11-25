@@ -261,6 +261,8 @@ export default function NewProductForm({refresh}) {
           )}
         </div>
 
+        <TextEditor/>
+
         {/* row-6 */}
         <div className="mt-8">
           <Button dynamicType="submit" primary={true} type="submit">

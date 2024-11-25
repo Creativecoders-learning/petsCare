@@ -1,9 +1,10 @@
 const express = require('express')
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const cors = require('cors')
-require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config();
 const app = express();
-const port = process.env.PORT | 8000;
+const port = process.env.PORT || 8000;
 
 
 // middleware 
@@ -17,6 +18,7 @@ app.use(cors({
 
 
 const uri = process.env.DB_URI;
+console.log(uri)
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,

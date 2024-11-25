@@ -3,13 +3,13 @@ import BlogCategory from "../../Components/Blogs/BlogCategory";
 import CardBlog from "../../Components/Blogs/CardBlog";
 import Container from "../../Components/UI/Container";
 import useBlogs from "../../Hooks/api/useBlogs";
+import NoDataFound from "../../Components/UI/NoDataFound";
+import Breadcrumb from "../../Components/Shared/Breadcrumb/Breadcrumb";
 
 const Blog = () => {
   const { blogs, loading, error } = useBlogs();
   const [blogsByCategory, setBlogsByCategory] = useState([]);
   const [filterInput, setFilterInput] = useState("");
-
-  // console.log(blogs);
 
   useEffect(() => {
     setBlogsByCategory(blogs);
@@ -22,27 +22,33 @@ const Blog = () => {
   //   handle filter option
   const handleFilterOption = (value) => {
     setFilterInput(value);
-    console.log(value, 'hello');
-
   }
-
-
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
     <>
+      {/* Blogs Banner */}
+      <Breadcrumb title="All Blogs" />
+      
       <Container>
         <div className="flex w-full mx-auto">
           {/* <BlogBanner /> */}
-          <div className="px-10 py-20 lg:flex gap-10">
+          <div className="px-10 py-10 lg:flex gap-10">
             {/* <CardBlog /> */}
-            <div className="flex-1">
-              {blogsByCategory?.map((blog) => (
-                <CardBlog key={blog?._id} blog={blog} />
-              ))}
-            </div>
+            {
+              blogsByCategory.length > 0 ?
+                <div className="flex-1">
+                  {blogsByCategory?.map((blog) => (
+                    <CardBlog key={blog?._id} blog={blog} />
+                  ))}
+                </div>
+                :
+                <div className="flex-1">
+                  <NoDataFound text="Blogs" />
+                </div>
+            }
 
             {/* search by category */}
             <div className="lg:w-1/3">

@@ -21,6 +21,8 @@ const VetsCategory = () => {
     return false;
   });
 
+  console.log(vets)
+
   // handleSelected category
   const handleCategory = (category) => {
     SetSelectedCategory(category);

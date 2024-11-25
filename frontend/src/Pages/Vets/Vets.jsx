@@ -6,7 +6,6 @@ const Vets = () => {
     <div>
       {/* vets banner  */}
       <Breadcrumb title={"Choose Your Vets"} />
-      {/* vets Category  */}
       <VetsCategory/>
     </div>
   );

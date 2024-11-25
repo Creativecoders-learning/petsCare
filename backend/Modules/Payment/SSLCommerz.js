@@ -67,19 +67,14 @@ module.exports = (ordersCollection) => {
 
       SSLCommerzRouter.post('/payment/success/:transId', async (req, res) => {
             const tran_ID = req.params.transId;
-            const  {progress} = req.query;
             const query = { transactionId: tran_ID };
             const updateStatus = {
                   $set: {
                         paidStatus: true
                   }
             }
-            console.log(progress)
             const result = await ordersCollection.updateOne(query, updateStatus)
             if (result.modifiedCount > 0) {
-                  if(progress === "Checkout"){
-                        res.redirect(`http://localhost:5173/payment/success/${tran_ID}`)
-                  }
                   res.redirect(`http://localhost:5173/payment/success/${tran_ID}`)
             }
       })

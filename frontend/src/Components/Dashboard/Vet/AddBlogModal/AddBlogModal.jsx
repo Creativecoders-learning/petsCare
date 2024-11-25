@@ -18,7 +18,6 @@ const AddBlogModal = () => {
       const currentDate = new Date();
       const date = currentDate.toDateString();
 
-
       // Handle form submission
       const onSubmit = (data) => {
             const blogData = {

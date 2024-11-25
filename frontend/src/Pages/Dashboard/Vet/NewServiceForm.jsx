@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useAxios from "../../../Hooks/useAxios";
-import toast from "react-hot-toast";
 import PrimaryTitle from "../../../Components/UI/PrimaryTitle";
+import Button from "../../../Components/UI/Button";
+import toast from "react-hot-toast";
 
 const serviceType = [
   "Holistics",
@@ -12,24 +13,38 @@ const serviceType = [
   "Medical Care",
 ];
 
-const WorkingHours = 12;
-
 const NewServiceForm = () => {
   const apiHandler = useAxios();
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const [imagePreview, setImagePreview] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
-  const boxCount = WorkingHours / 3;
+  const [timeSlots, setTimeSlots] = useState([]);
+  const [newSlot, setNewSlot] = useState({
+    startTime: "",
+    endTime: "",
+    seats: 1,
+  });
+
+  const addTimeSlot = () => {
+    setTimeSlots([
+      ...timeSlots,
+      { ...newSlot, bookedSeats: Array(newSlot.seats).fill(false) },
+    ]);
+    setNewSlot({ startTime: "", endTime: "", seats: 1 });
+  };
 
   const onSubmit = async (data) => {
     const newServiceData = {
       ...data,
-      imageUrl,
+      image: imageUrl,
       status: "Pending",
+      adminFeedback: "no feedback !",
+      schedule: timeSlots
     };
     console.log(newServiceData);
 
@@ -38,6 +53,7 @@ const NewServiceForm = () => {
 
       if (response.data.insertedId) {
         toast.success(`Service data added successfully`, response.data);
+        reset();
       }
     } catch (error) {
       toast.error("Error adding service:", error.message);
@@ -166,6 +182,100 @@ const NewServiceForm = () => {
             )}
           </div>
         </div>
+        {/* row-3  */}
+        <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-10 mb-6">
+          {/* degrees Field */}
+          <div className="flex-1">
+            <label
+              htmlFor="title"
+              className="block text-lg font-medium text-gray-700"
+            >
+              Degrees
+            </label>
+            <input
+              {...register("degrees", {
+                required: "This field is required",
+              })}
+              type="text"
+              placeholder="Enter Service Name"
+              className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+            />
+            {errors.degrees && (
+              <p className="text-red-500 text-sm mt-2">
+                {errors.degrees.message}
+              </p>
+            )}
+          </div>
+          {/* institute Field */}
+          <div className="flex-1">
+            <label
+              htmlFor="title"
+              className="block text-lg font-medium text-gray-700"
+            >
+              Institute
+            </label>
+            <input
+              {...register("institute", {
+                required: "This field is required",
+              })}
+              type="text"
+              placeholder="Enter Service Name"
+              className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+            />
+            {errors.institute && (
+              <p className="text-red-500 text-sm mt-2">
+                {errors.institute.message}
+              </p>
+            )}
+          </div>
+        </div>
+        {/* row-4  */}
+        <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-10 mb-6">
+          {/* expertise Field */}
+          <div className="flex-1">
+            <label
+              htmlFor="title"
+              className="block text-lg font-medium text-gray-700"
+            >
+              Expertise
+            </label>
+            <input
+              {...register("expertise", {
+                required: "This field is required",
+              })}
+              type="text"
+              placeholder="Enter Service Name"
+              className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+            />
+            {errors.expertise && (
+              <p className="text-red-500 text-sm mt-2">
+                {errors.expertise.message}
+              </p>
+            )}
+          </div>
+          {/* experience Field */}
+          <div className="flex-1">
+            <label
+              htmlFor="title"
+              className="block text-lg font-medium text-gray-700"
+            >
+              Experience
+            </label>
+            <input
+              {...register("experience", {
+                required: "This field is required",
+              })}
+              type="text"
+              placeholder="Enter Service Name"
+              className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+            />
+            {errors.experience && (
+              <p className="text-red-500 text-sm mt-2">
+                {errors.experience.message}
+              </p>
+            )}
+          </div>
+        </div>
         {/* img uploading  */}
         <div className="mb-6 flex flex-col items-start">
           <label
@@ -190,32 +300,53 @@ const NewServiceForm = () => {
         </div>
 
         {/* schedule */}
-        <div className="mb-6 flex flex-col items-start">
-          <label className="text-lg font-medium text-gray-700 mb-2">
-            Schedule
-          </label>
-          <div className="w-full flex gap-10 justify-around px-10 py-10 border-2 border-gray-300 rounded-lg">
-            {Array.from({ length: boxCount }).map((_, index) => (
-              <div key={index} className="w-full border-2 border-gray-300">
-                <div className="flex flex-col items-center gap-4 pb-4">
-                  <input
-                    {...register(`scheduleTime.${index}`, {
-                      required: "This field is required",
-                    })}
-                    type="text"
-                    placeholder="Set Schedule Time"
-                    className="w-full p-2 border-b-2 focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
-                  />
-                  {errors.scheduleTime && errors.scheduleTime[index] && (
-                    <p className="text-red-500 text-sm mt-2">
-                      {errors.scheduleTime[index].message}
-                    </p>
-                  )}
-                  <p>4 Set Available</p>
-                </div>
-              </div>
-            ))}
+        <div className="mb-6">
+          <h3>Add Time Slot</h3>
+          <div className="flex justify-between gap-6">
+            <input
+              type="time"
+              value={newSlot.startTime}
+              className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+              onChange={(e) =>
+                setNewSlot({ ...newSlot, startTime: e.target.value })
+              }
+            />
+            <input
+              type="time"
+              value={newSlot.endTime}
+              className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+              onChange={(e) =>
+                setNewSlot({ ...newSlot, endTime: e.target.value })
+              }
+            />
+            <input
+              type="number"
+              value={newSlot.seats}
+              min="1"
+              className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+              onChange={(e) =>
+                setNewSlot({ ...newSlot, seats: Number(e.target.value) })
+              }
+            />
           </div>
+          <Button btnStyle="mt-5" onClick={addTimeSlot}>
+            Add Slot
+          </Button>
+
+          <ul className="mt-5 flex gap-6">
+            {timeSlots.map((slot, index) => (
+              <li
+                className="p-4 border-2 border-gray-300 rounded-lg flex flex-col items-center gap-4"
+                key={index}
+              >
+                <span>slot: {index + 1}</span>
+                <span>
+                  {slot.startTime} - {slot.endTime}
+                </span>{" "}
+                <span>Seats: {slot.seats}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* short des  */}
@@ -224,7 +355,7 @@ const NewServiceForm = () => {
             htmlFor="description"
             className="block text-lg font-medium text-gray-700"
           >
-            Short Description
+            Description
           </label>
           <textarea
             {...register("shortDescription", {
@@ -240,29 +371,6 @@ const NewServiceForm = () => {
             </p>
           )}
         </div>
-        {/* description  */}
-        <div className="mb-6">
-          <label
-            htmlFor="description"
-            className="block text-lg font-medium text-gray-700"
-          >
-            Description
-          </label>
-          <textarea
-            {...register("description", {
-              required: "This field is required",
-            })}
-            placeholder="Write a detailed description for your Service"
-            className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
-            rows="5"
-          />
-          {errors.description && (
-            <p className="text-red-500 text-sm mt-2">
-              {errors.description.message}
-            </p>
-          )}
-        </div>
-
         <div className="mt-8">
           <button
             type="submit"
