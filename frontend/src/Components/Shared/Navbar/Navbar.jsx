@@ -44,42 +44,42 @@ export default function Navbar() {
   // navLinks
   const navLinks = (
     <>
-      <li className="flex items-center">
+      <li onClick={()=> setIsToggleOpen(false)} className="flex items-center">
         <ActiveRoute to={"/"}>
           <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
             Home
           </span>
         </ActiveRoute>
       </li>
-      <li className="flex items-center">
+      <li onClick={()=> setIsToggleOpen(false)} className="flex items-center">
         <ActiveRoute to={"/shop"}>
           <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
             Shop
           </span>
         </ActiveRoute>
       </li>
-      <li className="flex items-center">
+      <li onClick={()=> setIsToggleOpen(false)} className="flex items-center">
         <ActiveRoute to={"vets"}>
           <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
             Vets
           </span>
         </ActiveRoute>
       </li>
-      <li className="flex items-center">
+      <li onClick={()=> setIsToggleOpen(false)} className="flex items-center">
         <ActiveRoute to={"/adoption"}>
           <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
             Adoption
           </span>
         </ActiveRoute>
       </li>
-      <li className="flex items-center">
+      <li onClick={()=> setIsToggleOpen(false)} className="flex items-center">
         <ActiveRoute to={"blogs"}>
           <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
             Blogs
           </span>
         </ActiveRoute>
       </li>
-      <li className="flex items-center">
+      <li onClick={()=> setIsToggleOpen(false)} className="flex items-center">
         <ActiveRoute to={"customer-plan"}>
           <span className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-primary lg:px-4">
             Customer Plans
