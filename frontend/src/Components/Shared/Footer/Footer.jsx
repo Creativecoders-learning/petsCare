@@ -125,12 +125,12 @@ const Footer = () => {
             </div>
           </div>
           <img
-            className="w-full absolute top-[-30%]"
+            className="w-full absolute top-[-5%] xl:top-[-30%] lg:top-[-20%] md:top-[-15%]"
             src="https://kutto.netlify.app/img/bg/copyright_shape.png"
             alt=""
           />
-            <img className="absolute left-[5%] bottom-[50%]" src="https://kutto.netlify.app/img/images/footer_shape01.png" alt="" />
-            <img className="absolute right-[10%] bottom-[100%]" src="https://kutto.netlify.app/img/images/footer_shape02.png" alt="" />
+            <img className="hidden md:block lg:block absolute left-[5%] bottom-[50%]" src="https://kutto.netlify.app/img/images/footer_shape01.png" alt="" />
+            <img className="hidden md:block lg:block absolute right-[10%] bottom-[100%]" src="https://kutto.netlify.app/img/images/footer_shape02.png" alt="" />
         </div>
       </footer>
     </>

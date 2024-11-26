@@ -35,6 +35,15 @@ success:#00BA88 */
   background-repeat: no-repeat;
 }
 
+.navbar_img{
+  position: absolute;
+  left: 0;
+  bottom: -13px;
+  z-index: -1;
+  background-repeat: repeat;
+  background-position: center;
+}
+
 
 /* Custom scrollbar styles */
 .custom-scrollbar::-webkit-scrollbar {

@@ -99,7 +99,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="relative z-20 w-full after:absolute  after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:backdrop-blur-sm lg:after:hidden pt-[16px] pb-[8px]">
+      <header className="relative z-20 w-full after:absolute  after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full lg:backdrop-blur-sm lg:after:hidden pt-[16px] pb-[8px]">
         <Container>
           <div className="relative mx-auto max-w-full z-50 lg:px-6 px-2">
             <nav className="flex items-center gap-6 justify-between font-medium text-slate-700">
@@ -246,9 +246,9 @@ export default function Navbar() {
         >
           {navLinks}
         </ul>
-        <div>
+        <div >
           <img
-            className="w-full absolute top-[80%]"
+            className="navbar_img w-full h-[30px] lg:h-[58px]"
             src="https://kutto.netlify.app/img/bg/header_shape.png"
             alt=""
           />
