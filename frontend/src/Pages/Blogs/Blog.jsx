@@ -5,6 +5,7 @@ import Container from "../../Components/UI/Container";
 import useBlogs from "../../Hooks/api/useBlogs";
 import NoDataFound from "../../Components/UI/NoDataFound";
 import Breadcrumb from "../../Components/Shared/Breadcrumb/Breadcrumb";
+import PageBanner from "../../Components/UI/PageBanner";
 
 const Blog = () => {
   const { blogs, loading, error } = useBlogs();
@@ -30,7 +31,7 @@ const Blog = () => {
   return (
     <>
       {/* Blogs Banner */}
-      <Breadcrumb title="All Blogs" />
+      <PageBanner title={"Read about Pets"} pageName={"Blogs"}/>
       
       <Container>
         <div className="flex w-full mx-auto">

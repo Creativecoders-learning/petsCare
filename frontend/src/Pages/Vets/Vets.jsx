@@ -1,11 +1,11 @@
-import Breadcrumb from "../../Components/Shared/Breadcrumb/Breadcrumb";
+import PageBanner from "../../Components/UI/PageBanner";
 import VetsCategory from "../../Components/Vets/VetsCategory/VetsCategory";
 
 const Vets = () => {
   return (
     <div>
       {/* vets banner  */}
-      <Breadcrumb title={"Choose Your Vets"} />
+      <PageBanner title={"Our Vets"} pageName={"vets"}/>
       <VetsCategory/>
     </div>
   );

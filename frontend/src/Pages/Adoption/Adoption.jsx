@@ -3,13 +3,13 @@ import Beginning from "../../Components/Adoption/Beginning/Beginning";
 import FAQAdoption from "../../Components/Adoption/FAQAdoption/FAQAdoption";
 import MeetAdoption from "../../Components/Adoption/Meet-adoption/MeetAdoption";
 import Puppies from "../../Components/Adoption/Puppies/Puppies";
-import Breadcrumb from "../../Components/Shared/Breadcrumb/Breadcrumb";
+import PageBanner from "../../Components/UI/PageBanner";
 
 
 const Adoption = () => {
     return (
       <div>
-         <Breadcrumb title={'Get Adoption'}></Breadcrumb>
+         <PageBanner title={"Choose your animals"} pageName={"adoption"}/>
            <MeetAdoption></MeetAdoption>
            <Categories></Categories>
            <FAQAdoption></FAQAdoption>
