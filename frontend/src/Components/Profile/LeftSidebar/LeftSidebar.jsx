@@ -12,7 +12,7 @@ const LeftSidebar = ({ user, selectedSection, setSelectedSection, setIsEditing }
 
       const calculateProfileCompletion = (user) => {
             const requiredFields = [
-                  "_id", "name", "email", "image", "role", "phone", "lastLogIn",
+                  "name", "email", "image", "role", "phone", "lastLogIn",
                   "address.country", "address.district", "address.streetAddress",
                   "gender", "socialLinks.facebook", "socialLinks.linkedin", "socialLinks.github",
                   "accountSettings.status",
