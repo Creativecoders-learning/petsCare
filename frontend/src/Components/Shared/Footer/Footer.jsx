@@ -82,7 +82,7 @@ const Footer = () => {
                   Keep In Touch With Us
                 </h3>
                 <p>
-                  Join the FurryFriends magazine and be first to hear about news
+                  Join the PerCare magazine and be first to hear about news
                 </p>
 
                 <div className="flex items-center space-x-2">
@@ -105,7 +105,7 @@ const Footer = () => {
         {/* Sub Footer */}
         <div className="relative bg-secondary py-4 text-white text-center text-sm">
           <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <span className="text-base">©2024 FurryFriends</span>
+            <span className="text-base">©2024 PetCare</span>
             <div className="flex space-x-4 mt-2 md:mt-0 text-base md:text-xl">
               <Link href="#" className=" text-white hover:text-gray-200">
                 <FaFacebook />
