@@ -6,9 +6,8 @@ import Container from "../../../UI/Container";
 import Breadcrumb from "../../../Shared/Breadcrumb/Breadcrumb";
 import { Link, useNavigate } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
-import { UIKitSettingsBuilder } from "@cometchat/uikit-shared";
-import { CometChatConversationsWithMessages, CometChatUIKit } from "@cometchat/chat-uikit-react";
 import { FaVideo } from "react-icons/fa";
+import Socket from "../../../../Socket/Socket";
 
 const id = Math.floor(Math.random()*1000)
 const GetStarted = () => {
@@ -22,61 +21,11 @@ const GetStarted = () => {
     navigate(`/getMeeting/${value}`)
   })
 
-  useEffect(() => {
-    // Initialize CometChat
-
-    const COMETCHAT_CONSTANTS = {
-      APP_ID: import.meta.env.VITE_COMETCHAT_APPID, //Replace with your App ID
-      REGION: import.meta.env.VITE_COMETCHAT_REGION, //Replace with your App Region
-      AUTH_KEY: import.meta.env.VITE_COMETCHAT_AUTH_KEY, //Replace with your Auth Key or leave blank if you are authenticating using Auth Token
-    };
-
-    const UIKitSettings = new UIKitSettingsBuilder()
-      .setAppId(COMETCHAT_CONSTANTS.APP_ID)
-      .setRegion(COMETCHAT_CONSTANTS.REGION)
-      .setAuthKey(COMETCHAT_CONSTANTS.AUTH_KEY)
-      .subscribePresenceForAllUsers()
-      .build();
-
-    //Initialize CometChat UI Kit
-    CometChatUIKit.init(UIKitSettings)
-      .then(() => {
-        console.log("Initialization completed successfully");
-
-        // Login or create user
-        const UID = 'cometchat-uid-5';
-
-        CometChatUIKit.getLoggedinUser().then((user) => {
-          console.log('loggedUser', user)
-          if (!user) {
-            //Login user
-            CometChatUIKit.login(UID)
-              .then((user) => {
-                console.log("Login Successful:", { user });
-                //mount your app
-              })
-              .catch(console.log);
-          } else {
-            //mount your app
-            console.log('user already exit')
-          }
-        });
-
-
-      })
-      .catch(console.log);
-
-  }, []);
-
-
 
   return (
     <div>
       <Breadcrumb title={'Get Started For Adoption'}></Breadcrumb>
       <Container>
-        <div className="py-10 lg:max-w-screen-xl mx-auto">
-          <CometChatConversationsWithMessages></CometChatConversationsWithMessages>
-        </div>
 
         <div className="flex flex-col lg:flex-row items-center lg:gap-x-20 p-5 lg:py-20 lg:px-10">
           <div className="w-full  relative lg:w-1/2">
@@ -128,6 +77,8 @@ const GetStarted = () => {
           </div>
         </div>
 
+
+        <Socket></Socket>
       </Container>
     </div>
   );
