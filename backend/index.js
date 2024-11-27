@@ -1,20 +1,30 @@
 const express = require('express')
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const cors = require('cors')
+const http = require('http')
+const socketIo = require('socket.io')
 require('dotenv').config();
 const app = express();
 const port = process.env.PORT | 8000;
 
 
+
+
 // middleware 
 app.use(express.json())
-app.use(cors({
-  origin: [
-    'https://petscarefrontend.netlify.app',
-    "http://localhost:5173"
-  ]
-}))
+ app.use(cors());
 
+const httpServer = http.createServer(app)
+const io = socketIo(httpServer, {
+  cors: {
+    origin: [
+      'https://petscarefrontend.netlify.app',
+      "http://localhost:5174"
+    ],
+    methods: ["GET", "POST"], // Specify allowed methods if needed
+    credentials: true // Enable credentials if required
+  }
+});
 
 const uri = process.env.Mongodb_Uri;
 const client = new MongoClient(uri, {
@@ -86,8 +96,25 @@ app.get('/', (req, res) => {
   res.send('This is petsCare server...')
 })
 
-app.listen(port, () => {
-  console.log(`my port is ${port}`)
+
+// start with socketIo 
+io.on("connection",(socket)=>{
+  console.log('socket connect successfully',socket.id);
+  
+  // start 
+   socket.on("message",(message)=>{
+    console.log("message",message)
+   })
+  // end
+
+  socket.on("disconnect",()=>{
+    console.log('disconnect socket',socket.id)
+  })
 })
+
+// end socketIo 
+ httpServer.listen(port, () => {
+   console.log(`my port is ${port}`)
+ })
 
 

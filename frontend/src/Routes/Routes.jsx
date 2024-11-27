@@ -18,7 +18,6 @@ import Login from "../Pages/Authentication/Login/Login";
 import DashboardLayout from "../Layout/DashboardLayout";
 import BlogManagement from "../Pages/Dashboard/Admin/BlogManagement";
 import PaymentProcess from "../Components/Shop/PaymentProcess/PaymentProcess";
-import GetStarted from "../Components/Adoption/Meet-Adoption/GetStarted/GetStarted";
 import Profile from "../Pages/Dashboard/Profile/Profile";
 import ShopManagement from "../Pages/Dashboard/Admin/ShopManagement/ShopManagement";
 import MyProducts from "../Pages/Dashboard/Seller/MyProducts/MyProducts";
@@ -39,6 +38,7 @@ import UserChatAdoption from "../Pages/Dashboard/Seller/userAdoption/UserChatAdo
 import Meeting from "../Pages/Dashboard/Seller/Meeting/Meeting";
 import PaymentSuccess from "../Pages/Payments/PaymentSuccess/PaymentSuccess";
 import PaymentFail from "../Pages/Payments/PaymentFail/PaymentFail";
+import GetStarted from "../Components/Adoption/Meet-adoption/GetStarted/GetStarted";
 
 const router = createBrowserRouter([
   // this is basic routes
