@@ -7,7 +7,7 @@ export default function usePetsProducts() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-
+ 
     const refresh = async () => {
         setLoading(true);
         try {
@@ -24,6 +24,8 @@ export default function usePetsProducts() {
     useEffect(() => {
         refresh();
     }, [])
+
+    console.log('pet',petsProducts)
 
     return { loading, error, petsProducts, refresh }
 }
