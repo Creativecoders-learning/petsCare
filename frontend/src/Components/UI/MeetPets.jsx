@@ -2,15 +2,16 @@ import { FaArrowRight } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
 import { Link } from "react-router-dom";
 
+
 const MeetPets = ({item}) => {
     return (
       <div  className=" min-h-[300px] mx-auto space-y-4 p-3 text-center rounded  duration-500 flex flex-col items-center justify-center ">
       {/* Card Image */}
       <img
-        style={{boxShadow: 'rgb(128, 128, 128) 0px 0px 20px 2px'}}
+        style={{boxShadow: 'rgb(128, 128, 128) 0px 0px 15px 2px'}}
         width={500}
         height={500}
-        className="size-64 rounded-full bg-gray-400 bg-cover"
+        className="size-80 rounded-full bg-gray-400 bg-cover"
         src={item?.image[0]}
         alt="card navigate ui"
       />

@@ -38,7 +38,7 @@ const Puppies = () => {
                 }
             }
         ]
-    }
+    }      
     const slideRight = () => {
         sliderRef.current.slickNext()
         console.log('slick to nect')
