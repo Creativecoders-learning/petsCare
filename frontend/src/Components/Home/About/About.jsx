@@ -2,7 +2,7 @@ import SectionContent from "../../UI/SectionContent";
 import bg from "../../../assets/adoptionsImg/breeder_details_bg.jpg";
 import Container from "../../UI/Container";
 
-const images = [{ img: 'https://i.ibb.co.com/QX6Pddz/img-home01-EHJQ9-B2-1.jpg', title: "Pets Adoption" }, { img: 'https://i.ibb.co.com/Gc1B5qz/image3-1.jpg', title: 'Healthy meals' }, { img: 'https://i.ibb.co.com/c6cHc3s/img-home01-W4-YA7-CK.jpg', title: "Veterinary care" }]
+const images = [{ img: 'https://i.ibb.co.com/QX6Pddz/img-home01-EHJQ9-B2-1.jpg', title: "Pets Adoption" }, { img: 'https://i.ibb.co.com/KyNhPn2/img-sv-FNTFM9-Q-1.jpg', title: "Pets Medicines" },,{ img: 'https://i.ibb.co.com/Gc1B5qz/image3-1.jpg', title: 'Healthy meals' }, { img: 'https://i.ibb.co.com/c6cHc3s/img-home01-W4-YA7-CK.jpg', title: "Veterinary care" }]
 
 const About = () => {
   return (
@@ -29,7 +29,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-40 pt-20">
+        <div className="flex items-center justify-center gap-20 pt-20">
           {
             images.map((img, inx) => (
               <div>
@@ -38,7 +38,7 @@ const About = () => {
                     boxShadow: 'rgb(128, 128, 128) 0px 0px 20px 2px'
                   }}
                   key={inx}
-                  className="size-60 rounded-full hover:scale-105 duration-500 "
+                  className="size-48 rounded-full hover:scale-105 duration-500 "
                   src={img.img}
                   alt=""
                 />

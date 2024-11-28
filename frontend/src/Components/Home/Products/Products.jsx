@@ -1,62 +1,46 @@
-import ProductCard from './ProductCard';
-import { FaCat, FaDog, FaFish } from 'react-icons/fa';
-import { GiEgyptianBird,GiRabbit,GiChameleonGlyph } from "react-icons/gi";
+
+import { useState } from 'react';
+import usePetsProducts from '../../../Hooks/api/usePetsProducts';
 import Container from '../../UI/Container';
+import SectionContent from '../../UI/SectionContent';
+import ShopCard from '../../UI/ShopCard';
+import VetsCategoryBtn from '../../UI/VetsCategoryBtn';
 
-
+const productCategories = [{category:'All'},{category:'Foods'}, {category:'Accessories'}, {category:'Medicines'}]
 
 const Products = () => {
+  const {petsProducts} = usePetsProducts()
+  const [selectedCategory,setSelectedCategory]=useState("All")
+  console.log('this pets product',petsProducts)
 
-  const iconMap = {
-    FaCat: FaCat,
-    FaDog: FaDog,
-    FaFish: FaFish,
-    GiRabbit: GiRabbit,
-    GiEgyptianBird: GiEgyptianBird,
-    GiChameleonGlyph: GiChameleonGlyph,
-  };
+  const handleCategory = (category)=>{
+    setSelectedCategory(category)
+  }
 
- // Define your categories data
-const categories = [
-  { icon: 'FaCat', title: 'Cat Shop', count: 115, link: '/category/cat' },
-  { icon: 'FaDog', title: 'Dog Shop', count: 70, link: '/category/dog' },
-  { icon: 'FaFish', title: 'Fish Shop', count: 98, link: '/category/fish' },
-  { icon: 'GiRabbit', title: 'Rabbit Shop', count: 84, link: '/category/rabbit' },
-  { icon: 'GiEgyptianBird', title: 'Bird Shop', count: 107, link: '/category/bird' },
-  { icon: 'GiChameleonGlyph', title: 'Chameleon', count: 125, link: '/category/chameleon' },
-];
-
-
-
+  const categories = petsProducts.filter(item=>item.subCategory === selectedCategory)
+  console.log("categories", categories)
   return (
-   <Container>
+    <Container>
 
-<div className="my-20">
-      <h2 className="text-3xl font-semibold text-center text-secondary">
-        Shop By Category
-      </h2>
-      <div className="my-10">
-        <section>
-          <div className="container px-6 m-auto">
-            <div className="grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12">
-              {categories.map((category, index) =>{
-                 const IconComponent = iconMap[category.icon];
-                return (
-                  <ProductCard
-                  key={index}
-                  icon={IconComponent}
-                  title={category.title}
-                  count={category.count}
-                  link={category.link}
-                />
-                )
-              })}
-            </div>
-          </div>
-        </section>
+      <div className="my-20">
+          <SectionContent alignStayle={'text-center mb-10'} tag={"Our Store"} first={"Our Best Selling Products"} />
+
+
+          <VetsCategoryBtn items={productCategories} selectedCategory={selectedCategory} handleCategory={handleCategory}/>
+           <div className='mt-10 grid grid-cols-4 items-center justify-items-center gap-5'> 
+            {categories.length ? (
+               categories?.slice(0,4).map(product=>(
+                <ShopCard key={product.id} item={product} />
+           ))
+            ) : 
+            
+            petsProducts?.slice(0,8).map(product=>(
+              <ShopCard key={product.id} item={product} />
+         ))
+            }
+           </div>
       </div>
-    </div>
-   </Container>
+    </Container>
   );
 };
 
