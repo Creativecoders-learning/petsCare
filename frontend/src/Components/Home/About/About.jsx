@@ -12,9 +12,9 @@ const About = () => {
     >
       <Container>
         <div
-          className="max-w-screen-lg mx-auto flex flex-col lg:flex-row items-end gap-10"
+          className="max-w-screen-lg mx-auto flex flex-col lg:flex-row items-center lg:items-end gap-10 px-10"
         >
-          <div className="  flex items-center justify-center text-left lg:w-4/6">
+          <div className=" flex items-center justify-center text-center lg:text-left lg:w-4/6">
             <SectionContent
               alignStayle={""}
               tag={"About us "}
@@ -24,15 +24,15 @@ const About = () => {
               }
             />
           </div>
-          <div className="w-ful lg:w-2/6 text-center lg:text-right">
+          <div className="w-full lg:w-2/6 text-center lg:text-right">
             <button className="text-sm px-12 py-4 bg-red-400 text-white hover:bg-primaryBold duration-700">More About Us</button>
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-20 pt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-5 lg:gap-10 pt-20 max-w-screen-lg mx-auto ">
           {
             images.map((img, inx) => (
-              <div>
+              <div className="text-center mx-auto">
                 <img
                   style={{
                     boxShadow: 'rgb(128, 128, 128) 0px 0px 20px 2px'
