@@ -1,46 +1,89 @@
-
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import usePetsProducts from '../../../Hooks/api/usePetsProducts';
 import Container from '../../UI/Container';
 import SectionContent from '../../UI/SectionContent';
 import ShopCard from '../../UI/ShopCard';
-import VetsCategoryBtn from '../../UI/VetsCategoryBtn';
-
-const productCategories = [{category:'All'},{category:'Foods'}, {category:'Accessories'}, {category:'Medicines'}]
+import '../../../index.css'
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { TiArrowBack, TiArrowForward } from 'react-icons/ti';
 
 const Products = () => {
-  const {petsProducts} = usePetsProducts()
-  const [selectedCategory,setSelectedCategory]=useState("All")
-  console.log('this pets product',petsProducts)
+  const { petsProducts } = usePetsProducts()
+  const sliderRef = useRef()
+  console.log('this pets product', petsProducts)
 
-  const handleCategory = (category)=>{
-    setSelectedCategory(category)
+ 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    centerPadding: "60px",
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows:false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   }
 
-  const categories = petsProducts.filter(item=>item.subCategory === selectedCategory)
-  console.log("categories", categories)
-  return (
-    <Container>
+  const slideRight = () => {
+    sliderRef.current.slickNext()
+  }
 
-      <div className="my-20">
+  const slideLeft = () => {
+    sliderRef.current.slickPrev()
+  }
+
+  return (
+    <div className='p-16 bg-amber-50'>
+      <Container>
           <SectionContent alignStayle={'text-center mb-10'} tag={"Our Store"} first={"Our Best Selling Products"} />
 
+          <div className='relative group  pt-10'>
+            {/* arrows */}
+            <div className="hidden group-hover:block duration-500 arrow-right cursor-pointer absolute top-52 z-10 right-0 text-2xl rounded-full text-white bg-[#0A453A]" onClick={slideRight}>
+              <TiArrowForward />
+            </div>
+            <div className="hidden group-hover:block duration-500 arrow-left absolute top-52 z-10 left-0 cursor-pointer  text-2xl rounded-full text-white bg-[#0A453A]" onClick={slideLeft}>
+              <TiArrowBack />
+            </div>
 
-          <VetsCategoryBtn items={productCategories} selectedCategory={selectedCategory} handleCategory={handleCategory}/>
-           <div className='mt-10 grid grid-cols-4 items-center justify-items-center gap-5'> 
-            {categories.length ? (
-               categories?.slice(0,4).map(product=>(
-                <ShopCard key={product.id} item={product} />
-           ))
-            ) : 
-            
-            petsProducts?.slice(0,8).map(product=>(
-              <ShopCard key={product.id} item={product} />
-         ))
-            }
-           </div>
-      </div>
-    </Container>
+            <Slider ref={sliderRef} {...settings}>
+            {
+                petsProducts?.map(product => (
+                  <ShopCard key={product.id} item={product} />
+                ))
+              }
+
+            </Slider>
+
+
+          </div>
+      </Container>
+    </div>
   );
 };
 

@@ -33,12 +33,19 @@ const Puppies = () => {
             {
                 breakpoint: 769,
                 settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 }
             }
         ]
-    }      
+    }
     const slideRight = () => {
         sliderRef.current.slickNext()
         console.log('slick to nect')

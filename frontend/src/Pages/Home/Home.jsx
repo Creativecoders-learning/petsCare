@@ -19,7 +19,7 @@ const Home = () => {
       <MeetVets/>
       {/* <Stats /> */}
       {/* <AdoptionSteps /> */}
-      <PetNews />
+      {/* <PetNews /> */}
       <Testimonials></Testimonials>
       <NewsLetter/>
     </div>

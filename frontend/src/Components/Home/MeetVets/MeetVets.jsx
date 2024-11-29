@@ -12,12 +12,12 @@ const vets = [
 
 const MeetVets = () => {
     return (
-        <div className='bg-gray-200 py-20'>
+        <div className='bg-amber-50 py-20'>
             {/* title of vets section */}
             <div
-                className="max-w-screen-lg mx-auto flex flex-col lg:flex-row items-end justify-between  gap-10"
+                className="max-w-screen-lg mx-auto flex flex-col lg:flex-row items-end justify-between gap-10 px-5 md:px-40 lg:px-0"
             >
-                <div className="flex items-center justify-center text-left lg:w-4/6">
+                <div className="flex items-center justify-center text-center lg:text-left lg:w-4/6">
                     <SectionContent
                         alignStayle={""}
                         first={"Meet our veterinarian "}
@@ -26,13 +26,13 @@ const MeetVets = () => {
                         }
                     />
                 </div>
-                <div className="w-full lg:w-2/6 flex justify-end items-end">
+                <div className="w-full lg:w-2/6 flex justify-center lg:justify-end items-end">
                     <button className="flex items-center gap-x-2 text-xl font-medium ">View All Vets <FaArrowRight></FaArrowRight> </button>
                 </div>
             </div>
 
             {/* here added vets card */}
-            <div className='mt-32 max-w-screen-lg mx-auto grid grid-cols-3 items-center gap-5'>
+            <div className='mt-32 px-5 md:px-20 lg:px-0 max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-y-36 items-center gap-5'>
                 {vets.map(item=>(
                     <VetProfile vetName={item.name} specialist={item.specialist} img={item.img} text={item.text}/>
                 ))}
