@@ -2,6 +2,7 @@ import Puppies from '../../Components/Adoption/Puppies/Puppies';
 import About from '../../Components/Home/About/About';
 import AdoptionSteps from '../../Components/Home/AdoptionSteps/AdoptionSteps';
 import Banner from '../../Components/Home/Banner/Banner';
+import MeetVets from '../../Components/Home/MeetVets/MeetVets';
 import NewsLetter from '../../Components/Home/NewsLetter/NewsLetter';
 import PetNews from '../../Components/Home/PetNews/PetNews';
 import Products from '../../Components/Home/Products/Products';
@@ -12,12 +13,13 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <Products />
       <About></About>
+      <Products />
       <Puppies></Puppies>
-      <Stats />
-      <AdoptionSteps />
-      <PetNews />
+      <MeetVets/>
+      {/* <Stats /> */}
+      {/* <AdoptionSteps /> */}
+      {/* <PetNews /> */}
       <Testimonials></Testimonials>
       <NewsLetter/>
     </div>
