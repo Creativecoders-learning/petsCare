@@ -1,68 +1,80 @@
 import { FaLocationDot } from "react-icons/fa6";
 import { WiTime4 } from "react-icons/wi";
+
 const LeftSide = ({ vet }) => {
   return (
-    <div>
-      <img className="w-full h-[500px]" src={vet.image} alt={vet.name} />
-<p>{vet?.category}</p>
-      <div className="flex items-center justify-between px-5">
-        <div>
-          <h2 className="mt-6 text-3xl font-bold mb-2">{vet.name}</h2>
-          <h2 className="text-xl font-semibold">{vet.institute}</h2>
-          <h2 className="text-xl">{vet.expertise.join(", ")}</h2>
+    <div className="bg-white shadow-md rounded-lg overflow-hidden">
+      {/* Image Section */}
+      <div className="relative">
+        <img
+          className="w-full h-[300px] sm:h-[400px] object-cover"
+          src={vet.image}
+          alt={vet.name}
+        />
+        <div className="absolute bottom-4 left-4 bg-primary text-white py-1 px-4 rounded">
+          {vet.category}
         </div>
-        <div className="flex items-center gap-20 font-bold text-gray-500">
-          <div>
-            <p className="flex items-center gap-2">
-              <FaLocationDot className="text-2xl text-primary" />
-              {vet.instituteLocation}
-            </p>
+      </div>
+
+      {/* Content Section */}
+      <div className="p-6">
+        {/* Name & Details */}
+        <h2 className="text-3xl font-bold text-primaryBold">{vet.name}</h2>
+        <h3 className="text-lg font-medium text-primary mt-1">{vet.institute}</h3>
+        <p className="text-gray-600 mt-2">{vet.expertise.join(", ")}</p>
+
+        {/* Location & Availability */}
+        <div className="flex flex-col sm:flex-row sm:justify-between mt-5 text-gray-500">
+          <div className="flex items-center gap-2">
+            <FaLocationDot className="text-xl text-primary" />
+            <span>{vet.instituteLocation}</span>
           </div>
-          <div>
-            <p className="flex items-center gap-2">
-              <WiTime4 className="text-2xl text-primary" /> Availability
-            </p>
+          <div className="flex items-center gap-2 mt-3 sm:mt-0">
+            <WiTime4 className="text-2xl text-primary" />
+            <span>Available</span>
           </div>
         </div>
       </div>
 
-      <p className="text-gray-500 mt-10 px-5">{vet.about}</p>
+      {/* About Section */}
+      <div className="bg-gray-100 p-6">
+        <h3 className="text-xl font-semibold text-primaryBold mb-3">About</h3>
+        <p className="text-gray-600">{vet.about}</p>
+      </div>
 
-      <div className="px-6 mt-10">
-        <h2 className="underline text-xl font-semibold underline-offset-8 underline-primary">
-          Info
-        </h2>
+      {/* Additional Info */}
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-primary mb-4 underline underline-offset-4">
+          Additional Information
+        </h3>
 
         {/* Work Experience */}
-        <div className="mt-7">
-          <h2 className="text-xl font-semibold mb-2">Work Experience</h2>
-          <ul className="ml-5">
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-primaryBold">Work Experience</h4>
+          <ul className="list-disc pl-5 mt-2 text-gray-600">
             {vet.work_experiences.map((experience, index) => (
-              <li key={index} className="list-disc">
-                {experience}
-              </li>
+              <li key={index}>{experience}</li>
             ))}
           </ul>
         </div>
 
         {/* Education */}
-        <div className="mt-7">
-          <h2 className="text-xl font-semibold mb-3">Education</h2>
-          <ul className="ml-5">
+        <div className="mb-6">
+          <h4 className="text-lg font-semibold text-primaryBold">Education</h4>
+          <ul className="list-disc pl-5 mt-2 text-gray-600">
             {vet.education.map((edu, index) => (
-              <li key={index} className="list-disc">
-                {edu}
-              </li>
+              <li key={index}>{edu}</li>
             ))}
           </ul>
         </div>
 
         {/* Awards */}
-        <div className="mt-7">
-          <h2 className="text-xl font-semibold mb-3">Awards</h2>
-          <ul className="ml-5 mb-4">
-            <li className="list-disc">{vet?.awards[0]}</li>
-            <li className="list-disc">{vet?.awards[1]}</li>
+        <div>
+          <h4 className="text-lg font-semibold text-primaryBold">Awards</h4>
+          <ul className="list-disc pl-5 mt-2 text-gray-600">
+            {vet?.awards.map((award, index) => (
+              <li key={index}>{award}</li>
+            ))}
           </ul>
         </div>
       </div>

@@ -4,7 +4,7 @@ import img from '../../../assets/breadcrumb/breadcrumb_bg.jpg'
 const Breadcrumb = ({title}) => {
     const location = useLocation();
     const pathnames = location.pathname.split('/').filter((x) => x);
-    console.log(pathnames)
+    // console.log(pathnames)
     return (
         <div style={{backgroundImage: `url(${img})`}} className="bg-cover h-[16rem] flex flex-col items-start justify-center pl-10">
            <div className='bg-[#F04336] w-max  rounded-xl ' style={{clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)'}}>
