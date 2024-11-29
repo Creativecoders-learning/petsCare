@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useAxios from "../../../Hooks/useAxios";
-import toast from "react-hot-toast";
 import PrimaryTitle from "../../../Components/UI/PrimaryTitle";
+import Button from "../../../Components/UI/Button";
+import toast from "react-hot-toast";
 
 const serviceType = [
   "Holistics",
@@ -17,17 +18,33 @@ const NewServiceForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const [imagePreview, setImagePreview] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
+  const [timeSlots, setTimeSlots] = useState([]);
+  const [newSlot, setNewSlot] = useState({
+    startTime: "",
+    endTime: "",
+    seats: 1,
+  });
+
+  const addTimeSlot = () => {
+    setTimeSlots([
+      ...timeSlots,
+      { ...newSlot, bookedSeats: Array(newSlot.seats).fill(false) },
+    ]);
+    setNewSlot({ startTime: "", endTime: "", seats: 1 });
+  };
 
   const onSubmit = async (data) => {
     const newServiceData = {
       ...data,
-      image:imageUrl,
+      image: imageUrl,
       status: "Pending",
-      adminFeedback:"no feedback !"
+      adminFeedback: "no feedback !",
+      schedule: timeSlots
     };
     console.log(newServiceData);
 
@@ -36,6 +53,7 @@ const NewServiceForm = () => {
 
       if (response.data.insertedId) {
         toast.success(`Service data added successfully`, response.data);
+        reset();
       }
     } catch (error) {
       toast.error("Error adding service:", error.message);
@@ -194,7 +212,7 @@ const NewServiceForm = () => {
               htmlFor="title"
               className="block text-lg font-medium text-gray-700"
             >
-    Institute
+              Institute
             </label>
             <input
               {...register("institute", {
@@ -210,8 +228,6 @@ const NewServiceForm = () => {
               </p>
             )}
           </div>
-
-          
         </div>
         {/* row-4  */}
         <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-10 mb-6">
@@ -243,7 +259,7 @@ const NewServiceForm = () => {
               htmlFor="title"
               className="block text-lg font-medium text-gray-700"
             >
-              Experience 
+              Experience
             </label>
             <input
               {...register("experience", {
@@ -259,8 +275,6 @@ const NewServiceForm = () => {
               </p>
             )}
           </div>
-
-          
         </div>
         {/* img uploading  */}
         <div className="mb-6 flex flex-col items-start">
@@ -283,6 +297,56 @@ const NewServiceForm = () => {
               className="mt-4 max-w-xs max-h-48 object-cover rounded-lg shadow-lg"
             />
           )}
+        </div>
+
+        {/* schedule */}
+        <div className="mb-6">
+          <h3>Add Time Slot</h3>
+          <div className="flex justify-between gap-6">
+            <input
+              type="time"
+              value={newSlot.startTime}
+              className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+              onChange={(e) =>
+                setNewSlot({ ...newSlot, startTime: e.target.value })
+              }
+            />
+            <input
+              type="time"
+              value={newSlot.endTime}
+              className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+              onChange={(e) =>
+                setNewSlot({ ...newSlot, endTime: e.target.value })
+              }
+            />
+            <input
+              type="number"
+              value={newSlot.seats}
+              min="1"
+              className="w-full p-4 mt-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+              onChange={(e) =>
+                setNewSlot({ ...newSlot, seats: Number(e.target.value) })
+              }
+            />
+          </div>
+          <Button btnStyle="mt-5" onClick={addTimeSlot}>
+            Add Slot
+          </Button>
+
+          <ul className="mt-5 flex gap-6">
+            {timeSlots.map((slot, index) => (
+              <li
+                className="p-4 border-2 border-gray-300 rounded-lg flex flex-col items-center gap-4"
+                key={index}
+              >
+                <span>slot: {index + 1}</span>
+                <span>
+                  {slot.startTime} - {slot.endTime}
+                </span>{" "}
+                <span>Seats: {slot.seats}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* short des  */}

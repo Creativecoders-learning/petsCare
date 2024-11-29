@@ -5,6 +5,7 @@ import LeftSide from "../../UI/VetDetail/LeftSide";
 import { useState } from "react";
 import Modal from "../../UI/Modal";
 import UseAuth from "../../../Hooks/UseAuth";
+import DoctorSchedule from "../../UI/VetDetail/DoctorSchedule";
 import Slot from "../../UI/VetDetail/Slot";
 
 const VetsDetails = () => {
@@ -34,12 +35,12 @@ const VetsDetails = () => {
   return (
     <div>
       <Breadcrumb title={"Vets Details"} />
-      <div className="mx-20 flex flex-col lg:flex-row gap-8 mt-16 mb-20">
-        <div className="w-full lg:w-[70%] border">
+      <div className="lg:mx-20 flex flex-col lg:flex-row gap-8 mt-16 mb-20">
+        <div className="w-full lg:w-[70%]">
           <LeftSide vet={vet} />
         </div>
 
-        <div className="w-full lg:w-[30%]">
+        <div className="w-full lg:w-[30%] px-6 lg:px-0">
           <div>
             <h2 className="font-bold">
               Select Location, Time Slot, and Consultation Method
@@ -54,10 +55,10 @@ const VetsDetails = () => {
                     key={type}
                     onClick={() => handleAppointmentTypeClick(type)}
                     className={`w-[140px] py-2 ${user
-                        ? selectedAppointmentType === type
-                          ? "bg-primary text-white"
-                          : "border border-primary text-black hover:bg-black hover:text-white"
-                        : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                      ? selectedAppointmentType === type
+                        ? "bg-primary text-white"
+                        : "border border-primary text-black hover:bg-black hover:text-white"
+                      : "bg-gray-300 text-gray-500 cursor-not-allowed"
                       }`}
                     disabled={!user}
                   >
@@ -71,8 +72,8 @@ const VetsDetails = () => {
             <button
               onClick={handleBookNow}
               className={`w-full py-3 rounded-xl mt-5 ${user && selectedAppointmentType
-                  ? "bg-primary text-white hover:bg-black"
-                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                ? "bg-primary text-white hover:bg-black"
+                : "bg-gray-300 text-gray-500 cursor-not-allowed"
                 }`}
               disabled={!user || !selectedAppointmentType}
             >
@@ -84,7 +85,8 @@ const VetsDetails = () => {
 
       {openModal && (
         <Modal primary={true} openModal={openModal} setOpenModal={setOpenModal}>
-          <Slot />
+          {/* <Slot /> */}
+          <DoctorSchedule doctor={vet} />
         </Modal>
       )}
     </div>
