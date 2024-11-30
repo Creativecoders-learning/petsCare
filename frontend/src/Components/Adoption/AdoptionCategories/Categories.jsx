@@ -18,7 +18,7 @@ const Categories = () => {
         <div className='lg:max-w-max bg-slate-200 mx-auto p-5 rounded-md'>
           {/* filtering option */}
           <div className="space-y-3 ">
-            <div className='flex gap-5 justify-center items-center'>
+            <div className='flex flex-wrap gap-5 justify-center items-center'>
               <div className="">
                 {/* location field */}
                 <input
@@ -84,7 +84,7 @@ const Categories = () => {
           {/* Category Card items */}
           <div>
             {filteredAdoption.length > 0 ? (
-              <div className='grid gap-5 lg:gap-10 grid-cols-3 items-center justify-items-center p-10 '>
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-items-center gap-5 lg:gap-10 p-10 '>
                 {
                   filteredAdoption?.map((adoption) => (
                     <AdoptionCard key={adoption?._id} item={adoption}></AdoptionCard>
