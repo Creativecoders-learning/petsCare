@@ -19,7 +19,7 @@ const Beginning = () => {
   }, [currentSlider, adoptions?.length]);
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-y-10 lg:gap-x-40 p-10 lg:px-20 lg:py-20">
+    <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-y-10 p-20 lg:gap-x-40 lg:px-20 lg:py-20  ">
       {/* text container */}
       <div className="lg:w-1/2 pr-10 space-y-5">
         <h1 className="text-xl font-nunito text-red-500 font-bold">
@@ -49,17 +49,17 @@ const Beginning = () => {
       </div>
 
       {/* image container */}
-      <div className="lg:w-1/2 relative max-h-[24rem] flex no-gap rounded-s-md">
-        <div className="border bg-green-300">
+      <div className="lg:w-1/2 max-h-[24rem] relative flex no-gap rounded-s-md">
+        <div className="">
           <img
             src={adoptions[currentSlider]?.image[0]}
-            className={`h-full w-full bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-4000 ease-linear transition-transform ${currentSlider ? "scale-110" : "scale-100"
+            className={`h-full sm:w-full bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-4000 ease-linear transition-transform ${currentSlider ? "scale-110" : "scale-100"
               }`}
             alt=""
           />
           {/* slider container */}
-          <div className="absolute top-32 right-2 flex flex-col justify-center items-center gap-3 p-2">
-            {adoptions.map((slide, inx) => {
+          <div className="absolute inset-0 flex flex-col justify-center items-end gap-3 p-2 ">
+            {adoptions?.slice(0,10).map((slide, inx) => {
               // Determine if the current dot is active based on the actual index
               const isActive = currentSlider === inx;
 
