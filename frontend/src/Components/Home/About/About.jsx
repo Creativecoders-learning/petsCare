@@ -29,7 +29,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-5 lg:gap-10 pt-20 max-w-screen-lg mx-auto ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-5 lg:gap-10  pt-10 md:p-24 lg:px-0 lg:pt-20 max-w-screen-lg mx-auto ">
           {
             images.map((img, inx) => (
               <div className="text-center mx-auto">
