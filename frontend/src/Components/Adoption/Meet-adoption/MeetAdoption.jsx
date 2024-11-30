@@ -10,10 +10,10 @@ const MeetAdoption = () => {
   return (
     <div
       style={{ backgroundImage: `url(${bg})` }}
-      className="px-32 py-28 bg-contain bg-repeat-round "
+      className="px-5 md:px-10 lg:px-32 py-28 bg-contain bg-repeat-round "
     >
       <Container>
-        <div  className="flex flex-col lg:flex-row items-center justify-center lg:gap-x-32 lg:gap-y-10">
+        <div  className="flex flex-col lg:flex-row items-center justify-center lg:gap-x-32 gap-y-5 md:gap-y-10 lg:gap-y-10">
           <div className="lg:w-2/5 ">
             <SectionContent alignStayle={'text-left'} tag={' Meet Adoption'} first={'Work For'} span={'Adoption'} second={'Happy Time'} text={'The best overall dog DNA test is Embark Breed & Health Kit view at Chewy which pres domesti dog is a sticated descendant.'}/>
 
@@ -34,9 +34,9 @@ const MeetAdoption = () => {
           </div>
 
           {/* image container */}
-          <div className="lg:w-3/5 min-h-[24rem] flex no-gap rounded-s-md ">
+          <div className="lg:w-3/5 min-h-[24rem] flex flex-col lg:flex-row no-gap rounded-s-md ">
             <div className="lg:w-1/2 bg-green-300">
-              <img src={img1} className="h-full object-cover" alt="" />
+              <img src={img1} className="h-[40%] lg:h-full w-full object-cover" alt="" />
             </div>
             <div
               style={{ backgroundImage: `url(${img2})` }}
