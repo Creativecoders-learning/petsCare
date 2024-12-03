@@ -4,7 +4,7 @@ import Footer from '../Components/Shared/Footer/Footer';
 
 export default function MainLayout() {
   const location = useLocation()
-  console.log(location)
+  // console.log(location)
   const isMeeting = location.pathname.includes('getMeeting')
   
   return (
