@@ -5,17 +5,16 @@ import Checkout from '../../../Pages/Checkout/Checkout';
 import useMyServices from '../../../Hooks/api/useMyServices';
 
 const DoctorSchedule = ({ doctor }) => {
-  const [selectedSlot, setSelectedSlot] = useState(null);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
   const [bookedSlot, setBookedSlot] = useState(null);
   const [showCheckout, setShowCheckout] = useState(false);
-  const [confirmedSlots, setConfirmedSlots] = useState({}); // To track confirmed slots
+  // const [confirmedSlots, setConfirmedSlots] = useState({}); // To track confirmed slots
 
-  const { myServices, refresh } = useMyServices();
+  const { myServices } = useMyServices();
 
   // Get doctor's service from the available services
   const doctorsService = myServices?.find(service => service?.vetEmail === doctor?.email);
-  const { vetName, schedule } = doctorsService || {};
+  const { schedule } = doctorsService || {};
 
   const handleSlotClick = (slotIndex, seatIndex) => {
     const slot = doctor.schedule[slotIndex];
