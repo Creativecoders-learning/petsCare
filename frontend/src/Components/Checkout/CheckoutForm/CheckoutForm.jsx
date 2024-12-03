@@ -59,7 +59,7 @@ export default function CheckoutForm({ price, plan }) {
 
   return (
     <div className="">
-      <div className="w-full">
+      <div className="w-full max-w-xl mx-auto shadow-xl p-10 rounded-xl bg-white">
         <div className="flex flex-col gap-2">
           <PrimaryTitle titleStyle="text-primaryBold">
             Secure Your Purchase
