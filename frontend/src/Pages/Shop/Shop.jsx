@@ -9,6 +9,7 @@ import PageBanner from "../../Components/UI/PageBanner";
 
 export default function Shop() {
   const { petsProducts } = usePetsProducts();
+  console.log(petsProducts)
   const [searchParams] = useSearchParams();
   const [foodsByCategory, setFoodsByCategory] = useState([]);
   const [category, setCategory] = useState(

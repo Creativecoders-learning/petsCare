@@ -79,7 +79,7 @@ export default function ShopCard({ item = {} }) {
           </div>
         ) : (
           <>
-            <div className="flex flex-col gap-6 justify-start items-center px-4  h-[70vh] overflow-y-auto">
+            <div className="flex flex-col gap-6 bg-emerald-500 justify-start items-center px-4  h-[70vh] overflow-y-auto">
               {cartProducts?.map((item) => (
                 <div
                   className="flex justify-between items-center"
@@ -121,7 +121,7 @@ export default function ShopCard({ item = {} }) {
           </>
         )}
       </Modal>
-      <div className="group p-4 shadow-myCustomShadow rounded-xl flex flex-col justify-between h-[500px]">
+      <div  className="slider-item  group p-4 bg-white border shadow-myCustomShadow rounded-xl flex flex-col justify-between h-[500px]">
         <Link className="h-[90%]" to={`/productDetails/${id}`}>
           {" "}
           {/* card image */}
