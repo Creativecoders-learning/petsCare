@@ -39,10 +39,10 @@ const DoctorSchedule = ({ doctor }) => {
     const updatedSchedule = [...doctor.schedule];
     const selectedSlot = updatedSchedule[bookedSlot.slotIndex];
     selectedSlot.bookedSeats[bookedSlot.seatIndex] = true;
-    // setConfirmedSlots((prev) => ({
-    //   ...prev,
-    //   [bookedSlot.slotIndex]: true,
-    // }));
+    setConfirmedSlots((prev) => ({
+      ...prev,
+      [bookedSlot.slotIndex]: true,
+    }));
     setBookedSlot(null); // Reset after confirmation
     setPaymentSuccess(false); // Reset payment success
   };
