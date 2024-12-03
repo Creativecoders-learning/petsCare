@@ -5,16 +5,17 @@ import Checkout from '../../../Pages/Checkout/Checkout';
 import useMyServices from '../../../Hooks/api/useMyServices';
 
 const DoctorSchedule = ({ doctor }) => {
+  const [selectedSlot, setSelectedSlot] = useState(null);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
   const [bookedSlot, setBookedSlot] = useState(null);
   const [showCheckout, setShowCheckout] = useState(false);
-  // const [confirmedSlots, setConfirmedSlots] = useState({}); // To track confirmed slots
+  const [confirmedSlots, setConfirmedSlots] = useState({}); // To track confirmed slots
 
-  const { myServices } = useMyServices();
+  const { myServices, refresh } = useMyServices();
 
   // Get doctor's service from the available services
   const doctorsService = myServices?.find(service => service?.vetEmail === doctor?.email);
-  const { schedule } = doctorsService || {};
+  const { vetName, schedule } = doctorsService || {};
 
   const handleSlotClick = (slotIndex, seatIndex) => {
     const slot = doctor.schedule[slotIndex];
@@ -39,10 +40,10 @@ const DoctorSchedule = ({ doctor }) => {
     const updatedSchedule = [...doctor.schedule];
     const selectedSlot = updatedSchedule[bookedSlot.slotIndex];
     selectedSlot.bookedSeats[bookedSlot.seatIndex] = true;
-    // setConfirmedSlots((prev) => ({
-    //   ...prev,
-    //   [bookedSlot.slotIndex]: true,
-    // }));
+    setConfirmedSlots((prev) => ({
+      ...prev,
+      [bookedSlot.slotIndex]: true,
+    }));
     setBookedSlot(null); // Reset after confirmation
     setPaymentSuccess(false); // Reset payment success
   };
