@@ -41,46 +41,61 @@ const VetsDetails = () => {
         </div>
 
         <div className="w-full lg:w-[30%] px-6 lg:px-0">
-          <div>
-            <h2 className="font-bold">
-              Select Location, Time Slot, and Consultation Method
-            </h2>
-            <div>
-              <h2 className="font-semibold text-gray-500 mt-5">
-                Select Appointment Type
-              </h2>
-              <div className="mt-5 flex items-center gap-3">
-                {["New", "Follow Us", "Report Show"].map((type) => (
-                  <button
-                    key={type}
-                    onClick={() => handleAppointmentTypeClick(type)}
-                    className={`w-[140px] py-2 ${user
-                      ? selectedAppointmentType === type
-                        ? "bg-primary text-white"
-                        : "border border-primary text-black hover:bg-black hover:text-white"
-                      : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                      }`}
-                    disabled={!user}
-                  >
-                    {type}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="mt-8">
-            <button
-              onClick={handleBookNow}
-              className={`w-full py-3 rounded-xl mt-5 ${user && selectedAppointmentType
-                ? "bg-primary text-white hover:bg-black"
-                : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                }`}
-              disabled={!user || !selectedAppointmentType}
-            >
-              {user ? (selectedAppointmentType ? "Book Now" : "Select Appointment Type") : "Login to Book"}
-            </button>
-          </div>
-        </div>
+  {/* Header Section */}
+  <div className="bg-secondaryLight p-5 rounded-lg shadow-md">
+    <h2 className="font-bold text-xl text-primary mb-3">
+      Book Your Appointment
+    </h2>
+    <p className="text-gray-600 text-sm">
+      Select your location, preferred time slot, and consultation method to proceed.
+    </p>
+  </div>
+
+  {/* Appointment Type Section */}
+  <div className="mt-6">
+    <h3 className="font-semibold text-lg text-gray-700 mb-4">
+      Choose Appointment Type
+    </h3>
+    <div className="grid grid-cols-3 gap-4">
+      {["New", "Follow Up", "Report Show"].map((type) => (
+        <button
+          key={type}
+          onClick={() => handleAppointmentTypeClick(type)}
+          className={`py-3 rounded-lg text-sm font-medium shadow-md transition-transform ${
+            user
+              ? selectedAppointmentType === type
+                ? "bg-primary text-white scale-105"
+                : "bg-secondaryLight text-primary hover:bg-primary hover:text-white"
+              : "bg-gray-300 text-gray-500 cursor-not-allowed"
+          }`}
+          disabled={!user}
+        >
+          {type}
+        </button>
+      ))}
+    </div>
+  </div>
+
+  {/* Book Now Button */}
+  <div className="mt-10">
+    <button
+      onClick={handleBookNow}
+      className={`w-full py-3 rounded-lg font-semibold text-lg shadow-md transition-all ${
+        user && selectedAppointmentType
+          ? "bg-primary text-white hover:bg-primaryLight"
+          : "bg-gray-300 text-gray-500 cursor-not-allowed"
+      }`}
+      disabled={!user || !selectedAppointmentType}
+    >
+      {user
+        ? selectedAppointmentType
+          ? "Confirm Appointment"
+          : "Select Appointment Type"
+        : "Login to Book"}
+    </button>
+  </div>
+</div>
+
       </div>
 
       {openModal && (

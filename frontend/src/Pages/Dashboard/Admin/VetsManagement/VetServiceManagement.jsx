@@ -11,7 +11,6 @@ const VetServiceManagement = () => {
   const [openModal, setOpenModal] = useState(false);
   const [serviceId, setServiceId] = useState(null);
   const [modalType, setModalType] = useState('');
-  console.log(serviceId)
 
   const handleAdminReviewBtn = (service) => {
     console.log(service)

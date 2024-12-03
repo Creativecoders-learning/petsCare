@@ -1,114 +1,121 @@
-import { useState } from "react";
+import { useState } from 'react';
+import { FaRegBookmark } from "react-icons/fa";
+import { IoBagCheck, IoCheckmarkSharp } from "react-icons/io5";
+import Checkout from '../../../Pages/Checkout/Checkout';
+import useMyServices from '../../../Hooks/api/useMyServices';
 
-const DoctorSchedule = () => {
-  const [selectedDay, setSelectedDay] = useState(""); // Selected Day
-  const [selectedSlot, setSelectedSlot] = useState(null); // Selected Slot
-  const [confirmedBookings, setConfirmedBookings] = useState({}); // Confirmed Bookings
+const DoctorSchedule = ({ doctor }) => {
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
+  const [bookedSlot, setBookedSlot] = useState(null);
+  const [showCheckout, setShowCheckout] = useState(false);
+  // const [confirmedSlots, setConfirmedSlots] = useState({}); // To track confirmed slots
 
-  const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  const slots = [
-    "6:00am-9:00am",
-    "9:00am-12:00pm",
-    "1:00pm-3:00pm",
-    "3:00pm-6:00pm",
-  ];
+  const { myServices } = useMyServices();
 
-  // Handle Day Selection
-  const handleDaySelect = (day) => {
-    setSelectedDay(day);
-    setSelectedSlot(null); // Reset slot when changing the day
-  };
+  // Get doctor's service from the available services
+  const doctorsService = myServices?.find(service => service?.vetEmail === doctor?.email);
+  const { schedule } = doctorsService || {};
 
-  // Handle Slot Selection
-  const handleSlotSelect = (slot) => {
-    const bookings = confirmedBookings[selectedDay]?.[slot] || [];
-    if (bookings.length < 4) {
-      setSelectedSlot(slot);
+  const handleSlotClick = (slotIndex, seatIndex) => {
+    const slot = doctor.schedule[slotIndex];
+    if (!slot.bookedSeats[seatIndex]) {
+      setBookedSlot({ slotIndex, seatIndex });
+      setShowCheckout(true); // Show checkout button after selecting a slot
     }
   };
 
-  // Confirm Booking
-  const handleConfirmBooking = () => {
-    if (selectedDay && selectedSlot) {
-      setConfirmedBookings((prev) => ({
-        ...prev,
-        [selectedDay]: {
-          ...prev[selectedDay],
-          [selectedSlot]: [
-            ...(prev[selectedDay]?.[selectedSlot] || []),
-            { name: "John Doe", email: "john@example.com" }, // Replace with actual user data
-          ],
-        },
-      }));
-      setSelectedSlot(null);
-      alert("Booking Confirmed!");
-    }
+  const handleCheckoutClick = () => {
+    setShowCheckout(true);
+  };
+
+  const handlePaymentSuccess = () => {
+    setPaymentSuccess(true); // Set payment as successful
+    setShowCheckout(false); // Hide checkout after payment
+  };
+
+  const handleConfirm = () => {
+    // Send booking data to the backend (e.g., API call)
+    console.log("Booking Confirmed", bookedSlot);
+    const updatedSchedule = [...doctor.schedule];
+    const selectedSlot = updatedSchedule[bookedSlot.slotIndex];
+    selectedSlot.bookedSeats[bookedSlot.seatIndex] = true;
+    // setConfirmedSlots((prev) => ({
+    //   ...prev,
+    //   [bookedSlot.slotIndex]: true,
+    // }));
+    setBookedSlot(null); // Reset after confirmation
+    setPaymentSuccess(false); // Reset payment success
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-5">
-      <h2 className="text-2xl font-bold text-center mb-5">Doctor Schedule</h2>
-
-      {/* Day Selection */}
-      <div className="flex flex-wrap justify-center gap-4 mb-5">
-        {days.map((day) => (
+    <div className="bg-white rounded-lg shadow-lg p-6 max-w-3xl mx-auto">
+      <h2 className="text-2xl font-semibold my-3 text-center mb-5">Select Your Slot</h2>
+      <div className="mx-16">
+        <img className="w-full" src="https://i.ibb.co/MsbDWtd/Line-2.png" alt="line" />
+        <div className="flex items-center justify-between my-5">
+          <h2 className="flex items-center gap-3 font-bold text-gray-500">
+            <FaRegBookmark className="text-2xl" />
+            Available
+          </h2>
           <button
-            key={day}
-            onClick={() => handleDaySelect(day)}
-            className={`px-4 py-2 rounded-lg font-medium border ${
-              selectedDay === day
-                ? "bg-blue-500 text-white"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-            }`}
+            onClick={handleCheckoutClick}
+            className="flex items-center gap-3 font-bold text-primary border-primary border px-2 py-2 rounded hover:bg-black hover:text-white"
           >
-            {day}
+            <IoBagCheck className="text-2xl" />
+            Checkout Now
           </button>
-        ))}
+        </div>
+        <img className="w-full" src="https://i.ibb.co/MsbDWtd/Line-2.png" alt="line" />
       </div>
 
       {/* Slot Selection */}
-      {selectedDay && (
-        <div>
-          <h3 className="text-lg font-semibold text-center mb-3">
-            Available Slots for {selectedDay}
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {slots.map((slot) => {
-              const bookings = confirmedBookings[selectedDay]?.[slot] || [];
-              const isFull = bookings.length >= 4;
-
-              return (
-                <div
-                  key={slot}
-                  onClick={() => handleSlotSelect(slot)}
-                  className={`border rounded-lg font-medium py-4 px-2 text-center cursor-pointer ${
-                    isFull
-                      ? "bg-gray-400 text-white cursor-not-allowed"
-                      : selectedSlot === slot
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                  }`}
-                >
-                  <p className="text-xl font-bold">{slot}</p>
-                  <p className="text-sm">{4 - bookings.length} slots left</p>
-                </div>
-              );
-            })}
+      <div className="mt-10 py-5 px-5">
+        {schedule?.map((slot, slotIndex) => (
+          <div key={slotIndex} className="mt-5">
+            <h2 className="text-[18px] text-gray-500 font-bold text-center mb-4">
+              {slot.startTime} - {slot.endTime}
+            </h2>
+            <div className="flex items-center justify-center gap-4">
+              {Array.from({ length: slot.seats }).map((_, seatIndex) => {
+                const isBooked = slot.bookedSeats[seatIndex];
+                return (
+                  <div
+                    key={seatIndex}
+                    onClick={() => handleSlotClick(slotIndex, seatIndex)}
+                    className={`border font-bold h-[50px] w-[100px] flex items-center justify-center ${isBooked
+                        ? "bg-gray-400 text-white cursor-not-allowed"
+                        : "bg-[#F7F8F8] text-gray-500 cursor-pointer"
+                      }`}
+                  >
+                    {isBooked ? (
+                      <IoCheckmarkSharp className="text-2xl" />
+                    ) : (
+                      `Seat ${seatIndex + 1}`
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      )}
+        ))}
+      </div>
+
+      {/* Checkout Component */}
+      {showCheckout && <Checkout onPaymentSuccess={handlePaymentSuccess} />}
 
       {/* Confirm Button */}
-      {selectedSlot && (
-        <div className="mt-5 text-center">
-          <button
-            onClick={handleConfirmBooking}
-            className="px-6 py-2 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600"
-          >
-            Confirm Booking
-          </button>
-        </div>
-      )}
+      <div className="mt-10 flex items-center justify-center">
+        <button
+          onClick={handleConfirm}
+          disabled={!paymentSuccess || !bookedSlot} // Enable only after successful payment and slot selection
+          className={`w-[250px] py-2 rounded-xl font-bold text-xl ${paymentSuccess && bookedSlot
+              ? "bg-primary text-white hover:bg-black"
+              : "bg-gray-400 text-gray-600 cursor-not-allowed"
+            }`}
+        >
+          Confirm
+        </button>
+      </div>
     </div>
   );
 };
